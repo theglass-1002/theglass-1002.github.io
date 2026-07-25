@@ -71,7 +71,7 @@
       <article class="project">
         <div class="project-col1">
           <a href="projects/interview.html" class="project-link">
-            <img src="images/projects/interview/image11.png" alt="면접왕 썸네일" class="project-thumb" loading="lazy">
+            <img src="images/projects/interview/screen-1.png" alt="면접왕 썸네일" class="project-thumb" loading="lazy">
             <h3 class="project-title">면접왕</h3>
             <span class="project-label">case study</span>
           </a>
@@ -82,12 +82,12 @@
         </div>
         <div class="project-col2">
           <a href="projects/interview.html">
-            <img src="images/projects/interview/image12.png" alt="면접왕 메인 화면" class="project-screenshot" loading="lazy">
+            <img src="images/projects/interview/screen-2.png" alt="면접왕 메인 화면" class="project-screenshot" loading="lazy">
           </a>
         </div>
         <div class="project-col3">
           <a href="projects/interview.html">
-            <img src="images/projects/interview/image18.png" alt="면접왕 모바일" class="project-mobile" loading="lazy">
+            <img src="images/projects/interview/screen-3.png" alt="면접왕 모바일" class="project-mobile" loading="lazy">
           </a>
         </div>
       </article>
@@ -96,7 +96,7 @@
       <article class="project">
         <div class="project-col1">
           <a href="projects/jobkok.html" class="project-link">
-            <img src="images/projects/jobkok/image27.png" alt="잡콕 썸네일" class="project-thumb" loading="lazy">
+            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 썸네일" class="project-thumb" loading="lazy">
             <h3 class="project-title">잡콕</h3>
             <span class="project-label">case study</span>
           </a>
@@ -107,12 +107,12 @@
         </div>
         <div class="project-col2">
           <a href="projects/jobkok.html">
-            <img src="images/projects/jobkok/image28.png" alt="잡콕 메인 화면" class="project-screenshot" loading="lazy">
+            <img src="images/projects/jobkok/screen-2.png" alt="잡콕 메인 화면" class="project-screenshot" loading="lazy">
           </a>
         </div>
         <div class="project-col3">
           <a href="projects/jobkok.html">
-            <img src="images/projects/jobkok/image29.png" alt="잡콕 상세" class="project-mobile" loading="lazy">
+            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 상세" class="project-mobile" loading="lazy">
           </a>
         </div>
       </article>
@@ -121,7 +121,7 @@
       <article class="project">
         <div class="project-col1">
           <a href="projects/jango.html" class="project-link">
-            <img src="images/projects/jango/image30.png" alt="장고 썸네일" class="project-thumb" loading="lazy">
+            <img src="images/projects/jango/screen-1.png" alt="장고 썸네일" class="project-thumb" loading="lazy">
             <h3 class="project-title">장고</h3>
             <span class="project-label">case study</span>
           </a>
@@ -132,12 +132,12 @@
         </div>
         <div class="project-col2">
           <a href="projects/jango.html">
-            <img src="images/projects/jango/image31.png" alt="장고 메인 화면" class="project-screenshot" loading="lazy">
+            <img src="images/projects/jango/screen-2.png" alt="장고 메인 화면" class="project-screenshot" loading="lazy">
           </a>
         </div>
         <div class="project-col3">
           <a href="projects/jango.html">
-            <img src="images/projects/jango/image32.png" alt="장고 상세" class="project-mobile" loading="lazy">
+            <img src="images/projects/jango/screen-3.png" alt="장고 상세" class="project-mobile" loading="lazy">
           </a>
         </div>
       </article>
@@ -322,6 +322,111 @@
       </div>
     </div>
   </footer>
+
+  <!-- Chatbot Floating Button -->
+  <div class="chatbot-float">
+    <button class="chatbot-button" id="chatbotToggle" aria-label="챗봇 열기">
+      <span class="chatbot-icon">💬</span>
+    </button>
+  </div>
+
+  <!-- Chatbot Panel -->
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      <h3>💬 안녕하세요!</h3>
+      <button class="chatbot-close" id="chatbotClose" aria-label="챗봇 닫기">×</button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages">
+      <div class="chatbot-message bot">
+        <div class="message-avatar">🤖</div>
+        <div class="message-content">안녕하세요! 궁금하신 점이 있으시면 물어보세요 😊</div>
+      </div>
+    </div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="메시지를 입력하세요...">
+      <button class="chatbot-send" id="chatbotSend" aria-label="전송">▶</button>
+    </div>
+  </div>
+
+  <!-- Visitor Counter -->
+  <div class="visitor-counter">
+    <span id="visitorCount">Visitor: 0 | Total: 0</span>
+  </div>
+
+  <script>
+    // Chatbot Toggle
+    const chatbotToggle = document.getElementById('chatbotToggle');
+    const chatbotPanel = document.getElementById('chatbotPanel');
+    const chatbotClose = document.getElementById('chatbotClose');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const chatbotSend = document.getElementById('chatbotSend');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+
+    chatbotToggle.addEventListener('click', () => {
+      chatbotPanel.classList.add('active');
+    });
+
+    chatbotClose.addEventListener('click', () => {
+      chatbotPanel.classList.remove('active');
+    });
+
+    function addMessage(text, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `chatbot-message ${isUser ? 'user' : 'bot'}`;
+
+      const avatar = document.createElement('div');
+      avatar.className = 'message-avatar';
+      avatar.textContent = isUser ? '👤' : '🤖';
+
+      const content = document.createElement('div');
+      content.className = 'message-content';
+      content.textContent = text;
+
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(content);
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function sendMessage() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+
+      addMessage(message, true);
+      chatbotInput.value = '';
+
+      setTimeout(() => {
+        const responses = [
+          '감사합니다! 곧 답변드리겠습니다 😊',
+          '좋은 질문이네요! 확인해보겠습니다 🔍',
+          '문의 감사합니다. 빠르게 답변드릴게요! ⚡',
+        ];
+        addMessage(responses[Math.floor(Math.random() * responses.length)]);
+      }, 500);
+    }
+
+    chatbotSend.addEventListener('click', sendMessage);
+    chatbotInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') sendMessage();
+    });
+
+    // Visitor Counter (LocalStorage 기반 간단 카운터)
+    function updateVisitorCount() {
+      let total = parseInt(localStorage.getItem('totalVisitors') || '0');
+      let today = new Date().toDateString();
+      let lastVisit = localStorage.getItem('lastVisit');
+
+      if (lastVisit !== today) {
+        total++;
+        localStorage.setItem('totalVisitors', total);
+        localStorage.setItem('lastVisit', today);
+      }
+
+      document.getElementById('visitorCount').textContent = `Visitor: ${total} | Total: ${total}`;
+    }
+
+    updateVisitorCount();
+  </script>
 
 </body>
 </html>
