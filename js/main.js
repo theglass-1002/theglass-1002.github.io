@@ -73,6 +73,66 @@ const projectData = {
     ],
     tech: ['React 19', 'TypeScript', 'Gemini API', 'Vite', 'Voice Recognition', 'Firebase'],
     role: '프론트엔드 전체 개발 및 AI API 연동'
+  },
+  zentry: {
+    title: '젠트리 (Zentry)',
+    tag: 'Pet Healthcare Platform',
+    color: '#4ea8f7',
+    description: '반려동물 건강 관리 통합 플랫폼. 웨어러블 디바이스로 실시간 건강 데이터를 수집하고, 수의사와 보호자를 연결합니다.',
+    features: [
+      '두리틀 앱 - 보호자용 반려동물 건강 모니터링',
+      '젠트리 공식 웹사이트 - 반응형 UI/UX',
+      '젠트리 관리자용 웹사이트 - 실시간 데이터 관리',
+      'REST API 기반 실시간 데이터 동기화',
+      'TCP/WebSocket 통신으로 웨어러블 연동'
+    ],
+    tech: ['Dart', 'HTML/CSS', 'JavaScript', 'React', 'MySQL', 'WebSocket'],
+    role: '두리틀 앱 퍼블리싱 및 웹사이트 3종 개발 (2년 6개월)'
+  },
+  newO: {
+    title: '뉴오 (NewO)',
+    tag: 'Metaverse Education',
+    color: '#ff8c42',
+    description: '틴노바 학원생을 위한 메타버스 기반 온라인 학습 플랫폼. 캐릭터 커스터마이징과 게임화로 몰입도 높은 학습 경험을 제공합니다.',
+    features: [
+      'Phaser.js 기반 2D 메타버스 공간',
+      '캐릭터 커스터마이징 시스템',
+      '실시간 채팅 및 멘토링 기능',
+      '학습 일정 관리 및 TODO 시스템',
+      '게시판 및 피드백 제공'
+    ],
+    tech: ['HTML/CSS', 'JavaScript', 'PHP', 'Java', 'Phaser.js', 'Bootstrap', 'MariaDB', 'Redis'],
+    role: '프론트엔드 개발 (40%) 및 UI/UX 제공 (4개월)'
+  },
+  careform: {
+    title: '케어팜 (CareForm)',
+    tag: 'Developer Tools',
+    color: '#10b981',
+    description: '간병인이 필요한 사용자와 간병인을 매칭하는 서비스. 손쉬운 사용자 경험으로 빠른 매칭을 지원합니다.',
+    features: [
+      '간병인/사용자 회원가입 및 프로필 관리',
+      '실시간 매칭 알고리즘',
+      '리뷰 및 평점 시스템',
+      '일정 관리 캘린더',
+      '알림 시스템 (이메일/SMS)'
+    ],
+    tech: ['HTML/CSS', 'JavaScript', 'Bootstrap', 'Apache', 'Nginx'],
+    role: '프론트엔드 퍼블리싱 개발'
+  },
+  sketchers: {
+    title: '스케쳐스 (Sketchers)',
+    tag: 'E-commerce Platform',
+    color: '#a78bfa',
+    description: '스케쳐스 쇼핑몰 웹사이트. 상품 조회, 장바구니, 결제 시스템을 구현한 E-commerce 플랫폼입니다.',
+    features: [
+      '상품 카탈로그 및 검색 기능',
+      '장바구니 및 주문 시스템',
+      '회원가입 및 로그인 (세션 관리)',
+      '관리자 페이지 (상품/주문 관리)',
+      '반응형 디자인'
+    ],
+    tech: ['HTML/CSS', 'JavaScript', 'Bootstrap', 'Apache', 'MySQL'],
+    role: '풀스택 개발 (쇼핑몰 자료 출력 및 정리)'
   }
 };
 
