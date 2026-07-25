@@ -1,4 +1,4 @@
-const projectData = {
+const projectDataRaw = {
   literacy: {
     title: '문해력 탐험대',
     tag: 'AI Education Platform',
@@ -13,6 +13,8 @@ const projectData = {
     ],
     tech: ['HTML5', 'CSS3', 'JavaScript (Vanilla)', 'AI Integration', 'Chart Visualization'],
     role: '프론트엔드 퍼블리싱 및 UI/UX 구현',
+    period: '2024.03 - 2024.08 (6개월)',
+    startDate: '2024-03',
     images: [],
     link: null
   },
@@ -31,6 +33,8 @@ const projectData = {
     ],
     tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AI Vision Analysis', 'CROVAI'],
     role: '프론트엔드 UI/UX 개발 및 면접 플로우 구현',
+    period: '2024.01 - 2024.06 (6개월)',
+    startDate: '2024-01',
     images: [
       'images/projects/interview/screen-1.png',
       'images/projects/interview/screen-2.png',
@@ -55,9 +59,14 @@ const projectData = {
     ],
     tech: ['React 19', 'TypeScript', 'Firebase', 'Vite', 'React Router', 'AI Integration'],
     role: '3개 버전 풀스택 개발 (프론트엔드 중심)',
+    period: '2023.09 - 2024.02 (6개월)',
+    startDate: '2023-09',
     images: [
       'images/projects/jango/screen-1.png',
-      'images/projects/jango/screen-2.png'
+      'images/projects/jango/screen-2.png',
+      'images/projects/jango/screen-3.png',
+      'images/projects/jango/screen-4.png',
+      'images/projects/jango/screen-5.png'
     ],
     link: null
   },
@@ -76,8 +85,11 @@ const projectData = {
     ],
     tech: ['Java Spring', 'HTML/CSS', 'JavaScript', 'MySQL', 'RESTful API'],
     role: '프론트엔드 UI/UX 개발 및 백엔드 연동',
+    period: '2023.03 - 2023.08 (6개월)',
+    startDate: '2023-03',
     images: [
-      'images/projects/jobkok/screen-1.png'
+      'images/projects/jobkok/screen-1.png',
+      'images/projects/jobkok/screen-2.png'
     ],
     link: null
   },
@@ -94,7 +106,11 @@ const projectData = {
       '관리자 대시보드 (품절/매출/주문)'
     ],
     tech: ['React 19', 'TypeScript', 'Gemini API', 'Vite', 'Voice Recognition', 'Firebase'],
-    role: '프론트엔드 전체 개발 및 AI API 연동'
+    role: '프론트엔드 전체 개발 및 AI API 연동',
+    period: '2024.09 - 2024.12 (4개월)',
+    startDate: '2024-09',
+    images: [],
+    link: null
   },
   zentry: {
     title: '젠트리 (Zentry)',
@@ -109,7 +125,11 @@ const projectData = {
       'TCP/WebSocket 통신으로 웨어러블 연동'
     ],
     tech: ['Dart', 'HTML/CSS', 'JavaScript', 'React', 'MySQL', 'WebSocket'],
-    role: '두리틀 앱 퍼블리싱 및 웹사이트 3종 개발 (2년 6개월)'
+    role: '두리틀 앱 퍼블리싱 및 웹사이트 3종 개발',
+    period: '2022.09 - 2025.02 (2년 6개월)',
+    startDate: '2022-09',
+    images: [],
+    link: 'https://zentry.kr'
   },
   newO: {
     title: '뉴오 (NewO)',
@@ -124,11 +144,15 @@ const projectData = {
       '게시판 및 피드백 제공'
     ],
     tech: ['HTML/CSS', 'JavaScript', 'PHP', 'Java', 'Phaser.js', 'Bootstrap', 'MariaDB', 'Redis'],
-    role: '프론트엔드 개발 (40%) 및 UI/UX 제공 (4개월)'
+    role: '프론트엔드 개발 (40%) 및 UI/UX 제공',
+    period: '2022.02 - 2022.06 (4개월)',
+    startDate: '2022-02',
+    images: [],
+    link: null
   },
   careform: {
     title: '케어팜 (CareForm)',
-    tag: 'Developer Tools',
+    tag: 'Healthcare Matching',
     color: '#10b981',
     description: '간병인이 필요한 사용자와 간병인을 매칭하는 서비스. 손쉬운 사용자 경험으로 빠른 매칭을 지원합니다.',
     features: [
@@ -139,7 +163,11 @@ const projectData = {
       '알림 시스템 (이메일/SMS)'
     ],
     tech: ['HTML/CSS', 'JavaScript', 'Bootstrap', 'Apache', 'Nginx'],
-    role: '프론트엔드 퍼블리싱 개발'
+    role: '프론트엔드 퍼블리싱 개발',
+    period: '2022.03 - 2022.06 (4개월)',
+    startDate: '2022-03',
+    images: [],
+    link: null
   },
   sketchers: {
     title: '스케쳐스 (Sketchers)',
@@ -154,8 +182,20 @@ const projectData = {
       '반응형 디자인'
     ],
     tech: ['HTML/CSS', 'JavaScript', 'Bootstrap', 'Apache', 'MySQL'],
-    role: '풀스택 개발 (쇼핑몰 자료 출력 및 정리)'
+    role: '풀스택 개발 (쇼핑몰 자료 출력 및 정리)',
+    period: '2021.05 - 2021.08 (4개월)',
+    startDate: '2021-05',
+    images: [],
+    link: null
   }
+};
+
+// 날짜순으로 정렬 (최신순)
+const projectData = Object.fromEntries(
+  Object.entries(projectDataRaw).sort((a, b) => {
+    return b[1].startDate.localeCompare(a[1].startDate);
+  })
+);
 };
 
 // Intersection Observer
