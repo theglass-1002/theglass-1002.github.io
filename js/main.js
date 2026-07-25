@@ -196,7 +196,6 @@ const projectData = Object.fromEntries(
     return b[1].startDate.localeCompare(a[1].startDate);
   })
 );
-};
 
 // Intersection Observer
 const observerOptions = {
