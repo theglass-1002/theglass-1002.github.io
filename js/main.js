@@ -1,0 +1,176 @@
+const projectData = {
+  literacy: {
+    title: '문해력 탐험대',
+    tag: 'AI Education Platform',
+    color: '#ff8c42',
+    description: 'AI 기반 맞춤형 문해력 학습 플랫폼으로, 학생들의 읽기 능력을 실시간으로 진단하고 개인별 맞춤 학습 경로를 제공합니다.',
+    features: [
+      'AI 기반 문해력 실시간 진단 시스템',
+      '난이도별 맞춤 문제 자동 생성',
+      '게임화된 학습 경험 (탐험대 컨셉)',
+      '학습 진척도 시각화 대시보드',
+      '학생/교사/관리자 3-tier 구조'
+    ],
+    tech: ['HTML5', 'CSS3', 'JavaScript (Vanilla)', 'AI Integration', 'Chart Visualization'],
+    role: '프론트엔드 퍼블리싱 및 UI/UX 구현'
+  },
+  interview: {
+    title: '면접왕 (인터뷰마스터)',
+    tag: 'AI Mock Interview',
+    color: '#4ea8f7',
+    description: 'AI 영상 분석 기술을 활용한 대면 모의면접 서비스. 실시간으로 표정, 자세, 음성을 분석하여 상세한 피드백을 제공합니다.',
+    features: [
+      'WebRTC 기반 실시간 영상 면접',
+      'AI 표정/자세/음성 분석',
+      '생활기록부 기반 맞춤 질문 생성',
+      '종합 분석 리포트 PDF 다운로드',
+      '학과별/학생별 예상 질문 데이터베이스'
+    ],
+    tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AOS (Animate On Scroll)'],
+    role: '프론트엔드 개발 및 차트 시각화'
+  },
+  jango: {
+    title: '장고 (장애인고용 플랫폼)',
+    tag: 'Employment Platform',
+    color: '#a78bfa',
+    description: '장애인 구직자, 기업, 복지사를 연결하는 통합 고용 플랫폼. 접근성을 최우선으로 설계된 3개 버전의 웹사이트입니다.',
+    features: [
+      '구직자/기업/복지사 3개 독립 웹사이트',
+      'WCAG 2.1 AA 수준 웹 접근성 준수',
+      'Firebase 실시간 알림 시스템',
+      '이력서 자동 매칭 알고리즘',
+      '채용 공고 검색 및 필터링'
+    ],
+    tech: ['React 19', 'TypeScript', 'Firebase', 'Vite', 'React Router'],
+    role: '3개 버전 풀스택 개발 (프론트엔드 중심)'
+  },
+  jobkok: {
+    title: '잡콕 (JobKok)',
+    tag: 'Job Portal',
+    color: '#10b981',
+    description: '사람인형 구인구직 플랫폼으로, 빠른 검색과 직관적인 UI로 구직자와 기업을 연결합니다.',
+    features: [
+      '통합 검색 엔진 (직무/지역/경력)',
+      '실시간 채용 공고 업데이트',
+      '이력서 자동 완성 기능',
+      '기업 맞춤 인재 추천',
+      '지원 현황 대시보드'
+    ],
+    tech: ['Java Spring', 'HTML/CSS', 'JavaScript', 'MySQL', 'RESTful API'],
+    role: '프론트엔드 개발 및 백엔드 연동'
+  },
+  kiosk: {
+    title: '홀로그램 AI 키오스크',
+    tag: 'AI Voice Kiosk',
+    color: '#f472b6',
+    description: 'Gemini API를 활용한 음성 주문 카페 키오스크. 자연어 대화로 주문부터 결제까지 완성하는 미래형 무인 주문 시스템입니다.',
+    features: [
+      'Gemini API 음성인식 및 자연어 처리',
+      '홀로그램 디스플레이 연동',
+      '실시간 메뉴 추천 시스템',
+      'PG 결제 통합 (카드/간편결제)',
+      '관리자 대시보드 (품절/매출/주문)'
+    ],
+    tech: ['React 19', 'TypeScript', 'Gemini API', 'Vite', 'Voice Recognition', 'Firebase'],
+    role: '프론트엔드 전체 개발 및 AI API 연동'
+  }
+};
+
+// Intersection Observer
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.bento-item').forEach(item => {
+  observer.observe(item);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Modal
+function openModal(projectId) {
+  const data = projectData[projectId];
+  if (!data) return;
+
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalTitle').style.color = data.color;
+
+  document.getElementById('modalMeta').innerHTML = `
+    <span class="project-tag" style="background: ${data.color}33; color: ${data.color}">${data.tag}</span>
+  `;
+
+  document.getElementById('modalBody').innerHTML = `
+    <h3>프로젝트 소개</h3>
+    <p>${data.description}</p>
+
+    <h3>주요 기능</h3>
+    <ul>
+      ${data.features.map(f => `<li>${f}</li>`).join('')}
+    </ul>
+
+    <h3>기술 스택</h3>
+    <div class="project-tech">
+      ${data.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+    </div>
+
+    <h3 style="margin-top: 2rem">담당 역할</h3>
+    <p>${data.role}</p>
+  `;
+
+  document.getElementById('modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Project click events
+document.querySelectorAll('.bento-item').forEach(item => {
+  item.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('project-link')) {
+      const projectId = item.dataset.project;
+      openModal(projectId);
+    }
+  });
+
+  item.querySelector('.project-link')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    openModal(item.dataset.project);
+  });
+});
+
+// Close modal on outside click
+document.getElementById('modal').addEventListener('click', (e) => {
+  if (e.target.id === 'modal') {
+    closeModal();
+  }
+});
+
+// ESC key to close modal
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
