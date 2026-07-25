@@ -531,3 +531,17 @@ body::before {
 .fade-in {
   animation: fadeInUp 0.8s ease forwards;
 }
+
+.project-screenshots {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.project-screenshots img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-card);
+}

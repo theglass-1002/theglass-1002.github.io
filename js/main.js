@@ -12,7 +12,9 @@ const projectData = {
       '학생/교사/관리자 3-tier 구조'
     ],
     tech: ['HTML5', 'CSS3', 'JavaScript (Vanilla)', 'AI Integration', 'Chart Visualization'],
-    role: '프론트엔드 퍼블리싱 및 UI/UX 구현'
+    role: '프론트엔드 퍼블리싱 및 UI/UX 구현',
+    images: [],
+    link: null
   },
   interview: {
     title: '면접왕 (승무원 버전)',
@@ -28,7 +30,15 @@ const projectData = {
       '종합 분석 리포트 및 개선점 제공'
     ],
     tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AI Vision Analysis', 'CROVAI'],
-    role: '프론트엔드 UI/UX 개발 및 면접 플로우 구현'
+    role: '프론트엔드 UI/UX 개발 및 면접 플로우 구현',
+    images: [
+      'images/projects/interview/screen-1.png',
+      'images/projects/interview/screen-2.png',
+      'images/projects/interview/screen-3.png',
+      'images/projects/interview/screen-4.png',
+      'images/projects/interview/screen-5.png'
+    ],
+    link: null
   },
   jango: {
     title: '장고 (장애인고용 플랫폼)',
@@ -44,7 +54,12 @@ const projectData = {
       '모의면접 진행 현황 대시보드'
     ],
     tech: ['React 19', 'TypeScript', 'Firebase', 'Vite', 'React Router', 'AI Integration'],
-    role: '3개 버전 풀스택 개발 (프론트엔드 중심)'
+    role: '3개 버전 풀스택 개발 (프론트엔드 중심)',
+    images: [
+      'images/projects/jango/screen-1.png',
+      'images/projects/jango/screen-2.png'
+    ],
+    link: null
   },
   jobkok: {
     title: '잡콕 (JobKok)',
@@ -60,7 +75,11 @@ const projectData = {
       '페이지네이션 및 정렬 기능 (최신순/인기순)'
     ],
     tech: ['Java Spring', 'HTML/CSS', 'JavaScript', 'MySQL', 'RESTful API'],
-    role: '프론트엔드 UI/UX 개발 및 백엔드 연동'
+    role: '프론트엔드 UI/UX 개발 및 백엔드 연동',
+    images: [
+      'images/projects/jobkok/screen-1.png'
+    ],
+    link: null
   },
   kiosk: {
     title: '홀로그램 AI 키오스크',
@@ -181,6 +200,32 @@ function openModal(projectId) {
     <span class="project-tag" style="background: ${data.color}33; color: ${data.color}">${data.tag}</span>
   `;
 
+  let imagesHTML = '';
+  if (data.images && data.images.length > 0) {
+    imagesHTML = `
+      <h3 style="margin-top: 2rem">디자인 화면</h3>
+      <div class="project-screenshots">
+        ${data.images.map(img => `<img src="${img}" alt="${data.title} 스크린샷" loading="lazy">`).join('')}
+      </div>
+    `;
+  }
+
+  let linkHTML = '';
+  if (data.link) {
+    linkHTML = `
+      <h3 style="margin-top: 2rem">사이트 주소</h3>
+      <p><a href="${data.link}" target="_blank" rel="noopener noreferrer" style="color: ${data.color}; text-decoration: underline;">${data.link}</a></p>
+    `;
+  }
+
+  let periodHTML = '';
+  if (data.period) {
+    periodHTML = `
+      <h3 style="margin-top: 2rem">개발 기간</h3>
+      <p>${data.period}</p>
+    `;
+  }
+
   document.getElementById('modalBody').innerHTML = `
     <h3>프로젝트 소개</h3>
     <p>${data.description}</p>
@@ -197,6 +242,10 @@ function openModal(projectId) {
 
     <h3 style="margin-top: 2rem">담당 역할</h3>
     <p>${data.role}</p>
+
+    ${periodHTML}
+    ${linkHTML}
+    ${imagesHTML}
   `;
 
   document.getElementById('modal').classList.add('active');
