@@ -34,15 +34,16 @@ const projectData = {
     title: '장고 (장애인고용 플랫폼)',
     tag: 'Employment Platform',
     color: '#a78bfa',
-    description: '장애인 구직자, 기업, 복지사를 연결하는 통합 고용 플랫폼. 접근성을 최우선으로 설계된 3개 버전의 웹사이트입니다.',
+    description: '장애인 구직자, 기업, 복지사를 연결하는 통합 고용 플랫폼. AI 모의면접과 접근성을 최우선으로 설계된 3개 버전의 웹사이트입니다.',
     features: [
+      'AI 모의면접 - 이력서 기반 맞춤형 질문 생성',
       '구직자/기업/복지사 3개 독립 웹사이트',
       'WCAG 2.1 AA 수준 웹 접근성 준수',
-      'Firebase 실시간 알림 시스템',
-      '이력서 자동 매칭 알고리즘',
-      '채용 공고 검색 및 필터링'
+      '채용 공고/이력서 통합 관리 시스템',
+      'Firebase 실시간 알림 및 인증',
+      '모의면접 진행 현황 대시보드'
     ],
-    tech: ['React 19', 'TypeScript', 'Firebase', 'Vite', 'React Router'],
+    tech: ['React 19', 'TypeScript', 'Firebase', 'Vite', 'React Router', 'AI Integration'],
     role: '3개 버전 풀스택 개발 (프론트엔드 중심)'
   },
   jobkok: {
