@@ -15,19 +15,19 @@ const projectData = {
     role: '프론트엔드 퍼블리싱 및 UI/UX 구현'
   },
   interview: {
-    title: '면접왕 (인터뷰마스터)',
-    tag: 'AI Mock Interview',
+    title: '면접왕 (승무원 버전)',
+    tag: 'AI Flight Attendant Interview',
     color: '#4ea8f7',
-    description: 'AI 영상 분석 기술을 활용한 대면 모의면접 서비스. 실시간으로 표정, 자세, 음성을 분석하여 상세한 피드백을 제공합니다.',
+    description: '승무원 면접 특화 AI 모의면접 서비스. 실시간 영상 분석으로 표정, 자세, 음성, 복장을 분석하여 승무원 면접에 최적화된 피드백을 제공합니다.',
     features: [
-      'WebRTC 기반 실시간 영상 면접',
-      'AI 표정/자세/음성 분석',
-      '생활기록부 기반 맞춤 질문 생성',
-      '종합 분석 리포트 PDF 다운로드',
-      '학과별/학생별 예상 질문 데이터베이스'
+      'WebRTC 기반 실시간 승무원 면접 시뮬레이션',
+      'AI 표정/자세/음성/복장 분석',
+      '승무원 면접 예상 질문 데이터베이스',
+      '서비스 마인드 및 커뮤니케이션 평가',
+      '종합 분석 리포트 및 개선점 제공'
     ],
-    tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AOS (Animate On Scroll)'],
-    role: '프론트엔드 개발 및 차트 시각화'
+    tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AI Vision Analysis'],
+    role: '프론트엔드 개발 및 면접 시각화'
   },
   jango: {
     title: '장고 (장애인고용 플랫폼)',
