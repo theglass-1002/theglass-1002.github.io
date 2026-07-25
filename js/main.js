@@ -1,17 +1,18 @@
 const projectDataRaw = {
   literacy: {
     title: '문해력 탐험대',
-    tag: 'AI Education Platform',
+    tag: 'Windows Desktop Program',
     color: '#ff8c42',
-    description: 'AI 기반 맞춤형 문해력 학습 플랫폼으로, 학생들의 읽기 능력을 실시간으로 진단하고 개인별 맞춤 학습 경로를 제공합니다.',
+    description: 'AI 기반 맞춤형 문해력 학습 윈도우 프로그램. 학생들의 읽기 능력을 실시간으로 진단하고 개인별 맞춤 학습 경로를 제공합니다.',
     features: [
+      'Windows 데스크톱 애플리케이션',
       'AI 기반 문해력 실시간 진단 시스템',
       '난이도별 맞춤 문제 자동 생성',
       '게임화된 학습 경험 (탐험대 컨셉)',
       '학습 진척도 시각화 대시보드',
       '학생/교사/관리자 3-tier 구조'
     ],
-    tech: ['HTML5', 'CSS3', 'JavaScript (Vanilla)', 'AI Integration', 'Chart Visualization'],
+    tech: ['HTML5', 'CSS3', 'JavaScript (Vanilla)', 'AI Integration', 'Chart Visualization', 'Windows Desktop'],
     role: '프론트엔드 퍼블리싱 및 UI/UX 구현',
     period: '2024.03 - 2024.08 (6개월)',
     startDate: '2024-03',
@@ -95,7 +96,7 @@ const projectDataRaw = {
       'images/projects/jobkok/screen-1.png',
       'images/projects/jobkok/screen-2.png'
     ],
-    link: null
+    link: 'https://jobkok.kr'
   },
   kiosk: {
     title: '홀로그램 AI 키오스크',
