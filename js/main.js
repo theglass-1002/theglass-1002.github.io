@@ -18,16 +18,17 @@ const projectData = {
     title: '면접왕 (승무원 버전)',
     tag: 'AI Flight Attendant Interview',
     color: '#4ea8f7',
-    description: '승무원 면접 특화 AI 모의면접 서비스. 실시간 영상 분석으로 표정, 자세, 음성, 복장을 분석하여 승무원 면접에 최적화된 피드백을 제공합니다.',
+    description: '승무원 면접 특화 AI 모의면접 플랫폼. 대입/취업 모의면접 선택부터 실시간 영상 분석, 항공사별 맞춤 질문까지 전 과정을 지원합니다.',
     features: [
-      'WebRTC 기반 실시간 승무원 면접 시뮬레이션',
-      'AI 표정/자세/음성/복장 분석',
-      '승무원 면접 예상 질문 데이터베이스',
-      '서비스 마인드 및 커뮤니케이션 평가',
+      '대입/취업 모의면접 듀얼 모드 제공',
+      'CROVAI 가이드 영상 시스템',
+      '실시간 AI 분석 (외모 단정, 화면 환명, 얼굴 위치, 목소리 톤)',
+      '항공사별 맞춤 질문 데이터베이스',
+      '4단계 체크 시스템 (가이드 → 주의사항 → 체크 → 정보입력)',
       '종합 분석 리포트 및 개선점 제공'
     ],
-    tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AI Vision Analysis'],
-    role: '프론트엔드 개발 및 면접 시각화'
+    tech: ['jQuery', 'Chart.js', 'WebRTC', 'Swiper.js', 'AI Vision Analysis', 'CROVAI'],
+    role: '프론트엔드 UI/UX 개발 및 면접 플로우 구현'
   },
   jango: {
     title: '장고 (장애인고용 플랫폼)',
