@@ -1,254 +1,332 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>정유리 - Frontend Developer Portfolio</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정유리 - Frontend Developer</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">💼 Available for Projects</div>
-    <h1>Frontend Developer</h1>
-    <p class="hero-subtitle">정유리</p>
-    <p>AI와 인터랙티브 경험을 결합한 웹사이트를 만듭니다</p>
-    <div class="hero-contact">
-      <span>📧 <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></span>
-      <span>📱 <a href="tel:01040965625">010-4096-5625</a></span>
-      <span>💰 희망연봉: 3,800만원 이상 (협의)</span>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="logo">정유리</a>
+        <ul class="nav-menu">
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary">프로젝트 보기</a>
-      <a href="#contact" class="btn btn-secondary">연락하기</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">AI와 인터랙티브 경험을 결합한 웹사이트를 만듭니다</h1>
+      <p class="hero-subtitle">빠르고, 유지보수 가능하며, 사용자 친화적이고, 최신 웹 기술로 구축된 솔루션을 제공합니다.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Projects Section -->
-<section class="projects" id="projects">
-  <div class="container">
-    <div class="section-title">
-      <h2>Awards & Projects</h2>
-      <p style="color: #fbbf24; margin-bottom: 1rem;">🏆 2022.03 한전KDN 데이터 결합 및 활용 공모전 장려상</p>
-      <p>10개 프로젝트 | 실전 경험으로 검증된 기술력</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+          <p>
+            <strong>정유리</strong> (1998.10.02)
+          </p>
+          <p>
+            실용성을 쫓는 개발자로, AI와 인터랙티브 경험을 결합한 웹사이트를 만듭니다.
+            사용자 중심의 접근성과 최신 웹 기술을 활용하여 실용적인 솔루션을 제공합니다.
+          </p>
+          <p>
+            <strong>경력:</strong>
+          </p>
+          <ul>
+            <li>(주)위드마인드 (2025.07.30 ~ 현재)</li>
+            <li>(주)젠트리 (2022.09 ~ 2025.02, 2년 6개월)</li>
+            <li>뉴오 (2022.02 ~ 2022.06, 4개월)</li>
+          </ul>
+          <p>
+            <strong>수상경력:</strong> 2022.03 한전KDN 데이터 결합 및 활용 공모전 장려상
+          </p>
+          <p>
+            <strong>희망연봉:</strong> 3,800만원 이상 (협의)
+          </p>
+          <p>
+            <strong>학력:</strong> 학점은행제 졸업
+          </p>
+        </div>
+      </div>
+    </section>
+  
+  <!-- Portfolio Section -->
+  <main class="portfolio" id="portfolio">
+    <div class="container">
+
+      <!-- 1. 면접왕 -->
+      <article class="project">
+        <!-- 왼쪽: 썸네일 + 설명 -->
+        <div class="project-col1">
+          <a href="projects/interview.html" class="project-link">
+            <img src="images/projects/interview/screen-1.png" alt="면접왕 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">면접왕</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            승무원 면접 특화 AI 모의면접 플랫폼. 대입/취업 듀얼모드, CROVAI 가이드,
+            실시간 AI 분석으로 완벽한 면접 준비를 지원합니다.
+          </p>
+        </div>
+
+        <!-- 가운데: 주요 페이지 스크린샷 -->
+        <div class="project-col2">
+          <a href="projects/interview.html">
+            <img src="images/projects/interview/screen-2.png" alt="면접왕 메인 화면" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+
+        <!-- 오른쪽: 모바일 버전 -->
+        <div class="project-col3">
+          <a href="projects/interview.html">
+            <img src="images/projects/interview/screen-3.png" alt="면접왕 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 2. 잡콕 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/jobkok.html" class="project-link">
+            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">잡콕</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            AI 기반 HR 솔루션. 정부과제(지역혁신 실증 스케일업)로 개발된
+            채용 및 인사 관리 플랫폼입니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/jobkok.html">
+            <img src="images/projects/jobkok/screen-2.png" alt="잡콕 메인 화면" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/jobkok.html">
+            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 상세" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 3. 장고 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/jango.html" class="project-link">
+            <img src="images/projects/jango/screen-1.png" alt="장고 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">장고</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            AI 기반 복지 플랫폼. 정부 R&D 과제로 개발된
+            장애인 복지 통합 솔루션입니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/jango.html">
+            <img src="images/projects/jango/screen-2.png" alt="장고 메인 화면" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/jango.html">
+            <img src="images/projects/jango/screen-3.png" alt="장고 상세" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. 젠트리 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/zentry.html" class="project-link">
+            <img src="images/projects/zentry/screen-1.png" alt="젠트리 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">젠트리</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            React + TypeScript 기반 인터랙티브 웹 애플리케이션.
+            최신 웹 기술을 활용한 동적이고 반응형인 사용자 경험을 제공합니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/zentry.html">
+            <img src="images/projects/zentry/screen-2.png" alt="젠트리 메인 화면" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/zentry.html">
+            <img src="images/projects/zentry/screen-3.png" alt="젠트리 상세" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 5. 뉴오 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/newo.html" class="project-link">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E뉴오%3C/text%3E%3C/svg%3E" alt="뉴오 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">뉴오</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            웹 개발 프로젝트. 프론트엔드 개발을 담당했습니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/newo.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E뉴오 메인%3C/text%3E%3C/svg%3E" alt="뉴오 메인" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/newo.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E뉴오 모바일%3C/text%3E%3C/svg%3E" alt="뉴오 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 6. 에너지 전시관 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/energy.html" class="project-link">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E에너지%20전시관%3C/text%3E%3C/svg%3E" alt="에너지 전시관 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">에너지 메타버스 전시관</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            한전KDN 공모전 장려상 수상작. 메타버스 기반 에너지 데이터 전시관입니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/energy.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E전시관 메인%3C/text%3E%3C/svg%3E" alt="에너지 전시관 메인" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/energy.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E전시관 모바일%3C/text%3E%3C/svg%3E" alt="에너지 전시관 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 7. 홀로그램 키오스크 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/kiosk.html" class="project-link">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E키오스크%3C/text%3E%3C/svg%3E" alt="키오스크 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">홀로그램 AI 키오스크</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            Gemini API 연동 음성 주문 카페 키오스크. AI 대화형 주문 시스템입니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/kiosk.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E키오스크 메인%3C/text%3E%3C/svg%3E" alt="키오스크 메인" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/kiosk.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E키오스크 모바일%3C/text%3E%3C/svg%3E" alt="키오스크 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 8. 케어팜 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/careform.html" class="project-link">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E케어팜%3C/text%3E%3C/svg%3E" alt="케어팜 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">케어팜</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            헬스케어 서비스 플랫폼. 농업과 헬스케어를 결합한 혁신적인 서비스입니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/careform.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E케어팜 메인%3C/text%3E%3C/svg%3E" alt="케어팜 메인" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/careform.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E케어팜 모바일%3C/text%3E%3C/svg%3E" alt="케어팜 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
+      <!-- 9. 스케쳐스 -->
+      <article class="project">
+        <div class="project-col1">
+          <a href="projects/sketchers.html" class="project-link">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E스케쳐스%3C/text%3E%3C/svg%3E" alt="스케쳐스 썸네일" class="project-thumb" loading="lazy">
+            <h3 class="project-title">스케쳐스</h3>
+            <span class="project-label">case study</span>
+          </a>
+          <p class="project-description">
+            웹 개발 프로젝트. 프론트엔드 개발을 담당했습니다.
+          </p>
+        </div>
+        <div class="project-col2">
+          <a href="projects/sketchers.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E스케쳐스 메인%3C/text%3E%3C/svg%3E" alt="스케쳐스 메인" class="project-screenshot" loading="lazy">
+          </a>
+        </div>
+        <div class="project-col3">
+          <a href="projects/sketchers.html">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E스케쳐스 모바일%3C/text%3E%3C/svg%3E" alt="스케쳐스 모바일" class="project-mobile" loading="lazy">
+          </a>
+        </div>
+      </article>
+
     </div>
+  </main>
 
-    <div class="bento-grid">
-      <!-- 문해력 탐험대 -->
-      <div class="bento-item span-8" style="animation-delay: 0.1s" data-project="literacy">
-        <span class="project-tag accent-orange">AI Education Platform</span>
-        <h3 class="project-title">문해력 탐험대</h3>
-        <p class="project-desc">
-          AI 맞춤형 문해력 학습 플랫폼. 학생들의 읽기 능력을 실시간으로 진단하고,
-          난이도별 맞춤 문제를 제공하며 문해력 향상 과정을 직접 확인할 수 있습니다.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">HTML5</span>
-          <span class="tech-badge">CSS3</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">AI Integration</span>
-          <span class="tech-badge">Gamification</span>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-bio">
+          <h3>정유리</h3>
+          <p>Frontend Developer</p>
+          <p>AI와 웹 기술을 활용한 실용적인 솔루션 제공</p>
         </div>
-        <a href="#" class="project-link accent-orange">
-          자세히 보기 →
-        </a>
-        <div class="project-image accent-orange">🦊</div>
+
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
       </div>
 
-      <!-- 면접왕 -->
-      <div class="bento-item span-4" style="animation-delay: 0.2s" data-project="interview">
-        <span class="project-tag accent-blue">AI Flight Attendant Interview</span>
-        <h3 class="project-title">면접왕 (승무원)</h3>
-        <p class="project-desc">
-          승무원 면접 특화 AI 플랫폼. 대입/취업 듀얼모드, CROVAI 가이드,
-          실시간 AI 분석(외모·화면·얼굴·목소리)으로 완벽한 면접 준비를 지원합니다.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">jQuery</span>
-          <span class="tech-badge">WebRTC</span>
-          <span class="tech-badge">AI Vision</span>
-          <span class="tech-badge">CROVAI</span>
-        </div>
-        <a href="#" class="project-link accent-blue">
-          자세히 보기 →
-        </a>
-      </div>
-
-      <!-- 장고 -->
-      <div class="bento-item span-5" style="animation-delay: 0.3s" data-project="jango">
-        <span class="project-tag accent-purple">Employment Platform</span>
-        <h3 class="project-title">장고 (장애인고용)</h3>
-        <p class="project-desc">
-          AI 모의면접 탑재 장애인 고용 플랫폼.
-          구직자/기업/복지사 3개 버전, WCAG 2.1 AA 접근성 준수.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">React 19</span>
-          <span class="tech-badge">TypeScript</span>
-          <span class="tech-badge">Firebase</span>
-          <span class="tech-badge">AI</span>
-        </div>
-        <a href="#" class="project-link accent-purple">
-          자세히 보기 →
-        </a>
-      </div>
-
-      <!-- 잡콕 -->
-      <div class="bento-item span-7" style="animation-delay: 0.4s" data-project="jobkok">
-        <span class="project-tag accent-green">Job Portal</span>
-        <h3 class="project-title">잡콕 (JobKok)</h3>
-        <p class="project-desc">
-          사람인형 구인구직 플랫폼. 깔끔한 디자인 시스템과
-          다중 필터로 구직자와 기업을 빠르게 연결합니다.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">Java Spring</span>
-          <span class="tech-badge">HTML/CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">MySQL</span>
-        </div>
-        <a href="#" class="project-link accent-green">
-          자세히 보기 →
-        </a>
-        <div class="project-image accent-green" style="height: 200px">💼</div>
-      </div>
-
-      <!-- 홀로그램 키오스크 -->
-      <div class="bento-item span-4" style="animation-delay: 0.5s" data-project="kiosk">
-        <span class="project-tag accent-pink">AI Voice Kiosk</span>
-        <h3 class="project-title">홀로그램 AI 키오스크</h3>
-        <p class="project-desc">
-          Gemini API를 연동한 음성 주문 카페 키오스크.
-          자연어 대화로 메뉴 주문부터 결제까지 완성하는 미래형 키오스크 시스템.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">React 19</span>
-          <span class="tech-badge">TypeScript</span>
-          <span class="tech-badge">Gemini API</span>
-        </div>
-        <a href="#" class="project-link accent-pink">
-          자세히 보기 →
-        </a>
-      </div>
-
-      <!-- 젠트리 -->
-      <div class="bento-item span-8" style="animation-delay: 0.6s" data-project="zentry">
-        <span class="project-tag accent-blue">Pet Healthcare Platform</span>
-        <h3 class="project-title">젠트리 (Zentry)</h3>
-        <p class="project-desc">
-          반려동물 건강 관리 통합 플랫폼. 웨어러블 디바이스로 실시간 건강 데이터를 수집하고,
-          수의사와 보호자를 연결하는 헬스케어 솔루션.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">Dart</span>
-          <span class="tech-badge">HTML/CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">React</span>
-          <span class="tech-badge">WebSocket</span>
-        </div>
-        <a href="#" class="project-link accent-blue">
-          자세히 보기 →
-        </a>
-        <div class="project-image accent-blue">🐾</div>
-      </div>
-
-      <!-- 뉴오 -->
-      <div class="bento-item span-5" style="animation-delay: 0.7s" data-project="newO">
-        <span class="project-tag accent-orange">Metaverse Education</span>
-        <h3 class="project-title">뉴오 (NewO)</h3>
-        <p class="project-desc">
-          틴노바 학원생을 위한 메타버스 기반 온라인 학습 플랫폼.
-          게임화된 학습 경험을 제공합니다.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">Phaser.js</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">PHP</span>
-          <span class="tech-badge">MariaDB</span>
-        </div>
-        <a href="#" class="project-link accent-orange">
-          자세히 보기 →
-        </a>
-      </div>
-
-      <!-- 케어팜 -->
-      <div class="bento-item span-4" style="animation-delay: 0.8s" data-project="careform">
-        <span class="project-tag accent-green">Healthcare Matching</span>
-        <h3 class="project-title">케어팜</h3>
-        <p class="project-desc">
-          간병인 매칭 서비스. 사용자와 간병인을 빠르게 연결하는 플랫폼.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">HTML/CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">Bootstrap</span>
-        </div>
-        <a href="#" class="project-link accent-green">
-          자세히 보기 →
-        </a>
-      </div>
-
-      <!-- 스케쳐스 -->
-      <div class="bento-item span-3" style="animation-delay: 0.9s" data-project="sketchers">
-        <span class="project-tag accent-purple">E-commerce</span>
-        <h3 class="project-title">스케쳐스</h3>
-        <p class="project-desc">
-          쇼핑몰 웹사이트. 상품 관리부터 결제까지 완성된 E-commerce.
-        </p>
-        <div class="project-tech">
-          <span class="tech-badge">HTML/CSS</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">MySQL</span>
-        </div>
-        <a href="#" class="project-link accent-purple">
-          자세히 보기 →
-        </a>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div class="modal-header">
-      <h2 class="modal-title" id="modalTitle"></h2>
-      <div class="modal-meta" id="modalMeta"></div>
-    </div>
-    <div class="modal-body" id="modalBody"></div>
-  </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer" id="contact">
-  <div class="container">
-    <div class="footer-info">
-      <h3>Contact Me</h3>
-      <p><strong>정유리</strong> Frontend Developer</p>
-      <p>📧 glass.xcx@gmail.com</p>
-      <p>📱 010-4096-5625</p>
-    </div>
-    <div class="social-links">
-      <a href="https://github.com/theglass-1002" class="social-link" aria-label="GitHub">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
-      </a>
-      <a href="mailto:glass.xcx@gmail.com" class="social-link" aria-label="Email">
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-      </a>
-    </div>
-    <p style="margin-top: 2rem; color: var(--text-secondary);">© 2025 정유리. All rights reserved.</p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+  </footer>
 
 </body>
 </html>
