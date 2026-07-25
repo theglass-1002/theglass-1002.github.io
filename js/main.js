@@ -68,7 +68,11 @@ const projectDataRaw = {
       'images/projects/jango/screen-4.png',
       'images/projects/jango/screen-5.png'
     ],
-    link: null
+    links: [
+      { name: '구직자', url: 'https://jango.kr' },
+      { name: '기업', url: 'https://company.jango.kr' },
+      { name: '복지관', url: 'https://welfare.jango.kr' }
+    ]
   },
   jobkok: {
     title: '잡콕 (JobKok)',
@@ -150,6 +154,25 @@ const projectDataRaw = {
     images: [],
     link: null
   },
+  energy: {
+    title: '메타버스 에너지 전시관',
+    tag: 'Metaverse Exhibition',
+    color: '#fbbf24',
+    description: '한전KDN 공모전 수상작. 에너지 데이터를 활용한 메타버스 기반 전시관 플랫폼입니다.',
+    features: [
+      '3D 메타버스 전시 공간 구현',
+      '에너지 데이터 시각화',
+      '실시간 인터랙티브 체험',
+      '공간 내 자유로운 이동 및 탐색',
+      '데이터 결합 및 활용 시스템'
+    ],
+    tech: ['HTML/CSS', 'JavaScript', 'Three.js', 'WebGL', 'Data Visualization'],
+    role: '프론트엔드 개발 및 3D 공간 구현',
+    period: '2022.03 (1개월)',
+    startDate: '2022-03-15',
+    images: [],
+    link: null
+  },
   careform: {
     title: '케어팜 (CareForm)',
     tag: 'Healthcare Matching',
@@ -164,8 +187,8 @@ const projectDataRaw = {
     ],
     tech: ['HTML/CSS', 'JavaScript', 'Bootstrap', 'Apache', 'Nginx'],
     role: '프론트엔드 퍼블리싱 개발',
-    period: '2022.03 - 2022.06 (4개월)',
-    startDate: '2022-03',
+    period: '2022.01 - 2022.03 (3개월)',
+    startDate: '2022-01',
     images: [],
     link: null
   },
@@ -250,7 +273,21 @@ function openModal(projectId) {
   }
 
   let linkHTML = '';
-  if (data.link) {
+  if (data.links && data.links.length > 0) {
+    linkHTML = `
+      <h3 style="margin-top: 2rem">사이트 주소</h3>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        ${data.links.map(link => `
+          <a href="${link.url}" target="_blank" rel="noopener noreferrer"
+             style="padding: 0.75rem 1.5rem; background: ${data.color}33; color: ${data.color};
+                    border: 1px solid ${data.color}; border-radius: 8px; text-decoration: none;
+                    font-weight: 500; transition: all 0.3s;">
+            ${link.name} →
+          </a>
+        `).join('')}
+      </div>
+    `;
+  } else if (data.link) {
     linkHTML = `
       <h3 style="margin-top: 2rem">사이트 주소</h3>
       <p><a href="${data.link}" target="_blank" rel="noopener noreferrer" style="color: ${data.color}; text-decoration: underline;">${data.link}</a></p>
