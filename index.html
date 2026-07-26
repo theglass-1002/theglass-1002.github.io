@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>정유리 — Frontend Developer 포트폴리오</title>
-  <meta name="description" content="정유리 프론트엔드 개발자 포트폴리오. 면접왕, 잡콕, 장고, 젠트리 등 AI 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.">
+  <meta name="description" content="정유리 프론트엔드 개발자 포트폴리오. 잡콕, 장고, 면접왕, 문해력 탐험대, 젠트리 등 AI 채용·교육 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.">
 
   <link rel="canonical" href="https://theglass-1002.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="정유리 · Frontend Developer">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="정유리 — Frontend Developer 포트폴리오">
-  <meta property="og:description" content="정유리 프론트엔드 개발자 포트폴리오. 면접왕, 잡콕, 장고, 젠트리 등 AI 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.">
+  <meta property="og:description" content="정유리 프론트엔드 개발자 포트폴리오. 잡콕, 장고, 면접왕, 문해력 탐험대, 젠트리 등 AI 채용·교육 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.">
   <meta property="og:url" content="https://theglass-1002.github.io/">
   <meta property="og:image" content="https://theglass-1002.github.io/images/projects/zentry/zentry-device-hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -47,426 +47,369 @@
 
     <!-- ================= Intro ================= -->
     <section class="intro">
-      <div class="wrap wrap--read">
+      <div class="wrap wrap--stage">
         <h1>사람이 실제로 쓰는 화면을 만듭니다</h1>
         <p>
-          반려동물 헬스케어 기기의 실시간 모니터링 앱부터 AI 채용·면접 서비스까지,
-          기획 단계부터 참여해 화면 구조를 잡고 프론트엔드로 구현해 왔습니다.
+          화려함보다 꾸준함을 중요하게 생각합니다. 요구사항을 꼼꼼히 확인하고 동료와 소통합니다.
+          익숙한 방식에 머무르지 않고, 배우고 기록하며 서비스를 개선합니다.
         </p>
       </div>
     </section>
 
     <!--
-      프로젝트 한 개의 구조 (참고: ianlunn.co.uk)
-        1) a.work-item__brand    — 로고/타이포 대표 썸네일
-        2) h2 > a (파란 제목) + 설명 + 기술 스택
-        3) a.work-item__showcase — 데스크톱 메인 + 모바일 세로 화면 한 장의 프리뷰
-      브랜드 썸네일과 첫 showcase에는 마이페이지·설정·단순 관리 화면을 쓰지 않는다.
+      프로젝트 한 개의 순서 (참고: ianlunn.co.uk)
+        왼쪽 열 : 로고 → 프로젝트명 → 짧은 설명 → 기술 스택
+        오른쪽 열 : 큰 데스크톱 대표 화면 → 실제 모바일 화면(있을 때만)
+      마이페이지·설정 화면은 대표로 쓰지 않고, 자료가 없으면 목업을 만들지 않는다.
     -->
 
     <!-- ================= Work ================= -->
-    <section id="work" aria-label="프로젝트">
+    <section id="work" class="wrap wrap--stage" aria-label="프로젝트">
+      <div class="work">
 
-      <!-- 1. 면접왕 -->
-      <article class="work-item">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/interview.html" style="--brand-bg:#e9edf7; --brand-fg:#1c2b53; --brand-sub:#5b6788">
-            <span class="brand-type">
-              <b>면접왕</b>
-              <span>AI Mock Interview</span>
-            </span>
-          </a>
+        <!-- 1. 잡콕 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/jobkok.html" style="--logo-bg:#eef7f2; --logo-w:170px">
+              <img src="images/logos/jobkok-wordmark.svg" width="110" height="20" alt="잡콕(JOBKOK) 로고." decoding="async">
+            </a>
+            <h2 class="work-item__title"><a href="projects/jobkok.html">잡콕</a></h2>
+            <p class="work-item__desc">
+              채용 공고를 보고, AI 추천 공고를 열고, 이력서를 쓰고, 그 이력서로 AI 모의면접을 본 뒤
+              결과 리포트를 받는 흐름을 하나로 묶은 채용 플랫폼입니다.
+              구직자와 기업 양쪽 화면의 UI/UX 개발과 AI 면접 분석 연동을 맡았습니다.
+            </p>
+            <p class="work-item__meta">Java Spring · MySQL</p>
+          </div>
 
-          <h2 class="work-item__title"><a href="projects/interview.html">면접왕</a></h2>
-          <p class="work-item__desc">
-            대입 면접과 항공사 승무원 면접을 한 곳에서 준비하는 AI 모의면접 서비스입니다.
-            진로를 고르면 그에 맞는 면접 가이드와 심층 질문이 이어지고,
-            응시가 끝나면 태도·음성 분석을 묶은 종합 리포트를 받습니다.
-          </p>
-          <p class="work-item__desc">
-            준비 안내부터 응시, 결과 리포트까지 이어지는 화면을 프론트엔드로 구현했습니다.
-          </p>
-          <p class="work-item__meta">React · TypeScript · WebRTC</p>
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/jobkok.html">
+                <img src="images/projects/jobkok/screen-1.png" width="647" height="1200"
+                     alt="잡콕 채용 공고 리스트. 상단에 이력서 기반 AI 추천 토글과 직군·연봉·경력·지역 필터가 있고, 아래로 회사 로고와 채용 조건이 붙은 공고가 줄지어 있다."
+                     fetchpriority="high" decoding="async">
+              </a>
+              <figcaption>채용 공고 리스트와 이력서 기반 AI 추천</figcaption>
+            </figure>
 
-          <a class="work-item__showcase" href="projects/interview.html" style="--stage-bg:#e6eaf3">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/interview/screen-1.png" width="1200" height="613"
-                       alt="면접왕 진로 구분 화면. ‘목표에 맞는 면접을 선택해 주세요’ 안내 아래 대입 모의면접과 취업 모의면접 두 장의 카드가 나란히 놓여 있다."
-                       fetchpriority="high" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 진로를 고르는 첫 화면</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/interview/screen-2.png" width="1200" height="613"
-                       alt="면접왕 대입 AI 모의면접 가이드 화면. 복장과 메이크업 가이드 영상이 재생 버튼과 함께 놓여 있고 건너뛰기·다음 버튼이 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 응시 전 면접 가이드</figcaption>
-              </figure>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <!-- 2. 잡콕 -->
-      <article class="work-item is-alt">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/jobkok.html" style="--brand-bg:#e7f4ee; --brand-w:210px">
-            <img src="images/logos/jobkok-wordmark.svg" width="110" height="20" alt="잡콕(JOBKOK) 로고." loading="lazy" decoding="async">
-          </a>
-
-          <h2 class="work-item__title"><a href="projects/jobkok.html">잡콕</a></h2>
-          <p class="work-item__desc">
-            채용 공고를 살펴보고, AI가 추천한 공고를 열어보고, 이력서를 쓰고,
-            그 이력서로 AI 모의면접을 본 뒤 결과 리포트를 받는 흐름을 하나로 묶은 채용 플랫폼입니다.
-          </p>
-          <p class="work-item__desc">
-            구직자와 기업 양쪽 화면의 UI/UX 개발과 AI 면접 분석 연동을 맡았습니다.
-          </p>
-          <p class="work-item__meta">Java Spring · MySQL</p>
-
-          <a class="work-item__showcase" href="projects/jobkok.html" style="--stage-bg:#dfe9e5">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/jobkok/screen-1.png" width="647" height="1200"
-                       alt="잡콕 채용 공고 리스트 화면. 상단에 이력서 기반 추천 토글과 직군·연봉·경력·지역 필터가 있고, 그 아래로 회사 로고와 채용 조건이 붙은 공고가 줄지어 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 채용 공고 리스트와 AI 추천 필터</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/jobkok/screen-2.png" width="1200" height="818"
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/jobkok.html">
+                  <img src="images/projects/jobkok/screen-2-interview.png" width="1200" height="400"
                        alt="잡콕 AI 모의면접 화면. ‘이력서 기반의 맞춤형 질문으로 더욱 실전처럼 연습하세요’ 배너와 모의면접 시작 버튼, MY 리포트 탭이 있다."
                        loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 이력서 기반 AI 모의면접</figcaption>
+                </a>
+                <figcaption>이력서 기반 AI 모의면접과 MY 리포트</figcaption>
               </figure>
             </div>
-          </a>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 3. 장고 -->
-      <article class="work-item">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/jango.html" style="--brand-bg:#eceef3; --brand-w:230px">
-            <img src="images/logos/jango-logo-new.svg" width="79" height="22" alt="장고 로고." loading="lazy" decoding="async">
-          </a>
-
-          <h2 class="work-item__title"><a href="projects/jango.html">장고</a></h2>
-          <p class="work-item__desc">
-            장애인 구직자를 위한 고용 플랫폼입니다. 가장 큰 차이는 면접에 있습니다.
-            장애 유형에 따라 면접 진행 형식과 화면의 지원 방식이 달라지도록 설계한 접근성 특화 면접 경험이 핵심입니다.
-          </p>
-          <p class="work-item__desc">
-            공고 조회와 이력서 작성 흐름 위에 이 맞춤 면접을 얹었고,
-            구직자·기업·복지기관 세 사용자 그룹의 화면을 웹 접근성 기준에 맞춰 만들었습니다.
-          </p>
-          <p class="work-item__meta">React · 웹 접근성</p>
-
-          <a class="work-item__showcase" href="projects/jango.html" style="--stage-bg:#e6e8ee">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/jango/screen-4.png" width="1029" height="1200"
-                       alt="장고 인재용 AI 모의면접 화면. 상단 배너 아래 응시 내역 표에 종합 점수, 희망 직무, 면접 일자, 진행 완료 상태와 분석 결과 보기 버튼이 줄지어 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 인재용 AI 모의면접과 분석 결과</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/jango/screen-5.png" width="1200" height="493"
-                       alt="장고 채용 공고 카드. 오른쪽 카드에는 AI 적합도와 ‘희망 직무·지역이 일치하고 경력 조건도 맞아요’ 설명, AI Pick 배지가 붙어 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>공고 카드</b> — AI 적합도 기반 추천</figcaption>
-              </figure>
-            </div>
-            <p class="stage__slot">
-              기업용(공고·지원자·면접 관리)과 복지기관용(인재 지원·현황 관리) 화면은
-              원본 자료 정리 후 이 자리에 추가합니다.
+        <!-- 2. 장고 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/jango.html" style="--logo-bg:#f2f3f6; --logo-w:180px">
+              <img src="images/logos/jango-logo-new.svg" width="79" height="22" alt="장고 로고." loading="lazy" decoding="async">
+            </a>
+            <h2 class="work-item__title"><a href="projects/jango.html">장고</a></h2>
+            <p class="work-item__desc">
+              장애인 구직자를 위한 고용 플랫폼입니다. 장애 유형에 따라 면접 진행 형식과 화면의 지원 방식이
+              달라지는 맞춤 면접이 핵심이고, 그 위에 공고 조회와 이력서 작성, 결과 리포트가 이어집니다.
+              구직자·기업·복지기관 세 사용자 그룹의 화면을 웹 접근성 기준에 맞춰 만들었습니다.
             </p>
-          </a>
-        </div>
-      </article>
+            <p class="work-item__meta">React · 웹 접근성</p>
+          </div>
 
-      <!-- 4. 젠트리 · 두리틀 -->
-      <article class="work-item is-alt">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/zentry.html" style="--brand-bg:#e6ebf7; --brand-fg:#16249b; --brand-sub:#5a6699">
-            <span class="brand-type">
-              <b>zentry</b>
-              <span>Dolittle · Pet Monitoring</span>
-            </span>
-          </a>
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/jango.html">
+                <img src="images/projects/jango/screen-4.png" width="1029" height="1200"
+                     alt="장고 인재용 AI 모의면접 화면. 배너 아래 응시 내역 표에 종합 점수, 희망 직무, 면접 일자, 진행 완료 상태와 분석 결과 보기 버튼이 줄지어 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>인재용 AI 모의면접과 결과 리포트 목록</figcaption>
+            </figure>
 
-          <h2 class="work-item__title"><a href="projects/zentry.html">젠트리 · 두리틀</a></h2>
-          <p class="work-item__desc">
-            심부전 반려동물의 심박과 호흡을 웨어러블로 실시간 확인하는 두리틀 시리즈입니다.
-            동물병원 입원실에서 환자별 수치를 한눈에 보는 수의사용 앱이 중심입니다.
-          </p>
-          <p class="work-item__desc">
-            수의사용 앱의 환자 모니터 화면 구성과 공식 웹사이트 리뉴얼을 담당했습니다.
-          </p>
-          <p class="work-item__meta">Flutter · Dart · TCP 실시간 통신</p>
-
-          <a class="work-item__showcase" href="projects/zentry.html" style="--stage-bg:#dfe4f0">
-            <div class="stage stage--device">
-              <figure class="shot shot--desktop shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/zentry/zentry-web-desktop.jpg" width="1200" height="1200"
-                       alt="모니터에 띄운 젠트리 공식 웹사이트. ‘Wearable-based pet patient monitoring platform Dolittle’ 문구와 진료 중인 강아지 사진이 있다."
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/jango.html">
+                  <img src="images/projects/jango/screen-5-aipick.png" width="1160" height="457"
+                       alt="장고 채용 공고 카드. 오른쪽 카드에 AI 적합도와 ‘희망 직무·지역이 일치하고 경력 조건도 맞아요’ 설명, AI Pick 배지가 붙어 있다."
                        loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 젠트리 공식 웹사이트</figcaption>
+                </a>
+                <figcaption>AI 적합도 기반 추천 공고 카드</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. 면접왕 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/interview.html" style="--logo-bg:#eef1f8; --logo-fg:#1c2b53">
+              <span class="logo-type">면접왕</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/interview.html">면접왕</a></h2>
+            <p class="work-item__desc">
+              대입 면접과 항공사 승무원 면접을 한 곳에서 준비하는 AI 모의면접 서비스입니다.
+              진로를 고르면 그에 맞는 가이드와 심층 질문이 이어지고, 응시가 끝나면 태도·음성 분석 리포트를 받습니다.
+              준비 안내부터 응시, 결과 리포트까지 이어지는 화면을 프론트엔드로 구현했습니다.
+            </p>
+            <p class="work-item__meta">React · TypeScript · WebRTC</p>
+          </div>
+
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/interview.html">
+                <img src="images/projects/interview/screen-1.png" width="1200" height="613"
+                     alt="면접왕 진로 구분 화면. ‘목표에 맞는 면접을 선택해 주세요’ 안내 아래 대입 모의면접과 취업 모의면접 두 장의 카드가 나란히 놓여 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>진로를 고르는 첫 화면</figcaption>
+            </figure>
+
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/interview.html">
+                  <img src="images/projects/interview/screen-2.png" width="1200" height="613"
+                       alt="면접왕 대입 AI 모의면접 가이드 화면. 복장과 메이크업 가이드 영상이 재생 버튼과 함께 놓여 있고 건너뛰기·다음 버튼이 있다."
+                       loading="lazy" decoding="async">
+                </a>
+                <figcaption>응시 전 면접 가이드</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. 선생님 문해력 탐험대 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/literacy.html" style="--logo-bg:#f7f1e9; --logo-w:200px">
+              <img src="images/logos/literacy-logo.svg" width="124" height="21" alt="문해력 탐험대 로고." loading="lazy" decoding="async">
+            </a>
+            <h2 class="work-item__title"><a href="projects/literacy.html">선생님 문해력 탐험대</a></h2>
+            <p class="work-item__desc">
+              초등학생이 듣기·말하기·읽기·쓰기를 탐험하듯 학습하고, 선생님은 학급의 진단·학습 현황을 통계로 확인하는 교육 서비스입니다.
+              프로젝트 초기 구축이 아니라, 이미 운영 중이던 학생용 서비스의 고도화와 선생님용 관리 페이지 개발에 참여했습니다.
+            </p>
+            <p class="work-item__meta">웹 프론트엔드</p>
+          </div>
+
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/literacy.html">
+                <img src="images/projects/literacy/student-journey.png" width="1956" height="1223"
+                     alt="문해력 탐험대 학생용 탐험 지도 화면. 숲 배경에 탐험 시작 진단과 단계별 관문이 놓여 있고 오른쪽에 어휘 카드와 탐험 기록 그래프가 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>고도화한 학생용 탐험 학습 화면</figcaption>
+            </figure>
+
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/literacy.html">
+                  <img src="images/projects/literacy/teacher-report.png" width="2934" height="1654"
+                       alt="문해력 탐험대 선생님용 읽기 통계 화면. 읽기 패턴 통계 막대 그래프와 읽기 속도·시선 고정 시간·시선 폭·역행 비율 카드가 있다."
+                       loading="lazy" decoding="async">
+                </a>
+                <figcaption>선생님용 학급 읽기 통계 페이지</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. 홀로그램 AI 키오스크 -->
+        <article class="work-item has-no-shot">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/kiosk.html" style="--logo-bg:#f2f3f6">
+              <span class="logo-type">홀로그램<br>AI 키오스크</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/kiosk.html">홀로그램 AI 키오스크</a></h2>
+            <p class="work-item__desc">
+              홀로그램 화면과 대화하며 주문하는 카페 키오스크입니다.
+              Gemini API를 붙여 주문 대화가 오가는 화면의 프론트엔드를 구현했습니다.
+            </p>
+            <p class="work-item__meta">Gemini API</p>
+            <p class="work-item__pending">공개 가능한 화면 자료를 정리하는 중입니다.</p>
+          </div>
+        </article>
+
+        <!-- 6. 젠트리 · 두리틀 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/zentry.html" style="--logo-bg:#edf0f9; --logo-fg:#16249b">
+              <span class="logo-type">zentry</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/zentry.html">젠트리 · 두리틀</a></h2>
+            <p class="work-item__desc">
+              심부전 반려동물의 심박과 호흡을 웨어러블로 실시간 확인하는 두리틀 시리즈입니다.
+              동물병원 입원실에서 환자별 수치를 한눈에 보는 수의사용 앱이 중심입니다.
+              수의사용 앱의 환자 모니터 화면 구성과 공식 웹사이트 리뉴얼을 담당했습니다.
+            </p>
+            <p class="work-item__meta">Flutter · Dart · TCP 실시간 통신</p>
+          </div>
+
+          <div class="work-item__shots">
+            <figure class="shot shot--fit" style="--shot-max:560px">
+              <a href="projects/zentry.html">
+                <img src="images/projects/zentry/zentry-web-desktop.jpg" width="1200" height="1200"
+                     alt="모니터에 띄운 젠트리 공식 웹사이트. ‘Wearable-based pet patient monitoring platform Dolittle’ 문구와 진료 중인 강아지 사진이 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>젠트리 공식 웹사이트</figcaption>
+            </figure>
+
+            <div class="shot-row shot-row--phones">
+              <figure class="shot shot--phone">
+                <a href="projects/zentry.html">
+                  <img src="images/projects/zentry/zentry-vet-monitor.png" width="643" height="900"
+                       alt="두리틀 수의사용 앱 환자 모니터 화면. 입원실별로 반려동물 이름과 심박수·호흡수가 실시간으로 표시된다."
+                       loading="lazy" decoding="async">
+                </a>
+                <figcaption>수의사용 앱 환자 모니터</figcaption>
               </figure>
 
-              <figure class="shot shot--mobile">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/zentry/zentry-web-mobile.png" width="332" height="720"
+              <figure class="shot shot--phone">
+                <a href="projects/zentry.html">
+                  <img src="images/projects/zentry/zentry-web-mobile.png" width="332" height="720"
                        alt="모바일 브라우저로 본 젠트리 웹사이트. 같은 소개 문구가 세로 화면에 맞춰 쌓여 있다."
                        loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>모바일</b></figcaption>
+                </a>
+                <figcaption>모바일 화면</figcaption>
               </figure>
             </div>
-          </a>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 5. 선생님 문해력 탐험대 -->
-      <article class="work-item">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/literacy.html" style="--brand-bg:#f5efe7; --brand-w:280px">
-            <img src="images/logos/literacy-logo.svg" width="124" height="21" alt="문해력 탐험대 로고." loading="lazy" decoding="async">
-          </a>
+        <!-- 7. 뉴오 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/newo.html" style="--logo-bg:#fdf0ea; --logo-fg:#d9542c">
+              <span class="logo-type">NEW:O</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/newo.html">뉴오 (NEW:O)</a></h2>
+            <p class="work-item__desc">
+              코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 창업 프로젝트입니다.
+              도트 그래픽 맵에 접속해 같은 공간에서 공부하고, 그 안에서 과제·멘토링·대화가 오갑니다.
+              랜딩부터 맵과 커뮤니티 화면까지 웹으로 구현했습니다.
+            </p>
+            <p class="work-item__meta">Phaser.js</p>
+          </div>
 
-          <h2 class="work-item__title"><a href="projects/literacy.html">선생님 문해력 탐험대</a></h2>
-          <p class="work-item__desc">
-            초등학생이 듣기·말하기·읽기·쓰기를 탐험하듯 학습하고, 선생님은 학급의 진단·학습 현황을
-            통계와 개별 리포트로 확인하는 교육 서비스입니다.
-          </p>
-          <p class="work-item__desc">
-            프로젝트 초기 구축에 참여한 것이 아니라, 이미 운영 중이던 학생용 서비스의 고도화와
-            선생님용 관리 페이지 개발에 참여했습니다.
-          </p>
-          <p class="work-item__meta">웹 프론트엔드</p>
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/newo.html">
+                <img src="images/projects/newo/newo-landing.png" width="1180" height="634"
+                     alt="뉴오 랜딩 화면. ‘메타버스에서 팀원들과 함께 공부해요’ 문구와 GO TO NEW:O 버튼, 도트 캐릭터와 맵 미리보기가 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>랜딩과 입장 동선</figcaption>
+            </figure>
 
-          <a class="work-item__showcase" href="projects/literacy.html" style="--stage-bg:#ece4da">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/literacy/student-journey.png" width="1956" height="1223"
-                       alt="문해력 탐험대 학생용 탐험 지도 화면. 숲 배경에 탐험 시작 진단, 숲속 작은 오두막 같은 단계가 놓여 있고 오른쪽에 어휘 카드와 탐험 기록 그래프가 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 학생용 탐험 학습 화면</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/literacy/pdf-source/teacher-page-47.png" width="2934" height="4125"
-                       alt="문해력 탐험대 선생님용 학급 종합 리포트. 총 진단 횟수와 평균 학습 횟수 카드 아래로 레벨 변화 그래프와 평균 진단 점수 막대 그래프가 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 선생님용 학급 종합 리포트</figcaption>
-              </figure>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <!-- 6. 뉴오 -->
-      <article class="work-item is-alt">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/newo.html" style="--brand-bg:#fceee8; --brand-fg:#d9542c; --brand-sub:#9a6a58">
-            <span class="brand-type">
-              <b>NEW:O</b>
-              <span>Metaverse Office</span>
-            </span>
-          </a>
-
-          <h2 class="work-item__title"><a href="projects/newo.html">뉴오 (NEW:O)</a></h2>
-          <p class="work-item__desc">
-            코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 창업 프로젝트입니다.
-            도트 그래픽 맵에 접속해 같은 공간에서 공부하고, 그 안에서 과제·멘토링·대화가 오갑니다.
-          </p>
-          <p class="work-item__desc">
-            랜딩부터 맵과 커뮤니티 화면까지 웹으로 구현했습니다.
-          </p>
-          <p class="work-item__meta">Phaser.js</p>
-
-          <a class="work-item__showcase" href="projects/newo.html" style="--stage-bg:#f2e2da">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/newo/newo-landing.png" width="1180" height="634"
-                       alt="뉴오 랜딩 화면. ‘메타버스에서 팀원들과 함께 공부해요’ 문구와 GO TO NEW:O 버튼, 도트 캐릭터와 맵 미리보기가 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 랜딩과 입장 동선</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop">
-                <div class="shot__frame">
-                  <span class="shot__bar" aria-hidden="true"><i></i><i></i><i></i></span>
-                  <img class="shot__img" src="images/projects/newo/newo-metaverse.png" width="1180" height="618"
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/newo.html">
+                  <img src="images/projects/newo/newo-metaverse.png" width="1180" height="618"
                        alt="뉴오 메타버스 공간. 왼쪽에 온라인 접속자 13명의 유저 리스트가 있고 도트 그래픽 사무실 맵 위에 캐릭터들이 서 있다."
                        loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>데스크톱</b> — 메타버스 오피스</figcaption>
+                </a>
+                <figcaption>메타버스 오피스</figcaption>
               </figure>
             </div>
-          </a>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 7. 메타버스 에너지 전시관 -->
-      <article class="work-item">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/energy.html" style="--brand-bg:#e9f0ea; --brand-fg:#22492f; --brand-sub:#5c7565">
-            <span class="brand-type">
-              <b>메타버스<br>에너지 전시관</b>
-              <span>Unity · Data Exhibition</span>
-            </span>
-          </a>
+        <!-- 8. 메타버스 에너지 전시관 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/energy.html" style="--logo-bg:#edf2ee; --logo-fg:#22492f">
+              <span class="logo-type">메타버스<br>에너지 전시관</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/energy.html">메타버스 에너지 전시관</a></h2>
+            <p class="work-item__desc">
+              에너지 사용 데이터를 1인칭 시점으로 걸어 다니며 보는 가상 전시관입니다.
+              팀장으로 기획을 이끌고 Unity로 전시 공간과 관람 동선을 만들었습니다.
+              한전KDN 데이터 결합·활용 아이디어 공모전에서 장려상을 받았습니다.
+            </p>
+            <p class="work-item__meta">Unity · C#</p>
+          </div>
 
-          <h2 class="work-item__title"><a href="projects/energy.html">메타버스 에너지 전시관</a></h2>
-          <p class="work-item__desc">
-            에너지 사용 데이터를 1인칭 시점으로 걸어 다니며 보는 가상 전시관입니다.
-            집 안 가전마다 소비 전력이 붙어 있고, 안쪽 전시존에서는 온실가스 데이터를 패널로 봅니다.
-          </p>
-          <p class="work-item__desc">
-            팀장으로 기획을 이끌고 Unity로 전시 공간과 관람 동선을 만들었습니다.
-            한전KDN 데이터 결합·활용 아이디어 공모전에서 장려상을 받았습니다.
-          </p>
-          <p class="work-item__meta">Unity · C#</p>
+          <div class="work-item__shots">
+            <figure class="shot">
+              <a href="projects/energy.html">
+                <img src="images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
+                     alt="메타버스 에너지 전시관 내부. 전자레인지 5.25kWh, 냉장고 72kWh처럼 가전마다 소비 전력이 적힌 말풍선이 붙어 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>가전별 소비 전력 안내</figcaption>
+            </figure>
 
-          <a class="work-item__showcase" href="projects/energy.html" style="--stage-bg:#e2e9e4">
-            <div class="stage stage--pair">
-              <figure class="shot shot--desktop shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
-                       alt="메타버스 에너지 전시관 내부. 전자레인지 5.25kWh, 냉장고 72kWh처럼 가전마다 소비 전력이 적힌 말풍선이 붙어 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>전시 공간</b> — 가전별 소비 전력 안내</figcaption>
-              </figure>
-
-              <figure class="shot shot--desktop shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/energy/energy-data-exhibit.jpg" width="1200" height="564"
+            <div class="shot-row">
+              <figure class="shot">
+                <a href="projects/energy.html">
+                  <img src="images/projects/energy/energy-data-exhibit.jpg" width="1200" height="564"
                        alt="전시관 안의 데이터 패널. ‘전지구 온실가스 배출 평균 예측’ 제목 아래 안전·회복 불가능 구간을 색으로 나눈 그래프가 있다."
                        loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>전시 공간</b> — 온실가스 데이터 패널</figcaption>
+                </a>
+                <figcaption>온실가스 데이터 패널</figcaption>
               </figure>
             </div>
-          </a>
-        </div>
-      </article>
+          </div>
+        </article>
 
-      <!-- 8. 케어팜 -->
-      <article class="work-item is-alt">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/careform.html" style="--brand-bg:#faf3dd; --brand-fg:#4a4227; --brand-sub:#8a7f56">
-            <span class="brand-type">
-              <b>케어팜</b>
-              <span>Caregiver Matching</span>
-            </span>
-          </a>
+        <!-- 9. 케어팜 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/careform.html" style="--logo-bg:#fbf6e2; --logo-fg:#4a4227">
+              <span class="logo-type">케어팜</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/careform.html">케어팜</a></h2>
+            <p class="work-item__desc">
+              간병인이 필요한 사람과 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱입니다.
+              기획부터 프론트엔드와 백엔드까지 혼자 만들었습니다.
+            </p>
+            <p class="work-item__meta">Java · PHP · MySQL</p>
+          </div>
 
-          <h2 class="work-item__title"><a href="projects/careform.html">케어팜</a></h2>
-          <p class="work-item__desc">
-            간병인이 필요한 사람과 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱입니다.
-            기획부터 프론트엔드와 백엔드까지 혼자 만들었습니다.
-          </p>
-          <p class="work-item__meta">Java · PHP · MySQL</p>
+          <div class="work-item__shots">
+            <figure class="shot shot--phone is-solo">
+              <a href="projects/careform.html">
+                <img src="images/projects/careform/careform-splash.png" width="327" height="640"
+                     alt="케어팜 앱 시작 화면. ‘케어팜’ 제목 아래 ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구와 노란 일러스트가 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>앱 시작 화면</figcaption>
+            </figure>
+          </div>
+        </article>
 
-          <a class="work-item__showcase" href="projects/careform.html" style="--stage-bg:#f0e9d2">
-            <div class="stage stage--solo">
-              <figure class="shot shot--mobile shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/careform/careform-splash.png" width="327" height="640"
-                       alt="케어팜 앱 시작 화면. ‘케어팜’ 제목 아래 ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구와 노란 일러스트가 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>모바일</b> — 앱 시작 화면</figcaption>
-              </figure>
-            </div>
-          </a>
-        </div>
-      </article>
+        <!-- 10. 스케치스 -->
+        <article class="work-item">
+          <div class="work-item__intro">
+            <a class="work-item__logo" href="projects/sketchers.html" style="--logo-bg:#f9f0f5; --logo-fg:#1a1a1a">
+              <span class="logo-type">Skeches</span>
+            </a>
+            <h2 class="work-item__title"><a href="projects/sketchers.html">스케치스</a></h2>
+            <p class="work-item__desc">
+              스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱입니다.
+              1인 개발로 화면과 데이터 구조를 모두 담당했습니다.
+            </p>
+            <p class="work-item__meta">Java</p>
+          </div>
 
-      <!-- 9. 스케치스 -->
-      <article class="work-item">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand" href="projects/sketchers.html" style="--brand-bg:#f8eef4; --brand-fg:#1a1a1a; --brand-sub:#a1567f">
-            <span class="brand-type">
-              <b>Skeches</b>
-              <span>Drawing Archive</span>
-            </span>
-          </a>
+          <div class="work-item__shots">
+            <figure class="shot shot--phone is-solo">
+              <a href="projects/sketchers.html">
+                <img src="images/projects/sketchers/sketchers-splash.png" width="331" height="640"
+                     alt="스케치스 앱 시작 화면. 흑백 줄무늬 배경 가운데 분홍색 Skeches 로고가 있다."
+                     loading="lazy" decoding="async">
+              </a>
+              <figcaption>앱 시작 화면</figcaption>
+            </figure>
+          </div>
+        </article>
 
-          <h2 class="work-item__title"><a href="projects/sketchers.html">스케치스</a></h2>
-          <p class="work-item__desc">
-            스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱입니다.
-            1인 개발로 화면과 데이터 구조를 모두 담당했습니다.
-          </p>
-          <p class="work-item__meta">Java</p>
-
-          <a class="work-item__showcase" href="projects/sketchers.html" style="--stage-bg:#efe3ea">
-            <div class="stage stage--solo">
-              <figure class="shot shot--mobile shot--bare">
-                <div class="shot__frame">
-                  <img class="shot__img" src="images/projects/sketchers/sketchers-splash.png" width="331" height="640"
-                       alt="스케치스 앱 시작 화면. 흑백 줄무늬 배경 가운데 분홍색 Skeches 로고가 있다."
-                       loading="lazy" decoding="async">
-                </div>
-                <figcaption><b>모바일</b> — 앱 시작 화면</figcaption>
-              </figure>
-            </div>
-          </a>
-        </div>
-      </article>
-
-      <!-- 10. 홀로그램 AI 키오스크 -->
-      <article class="work-item is-alt">
-        <div class="wrap wrap--stage">
-          <a class="work-item__brand is-small" href="projects/kiosk.html" style="--brand-bg:#eceef3; --brand-fg:#2b2f3a; --brand-sub:#6b7280">
-            <span class="brand-type">
-              <b>홀로그램 AI 키오스크</b>
-              <span>이미지 준비 중</span>
-            </span>
-          </a>
-
-          <h2 class="work-item__title"><a href="projects/kiosk.html">홀로그램 AI 키오스크</a></h2>
-          <p class="work-item__desc">
-            홀로그램 화면과 대화하며 주문하는 카페 키오스크입니다.
-            Gemini API를 붙여 주문 대화가 오가는 화면의 프론트엔드를 구현했습니다.
-          </p>
-          <p class="work-item__meta">Gemini API</p>
-          <p class="work-item__note">공개 가능한 화면 자료를 정리하는 중입니다.</p>
-        </div>
-      </article>
-
+      </div>
     </section>
 
     <!-- ================= About ================= -->
