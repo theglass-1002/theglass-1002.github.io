@@ -573,7 +573,6 @@ h4 { font-size: 17px; line-height: 1.5; }
   font-size: 13px;
 }
 .footer-bottom p { margin: 0; }
-#visitorCount { font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .55); }
 
 /* --------------------------------------------------------------------------
    13. Case study — breadcrumb & hero

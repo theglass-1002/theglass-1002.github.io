@@ -1,6 +1,6 @@
 /* ==========================================================================
    정유리 Portfolio — 공통 스크립트
-   모바일 내비게이션 / 목차 스크롤스파이 / 방문자 카운터
+   모바일 내비게이션 / 목차 스크롤스파이 / 앵커 이동
    ========================================================================== */
 (function () {
   'use strict';
@@ -107,23 +107,4 @@
     document.documentElement.style.scrollBehavior = 'smooth';
   }
 
-  /* ------------------------------------------------------------------
-     4. 방문자 카운터 (localStorage 기반)
-     ------------------------------------------------------------------ */
-  (function visitorCounter() {
-    var el = document.getElementById('visitorCount');
-    if (!el) return;
-    try {
-      var total = parseInt(window.localStorage.getItem('portfolioVisits') || '0', 10) || 0;
-      var today = new Date().toDateString();
-      if (window.localStorage.getItem('portfolioLastVisit') !== today) {
-        total += 1;
-        window.localStorage.setItem('portfolioVisits', String(total));
-        window.localStorage.setItem('portfolioLastVisit', today);
-      }
-      el.textContent = '방문 ' + total + '회';
-    } catch (err) {
-      el.remove();
-    }
-  })();
 })();
