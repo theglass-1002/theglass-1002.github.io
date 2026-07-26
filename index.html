@@ -37,7 +37,6 @@
         <ul class="nav__list">
           <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
           <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
@@ -46,232 +45,160 @@
 
   <main id="main">
 
-    <!-- ================= Hero ================= -->
-    <section class="hero">
+    <!-- ================= Intro ================= -->
+    <section class="intro">
       <div class="wrap">
-        <span class="hero__eyebrow">Frontend Developer</span>
         <h1>사람이 실제로 쓰는 화면을 만듭니다</h1>
-        <p class="hero__lead">
+        <p>
           반려동물 헬스케어 기기의 실시간 모니터링 앱부터 AI 채용·면접 서비스까지,
           기획 단계부터 참여해 화면 구조를 잡고 프론트엔드로 구현해 왔습니다.
-          아래는 직접 맡았던 작업을 정리한 케이스 스터디입니다.
-        </p>
-        <p class="hero__meta">
-          <span>2021 – 현재</span>
-          <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a>
-          <a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a>
         </p>
       </div>
     </section>
 
-    <!-- ================= Featured work ================= -->
-    <section class="section" id="work" aria-labelledby="work-title">
+    <!-- ================= Work ================= -->
+    <section id="work" aria-label="프로젝트">
       <div class="wrap">
-        <div class="section__head">
-          <h2 id="work-title">주요 프로젝트</h2>
-          <p class="section__label">Featured</p>
-        </div>
+        <div class="work">
 
-        <div class="featured">
-
-          <!-- 면접왕 -->
-          <article class="card">
-            <div class="card__media">
+          <!-- 1. 면접왕 -->
+          <article class="work-item">
+            <div class="work-item__media">
               <img src="images/projects/interview/screen-1-card.png" width="679" height="382"
-                   alt="면접왕 진로 구분 화면. 대입 모의면접과 취업 모의면접 두 장의 선택 카드가 나란히 놓여 있다."
-                   fetchpriority="high" decoding="async">
+                   alt="면접왕 진로 구분 화면. 대입 모의면접과 취업 모의면접 두 장의 선택 카드가 나란히 놓여 있다." fetchpriority="high" decoding="async">
             </div>
-            <div class="card__body">
-              <div class="card__main">
-                <h3 class="card__title"><a href="projects/interview.html">면접왕</a></h3>
-                <p class="card__desc">
-                  대입 면접과 항공사 승무원 면접을 한 서비스에서 준비하는 AI 모의면접 플랫폼.
-                  준비 단계 안내부터 응시, 결과 리포트까지의 흐름을 구현했습니다.
-                </p>
-              </div>
-              <div class="card__aside">
-                <ul class="tags">
-                  <li>프론트엔드 개발</li>
-                  <li>React</li>
-                  <li>TypeScript</li>
-                  <li>WebRTC</li>
-                </ul>
-                <span class="card__cta">
-                  Case study
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
+            <h2 class="work-item__title"><a href="projects/interview.html">면접왕</a></h2>
+            <p class="work-item__desc">
+              대입 면접과 항공사 승무원 면접을 한 곳에서 준비하는 AI 모의면접 서비스입니다.
+              준비 단계 안내부터 응시, 결과 리포트까지 이어지는 화면을 프론트엔드로 구현했습니다.
+            </p>
+            <p class="work-item__meta">React · TypeScript · WebRTC</p>
           </article>
 
-          <!-- 잡콕 -->
-          <article class="card">
-            <div class="card__media">
+          <!-- 2. 잡콕 -->
+          <article class="work-item">
+            <div class="work-item__media">
               <img src="images/projects/jobkok/screen-2.png" width="1200" height="818"
-                   alt="잡콕 AI 모의면접 화면. 이력서 기반 맞춤형 질문을 안내하는 배너와 MY 리포트 탭이 보인다."
-                   loading="lazy" decoding="async">
+                   alt="잡콕 AI 모의면접 화면. 이력서 기반 맞춤형 질문을 안내하는 배너 아래 MY 리포트 탭이 있다." loading="lazy" decoding="async">
             </div>
-            <div class="card__body">
-              <div class="card__main">
-                <h3 class="card__title"><a href="projects/jobkok.html">잡콕</a></h3>
-                <p class="card__desc">
-                  이력서 작성부터 AI 모의면접, 채용 공고 탐색까지 하나로 이어지는 채용 플랫폼.
-                  구직자와 기업 양쪽 화면을 담당했습니다.
-                </p>
-              </div>
-              <div class="card__aside">
-                <ul class="tags">
-                  <li>프론트엔드 UI/UX</li>
-                  <li>Java Spring</li>
-                  <li>AI 면접 분석 연동</li>
-                </ul>
-                <span class="card__cta">
-                  Case study
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
+            <h2 class="work-item__title"><a href="projects/jobkok.html">잡콕</a></h2>
+            <p class="work-item__desc">
+              이력서 작성과 AI 모의면접, 채용 공고 탐색을 하나로 묶은 채용 플랫폼입니다.
+              구직자와 기업 양쪽 화면의 UI/UX 개발과 AI 면접 분석 연동을 맡았습니다.
+            </p>
+            <p class="work-item__meta">Java Spring · MySQL</p>
           </article>
 
-          <!-- 장고 -->
-          <article class="card">
-            <div class="card__media">
+          <!-- 3. 장고 -->
+          <article class="work-item">
+            <div class="work-item__media">
               <img src="images/projects/jango/screen-3.png" width="1200" height="675"
-                   alt="장고 마이페이지 화면. 왼쪽에 회원 정보 수정과 복지관 연동 코드 메뉴, 오른쪽에 알림 설정 토글이 있다."
-                   loading="lazy" decoding="async">
+                   alt="장고 마이페이지 화면. 왼쪽에 회원 정보 수정과 복지관 연동 코드 메뉴, 오른쪽에 알림 설정 토글이 있다." loading="lazy" decoding="async">
             </div>
-            <div class="card__body">
-              <div class="card__main">
-                <h3 class="card__title"><a href="projects/jango.html">장고</a></h3>
-                <p class="card__desc">
-                  장애인 구직자·기업·복지관을 잇는 고용 플랫폼.
-                  세 사용자 그룹이 각각 쓰는 사이트를 접근성 기준에 맞춰 만들었습니다.
-                </p>
-              </div>
-              <div class="card__aside">
-                <ul class="tags">
-                  <li>프론트엔드 중심 풀스택</li>
-                  <li>React</li>
-                  <li>웹 접근성</li>
-                </ul>
-                <span class="card__cta">
-                  Case study
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
+            <h2 class="work-item__title"><a href="projects/jango.html">장고</a></h2>
+            <p class="work-item__desc">
+              장애인 구직자와 기업, 복지관을 잇는 고용 플랫폼입니다.
+              세 사용자 그룹이 각각 사용하는 사이트를 웹 접근성 기준에 맞춰 만들었습니다.
+            </p>
+            <p class="work-item__meta">React · 웹 접근성</p>
           </article>
 
-          <!-- 젠트리 -->
-          <article class="card">
-            <div class="card__media">
-              <img src="images/projects/zentry/zentry-device-hero.jpg" width="1600" height="1067"
-                   alt="반려견이 두리틀 웨어러블 밴드를 착용하고 아이와 함께 침대에 누워 있는 사진."
-                   loading="lazy" decoding="async">
+          <!-- 4. 젠트리 · 두리틀 -->
+          <article class="work-item">
+            <div class="work-item__media is-contain">
+              <img src="images/projects/zentry/zentry-vet-monitor.png" width="643" height="900"
+                   alt="두리틀 수의사용 앱의 환자 모니터 화면. 입원실별로 반려동물 이름과 심박수·호흡수가 실시간으로 표시된다." loading="lazy" decoding="async">
             </div>
-            <div class="card__body">
-              <div class="card__main">
-                <h3 class="card__title"><a href="projects/zentry.html">젠트리 · 두리틀</a></h3>
-                <p class="card__desc">
-                  심부전 반려동물의 심박·호흡을 실시간으로 보는 두리틀 시리즈.
-                  수의사용 앱 화면 구성과 공식 웹사이트 리뉴얼을 맡은 2년 6개월간의 작업입니다.
-                </p>
-              </div>
-              <div class="card__aside">
-                <ul class="tags">
-                  <li>앱 퍼블리싱</li>
-                  <li>Flutter · Dart</li>
-                  <li>React</li>
-                  <li>TCP 실시간 통신</li>
-                </ul>
-                <span class="card__cta">
-                  Case study
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
+            <h2 class="work-item__title"><a href="projects/zentry.html">젠트리 · 두리틀</a></h2>
+            <p class="work-item__desc">
+              심부전 반려동물의 심박과 호흡을 실시간으로 확인하는 두리틀 시리즈입니다.
+              수의사용 앱의 환자 모니터 화면 구성과 공식 웹사이트 리뉴얼을 담당했습니다.
+            </p>
+            <p class="work-item__meta">Flutter · Dart · TCP 실시간 통신</p>
           </article>
 
-        </div>
-      </div>
-    </section>
+          <!-- 5. 선생님 문해력 탐험대 -->
+          <article class="work-item">
+            <div class="work-item__media">
+              <img src="images/projects/literacy/teacher-dashboard.png" width="2934" height="2469"
+                   alt="선생님 문해력 탐험대 기관 관리 화면. 학급과 학생 수, 진단 현황, 학습 현황이 카드로 정리되어 있다." loading="lazy" decoding="async">
+            </div>
+            <h2 class="work-item__title"><a href="projects/literacy.html">선생님 문해력 탐험대</a></h2>
+            <p class="work-item__desc">
+              초등학생의 문해력을 진단하고 학습을 이어가는 교육 서비스입니다.
+              이미 운영 중이던 학생용 서비스의 고도화와 선생님용 관리 페이지 개발을 맡았습니다.
+            </p>
+            <p class="work-item__meta">웹 프론트엔드</p>
+          </article>
 
-    <!-- ================= More projects ================= -->
-    <section class="section section--tint" aria-labelledby="more-title">
-      <div class="wrap">
-        <div class="section__head">
-          <h2 id="more-title">그 밖의 프로젝트</h2>
-          <p class="section__label">More</p>
-        </div>
-
-        <div class="more-grid">
-
-          <article class="mini">
-            <div class="mini__media">
+          <!-- 6. 뉴오 -->
+          <article class="work-item">
+            <div class="work-item__media">
               <img src="images/projects/newo/newo-metaverse.png" width="1180" height="618"
-                   alt="뉴오 메타버스 공간. 도트 그래픽 사무실 맵에 접속자 목록과 캐릭터들이 보인다."
-                   loading="lazy" decoding="async">
+                   alt="뉴오 메타버스 공간. 도트 그래픽 사무실 맵에 접속자 목록과 캐릭터들이 보인다." loading="lazy" decoding="async">
             </div>
-            <h3 class="mini__title"><a href="projects/newo.html">뉴오 (NEW:O)</a></h3>
-            <p class="mini__desc">코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 4개월 창업 프로젝트.</p>
-            <ul class="tags"><li>웹 개발</li><li>Phaser.js</li></ul>
+            <h2 class="work-item__title"><a href="projects/newo.html">뉴오 (NEW:O)</a></h2>
+            <p class="work-item__desc">
+              코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 창업 프로젝트입니다.
+              도트 그래픽 맵과 그 안에서 오가는 커뮤니티 화면을 웹으로 구현했습니다.
+            </p>
+            <p class="work-item__meta">Phaser.js</p>
           </article>
 
-          <article class="mini">
-            <div class="mini__media">
+          <!-- 7. 메타버스 에너지 전시관 -->
+          <article class="work-item">
+            <div class="work-item__media">
               <img src="images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
-                   alt="메타버스 에너지 전시관 내부. 가전제품마다 소비 전력이 적힌 말풍선이 붙어 있다."
-                   loading="lazy" decoding="async">
+                   alt="메타버스 에너지 전시관 내부. 가전제품마다 소비 전력이 적힌 말풍선이 붙어 있다." loading="lazy" decoding="async">
             </div>
-            <h3 class="mini__title"><a href="projects/energy.html">메타버스 에너지 전시관</a></h3>
-            <p class="mini__desc">한전KDN 공모전 장려상. Unity로 만든 1인칭 시점 가상 에너지 전시관.</p>
-            <ul class="tags"><li>팀장</li><li>Unity · C#</li></ul>
+            <h2 class="work-item__title"><a href="projects/energy.html">메타버스 에너지 전시관</a></h2>
+            <p class="work-item__desc">
+              에너지 사용 데이터를 1인칭 시점으로 걸어 다니며 보는 가상 전시관입니다.
+              팀장으로 기획을 이끌고 Unity로 전시 공간과 관람 동선을 만들었습니다.
+              한전KDN 데이터 결합·활용 아이디어 공모전에서 장려상을 받았습니다.
+            </p>
+            <p class="work-item__meta">Unity · C#</p>
           </article>
 
-          <article class="mini">
-            <div class="mini__media mini__media--contain">
+          <!-- 8. 케어팜 -->
+          <article class="work-item">
+            <div class="work-item__media is-contain">
               <img src="images/projects/careform/careform-splash.png" width="327" height="640"
-                   alt="케어팜 앱 시작 화면. ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구가 적혀 있다."
-                   loading="lazy" decoding="async">
+                   alt="케어팜 앱 시작 화면. ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구가 적혀 있다." loading="lazy" decoding="async">
             </div>
-            <h3 class="mini__title"><a href="projects/careform.html">케어팜</a></h3>
-            <p class="mini__desc">간병인이 필요한 사람과 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱.</p>
-            <ul class="tags"><li>1인 개발</li><li>Java · PHP</li></ul>
+            <h2 class="work-item__title"><a href="projects/careform.html">케어팜</a></h2>
+            <p class="work-item__desc">
+              간병인이 필요한 사람과 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱입니다.
+              기획부터 프론트엔드와 백엔드까지 혼자 만들었습니다.
+            </p>
+            <p class="work-item__meta">Java · PHP · MySQL</p>
           </article>
 
-          <article class="mini">
-            <div class="mini__media mini__media--contain">
+          <!-- 9. 스케치스 -->
+          <article class="work-item">
+            <div class="work-item__media is-contain">
               <img src="images/projects/sketchers/sketchers-splash.png" width="331" height="640"
-                   alt="스케치스 앱 시작 화면. 흑백 줄무늬 배경 위에 분홍색 Skeches 로고가 있다."
-                   loading="lazy" decoding="async">
+                   alt="스케치스 앱 시작 화면. 흑백 줄무늬 배경 위에 분홍색 로고가 있다." loading="lazy" decoding="async">
             </div>
-            <h3 class="mini__title"><a href="projects/sketchers.html">스케치스</a></h3>
-            <p class="mini__desc">스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱.</p>
-            <ul class="tags"><li>1인 개발</li><li>Java</li></ul>
+            <h2 class="work-item__title"><a href="projects/sketchers.html">스케치스</a></h2>
+            <p class="work-item__desc">
+              스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱입니다.
+              1인 개발로 화면과 데이터 구조를 모두 담당했습니다.
+            </p>
+            <p class="work-item__meta">Java</p>
           </article>
 
-          <article class="mini mini--text">
-            <span class="mini__mark" aria-hidden="true">AI</span>
-            <h3 class="mini__title"><a href="projects/kiosk.html">홀로그램 AI 키오스크</a></h3>
-            <p class="mini__desc">Gemini API로 대화하며 주문하는 홀로그램 카페 키오스크.</p>
-            <ul class="tags"><li>프론트엔드</li><li>Gemini API</li></ul>
-            <p class="mini__note">화면 자료 준비 중</p>
-          </article>
-
-          <article class="mini mini--text">
-            <span class="mini__mark" aria-hidden="true">문해</span>
-            <h3 class="mini__title"><a href="projects/literacy.html">선생님 문해력 탐험대</a></h3>
-            <p class="mini__desc">초등학생 문해력 학습을 돕는 교육용 윈도우 프로그램.</p>
-            <ul class="tags"><li>UI 개발</li><li>Windows</li></ul>
-            <p class="mini__note">화면 자료 준비 중</p>
+          <!-- 10. 홀로그램 AI 키오스크 -->
+          <article class="work-item">
+            <div class="work-item__media is-empty">
+              <span>공개 가능한 화면 자료 준비 중</span>
+            </div>
+            <h2 class="work-item__title"><a href="projects/kiosk.html">홀로그램 AI 키오스크</a></h2>
+            <p class="work-item__desc">
+              홀로그램 화면과 대화하며 주문하는 카페 키오스크입니다.
+              Gemini API를 붙여 주문 대화가 오가는 화면의 프론트엔드를 구현했습니다.
+            </p>
+            <p class="work-item__meta">Gemini API</p>
           </article>
 
         </div>
@@ -279,15 +206,19 @@
     </section>
 
     <!-- ================= About ================= -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <section class="bio" id="about" aria-labelledby="about-title">
       <div class="wrap">
-        <div class="section__head">
-          <h2 id="about-title">About</h2>
-          <p class="section__label">정유리 · 1998.10.02</p>
-        </div>
+        <div class="bio__inner">
 
-        <div class="about-grid">
-          <div class="about-bio">
+          <div class="bio__photo">
+            <img src="images/profile/jung-yuri.jpg" width="1015" height="1440"
+                 alt="정유리 프로필 사진." loading="lazy" decoding="async">
+          </div>
+
+          <div class="bio__text">
+            <h2 id="about-title">정유리</h2>
+            <p class="bio__role">Frontend Developer</p>
+
             <p>
               실용성을 쫓는 개발자입니다. 화면을 예쁘게 만드는 것만큼,
               그 화면이 실제 업무와 사용 환경에서 버티는지를 중요하게 봅니다.
@@ -295,92 +226,49 @@
             <p>
               동물병원 수술실에서 쓰이는 모니터링 앱처럼 실패하면 안 되는 화면과,
               장애인 구직자가 쓰는 서비스처럼 접근성이 곧 사용 가능 여부를 결정하는 화면을 만들어 왔습니다.
-              기획 단계 회의부터 참여해 화면 구조와 데이터 흐름을 함께 정리하는 방식으로 일합니다.
+            </p>
+
+            <dl class="bio__facts">
+              <div>
+                <dt>경력</dt>
+                <dd>
+                  (주)위드마인드 2025.07 – 현재<br>
+                  (주)젠트리 2022.09 – 2025.02<br>
+                  뉴오 2022.02 – 2022.06
+                </dd>
+              </div>
+              <div>
+                <dt>수상</dt>
+                <dd>2022.03 한전KDN 데이터 결합·활용 아이디어 공모전 장려상</dd>
+              </div>
+              <div>
+                <dt>학력</dt>
+                <dd>학점은행제 졸업</dd>
+              </div>
+              <div>
+                <dt>희망연봉</dt>
+                <dd>3,800만원 이상 (협의)</dd>
+              </div>
+            </dl>
+
+            <p class="bio__contact">
+              <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a>
+              <a href="tel:01040965625">010-4096-5625</a>
+              <a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a>
             </p>
           </div>
 
-          <dl class="facts">
-            <div>
-              <dt>경력</dt>
-              <dd>
-                <ul>
-                  <li>(주)위드마인드 · 2025.07.30 ~ 현재</li>
-                  <li>(주)젠트리 · 2022.09 ~ 2025.02 (2년 6개월)</li>
-                  <li>뉴오 · 2022.02 ~ 2022.06 (4개월)</li>
-                </ul>
-              </dd>
-            </div>
-            <div>
-              <dt>수상</dt>
-              <dd>2022.03 한전KDN 데이터 결합·활용 아이디어 공모전 장려상</dd>
-            </div>
-            <div>
-              <dt>학력</dt>
-              <dd>학점은행제 졸업</dd>
-            </div>
-            <div>
-              <dt>희망연봉</dt>
-              <dd>3,800만원 이상 (협의)</dd>
-            </div>
-            <div>
-              <dt>연락처</dt>
-              <dd>
-                <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a><br>
-                <a href="tel:01040965625">010-4096-5625</a>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= Contact CTA ================= -->
-    <section class="cta" id="contact" aria-labelledby="contact-title">
-      <div class="wrap wrap--content">
-        <h2 id="contact-title">함께 만들 화면이 있다면</h2>
-        <p>포트폴리오에 담지 못한 작업이나 상세한 담당 범위는 메일로 편하게 물어봐 주세요.</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
-          <a class="btn btn--ghost" href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub 보기</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ================= Footer ================= -->
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-bio">
-          <h2>정유리</h2>
-          <p class="role">Frontend Developer</p>
-          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
-        </div>
-
-        <div class="footer-col">
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
-            <li><a href="tel:01040965625">010-4096-5625</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h3>Links</h3>
-          <ul>
-            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="#work">프로젝트 전체</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 정유리. All rights reserved.</p>
-      </div>
+      <p>&copy; 2025 정유리. All rights reserved.</p>
     </div>
   </footer>
-
 
   <script src="js/site.js" defer></script>
 </body>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>선생님 문해력 탐험대 — 정유리 포트폴리오</title>
-  <meta name="description" content="초등학생 문해력 향상을 돕는 교육용 윈도우 프로그램 ‘선생님 문해력 탐험대’ 케이스 스터디.">
+  <meta name="description" content="기존 문해력 탐험대 서비스 고도화와 선생님용 학습 관리 페이지 개발 케이스 스터디.">
 
   <link rel="canonical" href="https://theglass-1002.github.io/projects/literacy.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -13,9 +13,9 @@
   <meta property="og:site_name" content="정유리 · Frontend Developer">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="선생님 문해력 탐험대 — 정유리 포트폴리오">
-  <meta property="og:description" content="초등학생 문해력 향상을 돕는 교육용 윈도우 프로그램 ‘선생님 문해력 탐험대’ 케이스 스터디.">
+  <meta property="og:description" content="기존 문해력 탐험대 서비스 고도화와 선생님용 학습 관리 페이지 개발 케이스 스터디.">
   <meta property="og:url" content="https://theglass-1002.github.io/projects/literacy.html">
-  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/zentry/zentry-device-hero.jpg">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/literacy/student-journey.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="../css/style.css">
@@ -55,7 +55,7 @@
       <header class="ph">
         <span class="ph__kicker">Case study</span>
         <h1>선생님 문해력 탐험대</h1>
-        <p class="ph__lead">초등학생의 문해력 향상을 위한 교육용 윈도우 프로그램. 게임 형식의 학습 흐름과 아동 친화적 인터페이스를 담당했습니다.</p>
+        <p class="ph__lead">운영 중인 학생용 문해력 학습 서비스를 고도화하고, 수업·학생·성과를 관리하는 선생님용 페이지를 개발했습니다.</p>
 
         <dl class="ph__meta">
           <div>
@@ -64,7 +64,7 @@
           </div>
           <div>
             <dt>유형</dt>
-            <dd>교육용 윈도우 프로그램</dd>
+            <dd>학생용 학습 서비스 · 선생님 관리 페이지</dd>
           </div>
           <div>
             <dt>역할</dt>
@@ -87,6 +87,8 @@
           <ul class="toc">
             <li><a href="#overview">프로젝트 개요</a></li>
             <li><a href="#scope">담당 범위</a></li>
+            <li><a href="#student-upgrade">학생용 고도화</a></li>
+            <li><a href="#teacher">선생님용 페이지</a></li>
             <li><a href="#stack">기술 스택</a></li>
           </ul>
           <dl class="side__facts">
@@ -109,6 +111,8 @@
             <ul class="toc">
               <li><a href="#overview">프로젝트 개요</a></li>
               <li><a href="#scope">담당 범위</a></li>
+              <li><a href="#student-upgrade">학생용 고도화</a></li>
+              <li><a href="#teacher">선생님용 페이지</a></li>
               <li><a href="#stack">기술 스택</a></li>
             </ul>
           </details>
@@ -116,13 +120,14 @@
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 개요</h2>
             <p>
-              초등학생의 문해력 향상을 위한 교육용 윈도우 프로그램입니다.
-              게임 형식의 인터랙티브한 학습 경험을 통해 문해력을 효과적으로 향상시키는 것을 목표로 했습니다.
+              초등학생의 듣기·말하기·읽기·쓰기 학습을 지원하는 문해력 서비스입니다.
+              저는 초기 구축부터 참여한 것이 아니라, 운영 중인 학생용 서비스의 고도화와
+              선생님이 학습 현황을 관리하는 페이지 개발을 맡았습니다.
             </p>
             <p>
-              웹 서비스가 아니라 <strong>교실 PC에 설치해 쓰는 윈도우 프로그램</strong>이라는 조건이
-              화면 설계에 그대로 반영됐습니다. 브라우저 주소창도, 뒤로 가기도 없기 때문에
-              프로그램 안에서 지금 어디에 있고 어떻게 돌아가는지를 화면이 직접 알려줘야 했습니다.
+              학생 화면에서는 학습 진행과 결과가 즉시 이해되도록 흐름을 다듬었고,
+              선생님 화면에서는 여러 학생과 학급의 상태를 빠르게 찾고 관리할 수 있도록
+              목록·상세·등록·통계 화면을 연결했습니다.
             </p>
           </section>
 
@@ -130,27 +135,64 @@
             <h2 id="scope">담당 범위</h2>
             <ul class="role-list">
               <li>
-                <strong>윈도우 프로그램 UI/UX 개발</strong>
-                <span>설치형 프로그램 환경에 맞춘 화면 구성을 담당했습니다.</span>
+                <strong>학생용 서비스 고도화</strong>
+                <span>학습 여정, 문제 풀이, 음성 학습, 결과 확인 화면의 사용 흐름을 개선했습니다.</span>
               </li>
               <li>
-                <strong>인터랙티브 학습 콘텐츠 구현</strong>
-                <span>학습 단계와 반응을 화면으로 구현했습니다.</span>
+                <strong>선생님용 페이지 개발</strong>
+                <span>학급·학생·문제·학습 결과를 관리하는 운영 화면을 구현했습니다.</span>
               </li>
               <li>
-                <strong>게임형 학습 시스템 개발</strong>
-                <span>학습 진행을 게임 흐름으로 바꾼 화면을 만들었습니다.</span>
+                <strong>관리 작업 상태 설계</strong>
+                <span>등록·수정·삭제·파일 업로드의 정상, 오류, 확인 상태를 화면에 반영했습니다.</span>
               </li>
               <li>
-                <strong>아동 친화적 인터페이스 설계</strong>
-                <span>글을 배우는 단계의 사용자를 대상으로 글자 크기와 버튼 크기, 안내 문장을 조정했습니다.</span>
+                <strong>학습 결과 시각화</strong>
+                <span>학생별 진행 상태와 영역별 결과를 목록과 차트로 확인할 수 있게 구성했습니다.</span>
               </li>
             </ul>
             <p>
-              대상이 초등학생이라 <strong>읽어야 알 수 있는 안내를 최소화</strong>하는 것이 중요했습니다.
-              문해력을 기르는 프로그램에서 사용법 설명이 어려우면 그 자체로 장벽이 되기 때문에,
-              글보다 형태와 위치로 다음 행동을 알리는 방향으로 잡았습니다.
+              전체 제품을 새로 만든 프로젝트로 과장하지 않고,
+              <strong>기존 서비스에서 실제 학습·운영 흐름을 확장한 기여</strong>를 중심으로 정리했습니다.
             </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="student-upgrade">
+            <h2 id="student-upgrade">학생용 서비스 고도화</h2>
+            <p>학습 여정에서 현재 단계와 다음 행동을 확인하고, 객관식·음성·단답형 문제를 거쳐 결과를 확인하는 흐름을 고도화했습니다.</p>
+            <figure>
+              <img src="../images/projects/literacy/student-journey.png" alt="문해력 탐험대 학생용 학습 여정과 진행 현황 화면" loading="lazy">
+              <figcaption>학습 단계와 영역별 현황을 한 화면에서 확인하는 학습 여정</figcaption>
+            </figure>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/literacy/student-quiz.png" alt="문해력 탐험대 학생용 객관식 문제 풀이 화면" loading="lazy">
+                <figcaption>문제와 선택지, 진행 상태를 단순하게 구성한 학습 화면</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/literacy/image35.png" alt="문해력 탐험대 캐릭터 선택 화면" loading="lazy">
+                <figcaption>학습 시작 전 캐릭터를 선택하는 화면</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="teacher">
+            <h2 id="teacher">선생님용 페이지 개발</h2>
+            <p>선생님이 학급과 학생을 관리하고, 학습 진행과 결과를 확인할 수 있는 관리 페이지를 개발했습니다.</p>
+            <figure>
+              <img src="../images/projects/literacy/teacher-dashboard.png" alt="선생님용 문해력 탐험대 대시보드 화면" loading="lazy">
+              <figcaption>수업 현황과 주요 지표를 빠르게 확인하는 대시보드</figcaption>
+            </figure>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/literacy/teacher-management.png" alt="선생님용 문해력 탐험대 학급과 학생 관리 목록" loading="lazy">
+                <figcaption>학급·학생 상태를 조회하고 관리하는 목록 화면</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/literacy/teacher-report.png" alt="선생님용 문해력 탐험대 학습 결과 차트" loading="lazy">
+                <figcaption>영역별 학습 결과를 비교하는 통계 화면</figcaption>
+              </figure>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
@@ -160,10 +202,6 @@
               <li>HTML5 · CSS3 · JavaScript</li>
               <li>인터랙티브 학습 모듈</li>
             </ul>
-            <div class="note">
-              <strong>남은 자료</strong> — 이 프로젝트는 현재 공개 가능한 화면 캡처가 없어 글로만 정리했습니다.
-              학습 화면, 진행 단계 표시, 결과 화면 캡처 또는 시연 영상을 확보하면 이 페이지에 추가할 예정입니다.
-            </div>
           </section>
 
         </div>
