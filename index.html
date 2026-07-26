@@ -2,431 +2,385 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>정유리 - Frontend Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>정유리 — Frontend Developer 포트폴리오</title>
+  <meta name="description" content="정유리 프론트엔드 개발자 포트폴리오. 면접왕, 잡콕, 장고, 젠트리 등 AI 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="#" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html">정유리 <span>Frontend Developer</span></a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="#work">Work</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1 class="hero-title">AI와 인터랙티브 경험을 결합한 웹사이트를 만듭니다</h1>
-      <p class="hero-subtitle">빠르고, 유지보수 가능하며, 사용자 친화적이고, 최신 웹 기술로 구축된 솔루션을 제공합니다.</p>
-    </div>
-  </section>
+  <main id="main">
 
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-content">
-          <p>
-            <strong>정유리</strong> (1998.10.02)
-          </p>
-          <p>
-            실용성을 쫓는 개발자로, AI와 인터랙티브 경험을 결합한 웹사이트를 만듭니다.
-            사용자 중심의 접근성과 최신 웹 기술을 활용하여 실용적인 솔루션을 제공합니다.
-          </p>
-          <p>
-            <strong>경력:</strong>
-          </p>
-          <ul>
-            <li>(주)위드마인드 (2025.07.30 ~ 현재)</li>
-            <li>(주)젠트리 (2022.09 ~ 2025.02, 2년 6개월)</li>
-            <li>뉴오 (2022.02 ~ 2022.06, 4개월)</li>
-          </ul>
-          <p>
-            <strong>수상경력:</strong> 2022.03 한전KDN 데이터 결합 및 활용 공모전 장려상
-          </p>
-          <p>
-            <strong>희망연봉:</strong> 3,800만원 이상 (협의)
-          </p>
-          <p>
-            <strong>학력:</strong> 학점은행제 졸업
-          </p>
+    <!-- ================= Hero ================= -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="hero__eyebrow">Frontend Developer</span>
+        <h1>사람이 실제로 쓰는 화면을 만듭니다</h1>
+        <p class="hero__lead">
+          반려동물 헬스케어 기기의 실시간 모니터링 앱부터 AI 채용·면접 서비스까지,
+          기획 단계부터 참여해 화면 구조를 잡고 프론트엔드로 구현해 왔습니다.
+          아래는 직접 맡았던 작업을 정리한 케이스 스터디입니다.
+        </p>
+        <p class="hero__meta">
+          <span>2021 – 현재</span>
+          <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a>
+          <a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= Featured work ================= -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="work-title">주요 프로젝트</h2>
+          <p class="section__label">Featured</p>
+        </div>
+
+        <div class="featured">
+
+          <!-- 면접왕 -->
+          <article class="card">
+            <div class="card__media">
+              <img src="images/projects/interview/screen-1.png" width="1200" height="613"
+                   alt="면접왕 진로 구분 화면. 대입 모의면접과 취업 모의면접 두 장의 선택 카드가 나란히 놓여 있다."
+                   fetchpriority="high" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="projects/interview.html">면접왕</a></h3>
+              <p class="card__desc">
+                대입 면접과 항공사 승무원 면접을 한 서비스에서 준비하는 AI 모의면접 플랫폼.
+                준비 단계 안내부터 응시, 결과 리포트까지의 흐름을 구현했습니다.
+              </p>
+              <ul class="tags">
+                <li>프론트엔드 개발</li>
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>WebRTC</li>
+              </ul>
+              <span class="card__cta">
+                Case study
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- 잡콕 -->
+          <article class="card">
+            <div class="card__media">
+              <img src="images/projects/jobkok/screen-2.png" width="1200" height="818"
+                   alt="잡콕 AI 모의면접 화면. 이력서 기반 맞춤형 질문을 안내하는 배너와 MY 리포트 탭이 보인다."
+                   loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="projects/jobkok.html">잡콕</a></h3>
+              <p class="card__desc">
+                이력서 작성부터 AI 모의면접, 채용 공고 탐색까지 하나로 이어지는 채용 플랫폼.
+                구직자와 기업 양쪽 화면을 담당했습니다.
+              </p>
+              <ul class="tags">
+                <li>프론트엔드 UI/UX</li>
+                <li>Java Spring</li>
+                <li>AI 면접 분석 연동</li>
+              </ul>
+              <span class="card__cta">
+                Case study
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- 장고 -->
+          <article class="card">
+            <div class="card__media">
+              <img src="images/projects/jango/screen-3.png" width="1200" height="675"
+                   alt="장고 마이페이지 화면. 왼쪽에 회원 정보 수정과 복지관 연동 코드 메뉴, 오른쪽에 알림 설정 토글이 있다."
+                   loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="projects/jango.html">장고</a></h3>
+              <p class="card__desc">
+                장애인 구직자·기업·복지관을 잇는 고용 플랫폼.
+                세 사용자 그룹이 각각 쓰는 사이트를 접근성 기준에 맞춰 만들었습니다.
+              </p>
+              <ul class="tags">
+                <li>프론트엔드 중심 풀스택</li>
+                <li>React</li>
+                <li>웹 접근성</li>
+              </ul>
+              <span class="card__cta">
+                Case study
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- 젠트리 -->
+          <article class="card">
+            <div class="card__media">
+              <img src="images/projects/zentry/zentry-device-hero.jpg" width="1600" height="1067"
+                   alt="반려견이 두리틀 웨어러블 밴드를 착용하고 아이와 함께 침대에 누워 있는 사진."
+                   loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="projects/zentry.html">젠트리 · 두리틀</a></h3>
+              <p class="card__desc">
+                심부전 반려동물의 심박·호흡을 실시간으로 보는 두리틀 시리즈.
+                수의사용 앱 화면 구성과 공식 웹사이트 리뉴얼을 맡은 2년 6개월간의 작업입니다.
+              </p>
+              <ul class="tags">
+                <li>앱 퍼블리싱</li>
+                <li>Flutter · Dart</li>
+                <li>React</li>
+                <li>TCP 실시간 통신</li>
+              </ul>
+              <span class="card__cta">
+                Case study
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M3 8h9M8.5 4.5 12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
-  
-  <!-- Portfolio Section -->
-  <main class="portfolio" id="portfolio">
-    <div class="container">
 
-      <!-- 1. 면접왕 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/interview.html" class="project-link">
-            <img src="images/projects/interview/screen-1.png" alt="면접왕 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">면접왕</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            승무원 면접 특화 AI 모의면접 플랫폼. 대입/취업 듀얼모드, CROVAI 가이드,
-            실시간 AI 분석으로 완벽한 면접 준비를 지원합니다.
-          </p>
+    <!-- ================= More projects ================= -->
+    <section class="section section--tint" aria-labelledby="more-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="more-title">그 밖의 프로젝트</h2>
+          <p class="section__label">More</p>
         </div>
-        <div class="project-col2">
-          <a href="projects/interview.html">
-            <img src="images/projects/interview/screen-2.png" alt="면접왕 메인 화면" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/interview.html">
-            <img src="images/projects/interview/screen-3.png" alt="면접왕 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
 
-      <!-- 2. 잡콕 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/jobkok.html" class="project-link">
-            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">잡콕</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            AI 기반 HR 솔루션. 정부과제(지역혁신 실증 스케일업)로 개발된
-            채용 및 인사 관리 플랫폼입니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/jobkok.html">
-            <img src="images/projects/jobkok/screen-2.png" alt="잡콕 메인 화면" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/jobkok.html">
-            <img src="images/projects/jobkok/screen-1.png" alt="잡콕 상세" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+        <div class="more-grid">
 
-      <!-- 3. 장고 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/jango.html" class="project-link">
-            <img src="images/projects/jango/screen-1.png" alt="장고 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">장고</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            AI 기반 복지 플랫폼. 정부 R&D 과제로 개발된
-            장애인 복지 통합 솔루션입니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/jango.html">
-            <img src="images/projects/jango/screen-2.png" alt="장고 메인 화면" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/jango.html">
-            <img src="images/projects/jango/screen-3.png" alt="장고 상세" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media">
+              <img src="images/projects/newo/newo-metaverse.png" width="1180" height="618"
+                   alt="뉴오 메타버스 공간. 도트 그래픽 사무실 맵에 접속자 목록과 캐릭터들이 보인다."
+                   loading="lazy" decoding="async">
+            </div>
+            <h3 class="mini__title"><a href="projects/newo.html">뉴오 (NEW:O)</a></h3>
+            <p class="mini__desc">코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 4개월 창업 프로젝트.</p>
+            <ul class="tags"><li>웹 개발</li><li>Phaser.js</li></ul>
+          </article>
 
-      <!-- 4. 젠트리 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/zentry.html" class="project-link">
-            <img src="images/projects/zentry/screen-1.png" alt="젠트리 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">젠트리</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            React + TypeScript 기반 인터랙티브 웹 애플리케이션.
-            최신 웹 기술을 활용한 동적이고 반응형인 사용자 경험을 제공합니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/zentry.html">
-            <img src="images/projects/zentry/screen-2.png" alt="젠트리 메인 화면" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/zentry.html">
-            <img src="images/projects/zentry/screen-3.png" alt="젠트리 상세" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media">
+              <img src="images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
+                   alt="메타버스 에너지 전시관 내부. 가전제품마다 소비 전력이 적힌 말풍선이 붙어 있다."
+                   loading="lazy" decoding="async">
+            </div>
+            <h3 class="mini__title"><a href="projects/energy.html">메타버스 에너지 전시관</a></h3>
+            <p class="mini__desc">한전KDN 공모전 장려상. Unity로 만든 1인칭 시점 가상 에너지 전시관.</p>
+            <ul class="tags"><li>팀장</li><li>Unity · C#</li></ul>
+          </article>
 
-      <!-- 5. 뉴오 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/newo.html" class="project-link">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E뉴오%3C/text%3E%3C/svg%3E" alt="뉴오 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">뉴오</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            웹 개발 프로젝트. 프론트엔드 개발을 담당했습니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/newo.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E뉴오 메인%3C/text%3E%3C/svg%3E" alt="뉴오 메인" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/newo.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E뉴오 모바일%3C/text%3E%3C/svg%3E" alt="뉴오 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media mini__media--contain">
+              <img src="images/projects/careform/careform-splash.png" width="327" height="640"
+                   alt="케어팜 앱 시작 화면. ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구가 적혀 있다."
+                   loading="lazy" decoding="async">
+            </div>
+            <h3 class="mini__title"><a href="projects/careform.html">케어팜</a></h3>
+            <p class="mini__desc">간병인이 필요한 사람과 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱.</p>
+            <ul class="tags"><li>1인 개발</li><li>Java · PHP</li></ul>
+          </article>
 
-      <!-- 6. 에너지 전시관 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/energy.html" class="project-link">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E에너지%20전시관%3C/text%3E%3C/svg%3E" alt="에너지 전시관 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">에너지 메타버스 전시관</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            한전KDN 공모전 장려상 수상작. 메타버스 기반 에너지 데이터 전시관입니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/energy.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E전시관 메인%3C/text%3E%3C/svg%3E" alt="에너지 전시관 메인" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/energy.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E전시관 모바일%3C/text%3E%3C/svg%3E" alt="에너지 전시관 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media mini__media--contain">
+              <img src="images/projects/sketchers/sketchers-splash.png" width="331" height="640"
+                   alt="스케치스 앱 시작 화면. 흑백 줄무늬 배경 위에 분홍색 Skeches 로고가 있다."
+                   loading="lazy" decoding="async">
+            </div>
+            <h3 class="mini__title"><a href="projects/sketchers.html">스케치스</a></h3>
+            <p class="mini__desc">스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱.</p>
+            <ul class="tags"><li>1인 개발</li><li>Java</li></ul>
+          </article>
 
-      <!-- 7. 홀로그램 키오스크 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/kiosk.html" class="project-link">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E키오스크%3C/text%3E%3C/svg%3E" alt="키오스크 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">홀로그램 AI 키오스크</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            Gemini API 연동 음성 주문 카페 키오스크. AI 대화형 주문 시스템입니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/kiosk.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E키오스크 메인%3C/text%3E%3C/svg%3E" alt="키오스크 메인" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/kiosk.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E키오스크 모바일%3C/text%3E%3C/svg%3E" alt="키오스크 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media mini__media--none" aria-hidden="true">공개 가능한 화면 자료 준비 중</div>
+            <h3 class="mini__title"><a href="projects/kiosk.html">홀로그램 AI 키오스크</a></h3>
+            <p class="mini__desc">Gemini API로 대화하며 주문하는 홀로그램 카페 키오스크.</p>
+            <ul class="tags"><li>프론트엔드</li><li>Gemini API</li></ul>
+          </article>
 
-      <!-- 8. 케어팜 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/careform.html" class="project-link">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E케어팜%3C/text%3E%3C/svg%3E" alt="케어팜 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">케어팜</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            헬스케어 서비스 플랫폼. 농업과 헬스케어를 결합한 혁신적인 서비스입니다.
-          </p>
-        </div>
-        <div class="project-col2">
-          <a href="projects/careform.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E케어팜 메인%3C/text%3E%3C/svg%3E" alt="케어팜 메인" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/careform.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E케어팜 모바일%3C/text%3E%3C/svg%3E" alt="케어팜 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+          <article class="mini">
+            <div class="mini__media mini__media--none" aria-hidden="true">공개 가능한 화면 자료 준비 중</div>
+            <h3 class="mini__title"><a href="projects/literacy.html">선생님 문해력 탐험대</a></h3>
+            <p class="mini__desc">초등학생 문해력 학습을 돕는 교육용 윈도우 프로그램.</p>
+            <ul class="tags"><li>UI 개발</li><li>Windows</li></ul>
+          </article>
 
-      <!-- 9. 스케쳐스 -->
-      <article class="project">
-        <div class="project-col1">
-          <a href="projects/sketchers.html" class="project-link">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect fill='%23f3f4f6' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%236b7280'%3E스케쳐스%3C/text%3E%3C/svg%3E" alt="스케쳐스 썸네일" class="project-thumb" loading="lazy">
-            <h3 class="project-title">스케쳐스</h3>
-            <span class="project-label">case study</span>
-          </a>
-          <p class="project-description">
-            웹 개발 프로젝트. 프론트엔드 개발을 담당했습니다.
-          </p>
         </div>
-        <div class="project-col2">
-          <a href="projects/sketchers.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'%3E%3Crect fill='%23f3f4f6' width='1200' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%236b7280'%3E스케쳐스 메인%3C/text%3E%3C/svg%3E" alt="스케쳐스 메인" class="project-screenshot" loading="lazy">
-          </a>
-        </div>
-        <div class="project-col3">
-          <a href="projects/sketchers.html">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='800'%3E%3Crect fill='%23f3f4f6' width='400' height='800'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%236b7280'%3E스케쳐스 모바일%3C/text%3E%3C/svg%3E" alt="스케쳐스 모바일" class="project-mobile" loading="lazy">
-          </a>
-        </div>
-      </article>
+      </div>
+    </section>
 
-    </div>
+    <!-- ================= About ================= -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 id="about-title">About</h2>
+          <p class="section__label">정유리 · 1998.10.02</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-bio">
+            <p>
+              실용성을 쫓는 개발자입니다. 화면을 예쁘게 만드는 것만큼,
+              그 화면이 실제 업무와 사용 환경에서 버티는지를 중요하게 봅니다.
+            </p>
+            <p>
+              동물병원 수술실에서 쓰이는 모니터링 앱처럼 실패하면 안 되는 화면과,
+              장애인 구직자가 쓰는 서비스처럼 접근성이 곧 사용 가능 여부를 결정하는 화면을 만들어 왔습니다.
+              기획 단계 회의부터 참여해 화면 구조와 데이터 흐름을 함께 정리하는 방식으로 일합니다.
+            </p>
+          </div>
+
+          <dl class="facts">
+            <div>
+              <dt>경력</dt>
+              <dd>
+                <ul>
+                  <li>(주)위드마인드 · 2025.07.30 ~ 현재</li>
+                  <li>(주)젠트리 · 2022.09 ~ 2025.02 (2년 6개월)</li>
+                  <li>뉴오 · 2022.02 ~ 2022.06 (4개월)</li>
+                </ul>
+              </dd>
+            </div>
+            <div>
+              <dt>수상</dt>
+              <dd>2022.03 한전KDN 데이터 결합·활용 아이디어 공모전 장려상</dd>
+            </div>
+            <div>
+              <dt>학력</dt>
+              <dd>학점은행제 졸업</dd>
+            </div>
+            <div>
+              <dt>희망연봉</dt>
+              <dd>3,800만원 이상 (협의)</dd>
+            </div>
+            <div>
+              <dt>연락처</dt>
+              <dd>
+                <a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a><br>
+                <a href="tel:01040965625">010-4096-5625</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Contact CTA ================= -->
+    <section class="cta" id="contact" aria-labelledby="contact-title">
+      <div class="wrap wrap--content">
+        <h2 id="contact-title">함께 만들 화면이 있다면</h2>
+        <p>포트폴리오에 담지 못한 작업이나 상세한 담당 범위는 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub 보기</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-
-  <!-- Footer -->
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="footer-content">
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
         <div class="footer-bio">
-          <h3>정유리</h3>
-          <p>Frontend Developer</p>
-          <p>AI와 웹 기술을 활용한 실용적인 솔루션 제공</p>
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
         </div>
 
-        <div class="footer-links">
-          <h4>Contact</h4>
+        <div class="footer-col">
+          <h3>Contact</h3>
           <ul>
             <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
             <li><a href="tel:01040965625">010-4096-5625</a></li>
           </ul>
         </div>
 
-        <div class="footer-social">
-          <h4>Connect</h4>
+        <div class="footer-col">
+          <h3>Links</h3>
           <ul>
             <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#work">프로젝트 전체</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
         <p>&copy; 2025 정유리. All rights reserved.</p>
+        <p id="visitorCount"></p>
       </div>
     </div>
   </footer>
 
-  <!-- Chatbot Floating Button -->
-  <div class="chatbot-float">
-    <button class="chatbot-button" id="chatbotToggle" aria-label="챗봇 열기">
-      <span class="chatbot-icon">💬</span>
-    </button>
-  </div>
+  <!-- ================= Chatbot ================= -->
+  <button class="chat-launcher" type="button" id="chatLauncher" aria-expanded="false" aria-controls="chatPanel" aria-label="문의 창 열기">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 11.5c0 3.9-3.6 7-8 7-.9 0-1.8-.1-2.6-.4L4 20l1.3-3.4C4.5 15.2 4 13.4 4 11.5c0-3.9 3.6-7 8-7s8 3.1 8 7Z"
+            stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </svg>
+  </button>
 
-  <!-- Chatbot Panel -->
-  <div class="chatbot-panel" id="chatbotPanel">
-    <div class="chatbot-header">
-      <h3>💬 안녕하세요!</h3>
-      <button class="chatbot-close" id="chatbotClose" aria-label="챗봇 닫기">×</button>
-    </div>
-    <div class="chatbot-messages" id="chatbotMessages">
-      <div class="chatbot-message bot">
-        <div class="message-avatar">🤖</div>
-        <div class="message-content">안녕하세요! 궁금하신 점이 있으시면 물어보세요 😊</div>
+  <div class="chat-panel" id="chatPanel" data-open="false" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+    <div class="chat-panel__head">
+      <div>
+        <h2 id="chatTitle">문의 남기기</h2>
+        <p>자동 응답 창입니다</p>
       </div>
+      <button class="chat-close" type="button" data-chat-close aria-label="문의 창 닫기">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 4l10 10M14 4 4 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
     </div>
-    <div class="chatbot-input-area">
-      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="메시지를 입력하세요...">
-      <button class="chatbot-send" id="chatbotSend" aria-label="전송">▶</button>
+    <div class="chat-log" data-chat-log>
+      <p class="chat-msg chat-msg--bot">안녕하세요. 궁금한 점을 남겨주시면 확인 후 메일로 답변드릴게요.</p>
     </div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chatInput">문의 내용</label>
+      <input id="chatInput" type="text" data-chat-input placeholder="메시지를 입력하세요" autocomplete="off">
+      <button type="submit">전송</button>
+    </form>
   </div>
 
-  <!-- Visitor Counter -->
-  <div class="visitor-counter">
-    <span id="visitorCount">Visitor: 0 | Total: 0</span>
-  </div>
-
-  <script>
-    // Chatbot Toggle
-    const chatbotToggle = document.getElementById('chatbotToggle');
-    const chatbotPanel = document.getElementById('chatbotPanel');
-    const chatbotClose = document.getElementById('chatbotClose');
-    const chatbotInput = document.getElementById('chatbotInput');
-    const chatbotSend = document.getElementById('chatbotSend');
-    const chatbotMessages = document.getElementById('chatbotMessages');
-
-    chatbotToggle.addEventListener('click', () => {
-      chatbotPanel.classList.add('active');
-    });
-
-    chatbotClose.addEventListener('click', () => {
-      chatbotPanel.classList.remove('active');
-    });
-
-    function addMessage(text, isUser = false) {
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `chatbot-message ${isUser ? 'user' : 'bot'}`;
-
-      const avatar = document.createElement('div');
-      avatar.className = 'message-avatar';
-      avatar.textContent = isUser ? '👤' : '🤖';
-
-      const content = document.createElement('div');
-      content.className = 'message-content';
-      content.textContent = text;
-
-      messageDiv.appendChild(avatar);
-      messageDiv.appendChild(content);
-      chatbotMessages.appendChild(messageDiv);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    }
-
-    function sendMessage() {
-      const message = chatbotInput.value.trim();
-      if (!message) return;
-
-      addMessage(message, true);
-      chatbotInput.value = '';
-
-      setTimeout(() => {
-        const responses = [
-          '감사합니다! 곧 답변드리겠습니다 😊',
-          '좋은 질문이네요! 확인해보겠습니다 🔍',
-          '문의 감사합니다. 빠르게 답변드릴게요! ⚡',
-        ];
-        addMessage(responses[Math.floor(Math.random() * responses.length)]);
-      }, 500);
-    }
-
-    chatbotSend.addEventListener('click', sendMessage);
-    chatbotInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
-    });
-
-    // Visitor Counter (LocalStorage 기반 간단 카운터)
-    function updateVisitorCount() {
-      let total = parseInt(localStorage.getItem('totalVisitors') || '0');
-      let today = new Date().toDateString();
-      let lastVisit = localStorage.getItem('lastVisit');
-
-      if (lastVisit !== today) {
-        total++;
-        localStorage.setItem('totalVisitors', total);
-        localStorage.setItem('lastVisit', today);
-      }
-
-      document.getElementById('visitorCount').textContent = `Visitor: ${total} | Total: ${total}`;
-    }
-
-    updateVisitorCount();
-  </script>
-
+  <script src="js/site.js" defer></script>
 </body>
 </html>

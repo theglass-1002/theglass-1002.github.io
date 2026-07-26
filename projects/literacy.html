@@ -2,101 +2,223 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>선생님 문해력 탐험대 - 정유리 Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>선생님 문해력 탐험대 — 정유리 포트폴리오</title>
+  <meta name="description" content="초등학생 문해력 향상을 돕는 교육용 윈도우 프로그램 ‘선생님 문해력 탐험대’ 케이스 스터디.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="../index.html" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="#" class="logo">정유리</a>
-          <li><a href="../index.html#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="project-detail">
-    <div class="container">
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><span aria-current="page">선생님 문해력 탐험대</span></li>
+        </ol>
+      </nav>
 
-      <div class="project-detail-header">
+      <header class="ph">
+        <span class="ph__kicker">Case study</span>
         <h1>선생님 문해력 탐험대</h1>
-        <p class="project-detail-subtitle">초등학생 문해력 향상 윈도우 프로그램</p>
-      </div>
+        <p class="ph__lead">초등학생의 문해력 향상을 위한 교육용 윈도우 프로그램. 게임 형식의 학습 흐름과 아동 친화적 인터페이스를 담당했습니다.</p>
 
-      <section class="project-section">
-        <h2>프로젝트 개요</h2>
-        <p>
-          초등학생의 문해력 향상을 위한 교육용 윈도우 프로그램입니다.
-          게임 형식의 인터랙티브한 학습 경험을 통해 어린이들의 문해력을 효과적으로 향상시킵니다.
-        </p>
-      </section>
-
-      <section class="project-section">
-        <h2>담당 역할</h2>
-        <p><strong>프론트엔드 개발</strong></p>
-        <ul>
-          <li>윈도우 프로그램 UI/UX 개발</li>
-          <li>인터랙티브 학습 콘텐츠 구현</li>
-          <li>게임형 학습 시스템 개발</li>
-          <li>아동 친화적 인터페이스 설계</li>
-        </ul>
-      </section>
-
-      <section class="project-section">
-        <h2>기술 스택</h2>
-        <div class="tech-stack-grid">
-          <div class="tech-item">
-            <h3>Platform</h3>
-            <p>Windows Desktop Application</p>
+        <dl class="ph__meta">
+          <div>
+            <dt>기간</dt>
+            <dd>2023 – 2024</dd>
           </div>
-          <div class="tech-item">
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript</p>
+          <div>
+            <dt>유형</dt>
+            <dd>교육용 윈도우 프로그램</dd>
           </div>
-          <div class="tech-item">
-            <h3>Educational Content</h3>
-            <p>Interactive Learning Modules</p>
+          <div>
+            <dt>역할</dt>
+            <dd>프론트엔드 개발</dd>
           </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>프로젝트 정보</h2>
-        <dl class="project-info-list">
-          <dt>개발 기간</dt>
-          <dd>2023년 - 2024년</dd>
-
-          <dt>프로젝트 유형</dt>
-          <dd>교육용 윈도우 프로그램</dd>
-
-          <dt>주요 성과</dt>
-          <dd>
-            • 게임형 학습 시스템을 통한 문해력 향상<br>
-            • 아동 친화적 UI/UX 설계<br>
-            • 인터랙티브한 학습 경험 제공
-          </dd>
+          <div>
+            <dt>핵심 기술</dt>
+            <dd>Windows Desktop · HTML/CSS/JavaScript</dd>
+          </div>
         </dl>
-      </section>
 
-      <div class="back-to-portfolio">
-        <a href="../index.html#portfolio" class="btn btn-secondary">← 포트폴리오로 돌아가기</a>
+      </header>
+    </div>
+
+    <div class="wrap">
+      <div class="layout">
+
+        <aside class="side" aria-label="이 페이지 목차와 정보">
+          <dl class="side__facts">
+            <div>
+              <dt>플랫폼</dt>
+              <dd>Windows 데스크톱</dd>
+            </div>
+            <div>
+              <dt>대상 사용자</dt>
+              <dd>초등학생</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="content prose">
+
+
+          <section class="cs-section" aria-labelledby="overview">
+            <h2 id="overview">프로젝트 개요</h2>
+            <p>
+              초등학생의 문해력 향상을 위한 교육용 윈도우 프로그램입니다.
+              게임 형식의 인터랙티브한 학습 경험을 통해 문해력을 효과적으로 향상시키는 것을 목표로 했습니다.
+            </p>
+            <p>
+              웹 서비스가 아니라 <strong>교실 PC에 설치해 쓰는 윈도우 프로그램</strong>이라는 조건이
+              화면 설계에 그대로 반영됐습니다. 브라우저 주소창도, 뒤로 가기도 없기 때문에
+              프로그램 안에서 지금 어디에 있고 어떻게 돌아가는지를 화면이 직접 알려줘야 했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="scope">
+            <h2 id="scope">담당 범위</h2>
+            <ul class="role-list">
+              <li>
+                <strong>윈도우 프로그램 UI/UX 개발</strong>
+                <span>설치형 프로그램 환경에 맞춘 화면 구성을 담당했습니다.</span>
+              </li>
+              <li>
+                <strong>인터랙티브 학습 콘텐츠 구현</strong>
+                <span>학습 단계와 반응을 화면으로 구현했습니다.</span>
+              </li>
+              <li>
+                <strong>게임형 학습 시스템 개발</strong>
+                <span>학습 진행을 게임 흐름으로 바꾼 화면을 만들었습니다.</span>
+              </li>
+              <li>
+                <strong>아동 친화적 인터페이스 설계</strong>
+                <span>글을 배우는 단계의 사용자를 대상으로 글자 크기와 버튼 크기, 안내 문장을 조정했습니다.</span>
+              </li>
+            </ul>
+            <p>
+              대상이 초등학생이라 <strong>읽어야 알 수 있는 안내를 최소화</strong>하는 것이 중요했습니다.
+              문해력을 기르는 프로그램에서 사용법 설명이 어려우면 그 자체로 장벽이 되기 때문에,
+              글보다 형태와 위치로 다음 행동을 알리는 방향으로 잡았습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">기술 스택</h2>
+            <ul class="tags tags--brand">
+              <li>Windows 데스크톱</li>
+              <li>HTML5 · CSS3 · JavaScript</li>
+              <li>인터랙티브 학습 모듈</li>
+            </ul>
+            <div class="note">
+              <strong>남은 자료</strong> — 이 프로젝트는 현재 공개 가능한 화면 캡처가 없어 글로만 정리했습니다.
+              학습 화면, 진행 단계 표시, 결과 화면 캡처 또는 시연 영상을 확보하면 이 페이지에 추가할 예정입니다.
+            </div>
+          </section>
+
+        </div>
       </div>
 
+      <nav class="pager" aria-label="프로젝트 이동">
+        <a href="kiosk.html"><small>이전</small><b>← 홀로그램 AI 키오스크</b></a>
+        <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
+        <span class="is-empty"></span>
+      </nav>
     </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap wrap--content">
+        <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
+        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 정유리. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../index.html#work">프로젝트 전체</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
+        <p id="visitorCount"></p>
+      </div>
     </div>
   </footer>
 
+  <button class="chat-launcher" type="button" id="chatLauncher" aria-expanded="false" aria-controls="chatPanel" aria-label="문의 창 열기">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20 11.5c0 3.9-3.6 7-8 7-.9 0-1.8-.1-2.6-.4L4 20l1.3-3.4C4.5 15.2 4 13.4 4 11.5c0-3.9 3.6-7 8-7s8 3.1 8 7Z"
+            stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div class="chat-panel" id="chatPanel" data-open="false" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+    <div class="chat-panel__head">
+      <div>
+        <h2 id="chatTitle">문의 남기기</h2>
+        <p>자동 응답 창입니다</p>
+      </div>
+      <button class="chat-close" type="button" data-chat-close aria-label="문의 창 닫기">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 4l10 10M14 4 4 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="chat-log" data-chat-log>
+      <p class="chat-msg chat-msg--bot">안녕하세요. 궁금한 점을 남겨주시면 확인 후 메일로 답변드릴게요.</p>
+    </div>
+    <form class="chat-form" data-chat-form>
+      <label class="sr-only" for="chatInput">문의 내용</label>
+      <input id="chatInput" type="text" data-chat-input placeholder="메시지를 입력하세요" autocomplete="off">
+      <button type="submit">전송</button>
+    </form>
+  </div>
+
+  <script src="../js/site.js" defer></script>
 </body>
 </html>
