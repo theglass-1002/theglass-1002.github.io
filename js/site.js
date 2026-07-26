@@ -1,6 +1,6 @@
 /* ==========================================================================
    정유리 Portfolio — 공통 스크립트
-   모바일 내비게이션 / 챗봇 / 목차 스크롤스파이 / 방문자 카운터
+   모바일 내비게이션 / 목차 스크롤스파이 / 방문자 카운터
    ========================================================================== */
 (function () {
   'use strict';
@@ -57,81 +57,7 @@
   })();
 
   /* ------------------------------------------------------------------
-     2. 챗봇
-     ------------------------------------------------------------------ */
-  (function chatbot() {
-    var launcher = document.getElementById('chatLauncher');
-    var panel = document.getElementById('chatPanel');
-    if (!launcher || !panel) return;
-
-    var closeBtn = panel.querySelector('[data-chat-close]');
-    var form = panel.querySelector('[data-chat-form]');
-    var input = panel.querySelector('[data-chat-input]');
-    var log = panel.querySelector('[data-chat-log]');
-
-    function isOpen() {
-      return panel.getAttribute('data-open') === 'true';
-    }
-
-    function setOpen(open) {
-      panel.setAttribute('data-open', String(open));
-      launcher.setAttribute('aria-expanded', String(open));
-      launcher.setAttribute('aria-label', open ? '문의 창 닫기' : '문의 창 열기');
-      if (open) {
-        if (input) input.focus();
-      } else {
-        launcher.focus();
-      }
-    }
-
-    launcher.addEventListener('click', function () { setOpen(!isOpen()); });
-    if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && isOpen()) setOpen(false);
-    });
-
-    // 패널 안에서 Tab 순환
-    panel.addEventListener('keydown', function (e) {
-      if (e.key !== 'Tab' || !isOpen()) return;
-      var focusables = panel.querySelectorAll('button, input, a[href]');
-      if (!focusables.length) return;
-      var first = focusables[0];
-      var last = focusables[focusables.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    });
-
-    function addMessage(text, mine) {
-      if (!log) return;
-      var el = document.createElement('p');
-      el.className = 'chat-msg ' + (mine ? 'chat-msg--me' : 'chat-msg--bot');
-      el.textContent = text;
-      log.appendChild(el);
-      log.scrollTop = log.scrollHeight;
-    }
-
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var value = input && input.value.trim();
-        if (!value) return;
-        addMessage(value, true);
-        input.value = '';
-        window.setTimeout(function () {
-          addMessage('메시지 감사합니다. 자동 응답 창이라 답변은 남겨주신 내용을 확인한 뒤 glass.xcx@gmail.com 으로 드릴게요.', false);
-        }, 400);
-      });
-    }
-  })();
-
-  /* ------------------------------------------------------------------
-     3. 목차 스크롤스파이 (상세 페이지)
+     2. 목차 스크롤스파이 (상세 페이지)
      ------------------------------------------------------------------ */
   (function tableOfContents() {
     var links = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
@@ -175,14 +101,14 @@
   })();
 
   /* ------------------------------------------------------------------
-     4. 부드러운 앵커 이동 (헤더 높이 보정은 scroll-margin-top이 담당)
+     3. 부드러운 앵커 이동 (헤더 높이 보정은 scroll-margin-top이 담당)
      ------------------------------------------------------------------ */
   if (!reduceMotion) {
     document.documentElement.style.scrollBehavior = 'smooth';
   }
 
   /* ------------------------------------------------------------------
-     5. 방문자 카운터 (localStorage 기반)
+     4. 방문자 카운터 (localStorage 기반)
      ------------------------------------------------------------------ */
   (function visitorCounter() {
     var el = document.getElementById('visitorCount');

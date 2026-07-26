@@ -874,106 +874,7 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
 .pager .is-empty { border-style: dashed; opacity: .45; pointer-events: none; }
 
 /* --------------------------------------------------------------------------
-   18. Chatbot
-   -------------------------------------------------------------------------- */
-.chat-launcher {
-  position: fixed;
-  right: max(20px, env(safe-area-inset-right));
-  bottom: max(20px, env(safe-area-inset-bottom));
-  z-index: 950;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px; height: 54px;
-  background: var(--primary);
-  color: #fff;
-  border: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(21, 23, 29, .18);
-  transition: background-color .18s var(--ease), transform .18s var(--ease);
-}
-.chat-launcher:hover { background: var(--primary-hover); transform: translateY(-2px); }
-.chat-launcher svg { width: 24px; height: 24px; }
-
-.chat-panel {
-  position: fixed;
-  right: max(20px, env(safe-area-inset-right));
-  bottom: calc(max(20px, env(safe-area-inset-bottom)) + 66px);
-  z-index: 951;
-  display: none;
-  flex-direction: column;
-  width: min(360px, calc(100vw - 32px));
-  height: min(480px, calc(100vh - 140px));
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-.chat-panel[data-open="true"] { display: flex; animation: chat-in .2s var(--ease); }
-
-@keyframes chat-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.chat-panel__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-3);
-  padding: 14px 12px 14px 18px;
-  border-bottom: 1px solid var(--border);
-}
-.chat-panel__head h2 { font-size: 15px; margin: 0; }
-.chat-panel__head p { margin: 0; font-size: 12.5px; color: var(--muted); }
-.chat-close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  background: none;
-  border: 0;
-  border-radius: var(--radius-sm);
-  color: var(--muted);
-  cursor: pointer;
-}
-.chat-close:hover { background: var(--subtle); color: var(--heading); }
-
-.chat-log { flex: 1; padding: var(--s-4); overflow-y: auto; background: var(--subtle); }
-.chat-msg { max-width: 84%; margin-bottom: 10px; padding: 10px 14px; font-size: 14.5px; line-height: 1.6; border-radius: 12px; }
-.chat-msg--bot { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
-.chat-msg--me { margin-left: auto; background: var(--primary); color: #fff; }
-
-.chat-form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); background: var(--surface); }
-.chat-form input {
-  flex: 1;
-  min-width: 0;
-  min-height: 44px;
-  padding: 0 14px;
-  font-size: 15px;
-  background: var(--surface);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-}
-.chat-form input:focus-visible { outline-offset: 0; border-color: var(--primary); }
-.chat-form button {
-  flex: 0 0 auto;
-  min-width: 44px; min-height: 44px;
-  padding: 0 14px;
-  background: var(--primary);
-  color: #fff;
-  border: 0;
-  border-radius: var(--radius-sm);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.chat-form button:hover { background: var(--primary-hover); }
-
-/* --------------------------------------------------------------------------
-   19. Responsive
+   18. Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .side { display: none; }
@@ -1023,11 +924,10 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
   .facts > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
   .cta__actions .btn { width: 100%; }
-  .chat-panel { height: min(70vh, calc(100vh - 130px)); }
 }
 
 /* --------------------------------------------------------------------------
-   20. Motion & print
+   19. Motion & print
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1040,11 +940,10 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   }
   .card:hover .card__media img,
   .mini:hover .mini__media img,
-  .card:hover .card__cta svg,
-  .chat-launcher:hover { transform: none; }
+  .card:hover .card__cta svg { transform: none; }
 }
 
 @media print {
-  .site-header, .chat-launcher, .chat-panel, .pager, .cta, .toc-mobile, .side { display: none !important; }
+  .site-header, .pager, .cta, .toc-mobile, .side { display: none !important; }
   body { font-size: 12pt; }
 }
