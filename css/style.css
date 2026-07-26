@@ -42,6 +42,8 @@
   --w-media: 1180px;
   --w-content: 780px;      /* 상세 본문 텍스트 읽기 폭 */
   --w-figure: 900px;       /* 상세 이미지가 쓸 수 있는 폭 */
+  --w-read: 720px;         /* 홈 — 참고 사이트 기준 읽기 폭 */
+  --w-stage: 980px;        /* 홈 — showcase 프레임이 쓸 수 있는 폭 */
   --w-narrow: 640px;
   --w-side: 240px;
   --pad: clamp(20px, 5vw, 48px);
@@ -147,6 +149,8 @@ h4 { font-size: 17px; line-height: 1.5; }
 
 .wrap--content { max-width: calc(var(--w-content) + var(--pad) * 2); }
 .wrap--media { max-width: calc(var(--w-media) + var(--pad) * 2); }
+.wrap--read { max-width: calc(var(--w-read) + var(--pad) * 2); }
+.wrap--stage { max-width: calc(var(--w-stage) + var(--pad) * 2); }
 
 .skip-link {
   position: absolute;
@@ -313,120 +317,240 @@ h4 { font-size: 17px; line-height: 1.5; }
 .tags--brand li { color: var(--primary); background: var(--primary-soft); border-color: transparent; }
 /* --------------------------------------------------------------------------
    6. Home — intro
+
+   참고 사이트처럼 절제된 폭 — 히어로가 프로젝트보다 앞서지 않는다.
    -------------------------------------------------------------------------- */
 .intro {
-  padding: clamp(56px, 9vw, 104px) 0 clamp(40px, 6vw, 72px);
-  text-align: center;
+  padding: clamp(48px, 7vw, 88px) 0 clamp(32px, 4.5vw, 56px);
 }
 .intro h1 {
-  max-width: 20ch;
-  margin-inline: auto;
-  font-size: var(--t-display);
-  line-height: 1.2;
+  max-width: 18ch;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.22;
 }
 .intro p {
-  max-width: 54ch;
-  margin: var(--s-5) auto 0;
-  font-size: var(--t-lead);
-  line-height: 1.7;
+  max-width: 56ch;
+  margin-top: var(--s-4);
+  font-size: clamp(17px, 1.4vw, 19px);
+  line-height: 1.75;
   color: var(--muted-strong);
 }
 
 /* --------------------------------------------------------------------------
-   7. Home — single column work list
+   7. Home — 프로젝트 목록 (참고 사이트 3단 구조)
 
-   기준 구조: 큰 이미지 → 파란 프로젝트명 → 짧은 설명.
-   카드 배경/테두리/그리드 없이 이미지 자체가 중심이 되게 한다.
+     1) a.work-item__brand    — 로고/타이포 대표 썸네일
+     2) h2 > a (파란 제목) + 설명 + 기술 스택
+     3) a.work-item__showcase — 데스크톱 메인 + 모바일 한 장의 프리뷰
+
+   프로젝트마다 전체 폭 밴드를 차지하고, 배경색이 번갈아 바뀐다.
    -------------------------------------------------------------------------- */
-.work {
-  display: grid;
-  gap: clamp(72px, 11vw, 144px);
-  padding-bottom: clamp(64px, 9vw, 112px);
-}
+.work-item { padding: clamp(56px, 8vw, 104px) 0; }
+.work-item.is-alt { background: var(--subtle); }
+#work .work-item:first-child { border-top: 1px solid var(--border); }
 
-.work-item { position: relative; }
+/* 읽는 폭은 참고 사이트처럼 720px 안팎으로 좁힌다 */
+.work-item__brand,
+.work-item__title,
+.work-item__desc,
+.work-item__meta,
+.work-item__note { max-width: var(--w-read); }
 
-/* 모든 프로젝트가 같은 크기의 가로형 프레임을 쓴다 */
-.work-item__media {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
+/* 브랜드 썸네일 — 실제 서비스 화면이 아니라 로고/타이포 포스터 */
+.work-item__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(230px, 24vw, 320px);
+  padding: var(--s-6);
+  background: var(--brand-bg, #eef0f4);
   border-radius: var(--radius-lg);
-  background: var(--subtle);
+  text-decoration: none;
+  transition: transform .35s var(--ease);
 }
-.work-item__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;   /* 화면 상단(헤더·핵심 UI)이 남게 한다 */
-  transition: transform .5s var(--ease);
-}
-.work-item:hover .work-item__media img { transform: scale(1.015); }
-
-/* 세로형 모바일 화면 — 확대하거나 자르지 않고 밝은 배경 위에 전체를 보여준다 */
-.work-item__media.is-contain {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(20px, 3vw, 36px);
-  background: var(--subtle);
-}
-.work-item__media.is-contain img {
-  width: auto;
-  max-width: 100%;
-  height: 100%;
+.work-item__brand:hover { transform: translateY(-2px); }
+/* 로고는 원본이 작아도 --brand-w 만큼만 키운다 (과도한 확대 금지) */
+.work-item__brand img {
+  width: min(62%, var(--brand-w, 240px));
+  height: auto;
+  max-height: 52%;
   object-fit: contain;
-  border-radius: var(--radius);
 }
+.work-item__brand.is-small { height: clamp(150px, 15vw, 190px); }
 
-/* 화면 자료가 아직 없는 프로젝트 — 큰 빈 프레임 대신 낮은 텍스트 자리 */
-.work-item__media.is-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: auto;
-  min-height: 160px;
-  color: var(--muted);
-  font-size: var(--t-sm);
+/* 로고 파일이 없는 프로젝트 — 절제된 타이포 카드 */
+.brand-type { text-align: center; }
+.brand-type b {
+  display: block;
+  font-size: clamp(28px, 3.6vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+  color: var(--brand-fg, var(--heading));
+}
+.brand-type span {
+  display: block;
+  margin-top: 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--brand-sub, var(--muted));
 }
 
 .work-item__title {
-  margin-top: clamp(20px, 2.6vw, 32px);
-  font-size: var(--t-project);
-  line-height: 1.2;
+  margin-top: clamp(24px, 3vw, 38px);
+  font-size: clamp(25px, 2.8vw, 34px);
+  line-height: 1.25;
 }
 .work-item__title a {
   color: var(--primary);
   text-decoration: none;
 }
-/* 제목 링크가 항목 전체를 덮는다 — 링크는 하나만 둔다 */
-.work-item__title a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
-}
-.work-item:hover .work-item__title a { color: var(--primary-hover); }
+.work-item__title a:hover { color: var(--primary-hover); text-decoration: underline; text-underline-offset: 4px; }
 
 .work-item__desc {
-  max-width: 60ch;
-  margin-top: var(--s-3);
+  margin-top: var(--s-4);
   font-size: clamp(16.5px, 1.4vw, 18px);
-  line-height: 1.75;
+  line-height: 1.78;
   color: var(--muted-strong);
 }
+.work-item__desc + .work-item__desc { margin-top: var(--s-3); }
 
 .work-item__meta {
-  margin-top: var(--s-3);
+  margin-top: var(--s-4);
   font-size: 14.5px;
   color: var(--muted);
 }
 
-.work-item:has(.work-item__title a:focus-visible) {
-  outline: 3px solid var(--primary);
-  outline-offset: 10px;
-  border-radius: var(--radius-lg);
+.work-item__note {
+  margin-top: var(--s-4);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
 }
-.work-item:has(.work-item__title a:focus-visible) .work-item__title a { outline: none; }
+
+/* ---- showcase: 데스크톱 + 모바일을 한 장의 프리젠테이션으로 ---- */
+.work-item__showcase {
+  display: block;
+  margin-top: clamp(28px, 3.6vw, 48px);
+  padding: clamp(18px, 3vw, 40px);
+  background: var(--stage-bg, #e9ebf0);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+}
+.work-item.is-alt .work-item__showcase { background: var(--stage-bg, #e3e6ec); }
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 26px);
+  align-items: end;
+}
+/* 데스크톱 78% / 모바일 22% */
+.stage--device { grid-template-columns: minmax(0, 78fr) minmax(0, 22fr); }
+/* 데스크톱 두 장 — 대표 화면이 확실히 더 크다 */
+.stage--pair   { grid-template-columns: minmax(0, 63fr) minmax(0, 37fr); }
+/* 화면이 한 장뿐인 모바일 앱 — 억지로 넓히지 않고 가운데 한 대만 세운다 */
+.stage--solo { justify-items: center; }
+.stage--solo .shot { width: min(100%, 300px); }
+.stage--solo figcaption { text-align: center; }
+.stage--solo .shot--bare .shot__frame {
+  padding: 14px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 18, 24, .06), 0 14px 32px rgba(16, 18, 24, .12);
+}
+
+.shot { margin: 0; min-width: 0; }
+
+.shot__frame {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 18, 24, .07), 0 16px 38px rgba(16, 18, 24, .13);
+}
+.shot__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 12px;
+  background: #f0f1f5;
+  border-bottom: 1px solid rgba(16, 18, 24, .07);
+}
+.shot__bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #cdd1da;
+}
+.shot__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* 세로로 긴 전체 페이지 캡처만 아래쪽이 잘린다 — 비율은 유지된다 */
+  max-height: clamp(280px, 34vw, 470px);
+  object-fit: cover;
+  object-position: top center;
+  background: #fff;
+}
+
+/* 모바일 — 둥근 기기 프레임 */
+.shot--mobile .shot__frame {
+  padding: 7px;
+  border-radius: 26px;
+  background: #1b1d23;
+  box-shadow: 0 2px 4px rgba(16, 18, 24, .12), 0 18px 40px rgba(16, 18, 24, .22);
+}
+.shot--mobile .shot__img {
+  border-radius: 20px;
+  max-height: clamp(300px, 38vw, 520px);
+  object-fit: contain;
+  background: #fff;
+}
+
+/* 이미 기기 목업이 찍혀 있는 이미지 — 프레임을 겹치지 않는다 */
+.shot--bare .shot__frame {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+}
+.shot--bare .shot__img {
+  object-fit: contain;
+  background: none;
+  max-height: clamp(300px, 40vw, 540px);
+}
+
+.shot figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.shot figcaption b { color: var(--muted-strong); font-weight: 600; }
+
+/* 자료가 아직 없는 자리 — 큰 회색 박스 대신 점선 슬롯 */
+.stage__slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: var(--s-4);
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--muted);
+}
+.stage + .stage__slot { margin-top: clamp(14px, 2vw, 26px); }
+
+.work-item__showcase:focus-visible,
+.work-item__brand:focus-visible { outline-offset: 4px; }
 
 /* --------------------------------------------------------------------------
    8. Home — bio (프로젝트 목록 다음)
@@ -900,8 +1024,15 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
 @media (max-width: 768px) {
   body { font-size: 16.5px; }
   .prose { font-size: 17px; }
-  .work { gap: clamp(56px, 13vw, 88px); }
   .section__head { margin-bottom: var(--s-6); }
+
+  /* 데스크톱 위 · 모바일 아래로 자연스럽게 쌓는다 — 잘리거나 넘치지 않게 */
+  .stage--device,
+  .stage--pair { grid-template-columns: minmax(0, 1fr); }
+  .stage--device .shot--mobile { justify-self: start; width: min(56%, 230px); }
+  .shot__img { max-height: 620px; }
+  .shot--mobile .shot__img,
+  .shot--bare .shot__img { max-height: 560px; }
 
   .nav-toggle { display: inline-flex; }
 
@@ -947,14 +1078,13 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
 @media (max-width: 520px) {
   body { font-size: 16px; }
   .prose { font-size: 16.5px; }
-  .work { gap: var(--s-9); }
+  .work-item__brand { height: clamp(180px, 46vw, 230px); }
   .footer-grid { grid-template-columns: minmax(0, 1fr); gap: var(--s-6); }
   .bio__facts > div { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: var(--s-3) 0; }
   .bio__facts dt { padding-top: 0; }
   .cta__actions .btn { width: 100%; }
   .ph__meta { grid-template-columns: minmax(0, 1fr); gap: var(--s-3); }
   .fig-pair { grid-template-columns: minmax(0, 1fr); }
-  .work-item__media.is-contain img { max-height: 420px; }
 }
 
 /* --------------------------------------------------------------------------
@@ -969,7 +1099,7 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
     transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
-  .work-item:hover .work-item__media img { transform: none; }
+  .work-item__brand:hover { transform: none; }
 }
 
 @media print {
