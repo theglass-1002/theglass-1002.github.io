@@ -107,4 +107,32 @@
     document.documentElement.style.scrollBehavior = 'smooth';
   }
 
+  /* ------------------------------------------------------------------
+     4. 방문 통계 (GoatCounter)
+
+     숫자는 페이지에 표시하지 않고 대시보드에서만 확인한다.
+     아래 CODE 한 줄만 채우면 전 페이지에 적용된다.
+       1) goatcounter.com 가입 → 사이트 코드 확인 (예: yuri-portfolio)
+       2) CODE 에 그 코드를 넣는다
+       3) 대시보드: https://<코드>.goatcounter.com
+
+     회사별로 누가 열었는지 보려면 링크에 ?ref= 를 붙여서 보낸다.
+       https://theglass-1002.github.io/?ref=카카오
+     이러면 대시보드 Referrer 목록에 '카카오'가 시각과 함께 찍힌다.
+     ------------------------------------------------------------------ */
+  (function analytics() {
+    var CODE = '';
+    if (!CODE) return;
+
+    // 로컬 작업 중에는 집계하지 않는다 (count.js도 자체적으로 걸러내지만 명시해 둔다)
+    var host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1' || host === '' || host === '::1') return;
+
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://gc.zgo.at/count.js';
+    s.setAttribute('data-goatcounter', 'https://' + CODE + '.goatcounter.com/count');
+    document.head.appendChild(s);
+  })();
+
 })();
