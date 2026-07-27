@@ -2,88 +2,236 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>스케쳐스 - 정유리 Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스케치스 — 정유리 포트폴리오</title>
+  <meta name="description" content="스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱 ‘스케치스’ 케이스 스터디.">
+
+  <link rel="canonical" href="https://theglass-1002.github.io/projects/sketchers.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="정유리 · Frontend Developer">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="스케치스 — 정유리 포트폴리오">
+  <meta property="og:description" content="스케치 자료를 올리고 종류별로 정리해 그림 실력을 키우는 안드로이드 앱 ‘스케치스’ 케이스 스터디.">
+  <meta property="og:url" content="https://theglass-1002.github.io/projects/sketchers.html">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/sketchers/sketchers-splash.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="../index.html" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="../index.html#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="project-detail">
-    <div class="container">
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><span aria-current="page">스케치스</span></li>
+        </ol>
+      </nav>
 
-      <div class="project-detail-header">
-        <h1>스케쳐스</h1>
-        <p class="project-detail-subtitle">웹 프로젝트</p>
-      </div>
+      <header class="ph">
+        <span class="ph__kicker">Case study</span>
+        <h1>스케치스 (Skeches)</h1>
+        <p class="ph__lead">스케치 자료를 올리고 종류별로 정리해, 자료를 보면서 스케치 능력을 향상시키는 안드로이드 앱. 2개월간 혼자 기획하고 만들었습니다.</p>
 
-      <section class="project-section">
-        <h2>프로젝트 개요</h2>
-        <p>
-          스케쳐스 관련 웹 프로젝트입니다.
-          프론트엔드 개발을 담당하여 사용자 인터페이스를 구현했습니다.
-        </p>
-      </section>
-
-      <section class="project-section">
-        <h2>담당 역할</h2>
-        <p><strong>프론트엔드 개발</strong></p>
-        <ul>
-          <li>웹 사이트 프론트엔드 개발</li>
-          <li>사용자 인터페이스 구현</li>
-          <li>반응형 디자인 적용</li>
-        </ul>
-      </section>
-
-      <section class="project-section">
-        <h2>기술 스택</h2>
-        <div class="tech-stack-grid">
-          <div class="tech-item">
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript</p>
+        <dl class="ph__meta">
+          <div>
+            <dt>기간</dt>
+            <dd>2021.04 – 2021.05 (2개월)</dd>
           </div>
-          <div class="tech-item">
-            <h3>Design</h3>
-            <p>Responsive Web Design</p>
+          <div>
+            <dt>유형</dt>
+            <dd>개인 프로젝트 (1인 개발)</dd>
           </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>프로젝트 정보</h2>
-        <dl class="project-info-list">
-          <dt>프로젝트 유형</dt>
-          <dd>웹 개발 프로젝트</dd>
-
-          <dt>담당 업무</dt>
-          <dd>프론트엔드 개발</dd>
+          <div>
+            <dt>역할</dt>
+            <dd>기획 · 프론트엔드 개발</dd>
+          </div>
+          <div>
+            <dt>핵심 기술</dt>
+            <dd>Java · 카카오/네이버/유튜브 API</dd>
+          </div>
         </dl>
-      </section>
 
-      <div class="back-to-portfolio">
-        <a href="../index.html#portfolio" class="btn btn-secondary">← 포트폴리오로 돌아가기</a>
+        <div class="ph__actions">
+          <a class="btn btn--primary" href="https://youtu.be/AGeLkyVxhA4" target="_blank" rel="noopener">작품 영상 보기</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="wrap wrap--media">
+      <figure class="fig-hero fig-hero--narrow is-plain">
+        <img src="../images/projects/sketchers/sketchers-splash.png" width="331" height="640"
+             alt="스케치스 앱 시작 화면. 흑백 가로 줄무늬 배경 위에 분홍색 Skeches 로고가 있다."
+             fetchpriority="high" decoding="async">
+        <figcaption>앱 시작 화면.</figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <div class="layout">
+
+        <aside class="side" aria-label="이 페이지 목차와 정보">
+          <p class="side__title">목차</p>
+          <ul class="toc">
+            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#scope">담당 범위</a></li>
+            <li><a href="#features">주요 기능</a></li>
+            <li><a href="#stack">기술 스택</a></li>
+          </ul>
+          <dl class="side__facts">
+            <div>
+              <dt>개발 인원</dt>
+              <dd>1명</dd>
+            </div>
+            <div>
+              <dt>플랫폼</dt>
+              <dd>안드로이드</dd>
+            </div>
+            <div>
+              <dt>기여도</dt>
+              <dd>아이디어 · 프론트엔드 각 100%</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="content prose">
+
+
+          <details class="toc-mobile">
+            <summary>목차</summary>
+            <ul class="toc">
+              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#scope">담당 범위</a></li>
+              <li><a href="#features">주요 기능</a></li>
+              <li><a href="#stack">기술 스택</a></li>
+            </ul>
+          </details>
+
+          <section class="cs-section" aria-labelledby="overview">
+            <h2 id="overview">프로젝트 개요</h2>
+            <p>
+              스케치스는 <strong>스케치 자료를 올릴 수 있으며, 자료를 종류별로 정리하고
+              자료를 보면서 스케치 능력을 향상시키는</strong> 안드로이드 앱입니다.
+            </p>
+            <p>
+              그림 연습에서 실제로 시간을 잡아먹는 건 그리는 시간이 아니라
+              <strong>참고할 자료를 찾는 시간</strong>이었습니다.
+              그래서 자료를 모으는 기능과 분류하는 기능을 같은 무게로 두고, 보면서 바로 연습할 수 있는 흐름을 만들었습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="scope">
+            <h2 id="scope">담당 범위</h2>
+            <p>2개월간 혼자 진행했습니다.</p>
+            <ul>
+              <li><strong>아이디어 제공</strong> — 기여도 100%</li>
+              <li><strong>프론트엔드 개발</strong> — 기여도 100%</li>
+            </ul>
+          </section>
+
+          <section class="cs-section" aria-labelledby="features">
+            <h2 id="features">주요 기능</h2>
+            <ul>
+              <li><strong>스케치 자료 업로드</strong> — 참고 자료를 올려 모아 둡니다.</li>
+              <li><strong>종류별 분류</strong> — 자료를 카테고리로 정리해 필요한 것만 골라 봅니다.</li>
+              <li><strong>자료 열람</strong> — 모아 둔 자료를 보면서 연습합니다.</li>
+            </ul>
+            <p>
+              외부 자료 연동에는 <strong>카카오·네이버 API</strong>를,
+              영상 참고 자료에는 <strong>유튜브 API</strong>를 사용했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">기술 스택</h2>
+            <ul class="tags tags--brand">
+              <li>Java (Android)</li>
+              <li>카카오 API</li>
+              <li>네이버 API</li>
+              <li>유튜브 API</li>
+            </ul>
+            <div class="note">
+              <strong>남은 자료</strong> — 이 페이지에는 앱 시작 화면 외의 캡처가 없습니다.
+              자료 업로드와 분류 화면은 위 <a href="https://youtu.be/AGeLkyVxhA4" target="_blank" rel="noopener">작품 영상</a>에서 확인할 수 있습니다.
+            </div>
+          </section>
+
+        </div>
       </div>
 
+      <nav class="pager" aria-label="프로젝트 이동">
+        <a href="careform.html"><small>이전</small><b>← 케어팜</b></a>
+        <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
+        <a class="is-end" href="kiosk.html"><small>다음</small><b>홀로그램 AI 키오스크 →</b></a>
+      </nav>
     </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap wrap--content">
+        <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
+        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 정유리. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../index.html#work">프로젝트 전체</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+
+  <script src="../js/site.js" defer></script>
 </body>
 </html>

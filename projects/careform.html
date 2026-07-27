@@ -2,88 +2,245 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>케어팜 - 정유리 Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>케어팜 — 정유리 포트폴리오</title>
+  <meta name="description" content="간병인이 필요한 사용자와 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
+
+  <link rel="canonical" href="https://theglass-1002.github.io/projects/careform.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="정유리 · Frontend Developer">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="케어팜 — 정유리 포트폴리오">
+  <meta property="og:description" content="간병인이 필요한 사용자와 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
+  <meta property="og:url" content="https://theglass-1002.github.io/projects/careform.html">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/careform/careform-splash.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="../index.html" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="../index.html#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="project-detail">
-    <div class="container">
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><span aria-current="page">케어팜</span></li>
+        </ol>
+      </nav>
 
-      <div class="project-detail-header">
+      <header class="ph">
+        <span class="ph__kicker">Case study</span>
         <h1>케어팜</h1>
-        <p class="project-detail-subtitle">헬스케어 서비스 플랫폼</p>
-      </div>
+        <p class="ph__lead">간병인이 필요한 사람과 간병인을 하고 싶은 사람을 매칭하고, 주변 요양 시설을 찾을 수 있는 안드로이드 앱. 기획부터 프론트엔드와 백엔드까지 혼자 만들었습니다.</p>
 
-      <section class="project-section">
-        <h2>프로젝트 개요</h2>
-        <p>
-          케어팜은 농업과 헬스케어를 결합한 혁신적인 서비스 플랫폼입니다.
-          사용자 친화적인 웹 인터페이스를 통해 헬스케어 서비스를 제공합니다.
-        </p>
-      </section>
-
-      <section class="project-section">
-        <h2>담당 역할</h2>
-        <p><strong>프론트엔드 개발</strong></p>
-        <ul>
-          <li>웹 애플리케이션 프론트엔드 개발</li>
-          <li>사용자 인터페이스 구현</li>
-          <li>반응형 웹 디자인 적용</li>
-        </ul>
-      </section>
-
-      <section class="project-section">
-        <h2>기술 스택</h2>
-        <div class="tech-stack-grid">
-          <div class="tech-item">
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript</p>
+        <dl class="ph__meta">
+          <div>
+            <dt>기간</dt>
+            <dd>2021.10 – 2022.01 (3개월)</dd>
           </div>
-          <div class="tech-item">
-            <h3>Design</h3>
-            <p>Responsive Web Design</p>
+          <div>
+            <dt>유형</dt>
+            <dd>개인 프로젝트 (1인 개발)</dd>
           </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>프로젝트 정보</h2>
-        <dl class="project-info-list">
-          <dt>프로젝트 유형</dt>
-          <dd>헬스케어 서비스 플랫폼</dd>
-
-          <dt>담당 업무</dt>
-          <dd>프론트엔드 개발</dd>
+          <div>
+            <dt>역할</dt>
+            <dd>기획 · 프론트엔드 · 백엔드 전체</dd>
+          </div>
+          <div>
+            <dt>핵심 기술</dt>
+            <dd>Java · PHP · MySQL</dd>
+          </div>
         </dl>
-      </section>
 
-      <div class="back-to-portfolio">
-        <a href="../index.html#portfolio" class="btn btn-secondary">← 포트폴리오로 돌아가기</a>
+        <div class="ph__actions">
+          <a class="btn btn--primary" href="https://youtube.com/playlist?list=PLGlP69JJ_dOxD_eBhicZ3IUA_8EeCJixE" target="_blank" rel="noopener">작품 영상 보기</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="wrap wrap--media">
+      <figure class="fig-hero fig-hero--narrow is-plain">
+        <img src="../images/projects/careform/careform-splash.png" width="327" height="640"
+             alt="케어팜 앱 시작 화면. 제목 아래 ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구와 노란색 일러스트가 있다."
+             fetchpriority="high" decoding="async">
+        <figcaption>앱 시작 화면. 매칭 서비스의 목적을 한 문장으로 먼저 밝힙니다.</figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <div class="layout">
+
+        <aside class="side" aria-label="이 페이지 목차와 정보">
+          <p class="side__title">목차</p>
+          <ul class="toc">
+            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#scope">담당 범위</a></li>
+            <li><a href="#features">주요 기능</a></li>
+            <li><a href="#stack">기술 스택</a></li>
+          </ul>
+          <dl class="side__facts">
+            <div>
+              <dt>개발 인원</dt>
+              <dd>1명</dd>
+            </div>
+            <div>
+              <dt>플랫폼</dt>
+              <dd>안드로이드</dd>
+            </div>
+            <div>
+              <dt>기여도</dt>
+              <dd>기획 · 프론트엔드 · 백엔드 각 100%</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="content prose">
+
+
+          <details class="toc-mobile">
+            <summary>목차</summary>
+            <ul class="toc">
+              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#scope">담당 범위</a></li>
+              <li><a href="#features">주요 기능</a></li>
+              <li><a href="#stack">기술 스택</a></li>
+            </ul>
+          </details>
+
+          <section class="cs-section" aria-labelledby="overview">
+            <h2 id="overview">프로젝트 개요</h2>
+            <p>
+              케어팜은 <strong>간병인이 필요한 사용자와 간병인을 하고 싶은 사용자를 매칭</strong>시켜 주며,
+              주변 요양 시설을 찾을 수 있는 안드로이드 앱입니다.
+            </p>
+            <p>
+              간병은 급하게 필요해지는 경우가 많고, 그때 정보를 찾을 여유가 없습니다.
+              그래서 구인·구직 게시판 형태가 아니라 <strong>양쪽 조건을 등록해 두고 매칭되는 구조</strong>로 잡았습니다.
+              동시에 시설을 직접 찾는 경로도 필요하다고 봐서, 지도 기반 요양 시설 검색을 함께 넣었습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="scope">
+            <h2 id="scope">담당 범위</h2>
+            <p>3개월간 혼자 진행한 프로젝트로, 아이디어부터 배포까지 전 과정을 담당했습니다.</p>
+            <ul>
+              <li><strong>아이디어 제공</strong> — 기여도 100%</li>
+              <li><strong>프론트엔드 개발</strong> — 기여도 100%</li>
+              <li><strong>백엔드 개발</strong> — 기여도 100%</li>
+            </ul>
+            <p>
+              혼자 하는 프로젝트라 화면과 서버 사이에서 타협할 상대가 없었습니다.
+              대신 <strong>기능을 하나씩 끝까지 붙여 동작하는 상태를 유지</strong>하면서 늘리는 방식으로 진행했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="features">
+            <h2 id="features">주요 기능</h2>
+            <ul>
+              <li><strong>간병인 매칭</strong> — 간병이 필요한 사용자와 간병인 희망자를 연결합니다.</li>
+              <li><strong>주변 요양 시설 검색</strong> — 위치를 기준으로 인근 요양 시설을 찾습니다.</li>
+              <li><strong>회원가입 및 프로필 관리</strong> — 양쪽 사용자의 조건을 등록·수정합니다.</li>
+            </ul>
+            <p>
+              지도와 장소 검색은 <strong>카카오·네이버 API</strong>로 붙였고,
+              서버 통신은 <strong>Volley</strong> 라이브러리로 처리했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">기술 스택</h2>
+            <ul class="tags tags--brand">
+              <li>Java (Android)</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>Apache</li>
+              <li>카카오 API</li>
+              <li>네이버 API</li>
+              <li>Volley</li>
+            </ul>
+            <div class="note">
+              <strong>남은 자료</strong> — 이 페이지에는 앱 시작 화면 외의 캡처가 없습니다.
+              매칭 흐름과 요양 시설 검색 화면은 위 <a href="https://youtube.com/playlist?list=PLGlP69JJ_dOxD_eBhicZ3IUA_8EeCJixE" target="_blank" rel="noopener">작품 영상</a>에서
+              확인할 수 있고, 정지 화면 캡처를 확보하면 이 페이지에 추가할 예정입니다.
+            </div>
+          </section>
+
+        </div>
       </div>
 
+      <nav class="pager" aria-label="프로젝트 이동">
+        <a href="energy.html"><small>이전</small><b>← 메타버스 에너지 전시관</b></a>
+        <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
+        <a class="is-end" href="sketchers.html"><small>다음</small><b>스케치스 →</b></a>
+      </nav>
     </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap wrap--content">
+        <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
+        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 정유리. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../index.html#work">프로젝트 전체</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+
+  <script src="../js/site.js" defer></script>
 </body>
 </html>

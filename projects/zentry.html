@@ -2,137 +2,507 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>젠트리 - 정유리 Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>젠트리 · 두리틀 — 정유리 포트폴리오</title>
+  <meta name="description" content="심부전 등 만성 질환 반려동물을 위한 디지털 헬스케어 플랫폼 ‘두리틀’ 케이스 스터디. 수의사용 앱과 공식 웹사이트를 담당했습니다.">
+
+  <link rel="canonical" href="https://theglass-1002.github.io/projects/zentry.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="정유리 · Frontend Developer">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="젠트리 · 두리틀 — 정유리 포트폴리오">
+  <meta property="og:description" content="심부전 등 만성 질환 반려동물을 위한 디지털 헬스케어 플랫폼 ‘두리틀’ 케이스 스터디. 수의사용 앱과 공식 웹사이트를 담당했습니다.">
+  <meta property="og:url" content="https://theglass-1002.github.io/projects/zentry.html">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/zentry/zentry-device-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="../index.html" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="../index.html#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Project Detail -->
-  <main class="project-detail">
-    <div class="container">
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><span aria-current="page">젠트리 · 두리틀</span></li>
+        </ol>
+      </nav>
 
-      <!-- Project Header -->
-      <div class="project-detail-header">
-        <h1>젠트리 (Zentry)</h1>
-        <p class="project-detail-subtitle">인터랙티브 웹 경험 구현</p>
-      </div>
+      <header class="ph">
+        <span class="ph__kicker">Case study</span>
+        <h1>젠트리 · 두리틀</h1>
+        <p class="ph__lead">심부전 등 만성 질환을 앓는 반려동물의 심박·호흡을 실시간으로 보는 디지털 헬스케어 플랫폼. 가정용 앱부터 동물병원 수술실에서 쓰는 마취 모니터링 화면까지, 2년 6개월간 앱과 웹을 함께 맡았습니다.</p>
 
-      <!-- Project Overview -->
-      <section class="project-section">
-        <h2>프로젝트 개요</h2>
-        <p>
-          젠트리는 수의사와 반려동물 관리를 위한 통합 플랫폼입니다.
-          Flutter로 개발한 수의사 앱(Vet)과 React로 구축한 관리자 웹사이트로 구성되어 있으며,
-          최신 웹/모바일 기술을 활용하여 효율적인 동물 병원 관리 시스템을 제공합니다.
-        </p>
-      </section>
-
-      <!-- Responsibilities -->
-      <section class="project-section">
-        <h2>담당 역할</h2>
-
-        <h3>수의사 앱 (Flutter)</h3>
-        <ul>
-          <li>Flutter 기반 모바일 앱 개발</li>
-          <li>수의사 진료 기록 관리 기능 구현</li>
-          <li>반려동물 정보 관리 시스템</li>
-          <li>크로스 플랫폼(iOS/Android) 개발</li>
-        </ul>
-
-        <h3>관리자 웹사이트 (React)</h3>
-        <ul>
-          <li>React + TypeScript 기반 관리자 페이지 개발</li>
-          <li>병원 운영 관리 대시보드 구현</li>
-          <li>데이터 시각화 및 통계 기능</li>
-          <li>반응형 웹 디자인 적용</li>
-        </ul>
-      </section>
-
-      <!-- Technology Stack -->
-      <section class="project-section">
-        <h2>기술 스택</h2>
-        <div class="tech-stack-grid">
-          <div class="tech-item">
-            <h3>Mobile (Vet App)</h3>
-            <p>Flutter, Dart, iOS/Android</p>
+        <dl class="ph__meta">
+          <div>
+            <dt>기간</dt>
+            <dd>2022.09 – 2025.02 (2년 6개월)</dd>
           </div>
-          <div class="tech-item">
-            <h3>Web (Admin)</h3>
-            <p>React, TypeScript, JavaScript</p>
+          <div>
+            <dt>유형</dt>
+            <dd>(주)젠트리 재직 중 참여 프로젝트</dd>
           </div>
-          <div class="tech-item">
-            <h3>Styling</h3>
-            <p>CSS3, Responsive Design, Material Design</p>
+          <div>
+            <dt>역할</dt>
+            <dd>두리틀 수의사용 APP 퍼블리싱 · 공식/관리자 웹사이트 개발</dd>
           </div>
-          <div class="tech-item">
-            <h3>Tools</h3>
-            <p>Git, Firebase, REST API</p>
+          <div>
+            <dt>핵심 기술</dt>
+            <dd>Flutter · Dart · React · TCP/WebSocket</dd>
           </div>
-        </div>
-      </section>
-
-      <!-- Screenshots -->
-      <section class="project-section">
-        <h2>프로젝트 스크린샷</h2>
-        <div class="project-screenshots">
-          <img src="../images/projects/zentry/screen-1.png" alt="젠트리 화면 1" loading="lazy">
-          <img src="../images/projects/zentry/screen-2.png" alt="젠트리 화면 2" loading="lazy">
-          <img src="../images/projects/zentry/screen-3.png" alt="젠트리 화면 3" loading="lazy">
-        </div>
-      </section>
-
-      <!-- Project Info -->
-      <section class="project-section">
-        <h2>프로젝트 정보</h2>
-        <dl class="project-info-list">
-          <dt>개발 기간</dt>
-          <dd>2022.09 - 2025.02 (2년 6개월)</dd>
-
-          <dt>프로젝트 유형</dt>
-          <dd>(주)젠트리 재직 중 참여 프로젝트</dd>
-
-          <dt>팀 구성</dt>
-          <dd>프론트엔드 개발</dd>
-
-          <dt>주요 성과</dt>
-          <dd>
-            • Flutter 기반 수의사 전용 모바일 앱 개발<br>
-            • React 기반 관리자 웹사이트 구축<br>
-            • 크로스 플랫폼 통합 솔루션 제공<br>
-            • 병원 운영 효율화를 위한 관리 시스템 구현
-          </dd>
         </dl>
-      </section>
 
-      <!-- Back to Portfolio -->
-      <div class="back-to-portfolio">
-        <a href="../index.html#portfolio" class="btn btn-secondary">← 포트폴리오로 돌아가기</a>
+        <div class="ph__actions">
+          <a class="btn btn--primary" href="https://zentry.kr" target="_blank" rel="noopener">zentry.kr 방문</a>
+        </div>
+      </header>
+    </div>
+
+    <div class="wrap wrap--media">
+      <figure class="fig-hero is-plain">
+        <img src="../images/projects/zentry/zentry-device-hero.jpg" width="1600" height="1067"
+             alt="반려견이 목에 두리틀 웨어러블 밴드를 착용한 채 아이와 함께 침대에 누워 잠들어 있다."
+             fetchpriority="high" decoding="async">
+        <figcaption>두리틀은 병원에 있을 때만 쓰는 장비가 아닙니다. 집에서 자는 동안의 심박·호흡도 같은 데이터로 쌓이고, 그 데이터를 보는 화면이 가정용과 수의사용으로 나뉩니다.</figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <div class="layout">
+
+        <aside class="side" aria-label="이 페이지 목차와 정보">
+          <p class="side__title">목차</p>
+          <ul class="toc">
+            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#scope">담당 범위</a></li>
+            <li><a href="#system">두리틀 시스템 구조</a></li>
+            <li><a href="#vet">두리틀 벳 — 수의사용 앱</a></li>
+            <li><a href="#home">두리틀 홈 — 가정용 앱</a></li>
+            <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
+            <li><a href="#feedback">서비스 보완과 피드백</a></li>
+            <li><a href="#stack">기술 스택</a></li>
+            <li><a href="#closing">정리</a></li>
+          </ul>
+          <dl class="side__facts">
+            <div>
+              <dt>팀 구성</dt>
+              <dd>프론트엔드 개발</dd>
+            </div>
+            <div>
+              <dt>제품군</dt>
+              <dd>두리틀 홈 · 두리틀 벳 · 두리틀 싱글 · 두리틀 마취 · 두리틀 멀티</dd>
+            </div>
+            <div>
+              <dt>서비스</dt>
+              <dd><a href="https://zentry.kr" target="_blank" rel="noopener">zentry.kr</a></dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="content prose">
+          <details class="toc-mobile">
+            <summary>목차</summary>
+            <ul class="toc">
+              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#scope">담당 범위</a></li>
+              <li><a href="#system">두리틀 시스템 구조</a></li>
+              <li><a href="#vet">두리틀 벳 — 수의사용 앱</a></li>
+              <li><a href="#home">두리틀 홈 — 가정용 앱</a></li>
+              <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
+              <li><a href="#feedback">서비스 보완과 피드백</a></li>
+              <li><a href="#stack">기술 스택</a></li>
+              <li><a href="#closing">정리</a></li>
+            </ul>
+          </details>
+
+
+          <section class="cs-section" aria-labelledby="overview">
+            <h2 id="overview">프로젝트 개요</h2>
+            <p>
+              (주)젠트리는 심부전 등 만성 질환을 앓는 반려동물을 위한 디지털 헬스케어 솔루션을 만듭니다.
+              가정용 모니터링 기기부터 수의사용 전문 마취 모니터링 장비까지,
+              반려동물의 건강 상태를 실시간으로 체계적으로 관리하는 <strong>‘두리틀’ 시리즈</strong>가 제품군입니다.
+            </p>
+            <div class="story">
+              <div class="story__text">
+                <p>
+                  측정은 반려동물이 착용하는 웨어러블 밴드가 담당합니다.
+                  밴드가 심박수와 호흡수를 읽어 블루투스로 넘기고, 그 값이 앱과 병원 화면에 실시간으로 나타납니다.
+                </p>
+                <p>
+                  제가 맡은 일은 이 <strong>숫자를 사람이 판단할 수 있는 화면으로 만드는 쪽</strong>이었습니다.
+                  같은 심박수 값이라도 집에서 보호자가 보는 화면과 수술실에서 수의사가 보는 화면은 완전히 달라야 합니다.
+                </p>
+              </div>
+              <figure class="is-plain">
+                <img src="../images/projects/zentry/zentry-wearable.jpg" width="1000" height="847"
+                     alt="두리틀 웨어러블 밴드 제품 사진. 검은색 밴드에 강아지 얼굴 모양 로고가 새겨진 사각형 본체가 달려 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>두리틀 웨어러블 밴드.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="scope">
+            <h2 id="scope">담당 범위</h2>
+            <p>재직 기간 동안 아래 세 가지를 담당했습니다.</p>
+            <ul class="role-list">
+              <li>
+                <strong>두리틀 수의사용 APP 개발</strong>
+                <span>초기 수의사 앱의 화면 구성과 기획에 참여하고, Flutter로 퍼블리싱했습니다.</span>
+              </li>
+              <li>
+                <strong>젠트리 공식 웹사이트 개발</strong>
+                <span>PHP 기반 기존 사이트를 React 컴포넌트 구조로 다시 만들고 반응형을 적용했습니다.</span>
+              </li>
+              <li>
+                <strong>젠트리 관리자용 웹사이트 개발</strong>
+                <span>운영 데이터를 확인하는 관리자 화면을 담당했습니다.</span>
+              </li>
+            </ul>
+          </section>
+
+          <section class="cs-section" aria-labelledby="system">
+            <h2 id="system">두리틀 시스템 구조</h2>
+            <p>
+              두리틀은 앱 하나가 아니라 <strong>사용 장소에 따라 갈라지는 여러 화면의 묶음</strong>입니다.
+              어떤 화면을 만들지 정하기 전에 데이터가 어디서 와서 어디로 가는지를 먼저 그렸습니다.
+            </p>
+
+            <figure>
+              <img src="../images/projects/zentry/zentry-architecture.png" width="1000" height="826"
+                   alt="두리틀 초기 서비스 구조도. 왼쪽에 가정 돌봄과 병원 돌봄 경로가 나뉘어 웨어러블에서 블루투스로 스마트폰과 BLE 라우터를 거치고, 가운데 와이파이 라우터와 DB 서버를 지나 오른쪽의 심부전 앱, 두리틀 웹페이지, 입원환자 모니터링 앱, 마취 모니터링 앱으로 이어진다."
+                   loading="lazy" decoding="async">
+              <figcaption>초기 서비스 구조도. 측정 기기부터 각 화면까지의 경로를 정리한 문서입니다.</figcaption>
+            </figure>
+
+            <div class="compare">
+              <div>
+                <h3>가정 (Home care)</h3>
+                <ul>
+                  <li>만성 심부전용 웨어러블 → 블루투스 → 보호자 스마트폰</li>
+                  <li>와이파이 또는 LTE로 서버에 전송</li>
+                  <li>보호자용 <strong>두리틀 홈</strong> 화면</li>
+                </ul>
+              </div>
+              <div>
+                <h3>병원 (Hospital care)</h3>
+                <ul>
+                  <li>입원환자용 웨어러블 → 블루투스 → BLE 라우터 → 유선/무선 네트워크</li>
+                  <li>마취 모니터링 디바이스 → 크롬북 디스플레이</li>
+                  <li>수의사용 <strong>두리틀 벳 · 싱글 · 마취 · 멀티</strong> 화면</li>
+                </ul>
+              </div>
+            </div>
+
+            <p>
+              화면을 나눈 기준은 <strong>보는 사람이 그 순간 무엇을 결정해야 하는가</strong>였습니다.
+              보호자는 “며칠간의 흐름이 괜찮은가”를 보고, 마취실 수의사는 “지금 이 숫자가 위험한가”를 봅니다.
+              전자는 그래프, 후자는 큰 숫자와 색으로 갔습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="vet">
+            <h2 id="vet">두리틀 벳 — 수의사용 앱</h2>
+            <p>
+              두리틀 벳은 병원에 등록된 반려동물의 심박수와 호흡수를 수의사가 실시간으로 모니터링하는 앱입니다.
+              수술 중에는 <strong>두리틀 멀티 앱</strong>으로 생체 데이터를 실시간 연동·확인할 수 있고,
+              병원 내 직원 관리 기능까지 통합해 수의사용 헬스케어 플랫폼으로 확장 개발됐습니다.
+              저는 초기 수의사 앱의 화면 구성과 기획 단계부터 참여했습니다.
+            </p>
+
+            <h3>환자 목록과 실시간 모니터</h3>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/zentry/zentry-vet-list.png" width="643" height="900"
+                     alt="두리틀 벳 심부전 환자 목록 화면. 전체·개·고양이 필터 아래로 차트번호, 이름, 성별, 품종, 나이, 심부전 단계, 등록일이 한 줄씩 정리돼 있고 하단에 환자 등록 버튼이 있다."
+                     loading="lazy" decoding="async">
+                <figcaption><b>Heart Failure 탭</b> — 차트번호·이름·품종·나이·성별·단계로 환자를 찾는 목록.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/zentry/zentry-vet-monitor.png" width="643" height="900"
+                     alt="두리틀 벳 실시간 모니터 화면. 검은 배경에 환자별 카드가 세로로 놓이고 각 카드에 이름, 차트번호, 병실 번호와 함께 초록색 심박수와 파란색 호흡수가 큰 숫자로 표시돼 있다. 일부 카드는 붉은 배경으로 강조돼 있다."
+                     loading="lazy" decoding="async">
+                <figcaption><b>Patient Monitor 탭</b> — 병실별 실시간 심박수(초록)·호흡수(파랑).</figcaption>
+              </figure>
+            </div>
+            <p>
+              같은 앱 안에 성격이 다른 두 화면을 넣어야 했습니다.
+              목록은 <strong>찾는 화면</strong>이라 흰 배경에 정보를 촘촘히 담고,
+              모니터는 <strong>지켜보는 화면</strong>이라 검은 배경에 숫자만 크게 남겼습니다.
+              어두운 수술실·입원실 조명에서 멀리서도 읽혀야 하고, 값이 범위를 벗어나면 카드 전체가 붉게 바뀌어
+              숫자를 읽기 전에 이상을 먼저 알아차릴 수 있게 했습니다.
+              연결이 끊겨 값이 없을 때는 0이 아니라 <code>--</code>로 표시해, 측정값 0과 미수신을 구분했습니다.
+            </p>
+
+            <h3>실시간 통신 처리</h3>
+            <p>
+              두리틀 싱글 및 마취 화면에서는 <strong>TCP 소켓을 통해 수신된 바이트 데이터를 16진수로 변환한 뒤,
+              이를 실시간으로 화면에 표시하는 기능</strong>을 구현했습니다.
+              측정 기기가 보내는 원본 바이트 스트림을 화면 단위의 값으로 바꾸는 구간입니다.
+            </p>
+
+            <h3>수술 · 회복 기록 시각화</h3>
+            <figure>
+              <img src="../images/projects/zentry/zentry-anesthesia-graph.png" width="1100" height="594"
+                   alt="마취 이력 그래프 화면. 상단에 날짜, 차트번호, 환자 이름, 품종, 나이가 표시되고 아래 그래프에 초록색 심박수와 파란색 호흡수 점이 시간축에 따라 찍혀 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>
+                환자 이름을 누르면 나오는 <b>마취 이력 그래프</b>. 수술·회복 시간 동안 기록된 생체 데이터를
+                타임라인별 변화로 확인할 수 있게 구성했습니다.
+              </figcaption>
+            </figure>
+            <p>
+              실시간 화면이 “지금”을 담당한다면, 이 그래프는 “지나간 구간”을 담당합니다.
+              수술 시작·종료 시각을 함께 표시해, 값의 변화가 어느 처치 구간에서 일어났는지 짚을 수 있게 했습니다.
+            </p>
+
+            <h3>실제 병원에서의 사용</h3>
+            <figure>
+              <img src="../images/projects/zentry/zentry-multi-clinic.jpg" width="1200" height="861"
+                   alt="동물병원 벽에 설치된 태블릿 사진. 두리틀 멀티 화면에 여섯 개 병실 카드가 표시되고 각 카드에 품종, 체중, 나이, 성별, 담당 수의사와 심박수·호흡수가 들어 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>
+                동물병원에 설치된 <b>두리틀 멀티</b>. 여섯 개 병실을 한 화면에 놓고
+                각 카드에 품종·체중·나이·담당 수의사와 CPR/DNR 표시까지 함께 담았습니다.
+              </figcaption>
+            </figure>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/zentry/zentry-ward-live.jpg" width="1400" height="786"
+                     alt="태블릿과 스마트폰에서 두리틀 입원환자 모니터링 화면이 동시에 실행되고 있는 사진. 각 환자 카드에 품종, 나이, 성별, 담당자, 체중과 배터리·블루투스 상태가 표시돼 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>태블릿과 스마트폰에서 같은 데이터를 동시에 확인하는 모습.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/zentry/zentry-anesthesia-live.jpg" width="900" height="562"
+                     alt="동물병원 수술실 장비 옆에 놓인 태블릿 사진. 두리틀 마취 모니터링 화면에 심전도와 호흡 파형이 실시간으로 그려지고 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>수술실 장비 옆에서 동작하는 마취 모니터링 화면.</figcaption>
+              </figure>
+            </div>
+            <p>
+              화면이 실제로 놓이는 자리를 보고 나서 바꾼 것들이 있습니다.
+              태블릿이 벽에 붙어 있거나 장비 사이에 끼워져 있어서 <strong>서 있는 거리에서 읽히는 크기</strong>가 필요했고,
+              장갑을 낀 손으로도 누를 수 있도록 터치 영역을 넉넉히 잡아야 했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="home">
+            <h2 id="home">두리틀 홈 — 가정용 앱</h2>
+            <div class="story">
+              <div class="story__text">
+                <p>
+                  두리틀 홈 화면에서는 <strong>REST API를 통해 고객 데이터를 조회하고 수정하는 기능</strong>을 구현했습니다.
+                </p>
+                <p>
+                  보호자용 화면은 수의사용과 목적이 다릅니다.
+                  지금 값이 위험한지 판단하는 게 아니라, <strong>기간을 정해 흐름을 보는 것</strong>이 주된 사용법입니다.
+                  그래서 상단에 날짜 범위 선택을 두고, 심박수와 호흡수를 같은 시간축 위에 색만 달리해 겹쳐 놨습니다.
+                </p>
+                <p>
+                  하단 탭은 Home · Monitor · Record · Mypage 네 개로만 두고,
+                  기록을 보는 Record를 별도 탭으로 분리했습니다.
+                </p>
+              </div>
+              <figure>
+                <img src="../images/projects/zentry/zentry-home-record.png" width="328" height="640"
+                     alt="두리틀 홈 앱 기록 화면. 상단에 반려동물 이름과 품종, 나이가 있고 날짜 범위 선택 아래 빨간 심박수와 파란 호흡수 값이 시간축 그래프로 표시된다. 하단에 홈·모니터·기록·마이페이지 탭이 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>두리틀 홈의 기록 화면.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="web">
+            <h2 id="web">공식 웹사이트 리뉴얼</h2>
+            <p>
+              공식 웹사이트는 이미 운영 중이었지만 구조에 문제가 있었습니다.
+              업데이트 기획에 참여한 뒤, 문제를 정리하고 다시 만드는 작업을 맡았습니다.
+            </p>
+
+            <div class="compare">
+              <div>
+                <h3>기존 문제점</h3>
+                <ul>
+                  <li>PHP 기반 단일 페이지 구조로, UI와 데이터 로직이 뒤섞여 유지보수가 어려움</li>
+                  <li>HTML, CSS, DB 통신 코드가 한 파일 안에 혼합되어 가독성과 재사용성 저하</li>
+                  <li>반응형 웹 미지원으로 다양한 기기에서 레이아웃 깨짐</li>
+                </ul>
+              </div>
+              <div class="is-after">
+                <h3>개선 방향 및 역할</h3>
+                <ul>
+                  <li>React 프레임워크 도입 및 컴포넌트 기반 구조로 재구성</li>
+                  <li>UI와 데이터 로직을 명확히 분리하여 구조적 안정성 확보</li>
+                  <li>각 기능을 독립된 컴포넌트로 나누어 확장성과 유지보수성 향상</li>
+                  <li>모바일·태블릿·데스크탑에서 유연하게 동작하도록 리디자인</li>
+                  <li>CSS 미디어쿼리 및 반응형 유틸리티 적용</li>
+                  <li>사용자 경험 개선 및 접근성 향상</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="story">
+              <div class="story__text">
+                <p>
+                  결과물은 데스크톱과 모바일에서 같은 내용을 각각의 폭에 맞게 보여주는 형태가 됐습니다.
+                  제품 소개는 대상별로 <strong>수의사 / 보호자 / 반려동물</strong> 세 갈래로 나누어,
+                  들어온 사람이 자기에게 해당하는 줄을 먼저 찾을 수 있게 했습니다.
+                </p>
+              </div>
+              <figure>
+                <img src="../images/projects/zentry/zentry-web-mobile.png" width="332" height="720"
+                     alt="모바일 브라우저에서 열린 젠트리 공식 웹사이트. 로고와 햄버거 메뉴 아래 두리틀 제품 소개 문구와 진료 사진이 세로로 배치돼 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>모바일에서 본 zentry.kr.</figcaption>
+              </figure>
+            </div>
+
+            <figure class="is-plain">
+              <img src="../images/projects/zentry/zentry-web-desktop.jpg" width="1200" height="1200"
+                   alt="모니터 목업에 표시된 젠트리 공식 웹사이트 데스크톱 화면. 왼쪽에 두리틀 제품 소개 문구, 오른쪽에 수의사가 반려견을 진료하는 사진이 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>데스크톱 폭에서는 소개 문구와 이미지를 좌우로 나눠 배치했습니다.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs-section" aria-labelledby="feedback">
+            <h2 id="feedback">서비스 보완과 피드백</h2>
+            <p>
+              데이터 통신뿐 아니라 서비스 전반의 품질 개선에도 참여했습니다.
+              기능 구현에서 멈추지 않고, 주기적인 팀 회의와 협업을 통해 앱의 완성도를 계속 높였습니다.
+            </p>
+            <div class="story">
+              <div class="story__text">
+                <p>
+                  개발 과정에서 팀원들이 기능별 개선사항과 사용자 피드백을 정리한 문서를 공유해 줬고,
+                  이를 근거로 <strong>UI/UX, 동작 흐름, 예외 처리</strong> 등 여러 측면에서 기능을 보완하며 안정성을 강화했습니다.
+                </p>
+                <p>
+                  문서에는 “같은 QR코드로 중복 등록이 가능하고 같은 차트번호도 등록된다”처럼
+                  정상 흐름에서는 드러나지 않는 문제가 많았습니다.
+                  실제 병원에서는 이런 중복이 곧 오진으로 이어질 수 있어, <strong>예외 처리 항목을 별도로 추적</strong>했습니다.
+                </p>
+              </div>
+              <figure>
+                <img src="../images/projects/zentry/zentry-feedback-doc.png" width="1100" height="970"
+                     alt="피드백 정리 문서. 번호별로 개선 요청 내용이 적힌 표에 각 항목과 관련된 앱 화면 캡처가 나란히 붙어 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>팀에서 공유된 피드백 문서. 항목마다 관련 화면이 함께 붙어 있습니다.</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">기술 스택</h2>
+            <p>
+              앱은 iOS와 안드로이드를 함께 내야 해서 <strong>Flutter</strong>로 갔고,
+              측정 기기와의 통신은 실시간성이 필요해 <strong>TCP 소켓과 WebSocket</strong>을 사용했습니다.
+              공식 웹사이트는 유지보수 문제를 해결하려는 목적이 분명했기 때문에 컴포넌트 구조를 쓸 수 있는 <strong>React</strong>를 골랐습니다.
+            </p>
+            <ul class="tags tags--brand">
+              <li>Flutter · Dart</li>
+              <li>React</li>
+              <li>HTML/CSS · JavaScript</li>
+              <li>TCP/IP · WebSocket</li>
+              <li>REST API</li>
+              <li>MySQL · MariaDB · Redis</li>
+              <li>Apache · Nginx</li>
+              <li>Git · GitHub · Postman · Notion · Trello</li>
+            </ul>
+          </section>
+
+          <section class="cs-section" aria-labelledby="closing">
+            <h2 id="closing">정리</h2>
+            <p>
+              두리틀은 화면이 틀리면 사람이 잘못 판단하게 되는 종류의 서비스였습니다.
+              수술실에서 값을 잘못 읽거나, 미수신을 0으로 오해하거나, 같은 환자가 두 번 등록되면
+              그건 UI 문제로 끝나지 않습니다.
+            </p>
+            <p>
+              그래서 이 프로젝트에서 배운 것은 대부분 <strong>정상 흐름 밖에서</strong> 나왔습니다.
+              데이터가 안 올 때, 배터리가 없을 때, 같은 값이 두 번 들어올 때 화면이 무엇을 말해야 하는지를
+              팀 피드백 문서를 따라가며 하나씩 채운 2년 6개월이었습니다.
+            </p>
+          </section>
+
+        </div>
       </div>
 
+      <nav class="pager" aria-label="프로젝트 이동">
+        <a href="jango.html"><small>이전</small><b>← 장고</b></a>
+        <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
+        <a class="is-end" href="newo.html"><small>다음</small><b>뉴오 →</b></a>
+      </nav>
     </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap wrap--content">
+        <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
+        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 정유리. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../index.html#work">프로젝트 전체</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+
+  <script src="../js/site.js" defer></script>
 </body>
 </html>

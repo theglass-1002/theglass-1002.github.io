@@ -2,91 +2,372 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>뉴오 - 정유리 Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>뉴오 (NEW:O) — 정유리 포트폴리오</title>
+  <meta name="description" content="코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 창업 프로젝트 ‘뉴오’ 케이스 스터디.">
+
+  <link rel="canonical" href="https://theglass-1002.github.io/projects/newo.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="정유리 · Frontend Developer">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="뉴오 (NEW:O) — 정유리 포트폴리오">
+  <meta property="og:description" content="코로나로 멈춘 학원 커뮤니티를 메타버스 오피스로 옮긴 창업 프로젝트 ‘뉴오’ 케이스 스터디.">
+  <meta property="og:url" content="https://theglass-1002.github.io/projects/newo.html">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/newo/newo-metaverse.png">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="../index.html" class="logo">정유리</a>
-        <ul class="nav-menu">
-          <li><a href="../index.html#portfolio">Portfolio</a></li>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
+        <span class="nav-toggle__bars" aria-hidden="true"></span>
+        <span class="sr-only">메뉴 열기</span>
+      </button>
+      <nav class="nav" id="primary-nav" aria-label="주요 메뉴">
+        <ul class="nav__list">
+          <li><a href="../index.html#work" aria-current="page">Work</a></li>
           <li><a href="../index.html#about">About</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
+          <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="project-detail">
-    <div class="container">
+  <main id="main">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="위치">
+        <ol>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#work">Work</a></li>
+          <li><span aria-current="page">뉴오</span></li>
+        </ol>
+      </nav>
 
-      <div class="project-detail-header">
-        <h1>뉴오 (NEWO)</h1>
-        <p class="project-detail-subtitle">웹 개발 프로젝트</p>
-      </div>
+      <header class="ph">
+        <span class="ph__kicker">Case study</span>
+        <h1>뉴오 (NEW:O)</h1>
+        <p class="ph__lead">코로나로 대면 활동이 멈춘 학원 커뮤니티를, 도트 그래픽 메타버스 오피스로 옮긴 창업 프로젝트. 만들기 전에 설문으로 실제 사용 습관을 먼저 확인했습니다.</p>
 
-      <section class="project-section">
-        <h2>프로젝트 개요</h2>
-        <p>
-          뉴오에서 진행한 웹 개발 프로젝트입니다.
-          프론트엔드 개발을 담당하며 사용자 친화적인 웹 인터페이스를 구현했습니다.
-        </p>
-      </section>
-
-      <section class="project-section">
-        <h2>담당 역할</h2>
-        <p><strong>프론트엔드 개발</strong></p>
-        <ul>
-          <li>웹 사이트 프론트엔드 개발</li>
-          <li>반응형 웹 디자인 구현</li>
-          <li>사용자 인터페이스 최적화</li>
-        </ul>
-      </section>
-
-      <section class="project-section">
-        <h2>기술 스택</h2>
-        <div class="tech-stack-grid">
-          <div class="tech-item">
-            <h3>Frontend</h3>
-            <p>HTML5, CSS3, JavaScript</p>
+        <dl class="ph__meta">
+          <div>
+            <dt>기간</dt>
+            <dd>2022.02 – 2022.06 (4개월)</dd>
           </div>
-          <div class="tech-item">
-            <h3>Design</h3>
-            <p>Responsive Web Design</p>
+          <div>
+            <dt>유형</dt>
+            <dd>창업 프로젝트 (팀 4명)</dd>
           </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>프로젝트 정보</h2>
-        <dl class="project-info-list">
-          <dt>개발 기간</dt>
-          <dd>2022.02 - 2022.06 (4개월)</dd>
-
-          <dt>프로젝트 유형</dt>
-          <dd>뉴오 재직 중 참여 프로젝트</dd>
-
-          <dt>팀 구성</dt>
-          <dd>프론트엔드 개발</dd>
+          <div>
+            <dt>역할</dt>
+            <dd>백엔드 40% · 프론트엔드 30% · 아이디어 30%</dd>
+          </div>
+          <div>
+            <dt>핵심 기술</dt>
+            <dd>Phaser.js · Java WebSocket · PHP · MariaDB</dd>
+          </div>
         </dl>
-      </section>
 
-      <div class="back-to-portfolio">
-        <a href="../index.html#portfolio" class="btn btn-secondary">← 포트폴리오로 돌아가기</a>
+      </header>
+    </div>
+
+    <div class="wrap wrap--media">
+      <figure class="fig-hero">
+        <img src="../images/projects/newo/newo-landing.png" width="1180" height="634"
+             alt="뉴오 웹 서비스 첫 화면. 도트 캐릭터 네 명 아래 ‘메타버스에서 팀원들과 함께 공부해요’ 문구와 GO TO NEW.O 버튼이 있고, 오른쪽에 메타버스 맵 미리보기가 있다."
+             fetchpriority="high" decoding="async">
+        <figcaption>웹 서비스 첫 화면. 메타버스 공간으로 들어가는 입구와, 웹에서 처리하는 기능(할 일·게시판·채팅)을 왼쪽 사이드바로 나눠 뒀습니다.</figcaption>
+      </figure>
+    </div>
+
+    <div class="wrap">
+      <div class="layout">
+
+        <aside class="side" aria-label="이 페이지 목차와 정보">
+          <p class="side__title">목차</p>
+          <ul class="toc">
+            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#team">팀과 담당 범위</a></li>
+            <li><a href="#research">기획 단계 — 사전 설문</a></li>
+            <li><a href="#metaverse">메타버스 공간</a></li>
+            <li><a href="#web">웹 서비스</a></li>
+            <li><a href="#stack">기술 스택</a></li>
+            <li><a href="#closing">정리</a></li>
+          </ul>
+          <dl class="side__facts">
+            <div>
+              <dt>개발 인원</dt>
+              <dd>4명</dd>
+            </div>
+            <div>
+              <dt>대상 사용자</dt>
+              <dd>팀노바 학원생 및 학원 직원</dd>
+            </div>
+            <div>
+              <dt>기여도</dt>
+              <dd>Back End 40% · Front End 30% · 아이디어 제공 30%</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="content prose">
+          <details class="toc-mobile">
+            <summary>목차</summary>
+            <ul class="toc">
+              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#team">팀과 담당 범위</a></li>
+              <li><a href="#research">기획 단계 — 사전 설문</a></li>
+              <li><a href="#metaverse">메타버스 공간</a></li>
+              <li><a href="#web">웹 서비스</a></li>
+              <li><a href="#stack">기술 스택</a></li>
+              <li><a href="#closing">정리</a></li>
+            </ul>
+          </details>
+
+
+          <section class="cs-section" aria-labelledby="overview">
+            <h2 id="overview">프로젝트 개요</h2>
+            <p>
+              뉴오는 학원 직원들이 팀노바 학생들을 효율적으로 관리할 수 있도록 만든 학원생 관리 서비스입니다.
+              코로나로 대면 업무가 어려워진 상황에서, <strong>메타버스 기반 시스템을 도입해 소통과 관리가 원활하게 이루어지도록</strong> 개선한 플랫폼입니다.
+            </p>
+            <p>
+              목표는 “새로운 오피스 공간”이었습니다.
+              화상회의 도구는 회의가 있을 때만 켜지지만, 학원 커뮤니티에는
+              <strong>딱히 용건이 없어도 같은 공간에 있다는 감각</strong>이 필요했습니다.
+              그래서 접속하면 계속 머무는 형태의 2D 공간을 선택했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="team">
+            <h2 id="team">팀과 담당 범위</h2>
+            <p>4명이 4개월간 진행했고, 저는 팀원으로 참여해 다음 비중으로 기여했습니다.</p>
+            <ul>
+              <li><strong>백엔드 개발</strong> — 기여도 40%</li>
+              <li><strong>프론트엔드 개발</strong> — 기여도 30%</li>
+              <li><strong>아이디어 제공</strong> — 기여도 30%</li>
+            </ul>
+            <p>
+              한 사람이 특정 레이어만 맡기 어려운 규모였습니다.
+              그래서 기능 단위로 나눠 게시판·할 일·멘토링처럼 <strong>화면과 서버를 한 사람이 끝까지 붙이는 방식</strong>으로 진행했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="research">
+            <h2 id="research">기획 단계 — 사전 설문</h2>
+            <div class="story">
+              <div class="story__text">
+                <p>
+                  사용자가 원하는 서비스를 만들기 위해 <strong>개발 전에 사전 설문조사</strong>를 진행했습니다.
+                  기수(6기·7기·8기)를 먼저 구분하고, 기존에 쓰던 게더타운 사용 경험이 있는지,
+                  있다면 일주일에 몇 번 그 공간에서 공부하는지를 물었습니다.
+                </p>
+                <p>
+                  “메타버스가 필요한가”를 묻지 않고 <strong>이미 하고 있는 행동의 빈도</strong>를 물은 것이 이 설문의 요점입니다.
+                  기존 도구를 실제로 얼마나 쓰는지 알면, 새로 만들 공간이 대체해야 하는 수준도 정해집니다.
+                </p>
+                <p>
+                  설문에는 <strong>57건의 응답</strong>이 모였고, 이 결과를 기준으로 만들 기능의 순서를 정했습니다.
+                </p>
+              </div>
+              <figure>
+                <img src="../images/projects/newo/newo-survey.png" width="656" height="800"
+                     alt="구글 폼으로 만든 팀노바 메타버스 설문조사 화면. 응답 57건이 표시되고, 기수 선택과 게더타운 사용 경험 여부, 주당 이용 횟수 문항이 이어진다."
+                     loading="lazy" decoding="async">
+                <figcaption>사전 설문조사. 응답 57건.</figcaption>
+              </figure>
+            </div>
+            <p>
+              서비스 출시 후에도 <strong>개선을 위한 사용자 의견을 지속적으로 수렴</strong>했습니다.
+              게시판에 ‘불편사항 접수’ 글이 올라오고, 그 내용이 다음 기능 수정으로 이어지는 구조였습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="metaverse">
+            <h2 id="metaverse">메타버스 공간</h2>
+
+            <h3>캐릭터 선택</h3>
+            <figure>
+              <img src="../images/projects/newo/newo-character.png" width="1100" height="635"
+                   alt="캐릭터 변경 모달. ‘변경할 캐릭터를 선택해주세요’ 아래 도트 캐릭터 다섯 개가 나란히 있고 선택된 캐릭터에 빨간 테두리가 표시돼 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>
+                캐릭터 선택 모달. 선택 상태를 <b>테두리로 표시</b>하고 확정 버튼을 따로 둬,
+                고르는 중과 고른 뒤를 구분했습니다.
+              </figcaption>
+            </figure>
+
+            <h3>공간과 접속자</h3>
+            <figure>
+              <img src="../images/projects/newo/newo-metaverse.png" width="1180" height="618"
+                   alt="뉴오 메타버스 공간. 왼쪽에 온라인 접속자 13명의 기수와 이름 목록이 있고, 오른쪽 도트 그래픽 사무실 맵에 이름표를 달은 캐릭터들이 서 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>
+                왼쪽에 <b>현재 접속자 목록</b>, 오른쪽에 공간.
+                캐릭터마다 기수와 이름을 이름표로 붙여, 맵 안에서 바로 누구인지 알 수 있게 했습니다.
+              </figcaption>
+            </figure>
+            <p>
+              접속자 목록을 공간 옆에 상시 노출한 것은 의도한 선택입니다.
+              맵을 돌아다니며 누가 있는지 찾게 하지 않고, <strong>목록에서 먼저 확인하고 찾아가는 순서</strong>가 되도록 했습니다.
+            </p>
+
+            <h3>멘토링과 채팅</h3>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/newo/newo-mentoring.png" width="1000" height="523"
+                     alt="멘토링 패널. 날짜와 오늘의 멘토 시간대 두 건이 표시되고 마감된 시간대에는 마감 표시가 붙어 있다. 아래에 신청·예약 버튼과 대기자 리스트, 예약자 리스트가 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>
+                  <b>멘토링</b> — 멘토별 가능 시간, 마감 표시, 대기자와 예약자 목록을 한 패널에 모았습니다.
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/newo/newo-chat.png" width="900" height="893"
+                     alt="채팅 패널. 상대 이름이 상단에 있고 날짜 아래로 보낸 사람과 시간이 붙은 메시지가 이어지며, 하단에 채팅 입력창이 있다."
+                     loading="lazy" decoding="async">
+                <figcaption><b>채팅</b> — 공간을 벗어나지 않고 왼쪽 패널에서 대화합니다.</figcaption>
+              </figure>
+            </div>
+            <p>
+              멘토링은 “지금 대기 중인 사람이 몇 번째인지”가 가장 중요한 정보라고 봤습니다.
+              그래서 시간표보다 <strong>대기자 리스트를 같은 화면에</strong> 놓고, 진행 중인 항목을 표시했습니다.
+              채팅과 멘토링 모두 공간을 가리지 않는 왼쪽 패널로 열려, 대화하면서도 맵이 계속 보입니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="web">
+            <h2 id="web">웹 서비스</h2>
+            <p>
+              메타버스 공간이 “머무는 곳”이라면, 웹 쪽은 <strong>기록이 남아야 하는 기능</strong>을 담당했습니다.
+              공지와 소모임 글, 개인 할 일처럼 접속을 끊어도 남아야 하는 것들입니다.
+            </p>
+
+            <h3>게시판</h3>
+            <figure>
+              <img src="../images/projects/newo/newo-board.png" width="1180" height="678"
+                   alt="뉴오 게시판. 왼쪽에 공지사항과 소모임 카테고리가 있고, 오른쪽에 번호, 제목, 작성자 기수와 이름, 작성일이 정리된 글 목록이 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>
+                게시판. 카테고리를 왼쪽에 고정하고 목록은 <b>번호·제목·작성자·작성일</b>만 남겼습니다.
+                제목 앞에 (멘토필독), (필독)처럼 대상을 표시해 목록에서 바로 걸러 읽을 수 있게 했습니다.
+              </figcaption>
+            </figure>
+
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/newo/newo-board-club.png" width="1180" height="489"
+                     alt="글쓰기 소모임 게시판. 글 목록 아래 오른쪽에 글쓰기 버튼이 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>소모임 게시판. 목록 오른쪽 아래에 글쓰기 버튼을 둡니다.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/newo/newo-todo.png" width="1060" height="686"
+                     alt="나의 할일 화면. 왼쪽에 월간 달력과 월·주·오늘 보기 전환 버튼이 있고, 오른쪽에 선택한 날짜의 할 일 입력창과 항목 목록이 있다."
+                     loading="lazy" decoding="async">
+                <figcaption>할 일. 달력에서 날짜를 고르면 오른쪽에 그 날의 목록이 열립니다.</figcaption>
+              </figure>
+            </div>
+            <p>
+              할 일 화면은 달력과 목록을 좌우로 붙였습니다.
+              날짜를 고를 때마다 화면이 바뀌면 흐름이 끊기기 때문에,
+              <strong>달력은 그대로 두고 오른쪽 목록만 교체</strong>되도록 했습니다.
+            </p>
+          </section>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">기술 스택</h2>
+            <p>
+              2D 공간 렌더링과 캐릭터 이동은 <strong>Phaser.js</strong>로 처리했고,
+              여러 사람의 위치·채팅을 실시간으로 주고받는 부분은 <strong>Java WebSocket</strong>으로 붙였습니다.
+              접속자 위치처럼 자주 바뀌고 오래 보관할 필요 없는 값은 <strong>Redis</strong>에,
+              게시판·할 일처럼 남아야 하는 데이터는 <strong>MariaDB</strong>에 나눠 저장했습니다.
+            </p>
+            <ul class="tags tags--brand">
+              <li>HTML/CSS · JavaScript</li>
+              <li>PHP · Java</li>
+              <li>Phaser.js</li>
+              <li>Java WebSocket</li>
+              <li>Bootstrap</li>
+              <li>MariaDB · Redis</li>
+              <li>Nginx · HTTPS</li>
+              <li>Git · GitHub</li>
+            </ul>
+          </section>
+
+          <section class="cs-section" aria-labelledby="closing">
+            <h2 id="closing">정리</h2>
+            <p>
+              뉴오는 제가 처음으로 <strong>만들기 전에 물어본</strong> 프로젝트입니다.
+              설문 57건이 알려준 건 “메타버스를 원한다”가 아니라 “게더타운을 이 정도 빈도로 쓴다”였고,
+              그 숫자가 기능의 우선순위를 정했습니다.
+            </p>
+            <p>
+              4개월이라는 기간 안에서 공간과 웹 기능을 모두 넣으려면 무엇을 빼야 하는지도 계속 판단해야 했습니다.
+              결과적으로 <strong>머무는 기능은 공간에, 남는 기능은 웹에</strong> 나눈 구분이 이 프로젝트의 골격이 됐습니다.
+            </p>
+          </section>
+
+        </div>
       </div>
 
+      <nav class="pager" aria-label="프로젝트 이동">
+        <a href="zentry.html"><small>이전</small><b>← 젠트리 · 두리틀</b></a>
+        <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
+        <a class="is-end" href="energy.html"><small>다음</small><b>메타버스 에너지 전시관 →</b></a>
+      </nav>
     </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap wrap--content">
+        <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
+        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
+          <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 정유리. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <h2>정유리</h2>
+          <p class="role">Frontend Developer</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a></li>
+            <li><a href="tel:01040965625">010-4096-5625</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="../index.html#work">프로젝트 전체</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 정유리. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
+
+  <script src="../js/site.js" defer></script>
 </body>
 </html>
