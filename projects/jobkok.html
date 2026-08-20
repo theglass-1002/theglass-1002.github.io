@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://theglass-1002.github.io/images/projects/jobkok/screen-2.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260820">
 </head>
 <body>
 
@@ -51,13 +51,13 @@
           <li><span aria-current="page">잡콕</span></li>
         </ol>
       </nav>
+    </div>
 
-      <header class="ph">
-        <span class="ph__kicker">Case study</span>
-        <h1>잡콕</h1>
-        <p class="ph__lead">영상·음성 기반 AI HR 분석을 붙인 구인구직 플랫폼. 구직자가 이력서를 쓰고 모의면접을 보는 흐름과, 기업이 그 결과를 보고 인재를 고르는 흐름을 함께 담당했습니다.</p>
+    <div class="case-study-shell">
+      <aside class="case-sidebar" aria-label="프로젝트 정보">
+        <p class="case-sidebar__title">Project information</p>
 
-        <dl class="ph__meta">
+        <dl>
           <div>
             <dt>기간</dt>
             <dd>2025.09 – 2026.04 (8개월)</dd>
@@ -74,52 +74,26 @@
             <dt>핵심 기술</dt>
             <dd>Java Spring · MySQL · AI 면접 분석 연동</dd>
           </div>
+          <div>
+            <dt>서비스</dt>
+            <dd><a href="https://jobkok.kr" target="_blank" rel="noopener">jobkok.kr</a></dd>
+          </div>
         </dl>
+      </aside>
 
-        <div class="ph__actions">
-          <a class="btn btn--primary" href="https://jobkok.kr" target="_blank" rel="noopener">jobkok.kr 방문</a>
-        </div>
-      </header>
-    </div>
+      <article class="case-content">
+        <header>
+          <span class="case-kicker">Case study</span>
+          <h1>잡콕</h1>
+          <p class="ph__lead">영상·음성 기반 AI HR 분석을 붙인 구인구직 플랫폼. 구직자가 이력서를 쓰고 모의면접을 보는 흐름과, 기업이 그 결과를 보고 인재를 고르는 흐름을 함께 담당했습니다.</p>
+        </header>
 
-    <div class="wrap wrap--media">
-      <figure class="fig-hero">
-        <img src="../images/projects/jobkok/mobile-report.png" width="1200" height="818"
-             alt="잡콕 모바일 AI 면접 분석 리포트. 종합 평가, 역량 점수, 답변 분석, 개선 제안이 차트와 함께 표시된다."
-             fetchpriority="high" decoding="async">
-        <figcaption>구직자용 <b>AI 면접 분석 리포트</b>. 면접 영상을 분석해 역량별 점수, 답변 분석, 개선 제안을 제공합니다.</figcaption>
-      </figure>
-    </div>
-
-    <div class="wrap">
-      <div class="layout">
-
-        <aside class="side" aria-label="이 페이지 목차와 정보">
-          <p class="side__title">목차</p>
-          <ul class="toc">
-            <li><a href="#overview">프로젝트 개요</a></li>
-            <li><a href="#roles">담당 역할</a></li>
-            <li><a href="#seeker">구직자 흐름</a></li>
-            <li><a href="#company">기업 흐름</a></li>
-            <li><a href="#impact">실증 효과</a></li>
-            <li><a href="#stack">기술 스택</a></li>
-            <li><a href="#closing">정리</a></li>
-          </ul>
-          <dl class="side__facts">
-            <div>
-              <dt>팀 구성</dt>
-              <dd>프론트엔드 UI/UX 개발 및 백엔드 연동</dd>
-            </div>
-            <div>
-              <dt>정부 R&amp;D 과제</dt>
-              <dd>연구개발기간 2025.4.1 ~ 2026.12.31 (1년 9개월)<br>총 연구개발비 7억원</dd>
-            </div>
-            <div>
-              <dt>서비스</dt>
-              <dd><a href="https://jobkok.kr" target="_blank" rel="noopener">jobkok.kr</a></dd>
-            </div>
-          </dl>
-        </aside>
+        <figure class="case-hero">
+          <img src="../images/projects/jobkok/screen-2-interview.png"
+               width="1200" height="400"
+               alt="잡콕 AI 면접 진행 화면 - 실시간 질문 응답"
+               fetchpriority="high" decoding="async">
+        </figure>
 
         <div class="content prose">
           <details class="toc-mobile">
@@ -308,8 +282,10 @@
           </section>
 
         </div>
-      </div>
+      </article>
+    </div>
 
+    <div class="wrap">
       <nav class="pager" aria-label="프로젝트 이동">
         <a href="interview.html"><small>이전</small><b>← 면접왕</b></a>
         <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
