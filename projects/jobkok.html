@@ -44,56 +44,72 @@
 
   <main id="main">
     <div class="wrap">
-      <nav class="breadcrumb" aria-label="위치">
+      <div class="layout layout--aligned">
+
+        <!-- 머리말 — 왼쪽 위는 비우고 여기서부터 본문 기준선이 시작된다 -->
+        <div class="layout__head">
+          <nav class="breadcrumb" aria-label="위치">
         <ol>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../index.html#work">Work</a></li>
           <li><span aria-current="page">잡콕</span></li>
         </ol>
       </nav>
-    </div>
 
-    <div class="case-study-shell">
-      <aside class="case-sidebar" aria-label="프로젝트 정보">
-        <p class="case-sidebar__title">Project information</p>
+          <header class="ph">
+            <span class="ph__kicker">Case study</span>
+            <h1>잡콕</h1>
+            <p class="ph__lead">영상·음성 기반 AI HR 분석을 붙인 구인구직 플랫폼. 구직자가 이력서를 쓰고 모의면접을 보는 흐름과, 기업이 그 결과를 보고 인재를 고르는 흐름을 함께 담당했습니다.</p>
 
-        <dl>
-          <div>
-            <dt>기간</dt>
-            <dd>2025.09 – 2026.04 (8개월)</dd>
-          </div>
-          <div>
-            <dt>유형</dt>
-            <dd>대전 연구개발 사업 (정부과제)</dd>
-          </div>
-          <div>
-            <dt>역할</dt>
-            <dd>프론트엔드 UI/UX 개발 및 백엔드 연동</dd>
-          </div>
-          <div>
-            <dt>핵심 기술</dt>
-            <dd>Java Spring · MySQL · AI 면접 분석 연동</dd>
-          </div>
-          <div>
-            <dt>서비스</dt>
-            <dd><a href="https://jobkok.kr" target="_blank" rel="noopener">jobkok.kr</a></dd>
-          </div>
-        </dl>
-      </aside>
+            <dl class="ph__meta">
+              <div>
+                <dt>기간</dt>
+                <dd>2025.09 – 2026.04 (8개월)</dd>
+              </div>
+              <div>
+                <dt>유형</dt>
+                <dd>정부과제</dd>
+              </div>
+              <div>
+                <dt>역할</dt>
+                <dd>프론트엔드 UI/UX 개발 및 백엔드 연동</dd>
+              </div>
+              <div>
+                <dt>핵심 기술</dt>
+                <dd>Java Spring · MySQL · AI 면접 분석 연동</dd>
+              </div>
+            </dl>
+          </header>
+        </div>
 
-      <article class="case-content">
-        <header>
-          <span class="case-kicker">Case study</span>
-          <h1>잡콕</h1>
-          <p class="ph__lead">영상·음성 기반 AI HR 분석을 붙인 구인구직 플랫폼. 구직자가 이력서를 쓰고 모의면접을 보는 흐름과, 기업이 그 결과를 보고 인재를 고르는 흐름을 함께 담당했습니다.</p>
-        </header>
+        <!-- 사이드바 — 스크롤을 따라 고정된다 -->
+        <aside class="side" aria-label="이 페이지 정보와 목차">
+          <div class="side__cta">
+            <a class="btn btn--primary" href="https://jobkok.kr" target="_blank" rel="noopener">실제 사이트 보기</a>
+          </div>
 
-        <figure class="case-hero">
-          <img src="../images/projects/jobkok/screen-2-interview.png"
-               width="1200" height="400"
-               alt="잡콕 AI 면접 진행 화면 - 실시간 질문 응답"
-               fetchpriority="high" decoding="async">
-        </figure>
+          <div class="side__box">
+            <h2>담당 업무</h2>
+            <ul>
+              <li>Java Spring MVC 화면 개발</li>
+              <li>구직자·기업 반응형 UI</li>
+              <li>AI 모의면접 프론트엔드</li>
+              <li>이력서 작성·키워드 추천 UI</li>
+              <li>채용 공고 검색·필터</li>
+            </ul>
+          </div>
+
+          <p class="side__title">목차</p>
+          <ul class="toc">
+            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#resume">이력서 작성과 공개 범위</a></li>
+            <li><a href="#interview">AI 모의면접과 리포트</a></li>
+            <li><a href="#match">공고 추천과 검색</a></li>
+            <li><a href="#company">기업 화면</a></li>
+            <li><a href="#stack">기술 스택</a></li>
+            <li><a href="#closing">정리</a></li>
+          </ul>
+        </aside>
 
         <div class="content prose">
           <details class="toc-mobile">
@@ -109,180 +125,144 @@
             </ul>
           </details>
 
+          <figure class="fig-hero">
+            <div class="shot-frame">
+              <img src="../images/projects/jobkok/screen-2-interview.png"
+               width="1200" height="400"
+               alt="잡콕 AI 면접 진행 화면 - 실시간 질문 응답"
+               fetchpriority="high" decoding="async">
+            </div>
+          </figure>
+
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 개요</h2>
-            <p>
-              잡콕은 AI 기반 인재 매칭과 모의면접을 결합해 고도화한 구인구직 플랫폼입니다.
-              영상·음성 기반 AI HR 분석 기술을 활용해, 기업이 구직자의 모의면접 영상을 직접 확인하고
-              AI 분석 리포트를 근거로 인재를 선별할 수 있습니다.
+            <p class="lead-note">
+              <strong>기업이 지원자의 모의면접 영상과 AI 분석 리포트를 직접 보고 인재를 고르는 채용 플랫폼입니다.</strong>
             </p>
             <p>
-              글로벌 HR 테크 시장은 연평균 10% 이상의 성장률을 기록하며 AI·데이터 기반 채용 솔루션 도입이 빨라지고 있습니다.
-              잡콕은 이 흐름에 맞춰 AI 기반 인재 추천과 면접 분석으로 인재 선발의 효율을 높이고 채용 비용 절감에 기여하는 것을 목표로 했습니다.
+              구직자는 이력서를 쓰고 모의면접을 본 뒤 맞는 공고를 추천받고,
+              기업은 그 결과를 근거로 지원자를 선별합니다.
+              같은 이력서와 면접 리포트를 두 화면에서 다르게 배치하는 일이 이 프로젝트의 실질적인 작업이었습니다.
             </p>
-            <p>
-              이 프로젝트는 <strong>지역혁신 실증 스케일업 정부과제</strong>로 진행됐습니다.
-              기업과 구직자가 실제로 참여하는 실증 과정이 전제였기 때문에,
-              데모용 화면이 아니라 처음부터 실사용을 견디는 화면을 만드는 것이 조건이었습니다.
-            </p>
+            <figure>
+              <img src="../images/projects/jobkok/screen-1.png" width="647" height="1200"
+                   alt="잡콕 채용 공고 목록. 상단 검색창과 필터 줄 아래로 기업 로고가 붙은 공고 카드가 이어진다."
+                   loading="lazy" decoding="async">
+              <figcaption>채용 공고 목록. 직무·지역·경력·학력·급여를 조합해 좁혀 봅니다.</figcaption>
+            </figure>
           </section>
 
-          <section class="cs-section" aria-labelledby="roles">
-            <h2 id="roles">담당 역할</h2>
-            <p>프론트엔드 UI/UX 개발과 백엔드 연동을 맡았습니다.</p>
-            <ul class="role-list">
-              <li>
-                <strong>Java Spring 기반 MVC 웹 애플리케이션 개발</strong>
-                <span>화면과 컨트롤러를 함께 다루며 서버 렌더링 구조 위에서 UI를 구성했습니다.</span>
-              </li>
-              <li>
-                <strong>사용자 인터페이스 설계 및 반응형 웹 구현</strong>
-                <span>구직자·기업 양쪽 화면을 데스크톱과 모바일에서 함께 쓸 수 있도록 만들었습니다.</span>
-              </li>
-              <li>
-                <strong>AI 모의면접 시스템 프론트엔드 구현</strong>
-                <span>응시 진입, 진행 상태, 결과 리포트 확인까지의 화면을 담당했습니다.</span>
-              </li>
-              <li>
-                <strong>이력서 작성 지원 및 키워드 추천 UI 개발</strong>
-                <span>학력·경력을 입력하면 희망 직무와 보유 스킬 키워드를 추천받는 화면을 구현했습니다.</span>
-              </li>
-              <li>
-                <strong>채용 공고 검색·필터링 시스템 구현</strong>
-                <span>직무·지역·경력·학력·급여 등 다중 조건을 조합하는 검색 화면을 만들었습니다.</span>
-              </li>
-            </ul>
+          <section class="cs-section" aria-labelledby="resume">
+            <h2 id="resume">이력서 작성과 공개 범위</h2>
+            <p>
+              학력과 경력을 넣으면 희망 직무와 보유 스킬 키워드를 추천받고, 이력서 제목과 자기소개서 작성까지 이어집니다.
+              입력 항목이 많아 한 번에 다 보여주면 중간에 멈추기 때문에 단계를 나눠 배치했습니다.
+            </p>
+            <p>
+              이력서와 면접 영상, 분석 리포트는 항목별로 공개 여부를 따로 정할 수 있습니다.
+              면접 영상은 얼굴과 목소리가 담긴 자료라, 무엇이 누구에게 보이는지가 화면에서 바로 읽혀야 했습니다.
+              공개 상태를 토글 하나로 처리하지 않고 대상과 범위를 함께 보여주는 쪽으로 만들었습니다.
+            </p>
+            <figure>
+              <div class="ph-slot ph-slot--pc">(이력서 작성 화면)</div>
+              <figcaption>희망 직무와 스킬 키워드 추천 단계.</figcaption>
+            </figure>
           </section>
 
-          <section class="cs-section" aria-labelledby="seeker">
-            <h2 id="seeker">구직자 흐름</h2>
+          <section class="cs-section" aria-labelledby="interview">
+            <h2 id="interview">AI 모의면접과 리포트</h2>
             <p>
-              구직자 쪽 화면은 <strong>이력서 작성 → 모의면접 응시 → 공고 탐색</strong>이 끊기지 않고 이어지도록 묶었습니다.
-              세 기능이 각각 따로 있는 서비스가 아니라, 앞 단계의 결과가 뒤 단계의 입력이 되는 구조입니다.
+              모의면접은 표정과 음성, 답변 내용을 함께 분석해 리포트를 만듭니다.
+              응시 진입, 진행 상태, 결과 확인까지의 화면을 담당했습니다.
             </p>
-
-            <h3>이력서 등록 및 작성 지원</h3>
-            <ul>
-              <li><strong>키워드 추천</strong> — 학력·경력을 기반으로 희망 직무와 보유 스킬 키워드를 제안합니다.</li>
-              <li><strong>제목·자기소개서 작성 지원</strong> — 항목별로 무엇을 쓰면 되는지 안내를 붙였습니다.</li>
-              <li><strong>공개 범위 설정</strong> — 이력서와 면접 영상·리포트를 각각 공개할지 고를 수 있습니다.</li>
-            </ul>
-
-            <h3>AI 모의면접</h3>
-            <ul>
-              <li><strong>이력서 기반 질문</strong> — 등록한 이력서를 근거로 맞춤형 질문을 받습니다.</li>
-              <li><strong>표정·음성·내용 분석</strong> — 응시 결과를 분석해 면접 평가 리포트를 자동 생성합니다.</li>
-              <li><strong>피드백 확인</strong> — 역량 평가와 개선점을 리포트에서 확인합니다.</li>
-            </ul>
-
-            <div class="story">
+            <p>
+              분석이 끝나기까지 시간이 걸려서, 그 사이 화면이 무엇을 보여줄지 정하는 게 큰 부분이었습니다.
+              완료 여부를 목록에서 바로 알 수 있게 하고, 아직 끝나지 않은 건은 상태를 문장으로 표시했습니다.
+            </p>
+            <div class="story story--wide">
               <div class="story__text">
-                <h3>채용 공고 탐색</h3>
-                <ul>
-                  <li><strong>이력서 기반 AI 추천</strong> — 작성한 이력서를 분석해 적합도를 계산하고, AI가 맞춤형 채용 공고를 자동으로 추천합니다.</li>
-                  <li><strong>통합 검색</strong> — 직무·지역·경력·학력·급여를 조합한 다중 필터를 제공합니다.</li>
-                  <li><strong>조건 검색</strong> — 기업 규모, 연차 등 세부 조건으로 범위를 좁힐 수 있습니다.</li>
-                  <li><strong>정렬과 페이지 이동</strong> — 목록 상단에 정렬 기준과 표시 방식을 두고, 하단에 페이지 이동을 뒀습니다.</li>
-                </ul>
                 <p>
-                  공고 목록은 한 줄에 담아야 하는 정보가 많습니다.
-                  기업 로고, 직무명, 지역·경력·학력·급여, 마감일, 스크랩 여부가 모두 한 카드에 들어갑니다.
-                  그래서 <strong>직무명만 크게 두고 나머지는 한 단계 작은 회색 텍스트로 눌러</strong>,
-                  훑어볼 때 직무명 줄만 따라 읽히도록 위계를 잡았습니다.
+                  결과 리포트는 점수를 크게 띄우는 대신 표정·음성·내용을 항목별로 나눠,
+                  다음에 무엇을 고치면 되는지가 남도록 구성했습니다.
                 </p>
               </div>
               <figure>
-                <img src="../images/projects/jobkok/screen-1.png" width="647" height="1200"
-                     alt="잡콕 채용 공고 목록 화면 전체. 상단 검색창과 필터 줄 아래로 기업 로고가 붙은 공고 카드가 세로로 이어지고, 맨 아래에 페이지 번호가 있다."
+                <img src="../images/projects/jobkok/screen-2-interview.png" width="1200" height="400"
+                     alt="잡콕 AI 면접 진행 화면. 질문과 응답 상태가 함께 표시된다."
                      loading="lazy" decoding="async">
-                <figcaption>공고 목록 전체 화면. 검색·필터 → 목록 → 페이지 이동 순서.</figcaption>
+                <figcaption>면접 진행 화면.</figcaption>
               </figure>
             </div>
+            <figure class="fig-phone">
+              <img src="../images/projects/jobkok/jobkok-mobile-cropped.png" width="750" height="1333"
+                   alt="잡콕 모바일 화면. 좁은 폭에서 공고와 면접 정보가 세로로 정리돼 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>모바일에서도 같은 흐름을 씁니다.</figcaption>
+            </figure>
+          </section>
+
+          <section class="cs-section" aria-labelledby="match">
+            <h2 id="match">공고 추천과 검색</h2>
+            <p>
+              이력서와 면접 분석 리포트를 근거로 맞는 공고를 추천합니다.
+              외부 채용 사이트의 공고도 함께 모아 보여주기 때문에, 출처가 다른 카드가 한 목록에 섞입니다.
+              어디서 온 공고인지, 추천된 것인지 직접 검색한 것인지를 카드에서 구분할 수 있게 했습니다.
+            </p>
+            <p>
+              검색은 직무·지역·경력·학력·급여에 기업 규모와 연차 조건이 더해집니다.
+              조건이 늘어날수록 무엇이 걸려 있는지 놓치기 쉬워서, 적용된 필터를 항상 목록 위에 남겨 뒀습니다.
+            </p>
+            <figure>
+              <div class="ph-slot ph-slot--pc">(추천 공고와 필터)</div>
+              <figcaption>적용한 조건이 목록 위에 남습니다.</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="company">
-            <h2 id="company">기업 흐름</h2>
+            <h2 id="company">기업 화면</h2>
             <p>
-              기업 쪽은 구직자가 남긴 결과물을 보고 판단하는 화면입니다.
-              공고를 올리고, 지원자를 모으고, AI 분석 리포트로 비교하는 순서로 구성했습니다.
+              기업은 공고를 직접 쓰지 않고 다른 채용 사이트의 공고 URL만 올려도 등록됩니다.
+              올린 공고는 AI가 분석해 보완할 점을 제안하고, 허위·차별 표현이 있으면 표시합니다.
+              고쳐야 할 곳을 공고 본문 안에서 짚어 주는 쪽으로 화면을 구성했습니다.
             </p>
-            <ul>
-              <li><strong>공고 관리</strong> — 채용 공고를 등록·수정·삭제합니다.</li>
-              <li><strong>지원자 관리</strong> — 지원자의 이력서와 면접 영상을 확인합니다.</li>
-              <li><strong>AI 분석 리포트</strong> — 지원자별 면접 분석 결과를 함께 봅니다.</li>
-            </ul>
             <p>
-              구직자가 공개 범위를 직접 정하는 구조이기 때문에, 기업 화면에서는
-              <strong>공개된 항목과 비공개 항목이 섞여 있을 때를 기본 상태로</strong> 두고 만들었습니다.
-              비어 있는 항목이 오류처럼 보이지 않도록 안내 문구를 넣었습니다.
+              지원자 목록에서는 이력서와 면접 영상, AI 리포트를 함께 봅니다.
+              구직자 화면과 같은 데이터를 쓰지만 정렬 기준과 강조하는 항목이 달라서 컴포넌트를 나눠 만들었습니다.
             </p>
-          </section>
-
-          <section class="cs-section" aria-labelledby="impact">
-            <h2 id="impact">실증 효과</h2>
-            <p>정부과제 실증 과정에서 정리된 기대 효과는 다음과 같습니다.</p>
-
-            <h3>경제적 효과</h3>
-            <p>
-              기업과 구직자를 대상으로 한 실증 과정에서 초기 고객 확보와 서비스 개선 기회를 만들어,
-              빠른 시장 진입과 매출 기반 마련을 실현했습니다.
-            </p>
-
-            <h3>산업적 효과</h3>
-            <p>
-              실증을 통해 다양한 산업군의 서비스 수요를 검증하고,
-              HR 테크 시장뿐 아니라 관련 분야로의 확장 가능성을 확보했습니다.
-            </p>
-
-            <h3>사회적 효과</h3>
-            <p>
-              기업과 구직자가 직접 실증에 참여함으로써 서비스의 신뢰성과 공정성을 입증하고,
-              채용 과정의 투명성을 높였습니다.
-            </p>
-
-            <h3>기술적 효과</h3>
-            <p>
-              다양한 채용 환경에서 데이터를 수집·분석해 알고리즘 성능을 지속적으로 개선하고,
-              실증 과정에서 모인 채용·면접 데이터를 바탕으로 기업이 채용 전략을 세우고 인재 관리를 최적화할 수 있도록
-              데이터 기반 인사이트를 제공합니다.
-            </p>
-
-            <div class="note">
-              위 내용은 <strong>과제 계획서에 정리된 기대 효과</strong>입니다.
-              실증 참여 기업 수나 채용 성과 같은 수치는 제가 확인한 자료가 없어 적지 않았습니다.
-            </div>
+            <figure>
+              <div class="ph-slot ph-slot--pc">(기업 인재 추천 화면)</div>
+              <figcaption>지원자의 이력서와 면접 리포트를 함께 보는 화면.</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
             <h2 id="stack">기술 스택</h2>
             <p>
-              이미 Java Spring으로 서버가 잡혀 있는 과제였기 때문에, 별도 SPA를 얹지 않고
-              <strong>서버 렌더링 구조 안에서 화면을 만드는 방식</strong>을 택했습니다.
-              화면과 컨트롤러를 같이 다루면 검색 조건이나 공개 여부처럼 서버 상태에 붙은 UI를 맞추기가 수월했습니다.
+              Java Spring 기반 MVC 구조에서 화면과 컨트롤러를 함께 다뤘습니다.
+              서버 렌더링 위에 구직자·기업 양쪽 화면을 올리면서 데스크톱과 모바일에서 같이 쓸 수 있게 만들었습니다.
+              AI 모델은 과제 팀이 맡았고, 분석 결과를 받아 화면에 붙이는 쪽을 담당했습니다.
             </p>
-            <ul class="tags tags--brand">
-              <li>Java Spring · Spring MVC · Spring Security</li>
-              <li>HTML5 · CSS3 · JavaScript · jQuery</li>
-              <li>Bootstrap</li>
-              <li>MySQL · MyBatis</li>
-              <li>RESTful API</li>
-              <li>AI 면접 분석 API</li>
-              <li>Apache Tomcat · Nginx</li>
+            <ul class="tags">
+              <li>Java Spring</li>
+              <li>MySQL</li>
+              <li>JavaScript</li>
+              <li>반응형 웹</li>
+              <li>AI 면접 분석 연동</li>
             </ul>
           </section>
 
           <section class="cs-section" aria-labelledby="closing">
             <h2 id="closing">정리</h2>
             <p>
-              잡콕은 구직자와 기업이 같은 데이터를 서로 다른 목적으로 보는 서비스입니다.
-              구직자에게는 “내가 무엇을 더 채워야 하는지”, 기업에게는 “이 지원자를 왜 봐야 하는지”가 보여야 합니다.
-              같은 이력서와 같은 면접 리포트를 두 화면에서 다르게 배치하는 일이 이 프로젝트의 실질적인 작업이었습니다.
+              구직자와 기업이 같은 데이터를 다른 목적으로 보는 서비스입니다.
+              구직자에게는 무엇을 더 채워야 하는지, 기업에게는 이 지원자를 왜 봐야 하는지가 보여야 합니다.
+              같은 이력서와 리포트를 두 화면에서 다르게 배치하는 판단이 작업의 대부분이었습니다.
             </p>
           </section>
 
         </div>
-      </article>
+      </div>
     </div>
 
     <div class="wrap">

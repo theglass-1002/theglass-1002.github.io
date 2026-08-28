@@ -43,58 +43,63 @@
   </header>
 
   <main id="main">
+
+
     <div class="wrap">
-      <nav class="breadcrumb" aria-label="위치">
-        <ol>
+      <div class="layout layout--aligned">
+
+        <!-- 머리말 — 왼쪽 위는 비우고 여기서부터 본문 기준선이 시작된다 -->
+        <div class="layout__head">
+          <nav class="breadcrumb" aria-label="위치">
+          <ol>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../index.html#work">Work</a></li>
           <li><span aria-current="page">메타버스 에너지 전시관</span></li>
-        </ol>
-      </nav>
+          </ol>
+          </nav>
 
-      <header class="ph">
-        <span class="ph__kicker">Case study</span>
-        <h1>메타버스 에너지 전시관</h1>
-        <p class="ph__lead">전시관에 갈 수 없는 사람도 에너지 데이터를 직접 둘러볼 수 있게 만든 가상 전시관. 4인 팀의 팀장으로 기획과 팀 리딩을 맡았고, 한전KDN 공모전에서 장려상을 받았습니다.</p>
+          <header class="ph">
+          <span class="ph__kicker">Case study</span>
+          <h1>메타버스 에너지 전시관</h1>
+          <p class="ph__lead">전시관에 갈 수 없는 사람도 에너지 데이터를 직접 둘러볼 수 있게 만든 가상 전시관. 4인 팀의 팀장으로 기획과 팀 리딩을 맡았고, 한전KDN 공모전에서 장려상을 받았습니다.</p>
 
-        <dl class="ph__meta">
+          <dl class="ph__meta">
           <div>
-            <dt>대회 기간</dt>
-            <dd>2021.12.01 – 2022.01.12</dd>
+          <dt>대회 기간</dt>
+          <dd>2021.12.01 – 2022.01.12</dd>
           </div>
           <div>
-            <dt>유형</dt>
-            <dd>공모전 참가작 (팀 4명)</dd>
+          <dt>유형</dt>
+          <dd>공모전 참가작 (팀 4명)</dd>
           </div>
           <div>
-            <dt>역할</dt>
-            <dd>팀장 · 기획 및 팀 리딩</dd>
+          <dt>역할</dt>
+          <dd>팀장 · 기획 및 팀 리딩</dd>
           </div>
           <div>
-            <dt>핵심 기술</dt>
-            <dd>Unity · C# · MySQL</dd>
+          <dt>핵심 기술</dt>
+          <dd>Unity · C# · MySQL</dd>
           </div>
-        </dl>
+          </dl>
 
-        <div class="ph__actions">
-          <a class="btn btn--primary" href="https://youtu.be/OTqlqiIT8V4" target="_blank" rel="noopener">작품 영상 보기</a>
+          </header>
         </div>
-      </header>
-    </div>
 
-    <div class="wrap wrap--media">
-      <figure class="fig-hero">
-        <img src="../images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
-             alt="가상 전시관의 가정집 주방 전시물. 전자레인지에 5.25kWh, 냉장고에 72kWh라고 적힌 말풍선이 붙어 있고 벽면에 전기 생산 과정을 묻는 안내판이 있다."
-             fetchpriority="high" decoding="async">
-        <figcaption>전시관의 가정 공간. 숫자를 표로 나열하는 대신 <b>실제 가전제품 옆에 소비 전력을 붙여</b>, 관람자가 자기 집을 떠올리며 값을 읽게 했습니다.</figcaption>
-      </figure>
-    </div>
-
-    <div class="wrap">
-      <div class="layout">
 
         <aside class="side" aria-label="이 페이지 목차와 정보">
+
+          <div class="side__cta">
+            <a class="btn btn--primary" href="https://youtu.be/OTqlqiIT8V4" target="_blank" rel="noopener">작품 영상 보기</a>
+          </div>
+
+          <div class="side__box">
+            <h2>담당 업무</h2>
+            <ul>
+              <li>팀장 · 기획과 팀 리딩</li>
+              <li>프론트엔드 개발 (50%)</li>
+              <li>개발 방향 설정 (40%)</li>
+            </ul>
+          </div>
           <p class="side__title">목차</p>
           <ul class="toc">
             <li><a href="#overview">프로젝트 개요</a></li>
@@ -142,6 +147,15 @@
               <li><a href="#closing">정리</a></li>
             </ul>
           </details>
+
+          <figure class="fig-hero">
+          <div class="shot-frame">
+          <img src="../images/projects/energy/energy-home-exhibit.jpg" width="1200" height="580"
+          alt="가상 전시관의 가정집 주방 전시물. 전자레인지에 5.25kWh, 냉장고에 72kWh라고 적힌 말풍선이 붙어 있고 벽면에 전기 생산 과정을 묻는 안내판이 있다."
+          fetchpriority="high" decoding="async">
+          </div>
+          <figcaption>전시관의 가정 공간. 숫자를 표로 나열하는 대신 <b>실제 가전제품 옆에 소비 전력을 붙여</b>, 관람자가 자기 집을 떠올리며 값을 읽게 했습니다.</figcaption>
+          </figure>
 
 
           <section class="cs-section" aria-labelledby="overview">

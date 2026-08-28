@@ -26,6 +26,10 @@
   --primary-soft: #eeeefc;
   --primary-ring: #b9b7f2;
 
+  /* 아직 채우지 않은 자리 표시용 */
+  --todo: #c62828;
+  --todo-soft: #fdf2f2;
+
   --footer: #15171d;
   --footer-text: #b9bdc8;
   --footer-heading: #ffffff;
@@ -1340,3 +1344,228 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   .site-header, .pager, .cta, .toc-mobile, .side { display: none !important; }
   body { font-size: 12pt; }
 }
+
+/* --------------------------------------------------------------------------
+   20. Case study — 공용 틀 (참고: ianlunn.co.uk)
+
+   상세 페이지 10개가 이 틀 하나를 같이 쓴다.
+   페이지마다 달라지는 것은 "블록을 몇 개 놓느냐"와 "한 칸에 사진이 몇 장이냐"뿐이다.
+   블록 종류는 projects/_template.html 에 모아 뒀다.
+   -------------------------------------------------------------------------- */
+
+/* 세로 기준선을 2개로 — 머리말도 본문 열에서 시작하고, 왼쪽 위 칸은 비운다 */
+@media (min-width: 1025px) {
+  .layout--aligned {
+    display: grid;
+    grid-template-columns: var(--w-side) minmax(0, var(--w-figure));
+    column-gap: clamp(40px, 5vw, 64px);
+    /* .layout 의 gap 단축 속성이 세로 간격까지 잡아 사이드바가 아래로 밀린다.
+       가로 간격만 쓰고 세로는 .ph 의 아래 여백에 맡긴다. */
+    row-gap: 0;
+    justify-content: center;
+    align-items: start;
+  }
+  /* 머리말 아래 여백 — 사이드바와 본문이 같은 높이에서 시작하도록 줄인다 */
+  .layout--aligned .layout__head .ph { padding-bottom: clamp(24px, 3vw, 36px); }
+  .layout--aligned .layout__head { grid-column: 2; grid-row: 1; }
+  /* 사이드바는 머리말과 같은 높이에서 시작한다. 두 행을 걸쳐 두면
+     왼쪽 위가 비지 않고, 스크롤을 따라 붙는 sticky 도 그대로 동작한다. */
+  .layout--aligned .side         { grid-column: 1; grid-row: 1 / span 2; }
+  /* 사이드바 첫 요소를 제목(h1) 줄에 맞춘다.
+     위에서부터 빵부스러기 + .ph 위 여백 + kicker 만큼 내린다. */
+  .layout--aligned .side {
+    padding-top: calc(var(--s-6) + 22px + clamp(32px, 4vw, 52px)
+                      + var(--t-xs) * 1.7 + var(--s-3));
+  }
+  .layout--aligned .content      { grid-column: 2; grid-row: 2; }
+}
+
+/* 사이드바 — 실제 사이트 버튼. 스크롤 내내 따라온다 */
+.side__cta { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--s-5); }
+.side__cta .btn { width: 100%; text-align: center; }
+
+/* 사이드바 — 담당 업무 요약 */
+.side__box {
+  padding: var(--s-4);
+  background: var(--subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--s-5);
+}
+.side__box h2 {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.side__box ul { margin: 0; padding-left: 1.1em; }
+.side__box li { font-size: 14px; line-height: 1.75; }
+
+/* 스크린샷을 감싸는 회색 패널 — 홈 목록과 같은 옷을 입힌다 */
+.shot-frame {
+  background: var(--subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(20px, 2vw, 30px);
+}
+.shot-frame img { border-radius: 4px; }
+
+/* 자리 표시 칸 — 실제 이미지를 넣으면 <img> 로 갈아끼우고 이 클래스는 지운다 */
+.ph-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  min-height: 200px;
+  padding: 16px;
+  background: var(--todo-soft);
+  border: 2px dashed var(--todo);
+  border-radius: 4px;
+  color: var(--todo);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+.ph-slot::after {
+  content: "내용 채워야 함";
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: .02em;
+}
+.ph-slot--hero { min-height: 320px; }
+.ph-slot--gif  { min-height: 260px; }
+/* 모바일 세로 화면 자리 — 실제 스크린샷 비율(9:16)로 잡아야 실물을 넣어도 안 흔들린다 */
+.ph-slot--phone { min-height: 0; aspect-ratio: 9 / 16; }
+/* PC 가로 화면 자리 */
+.ph-slot--pc { min-height: 0; aspect-ratio: 16 / 10; }
+/* 회색 패널 안에 들어갈 때는 바탕을 흰색으로 — 패널과 겹쳐 보이지 않게 */
+.shot-frame .ph-slot { background: var(--surface); }
+
+/* 한 칸 안의 사진이 PC 가로형이냐 모바일 세로형이냐에 따라 칸 모양만 달라진다.
+   틀은 그대로 두고 아래 수식자만 바꿔 끼운다. */
+
+/* 글 + 사진 — 기본(.story)은 모바일 세로형(290px). PC 가로형이면 사진 칸을 넓힌다 */
+.story--wide { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+
+/* 모바일 세로 화면 한 장 — 본문 폭을 다 쓰지 않으므로 가운데 세운다.
+   왼쪽에 붙이면 오른쪽 빈 곳이 설명이 들어갈 자리처럼 보인다. */
+.fig-phone {
+  max-width: 300px;
+  margin-inline: auto;
+}
+.fig-phone img { border-radius: var(--radius-lg); }
+.fig-phone figcaption { text-align: center; }
+
+/* 모바일 세로 화면 여러 장 — 좁은 칸으로 나란히, 역시 가운데 */
+.fig-pair--phones {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 190px));
+  justify-content: center;
+}
+.fig-pair--phones figcaption { text-align: center; }
+
+/* .story 안에 세로로 긴 모바일 화면이 들어가면 글보다 훨씬 길어져 옆이 비어 보인다.
+   폭을 좁혀 높이를 낮춘다. 글이 짧을 때는 .story 대신 .fig-phone 을 쓴다. */
+.story > figure .ph-slot--phone,
+.story > figure img[width="750"] { max-width: 230px; margin-inline: auto; }
+
+/* --------------------------------------------------------------------------
+   21. 홈 프로젝트 카드 — 칸 전체를 클릭 영역으로
+
+   제목 링크 하나에 카드를 덮는 투명 면을 씌운다.
+   링크를 여러 개 두지 않으므로 스크린리더에는 프로젝트당 링크가 하나로 읽힌다.
+   -------------------------------------------------------------------------- */
+.project-card { position: relative; }
+
+.project-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* 누를 수 있다는 신호 */
+.project-card:hover { cursor: pointer; }
+.project-card:hover .project-title a { text-decoration: underline; text-underline-offset: 3px; }
+.project-card:hover .project-logo img { opacity: .85; }
+
+.project-media__desktop,
+.project-media__mobile { transition: transform .35s ease, box-shadow .35s ease; }
+.project-card:hover .project-media__desktop,
+.project-card:hover .project-media__mobile { transform: translateY(-2px); box-shadow: 0 6px 20px rgb(20 22 27 / 10%); }
+
+/* 키보드로 이동했을 때도 카드 전체가 잡히도록 */
+.project-title a:focus-visible::after {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-media__desktop,
+  .project-media__mobile { transition: none; }
+  .project-card:hover .project-media__desktop,
+  .project-card:hover .project-media__mobile { transform: none; }
+}
+
+/* 마우스를 올린 카드에 옅은 회색 바탕. 글과 사진 뒤로 깔린다.
+   좌우로 조금 넓게 잡아야 글자가 배경 가장자리에 붙지 않는다. */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 -24px;
+  z-index: -1;
+  border-radius: 10px;
+  background: transparent;
+  transition: background .2s ease;
+}
+.project-card:hover::before { background: var(--subtle); }
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card::before { transition: none; }
+}
+
+/* 아직 쓰지 않은 글 자리. 채우고 나면 <span class="todo"> 를 지운다. */
+.todo {
+  color: var(--todo);
+  font-weight: 700;
+  background: var(--todo-soft);
+  padding: 1px 6px;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.todo::after { content: " — 내용 채워야 함"; font-size: .85em; }
+
+/* --------------------------------------------------------------------------
+   22. 본문 표 — 권한/기능 비교처럼 항목이 마주 놓이는 자료
+   -------------------------------------------------------------------------- */
+.table-scroll {
+  overflow-x: auto;
+  margin: var(--s-6) 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.table-scroll table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 520px;
+  font-size: 15px;
+}
+.table-scroll th,
+.table-scroll td {
+  text-align: left;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.table-scroll thead th {
+  border-top: 0;
+  background: var(--subtle);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.table-scroll tbody td:first-child { font-weight: 500; color: var(--heading); white-space: nowrap; }
