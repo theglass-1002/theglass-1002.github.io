@@ -1443,6 +1443,23 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
 /* 회색 패널 안에 들어갈 때는 바탕을 흰색으로 — 패널과 겹쳐 보이지 않게 */
 .shot-frame .ph-slot { background: var(--surface); }
 
+/* 세로로 아주 긴 전체 페이지 캡처 — 원본 폭이 좁아 크게 늘리면 흐려지고,
+   전부 펼치면 본문이 사진 하나에 먹힌다. 폭을 묶고 위에서부터 잘라 보여준다.
+   비율은 그대로라 어떤 화면인지 알아보는 데는 문제가 없다. */
+.fig-longshot {
+  max-width: 480px;
+  margin-inline: auto;
+}
+.fig-longshot img {
+  max-height: 720px;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.fig-longshot figcaption { text-align: center; }
+
 /* 한 칸 안의 사진이 PC 가로형이냐 모바일 세로형이냐에 따라 칸 모양만 달라진다.
    틀은 그대로 두고 아래 수식자만 바꿔 끼운다. */
 
