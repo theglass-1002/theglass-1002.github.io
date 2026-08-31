@@ -1428,13 +1428,14 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   font-weight: 700;
 }
 .ph-slot::after {
-  content: "내용 채워야 함";
+  content: "사진 필요";
   font-family: var(--font-body);
   font-size: 13px;
   letter-spacing: .02em;
 }
-.ph-slot--hero { min-height: 320px; }
-.ph-slot--gif  { min-height: 260px; }
+/* 대표 화면 자리 — 실제로 들어갈 PC 스크린샷 비율(16:9)로 잡아 둔다 */
+.ph-slot--hero { min-height: 0; aspect-ratio: 16 / 9; }
+.ph-slot--gif  { min-height: 0; aspect-ratio: 16 / 10; }
 /* 모바일 세로 화면 자리 — 실제 스크린샷 비율(9:16)로 잡아야 실물을 넣어도 안 흔들린다 */
 .ph-slot--phone { min-height: 0; aspect-ratio: 9 / 16; }
 /* PC 가로 화면 자리 */
