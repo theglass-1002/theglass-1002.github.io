@@ -1475,6 +1475,15 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
 .fig-phone img { border-radius: var(--radius-lg); }
 .fig-phone figcaption { text-align: center; }
 
+/* 키오스크 화면 — 휴대폰보다 크고 PC보다 좁다. 원본 비율 그대로 두되 폭만 묶는다. */
+.fig-tall {
+  max-width: 420px;
+  margin-inline: auto;
+}
+.fig-tall img { border-radius: var(--radius-lg); }
+.fig-tall figcaption { text-align: center; }
+.fig-tall .ph-slot { max-width: 420px; margin-inline: auto; }
+
 /* 모바일 세로 화면 여러 장 — 좁은 칸으로 나란히, 역시 가운데 */
 .fig-pair--phones {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 190px));

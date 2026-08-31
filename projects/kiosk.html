@@ -107,7 +107,6 @@
             <li><a href="#customer">고객 주문 흐름</a></li>
             <li><a href="#operator">기기 · 운영자 흐름</a></li>
             <li><a href="#stack">기술 스택</a></li>
-            <li><a href="#assets">남은 자료</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -130,10 +129,15 @@
               <li><a href="#customer">고객 주문 흐름</a></li>
               <li><a href="#operator">기기 · 운영자 흐름</a></li>
               <li><a href="#stack">기술 스택</a></li>
-              <li><a href="#assets">남은 자료</a></li>
             </ul>
           </details>
 
+          <figure class="fig-tall">
+            <img src="../images/projects/kiosk/hero.webp" width="1462" height="2600"
+                 alt="홀로그램 AI 키오스크 주문 화면. 맨 위에 ‘듣고 있어요’ 음성 인식 상태 표시가 있고, 가운데 점원 모습의 AI 캐릭터가 ‘원하는 메뉴와 옵션을 편하게 말씀해 주세요.’라고 안내한다. 아래에는 추천·커피·스무디 등 메뉴 탭과 BEST 배지가 붙은 음료 카드가 놓이고, 맨 아래 장바구니 줄이 있다."
+                 fetchpriority="high" decoding="async">
+            <figcaption>주문 화면. 듣고 있는 상태를 맨 위에 고정해 두고, 그 아래에 손으로 고를 수 있는 메뉴를 같이 뒀습니다.</figcaption>
+          </figure>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 개요</h2>
@@ -151,6 +155,10 @@
               설명서를 읽지 않고, 뒤에 줄이 서 있고, 잘못 눌러도 되돌릴 수 있어야 합니다.
               그래서 이 프로젝트에서 정리한 산출물은 화면 목록이 아니라 <strong>전체 주문 프로세스 플로우차트와 시나리오</strong>였습니다.
             </p>
+            <figure>
+              <div class="ph-slot ph-slot--pc">(전체 주문 프로세스 플로우차트)</div>
+              <figcaption>시작부터 결제까지의 경로와 되돌아가는 지점.</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="roles">
@@ -207,6 +215,16 @@
               <li><strong>팝업 / 모달</strong> — 주문 오류와 안내 메시지를 처리합니다.</li>
               <li><strong>매장 FAQ</strong> — 자주 묻는 질문과 정책 문서를 제공합니다.</li>
             </ul>
+            <div class="fig-pair fig-pair--phones">
+              <figure>
+                <div class="ph-slot ph-slot--phone">(주문 확인 · 수정 화면)</div>
+                <figcaption>AI가 읽어 준 주문 내역을 손님이 고치는 단계.</figcaption>
+              </figure>
+              <figure>
+                <div class="ph-slot ph-slot--phone">(음성 인식 실패 시 터치 경로)</div>
+                <figcaption>말이 안 통할 때 같은 화면에서 손으로 넘어갑니다.</figcaption>
+              </figure>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="operator">
@@ -226,6 +244,14 @@
               관리 기능은 <strong>매장에서 즉시 처리해야 하는 것들만</strong> 로컬에 뒀습니다.
               품절과 주문 중단은 지금 당장 눌러야 하는 일이고, 통계처럼 나중에 봐도 되는 것은 여기에 넣지 않았습니다.
             </p>
+            <figure class="fig-tall">
+              <div class="ph-slot ph-slot--phone">(운영자 로컬 관리 메뉴)</div>
+              <figcaption>품절과 주문 일시중지를 매장에서 바로 처리합니다.</figcaption>
+            </figure>
+            <figure>
+              <div class="ph-slot ph-slot--pc">(실제 키오스크 기기 설치 사진)</div>
+              <figcaption>홀로그램 디스플레이에 띄운 실제 모습.</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
