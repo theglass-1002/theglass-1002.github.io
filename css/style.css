@@ -1129,14 +1129,18 @@ code {
    16. Figures
    -------------------------------------------------------------------------- */
 figure { margin: clamp(28px, 4vw, 44px) 0; }
-figure img {
+figure img,
+figure video {
   width: 100%;
   height: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--subtle);
 }
-figure.is-plain img { border: 0; background: none; }
+/* 영상은 인라인 요소라 아래에 baseline 여백이 생긴다 */
+figure video { display: block; }
+figure.is-plain img,
+figure.is-plain video { border: 0; background: none; }
 figcaption {
   margin-top: 12px;
   max-width: 62ch;
@@ -1480,7 +1484,25 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   max-width: 420px;
   margin-inline: auto;
 }
-.fig-tall img { border-radius: var(--radius-lg); }
+.fig-tall img,
+.fig-tall video { border-radius: var(--radius-lg); }
+
+/* 플로우차트 — 도형이 많아 좁은 화면에서 줄이면 글씨가 뭉갠다.
+   폭을 지키고 가로로만 스크롤시킨다. */
+.fig-diagram {
+  max-width: var(--w-figure);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--s-2);
+}
+.fig-diagram > svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+.fig-diagram figcaption { position: sticky; left: 0; }
 .fig-tall figcaption { text-align: center; }
 .fig-tall .ph-slot { max-width: 420px; margin-inline: auto; }
 
@@ -1490,6 +1512,21 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   justify-content: center;
 }
 .fig-pair--phones figcaption { text-align: center; }
+
+/* 세로 화면 4장을 한 줄에 — 좁아지면 2장씩 접힌다 */
+.fig-pair--quad {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px);
+}
+.fig-pair--quad figcaption {
+  margin-top: var(--s-2);
+  font-size: var(--t-xs);
+  line-height: 1.55;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .fig-pair--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* .story 안에 세로로 긴 모바일 화면이 들어가면 글보다 훨씬 길어져 옆이 비어 보인다.
    폭을 좁혀 높이를 낮춘다. 글이 짧을 때는 .story 대신 .fig-phone 을 쓴다. */

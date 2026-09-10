@@ -135,4 +135,42 @@
     document.head.appendChild(s);
   })();
 
+  /* ------------------------------------------------------------------
+     5. 자동재생 영상
+
+     - 모션을 줄이는 설정이면 재생하지 않고 poster만 보여준다.
+     - 화면에 들어올 때만 재생한다. 스크롤로 지나간 영상이 계속 도는 것을
+       막아 배터리와 데이터를 아낀다.
+     ------------------------------------------------------------------ */
+  (function autoplayVideos() {
+    var videos = document.querySelectorAll('video[autoplay]');
+    if (!videos.length) return;
+
+    if (reduceMotion) {
+      Array.prototype.forEach.call(videos, function (v) {
+        v.autoplay = false;
+        v.removeAttribute('autoplay');
+        v.controls = true;
+        v.pause();
+      });
+      return;
+    }
+
+    if (!('IntersectionObserver' in window)) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () { v.controls = true; });
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    Array.prototype.forEach.call(videos, function (v) { io.observe(v); });
+  })();
+
 })();

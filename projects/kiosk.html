@@ -87,10 +87,6 @@
 
         <aside class="side" aria-label="이 페이지 목차와 정보">
 
-          <div class="side__cta">
-            <a class="btn btn--primary" href="#" target="_blank" rel="noopener">실제 사이트 보기</a>
-          </div>
-
           <div class="side__box">
             <h2>담당 업무</h2>
             <ul>
@@ -133,10 +129,14 @@
           </details>
 
           <figure class="fig-tall">
-            <img src="../images/projects/kiosk/hero.webp" width="1462" height="2600"
-                 alt="홀로그램 AI 키오스크 주문 화면. 맨 위에 ‘듣고 있어요’ 음성 인식 상태 표시가 있고, 가운데 점원 모습의 AI 캐릭터가 ‘원하는 메뉴와 옵션을 편하게 말씀해 주세요.’라고 안내한다. 아래에는 추천·커피·스무디 등 메뉴 탭과 BEST 배지가 붙은 음료 카드가 놓이고, 맨 아래 장바구니 줄이 있다."
-                 fetchpriority="high" decoding="async">
-            <figcaption>주문 화면. 듣고 있는 상태를 맨 위에 고정해 두고, 그 아래에 손으로 고를 수 있는 메뉴를 같이 뒀습니다.</figcaption>
+            <video width="716" height="1280"
+                   poster="../images/projects/kiosk/order-flow-poster.webp"
+                   autoplay muted loop playsinline preload="metadata"
+                   aria-label="홀로그램 AI 키오스크 주문 흐름 영상. 맨 위에 ‘듣고 있어요’ 음성 인식 상태 표시가 있고, 가운데 점원 모습의 AI 캐릭터가 ‘원하는 메뉴와 옵션을 편하게 말씀해 주세요.’라고 안내한다. 아래에는 추천·커피·티·에이드 등 메뉴 탭과 BEST 배지가 붙은 음료 카드가 놓이고, 맨 아래 장바구니 줄이 있다. 메뉴 추천부터 옵션 선택, 장바구니 담기, 주문하기까지 이어진다.">
+              <source src="../images/projects/kiosk/order-flow.webm" type="video/webm">
+              <source src="../images/projects/kiosk/order-flow.mp4" type="video/mp4">
+            </video>
+            <figcaption>주문 흐름 전체. 듣고 있는 상태를 맨 위에 고정해 두고, 그 아래에 손으로 고를 수 있는 메뉴를 같이 뒀습니다. 음성으로 메뉴를 고르고 옵션을 정한 뒤 장바구니에 담아 주문까지 이어집니다.</figcaption>
           </figure>
 
           <section class="cs-section" aria-labelledby="overview">
@@ -155,9 +155,162 @@
               설명서를 읽지 않고, 뒤에 줄이 서 있고, 잘못 눌러도 되돌릴 수 있어야 합니다.
               그래서 이 프로젝트에서 정리한 산출물은 화면 목록이 아니라 <strong>전체 주문 프로세스 플로우차트와 시나리오</strong>였습니다.
             </p>
-            <figure>
-              <div class="ph-slot ph-slot--pc">(전체 주문 프로세스 플로우차트)</div>
-              <figcaption>시작부터 결제까지의 경로와 되돌아가는 지점.</figcaption>
+            <figure class="fig-diagram">
+            <svg viewBox="0 0 940 1836" xmlns="http://www.w3.org/2000/svg" class="flowchart"
+                 role="img" aria-labelledby="flowTitle flowDesc">
+              <title id="flowTitle">홀로오더 키오스크 전체 주문 프로세스 플로우차트</title>
+              <desc id="flowDesc">손님 흐름은 대기화면에서 시선 인식이나 [주문 시작하기] 터치로 시작해 인사와 메뉴 화면, 주문 입력(음성 또는 터치), 옵션 선택, 장바구니, 주문 확인, 매장·포장 선택, 결제수단 선택, 결제 진행, 완료 화면을 거쳐 15초 뒤 대기화면으로 돌아온다. 장바구니에서 메뉴를 더 담으면 주문 입력으로 돌아가고, 결제에 실패하면 결제수단 선택으로 돌아간다. 관리자 흐름은 좌측 상단 3초 롱프레스와 PIN 6자리를 거쳐 관리 메뉴로 들어가며 결제 관리, 품절 관리, 주문 접수 일시중지, 로그아웃 네 가지를 제공한다.</desc>
+              <defs>
+                <marker id="tri" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 1 L 7 4 L 0 7 z" fill="#c8ccd4"/>
+                </marker>
+                <marker id="tri-p" viewBox="0 0 8 8" refX="6.5" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M 0 1 L 7 4 L 0 7 z" fill="#b9b7f2"/>
+                </marker>
+              </defs>
+              <style>
+                /* CSS가 presentation attribute를 이기므로 정렬도 클래스로 준다 */
+                .flowchart text { font-family: var(--font-body, -apple-system, "Apple SD Gothic Neo", sans-serif);
+                                   text-anchor: middle; }
+                .flowchart .a-s { text-anchor: start; }
+                .flowchart .a-m { text-anchor: middle; }
+                .flowchart .t-h      { font-size: 20px;   font-weight: 700; letter-spacing: -.015em; }
+                .flowchart .t-h2     { font-size: 16px;   font-weight: 700; letter-spacing: -.01em; }
+                .flowchart .t-title  { font-size: 15.5px; font-weight: 650; letter-spacing: -.01em; }
+                .flowchart .t-title-s{ font-size: 13.5px; font-weight: 650; }
+                .flowchart .t-sub    { font-size: 12.5px; font-weight: 450; }
+                .flowchart .t-note-h { font-size: 12.5px; font-weight: 650; }
+                .flowchart .t-note   { font-size: 11.5px; font-weight: 450; }
+                .flowchart .t-chip   { font-size: 11px;   font-weight: 600; letter-spacing: .01em; }
+              </style>
+              <text x="96" y="42" class="t-h a-s" fill="#16181d">홀로오더 키오스크 — 전체 주문 프로세스</text>
+              <text x="96" y="64" class="t-sub a-s" fill="#5c6270">손님 주문 흐름과 관리자 흐름. QA 시트 18개 구분 기준.</text>
+              <rect x="96" y="94" width="430" height="94" rx="22" fill="#4b47d6" stroke="#4b47d6" stroke-width="1"/>
+              <text x="311.0" y="120" class="t-title" fill="#ffffff">대기화면</text>
+              <text x="311.0" y="140" class="t-sub" fill="#dedcfa">Brewing 영상 반복 · 매장명 안내</text>
+              <text x="311.0" y="157" class="t-sub" fill="#dedcfa">[한국어] [English] · 마이크 OFF</text>
+              <line x1="311.0" y1="188" x2="311.0" y2="214" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="552" y="216" width="330" height="72" rx="10" fill="#fbfbfd" stroke="#e3e5ea"/>
+              <rect x="552" y="228" width="3" height="48" rx="1.5" fill="#c8ccd4"/>
+              <text x="570" y="242" class="t-note-h a-s" fill="#43485a">오작동 방지</text>
+              <text x="570" y="262" class="t-note a-s" fill="#5c6270">그냥 지나가는 사람에게는 시작되지 않는다.</text>
+              <text x="570" y="278" class="t-note a-s" fill="#5c6270">정면 · 가까운 거리 · 2초 연속이 모두 맞아야 한다.</text>
+              <rect x="96" y="222" width="430" height="77" rx="12" fill="#ffffff" stroke="#b9b7f2" stroke-width="1.4" stroke-dasharray="5 4"/>
+              <text x="311.0" y="248" class="t-title" fill="#2f2ba3">시작</text>
+              <text x="311.0" y="268" class="t-sub" fill="#5c6270">정면 2초 응시(시선 인식) 또는 [주문 시작하기] 터치</text>
+              <line x1="526" y1="252" x2="552" y2="252" stroke="#d5d8de" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <line x1="311.0" y1="299" x2="311.0" y2="325" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="96" y="333" width="430" height="77" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="359" class="t-title" fill="#16181d">인사 · 메뉴 화면</text>
+              <text x="311.0" y="379" class="t-sub" fill="#5c6270">Greeting-IN 인사 후 메뉴 진입 · 이때부터 마이크 ON</text>
+              <line x1="311.0" y1="410" x2="311.0" y2="436" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="552" y="440" width="330" height="88" rx="10" fill="#fbfbfd" stroke="#e3e5ea"/>
+              <rect x="552" y="452" width="3" height="64" rx="1.5" fill="#c8ccd4"/>
+              <text x="570" y="466" class="t-note-h a-s" fill="#43485a">되묻기 · 예외</text>
+              <text x="570" y="486" class="t-note a-s" fill="#5c6270">모호한 이름 · 필수 옵션 누락 · 수량 불명확 → 1회 되물음</text>
+              <text x="570" y="502" class="t-note a-s" fill="#5c6270">없는 메뉴 · 품절 메뉴는 안내 후 재요청, 담기지 않음</text>
+              <text x="570" y="518" class="t-note a-s" fill="#5c6270">음성 인식 3회 실패 시 "화면에서 골라주셔도 돼요"</text>
+              <rect x="96" y="444" width="430" height="94" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="470" class="t-title" fill="#16181d">주문 입력 — 음성 / 터치</text>
+              <text x="311.0" y="490" class="t-sub" fill="#5c6270">음성  "아이스 아메리카노 라지"</text>
+              <text x="311.0" y="507" class="t-sub" fill="#5c6270">터치  메뉴 카드 선택</text>
+              <line x1="526" y1="482" x2="552" y2="482" stroke="#d5d8de" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <line x1="311.0" y1="538" x2="311.0" y2="564" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="96" y="572" width="430" height="94" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="598" class="t-title" fill="#16181d">옵션 선택</text>
+              <text x="311.0" y="618" class="t-sub" fill="#5c6270">택1(온도·사이즈) · 다중(토핑) · 수량(샷)</text>
+              <text x="311.0" y="635" class="t-sub" fill="#5c6270">필수 미선택 시 [담기] 비활성 · 고정 옵션은 회색 표시</text>
+              <line x1="311.0" y1="666" x2="311.0" y2="692" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="552" y="696" width="330" height="72" rx="10" fill="#fbfbfd" stroke="#e3e5ea"/>
+              <rect x="552" y="708" width="3" height="48" rx="1.5" fill="#c8ccd4"/>
+              <text x="570" y="722" class="t-note-h a-s" fill="#43485a">무동작 타임아웃</text>
+              <text x="570" y="742" class="t-note a-s" fill="#5c6270">주문 중 30초 무동작 → 확인 팝업 + 10초 카운트다운</text>
+              <text x="570" y="758" class="t-note a-s" fill="#5c6270">무시하면 대기화면으로. 장바구니 · 언어 · 마이크 초기화</text>
+              <rect x="96" y="700" width="430" height="77" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="726" class="t-title" fill="#16181d">장바구니</text>
+              <text x="311.0" y="746" class="t-sub" fill="#5c6270">같은 메뉴 · 같은 옵션은 ×N으로 묶임 · 수량 ± / 삭제</text>
+              <line x1="526" y1="730" x2="552" y2="730" stroke="#d5d8de" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <line x1="311.0" y1="777" x2="311.0" y2="815" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <path d="M 96 761 H 68 V 464 H 87" fill="none" stroke="#b9b7f2" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#tri-p)"/>
+              <text x="61" y="612.5" class="t-chip a-m" fill="#4b47d6" transform="rotate(-90 61 612.5)">더 주문하기</text>
+              <rect x="96" y="823" width="430" height="94" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="849" class="t-title" fill="#16181d">주문 확인</text>
+              <text x="311.0" y="869" class="t-sub" fill="#5c6270">AI가 담긴 메뉴를 전부 읽어주고 총 금액 안내</text>
+              <text x="311.0" y="886" class="t-sub" fill="#5c6270">수량 · 삭제 가능 / 옵션 변경은 불가</text>
+              <line x1="311.0" y1="917" x2="311.0" y2="943" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="96" y="951" width="430" height="77" rx="12" fill="#eeeefc" stroke="#b9b7f2" stroke-width="1.4"/>
+              <text x="311.0" y="977" class="t-title" fill="#2f2ba3">매장 / 포장</text>
+              <text x="311.0" y="997" class="t-sub" fill="#4b47d6">안 고르면 결제로 넘어가지 않는다 · 포장비 없음</text>
+              <line x1="311.0" y1="1028" x2="311.0" y2="1054" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="96" y="1062" width="430" height="77" rx="12" fill="#eeeefc" stroke="#b9b7f2" stroke-width="1.4"/>
+              <text x="311.0" y="1088" class="t-title" fill="#2f2ba3">결제수단 선택</text>
+              <text x="311.0" y="1108" class="t-sub" fill="#4b47d6">카드 결제 · 간편 결제</text>
+              <line x1="311.0" y1="1139" x2="311.0" y2="1165" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="552" y="1169" width="330" height="72" rx="10" fill="#fbfbfd" stroke="#f2d7d7"/>
+              <rect x="552" y="1181" width="3" height="48" rx="1.5" fill="#c62828"/>
+              <text x="570" y="1195" class="t-note-h a-s" fill="#a02121">결제 실패</text>
+              <text x="570" y="1215" class="t-note a-s" fill="#5c6270">[다시 시도] [다른 결제수단] [주문 확인으로] 3개 선택지</text>
+              <text x="570" y="1231" class="t-note a-s" fill="#5c6270">장바구니는 유지되고 주문번호는 발급되지 않는다</text>
+              <rect x="96" y="1173" width="430" height="94" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="1199" class="t-title" fill="#16181d">결제 진행</text>
+              <text x="311.0" y="1219" class="t-sub" fill="#5c6270">마이크 OFF · [처음으로] [뒤로] 비활성</text>
+              <text x="311.0" y="1236" class="t-sub" fill="#5c6270">이 구간만 무동작 타임아웃 없음(PG에 위임)</text>
+              <line x1="526" y1="1203" x2="552" y2="1203" stroke="#d5d8de" stroke-width="1.2" stroke-dasharray="4 4"/>
+              <line x1="311.0" y1="1267" x2="311.0" y2="1305" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <path d="M 96 1251 H 68 V 1082 H 87" fill="none" stroke="#b9b7f2" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#tri-p)"/>
+              <text x="61" y="1166.5" class="t-chip a-m" fill="#4b47d6" transform="rotate(-90 61 1166.5)">재시도</text>
+              <rect x="96" y="1313" width="430" height="94" rx="12" fill="#ffffff" stroke="#dfe2e8" stroke-width="1"/>
+              <text x="311.0" y="1339" class="t-title" fill="#16181d">완료 — 주문번호 #0042</text>
+              <text x="311.0" y="1359" class="t-sub" fill="#5c6270">Greeting-OUT 감사 인사</text>
+              <text x="311.0" y="1376" class="t-sub" fill="#5c6270">[영수증 출력] / [출력 안 함] · 15초 후 자동 복귀</text>
+              <line x1="311.0" y1="1407" x2="311.0" y2="1433" stroke="#c8ccd4" stroke-width="1.6" marker-end="url(#tri)"/>
+              <rect x="96" y="1441" width="430" height="77" rx="22" fill="#4b47d6" stroke="#4b47d6" stroke-width="1"/>
+              <text x="311.0" y="1467" class="t-title" fill="#ffffff">대기화면 복귀</text>
+              <text x="311.0" y="1487" class="t-sub" fill="#dedcfa">이전 주문 · 언어 설정이 남지 않은 깨끗한 상태</text>
+              <path d="M 96 1496 H 32 V 118 H 87" fill="none" stroke="#b9b7f2" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#tri-p)"/>
+              <text x="25" y="807.0" class="t-chip a-m" fill="#4b47d6" transform="rotate(-90 25 807.0)">다음 손님</text>
+              <line x1="96" y1="1578" x2="882" y2="1578" stroke="#e3e5ea"/>
+              <text x="96" y="1612" class="t-h2 a-s" fill="#16181d">관리자 흐름</text>
+              <text x="188" y="1612" class="t-note a-s" fill="#5c6270">손님 화면 위에 겹쳐 뜬다. 주문 · 결제 진행 중에는 진입이 막히고, 60초 방치하면 들어오기 전 화면으로 돌아온다.</text>
+              <rect x="96.0" y="1638" width="250.0" height="62" rx="12" fill="#ffffff" stroke="#dfe2e8"/>
+              <text x="221.0" y="1665" class="t-title-s" fill="#16181d">좌측 상단 3초 롱프레스</text>
+              <text x="221.0" y="1684" class="t-note" fill="#5c6270">대기화면 · 메뉴 화면에서만</text>
+              <line x1="349.0" y1="1669" x2="358.0" y2="1669" stroke="#c8ccd4" stroke-width="1.5" marker-end="url(#tri)"/>
+              <rect x="364.0" y="1638" width="250.0" height="62" rx="12" fill="#ffffff" stroke="#dfe2e8"/>
+              <text x="489.0" y="1665" class="t-title-s" fill="#16181d">관리자 PIN 6자리</text>
+              <text x="489.0" y="1684" class="t-note" fill="#5c6270">10회 틀리면 1분 임시 잠금</text>
+              <line x1="617.0" y1="1669" x2="626.0" y2="1669" stroke="#c8ccd4" stroke-width="1.5" marker-end="url(#tri)"/>
+              <rect x="632.0" y="1638" width="250.0" height="62" rx="12" fill="#ffffff" stroke="#dfe2e8"/>
+              <text x="757.0" y="1665" class="t-title-s" fill="#16181d">관리 메뉴</text>
+              <text x="757.0" y="1684" class="t-note" fill="#5c6270">매장명 + 아래 4개 항목</text>
+              <line x1="757.0" y1="1700" x2="757.0" y2="1722" stroke="#c8ccd4" stroke-width="1.4"/>
+              <line x1="187.5" y1="1722" x2="790.5" y2="1722" stroke="#c8ccd4" stroke-width="1.4"/>
+              <line x1="187.5" y1="1722" x2="187.5" y2="1734" stroke="#c8ccd4" stroke-width="1.4" marker-end="url(#tri)"/>
+              <rect x="96.0" y="1742" width="183.0" height="66" rx="12" fill="#eeeefc" stroke="#b9b7f2"/>
+              <text x="187.5" y="1768" class="t-title-s" fill="#2f2ba3">결제 관리</text>
+              <text x="187.5" y="1786" class="t-note" fill="#4b47d6">당일 주문만 · 전체 취소</text>
+              <text x="187.5" y="1801" class="t-note" fill="#4b47d6">되돌릴 수 없음</text>
+              <line x1="388.5" y1="1722" x2="388.5" y2="1734" stroke="#c8ccd4" stroke-width="1.4" marker-end="url(#tri)"/>
+              <rect x="297.0" y="1742" width="183.0" height="66" rx="12" fill="#eeeefc" stroke="#b9b7f2"/>
+              <text x="388.5" y="1768" class="t-title-s" fill="#2f2ba3">품절 관리</text>
+              <text x="388.5" y="1786" class="t-note" fill="#4b47d6">저장 버튼 없이 즉시 반영</text>
+              <text x="388.5" y="1801" class="t-note" fill="#4b47d6">다음 주문부터 적용</text>
+              <line x1="589.5" y1="1722" x2="589.5" y2="1734" stroke="#c8ccd4" stroke-width="1.4" marker-end="url(#tri)"/>
+              <rect x="498.0" y="1742" width="183.0" height="66" rx="12" fill="#eeeefc" stroke="#b9b7f2"/>
+              <text x="589.5" y="1768" class="t-title-s" fill="#2f2ba3">주문 접수 일시중지</text>
+              <text x="589.5" y="1786" class="t-note" fill="#4b47d6">진행 중 주문은 완료</text>
+              <text x="589.5" y="1801" class="t-note" fill="#4b47d6">새 주문만 차단</text>
+              <line x1="790.5" y1="1722" x2="790.5" y2="1734" stroke="#c8ccd4" stroke-width="1.4" marker-end="url(#tri)"/>
+              <rect x="699.0" y="1742" width="183.0" height="66" rx="12" fill="#eeeefc" stroke="#b9b7f2"/>
+              <text x="790.5" y="1768" class="t-title-s" fill="#2f2ba3">로그아웃</text>
+              <text x="790.5" y="1786" class="t-note" fill="#4b47d6">확인 모달 1회</text>
+              <text x="790.5" y="1801" class="t-note" fill="#4b47d6">기기 로그인 해제</text>
+            </svg>
+              <figcaption>
+                시작부터 결제까지의 경로와 되돌아가는 지점. 보라색 점선이 되돌아가는 경로로,
+                장바구니의 <b>더 주문하기</b>는 주문 입력으로, <b>결제 실패</b>는 결제수단 선택으로 돌아갑니다.
+                오른쪽 칸은 본류에서 빠지는 되묻기 · 타임아웃 · 실패 처리입니다.
+              </figcaption>
             </figure>
           </section>
 
@@ -215,16 +368,6 @@
               <li><strong>팝업 / 모달</strong> — 주문 오류와 안내 메시지를 처리합니다.</li>
               <li><strong>매장 FAQ</strong> — 자주 묻는 질문과 정책 문서를 제공합니다.</li>
             </ul>
-            <div class="fig-pair fig-pair--phones">
-              <figure>
-                <div class="ph-slot ph-slot--phone">(주문 확인 · 수정 화면)</div>
-                <figcaption>AI가 읽어 준 주문 내역을 손님이 고치는 단계.</figcaption>
-              </figure>
-              <figure>
-                <div class="ph-slot ph-slot--phone">(음성 인식 실패 시 터치 경로)</div>
-                <figcaption>말이 안 통할 때 같은 화면에서 손으로 넘어갑니다.</figcaption>
-              </figure>
-            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="operator">
@@ -244,13 +387,36 @@
               관리 기능은 <strong>매장에서 즉시 처리해야 하는 것들만</strong> 로컬에 뒀습니다.
               품절과 주문 중단은 지금 당장 눌러야 하는 일이고, 통계처럼 나중에 봐도 되는 것은 여기에 넣지 않았습니다.
             </p>
+            <div class="fig-pair fig-pair--quad">
+              <figure>
+                <img src="../images/projects/kiosk/admin-pin.webp" width="540" height="960" loading="lazy" decoding="async"
+                     alt="관리자 PIN 입력 화면. 어두운 모달에 3×4 숫자 키패드가 있고, 위에 “PIN을 잊으셨나요? 점주 관리자 페이지에서 재발급받거나, 57초 후 다시 시도해 주세요.”라는 안내가 있다.">
+                <figcaption><b>PIN 입력</b> — 10회 틀리면 1분간 잠깁니다.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/admin-menu.webp" width="540" height="960" loading="lazy" decoding="async"
+                     alt="관리 메뉴 화면. 상단에 매장명 위드마인드카페와 [닫기]가 있고, 결제 관리·품절 관리 카드와 주문 접수 상태 토글, 하단에 로그아웃 버튼이 있다.">
+                <figcaption><b>관리 메뉴</b> — 결제 · 품절 · 주문 접수 상태.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/admin-payment.webp" width="540" height="960" loading="lazy" decoding="async"
+                     alt="결제 관리 화면. 주문번호 검색창 아래로 오늘 주문 7건이 카드로 나열되고, 각 카드에 취소·환불과 영수증 재발급 버튼이 있다. 이미 취소된 주문은 흐리게 표시된다.">
+                <figcaption><b>결제 관리</b> — 당일 주문만, 전체 취소.</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/admin-soldout.webp" width="540" height="960" loading="lazy" decoding="async"
+                     alt="품절 관리 화면. 카테고리 탭 아래로 메뉴별 판매 상태 토글이 나열되고, 품절 처리된 바닐라라떼만 토글이 꺼져 있다. 하단에 변경사항은 다음 주문부터 반영된다는 안내가 있다.">
+                <figcaption><b>품절 관리</b> — 저장 없이 즉시, 다음 주문부터.</figcaption>
+              </figure>
+            </div>
             <figure class="fig-tall">
-              <div class="ph-slot ph-slot--phone">(운영자 로컬 관리 메뉴)</div>
-              <figcaption>품절과 주문 일시중지를 매장에서 바로 처리합니다.</figcaption>
-            </figure>
-            <figure>
-              <div class="ph-slot ph-slot--pc">(실제 키오스크 기기 설치 사진)</div>
-              <figcaption>홀로그램 디스플레이에 띄운 실제 모습.</figcaption>
+              <video width="540" height="960"
+                     poster="../images/projects/kiosk/booth-poster.webp"
+                     autoplay muted loop playsinline preload="none"
+                     aria-label="부산 가상융합 실증사업 전시 부스에 설치한 홀로그램 AI 키오스크. 전시장 통로에 놓인 기기 앞으로 관람객들이 지나가고, 화면에는 AI 점원 캐릭터가 떠 있다.">
+                <source src="../images/projects/kiosk/booth.mp4" type="video/mp4">
+              </video>
+              <figcaption>전시 부스에 설치.</figcaption>
             </figure>
           </section>
 
@@ -279,8 +445,6 @@
                 <li>음성 인식 진행 중 상태 표시가 보이는 캡처</li>
                 <li>주문 확인·수정 화면</li>
                 <li>운영자 로컬 관리 메뉴 화면</li>
-                <li>전체 주문 프로세스 플로우차트</li>
-                <li>실제 키오스크 기기에 띄운 사진 또는 시연 영상</li>
               </ul>
             </div> -->
           </section>
