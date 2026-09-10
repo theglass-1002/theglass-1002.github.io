@@ -1528,6 +1528,78 @@ figcaption b { color: var(--muted-strong); font-weight: 600; }
   .fig-pair--quad { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* --------------------------------------------------------------------------
+   이미지 확대 보기 (라이트박스)
+   -------------------------------------------------------------------------- */
+.is-zoomable { cursor: zoom-in; }
+.is-zoomable:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+html.is-locked { overflow: hidden; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(12, 13, 18, .9);
+  animation: lb-in .16s var(--ease);
+}
+@keyframes lb-in { from { opacity: 0 } to { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .lightbox { animation: none } }
+
+.lightbox__scroll {
+  height: 100%;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: clamp(44px, 6vw, 72px) clamp(16px, 4vw, 48px);
+}
+.lightbox__body { margin: 0; max-width: 100%; }
+.lightbox__stage { display: flex; justify-content: center; }
+.lightbox__stage img {
+  display: block;
+  max-width: min(1100px, 92vw);
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--surface);
+  cursor: zoom-out;
+}
+/* 도표는 세로로 길어서, 높이를 맞추면 글씨가 뭉갠다. 폭을 살리고 세로로 스크롤한다 */
+.lightbox__stage.is-vector { background: var(--surface); border-radius: var(--radius); padding: var(--s-5); }
+.lightbox__stage.is-vector svg { width: min(1280px, 90vw); height: auto; max-height: none; }
+
+.lightbox__cap {
+  margin: var(--s-4) auto 0;
+  max-width: 62ch;
+  color: #cdd1da;
+  text-align: center;
+  font-size: var(--t-sm);
+}
+.lightbox__cap b { color: #fff; }
+.lightbox__cap[hidden] { display: none; }
+
+.lightbox__close {
+  position: fixed;
+  top: clamp(12px, 2vw, 20px);
+  right: clamp(12px, 2vw, 20px);
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .15s var(--ease);
+}
+.lightbox__close:hover { background: rgba(255, 255, 255, .22); }
+.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
 /* .story 안에 세로로 긴 모바일 화면이 들어가면 글보다 훨씬 길어져 옆이 비어 보인다.
    폭을 좁혀 높이를 낮춘다. 글이 짧을 때는 .story 대신 .fig-phone 을 쓴다. */
 .story > figure .ph-slot--phone,

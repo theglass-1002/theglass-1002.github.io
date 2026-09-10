@@ -173,4 +173,94 @@
     Array.prototype.forEach.call(videos, function (v) { io.observe(v); });
   })();
 
+  /* ------------------------------------------------------------------
+     6. 이미지 확대 보기 (라이트박스)
+
+     본문 figure 안의 사진과 플로우차트를 누르면 화면 가득 띄운다.
+     홈 화면의 프로젝트 카드 이미지는 카드 전체가 링크라 제외한다.
+     ------------------------------------------------------------------ */
+  (function lightbox() {
+    var triggers = document.querySelectorAll('figure img, .fig-diagram svg');
+    if (!triggers.length) return;
+
+    var box, stage, cap, closeBtn, lastFocus;
+
+    function build() {
+      box = document.createElement('div');
+      box.className = 'lightbox';
+      box.hidden = true;
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-label', '확대 보기');
+      box.innerHTML =
+        '<button type="button" class="lightbox__close" aria-label="닫기">&#10005;</button>' +
+        '<div class="lightbox__scroll"><figure class="lightbox__body">' +
+        '<div class="lightbox__stage"></div>' +
+        '<figcaption class="lightbox__cap"></figcaption>' +
+        '</figure></div>';
+      document.body.appendChild(box);
+
+      stage = box.querySelector('.lightbox__stage');
+      cap = box.querySelector('.lightbox__cap');
+      closeBtn = box.querySelector('.lightbox__close');
+
+      closeBtn.addEventListener('click', close);
+      // 사진 바깥(어두운 영역)을 누르면 닫는다
+      box.addEventListener('click', function (e) {
+        if (!e.target.closest('.lightbox__stage, .lightbox__close')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (box.hidden) return;
+        if (e.key === 'Escape') { close(); return; }
+        // 열려 있는 동안 초점이 밖으로 새지 않게 잡아 둔다
+        if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+      });
+    }
+
+    function open(el) {
+      if (!box) build();
+      lastFocus = document.activeElement;
+      stage.innerHTML = '';
+      stage.classList.toggle('is-vector', el.tagName.toLowerCase() === 'svg');
+
+      if (el.tagName.toLowerCase() === 'svg') {
+        stage.appendChild(el.cloneNode(true));
+      } else {
+        var img = document.createElement('img');
+        img.src = el.currentSrc || el.src;
+        img.alt = el.alt || '';
+        stage.appendChild(img);
+      }
+
+      var fc = el.closest('figure') && el.closest('figure').querySelector('figcaption');
+      cap.innerHTML = fc ? fc.innerHTML : '';
+      cap.hidden = !fc;
+
+      box.hidden = false;
+      document.documentElement.classList.add('is-locked');
+      closeBtn.focus();
+    }
+
+    function close() {
+      box.hidden = true;
+      stage.innerHTML = '';
+      document.documentElement.classList.remove('is-locked');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    Array.prototype.forEach.call(triggers, function (el) {
+      // 링크 안에 든 이미지는 링크가 우선이다
+      if (el.closest('a')) return;
+      el.classList.add('is-zoomable');
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      var label = el.tagName.toLowerCase() === 'svg' ? '플로우차트' : (el.alt || '이미지');
+      el.setAttribute('aria-label', label + ' 확대해서 보기');
+      el.addEventListener('click', function () { open(el); });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+      });
+    });
+  })();
+
 })();
