@@ -192,7 +192,6 @@
           alt="장고 메인 화면. 상단에 보라색 배너와 '장애인 취업, 한 곳에서 해결하세요!' 헤드라인, 아래에 채용 공고·이력서·AI 모의면접 카드가 있다."
           fetchpriority="high" decoding="async">
           </div>
-          <figcaption>구직자 사이트 <b>메인 화면</b>. 채용 공고 검색, 이력서 작성, AI 모의면접을 한곳에서 이용할 수 있습니다.</figcaption>
           </figure>
 
           <!--
@@ -240,17 +239,25 @@
             <h2 id="interview">장애 유형에 따라 갈라지는 면접</h2>
             <p>
               카메라 앞에서 말하는 방식을 전제로 화면을 짜면 그 전제가 맞지 않는 사용자는 시작을 못 합니다.
-              청각·안면장애 사용자에게는 영상 없이 질문을 읽고 답변을 입력하는 텍스트 면접을 따로 만들었습니다.
+              그래서 면접을 두 갈래로 나눴습니다.
+              말하기와 표정 인식이 가능한 사용자는 <strong>영상 면접</strong>으로,
+              청각·언어·안면장애 사용자는 영상 없이 질문을 읽고 답변을 입력하는 <strong>텍스트 면접</strong>으로 갑니다.
             </p>
             <p>
-              진행 패널에는 자기소개, 장애 맞춤 질문, 직무 질문, 이력서 기반 질문 단계를
+              두 갈래 모두 진행 패널은 같습니다. 자기소개, 장애 맞춤 질문, 직무 질문, 이력서 기반 질문 단계를
               아이콘과 텍스트로 같이 표시해 현재 위치를 화면만 보고 알 수 있게 했습니다.
             </p>
+            <figure>
+              <img src="../images/projects/jango/jango-video-interview.webp" width="1600" height="784"
+                   alt="장고 영상 모의면접 진행 화면. 왼쪽에 설정·환경 테스트·모의면접 단계, 가운데 면접관 영상과 오른쪽 위 응시자 화면, 아래 답변 시작·답변 종료 버튼, 오른쪽에 이력서와 희망 직무, 자기소개 및 지원 동기부터 이력서 기반 질문까지 이어지는 면접 단계와 진행 현황 질문 1/6이 표시돼 있다."
+                   loading="lazy" decoding="async">
+              <figcaption>영상 면접 화면. 말하기와 표정 인식이 가능한 사용자가 쓰는 기본 경로입니다.</figcaption>
+            </figure>
             <figure>
               <img src="../images/projects/jango/jango-text-interview.webp" width="1600" height="783"
                    alt="장고 텍스트 기반 모의면접 화면. 왼쪽에 설정·모의면접 단계, 가운데 면접관 영상과 답변 입력창(0/2000), 오른쪽에 이력서·희망 직무와 자기소개, 장애 맞춤형 질문, 직무 질문, 이력서 기반 질문으로 이어지는 면접 단계와 진행 현황 1/6이 표시돼 있다."
                    loading="lazy" decoding="async">
-              <figcaption>영상 촬영 없이 진행하는 텍스트 면접 화면.</figcaption>
+              <figcaption>텍스트 면접 화면. 청각 · 언어 · 안면장애 사용자가 영상 촬영 없이 진행합니다.</figcaption>
             </figure>
             <div class="fig-pair fig-pair--phones">
               <figure>
