@@ -2023,8 +2023,6 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .nav__list a:hover { color: var(--heading); background: var(--subtle); border-radius: 0; }
 
 /* 상세 페이지 — 제목 앞 픽셀 마커, 이미지 테두리 */
-.cs-section > h2::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 12px; background: var(--forest); vertical-align: .1em; }
-.shot-frame, .fig-hero img { border-radius: 0; }
 
 /* 페이지 이동 — 짧은 페이드 (지원하는 브라우저에서만) */
 @view-transition { navigation: auto; }
@@ -2049,3 +2047,87 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   .brand { white-space: nowrap; }
   .brand span { display: none; }      /* 좁은 화면에서는 이름만 — 직함은 히어로에 있다 */
 }
+
+
+/* --------------------------------------------------------------------------
+   24. 상세 페이지 — 홈과 같은 옷 (숲 띠 · 번호 배지 · 픽셀 테두리)
+   본문 구조는 그대로 두고 겉모습만 맞춘다.
+   -------------------------------------------------------------------------- */
+
+/* 맨 위 숲 띠 — 홈 히어로의 나무 라인만 잘라서 쓴다 */
+main:has(.layout)::before {
+  content: "";
+  display: block;
+  height: clamp(84px, 11vw, 128px);
+  background: url("../images/hero/pixel-forest.webp") 50% 66% / cover no-repeat;
+  image-rendering: pixelated;
+  border-bottom: 4px solid var(--scene-forest);
+}
+
+/* 머리말 */
+.ph__kicker::after { content: ""; display: inline-block; width: 8px; height: 12px; margin-left: 10px; vertical-align: -1px; background: currentColor; }
+.ph__meta { border-top: 2px solid var(--px-border); }
+.ph__meta dt { color: var(--forest); }
+
+/* 섹션 제목 앞 번호 배지 (01, 02 …) */
+.content { counter-reset: cs; }
+.cs-section > h2::before {
+  counter-increment: cs;
+  content: counter(cs, decimal-leading-zero);
+  display: inline-block;
+  margin-right: 14px;
+  padding: 5px 7px;
+  font: 400 12px/1 var(--font-pixel);
+  letter-spacing: .1em;
+  color: var(--bg);
+  background: var(--forest);
+  vertical-align: .4em;
+}
+
+/* 태그 · 안내 박스 · 사이드 박스 — 모서리를 각지게, 색은 절제해서 */
+.tags li,
+.tags--brand li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 12px 3px 10px;
+  color: var(--heading);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+}
+.tags li::before { content: ""; width: 6px; height: 6px; background: var(--forest); }
+.lead-note { background: var(--surface); border-left: 4px solid var(--forest); border-radius: 0; }
+.note { border-radius: 0; }
+.side__box { border: 1px solid var(--border-strong); border-radius: 0; }
+.side__box h2 { color: var(--forest); }
+.toc-mobile { border-radius: 0; }
+
+/* 이미지 · 스크린샷 프레임 */
+figure img, figure video,
+.fig-hero img, .fig-phone img, .fig-tall video,
+.shot-frame, .shot-frame img, .shot img { border-radius: 0; }
+figure img, figure video { border-color: var(--border-strong); }
+
+/* 이전 / 다음 */
+.pager { border-top: 2px solid var(--px-border); }
+.pager a {
+  border: 2px solid var(--px-border);
+  border-radius: 0;
+  background: var(--surface);
+  box-shadow: 3px 3px 0 var(--forest);
+  transition: transform .12s steps(2), box-shadow .12s steps(2);
+}
+.pager a:hover { border-color: var(--px-border); background: #fff; transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--forest); }
+.pager .is-empty { border-color: transparent; background: transparent; box-shadow: none; opacity: 0; }
+
+/* 맨 아래 문의 — 홈 Contact 처럼 띠로 */
+.cta { background: var(--subtle); border-block: 1px solid var(--border); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pager a { transition: none; }
+}
+
+/* 본문 안의 태그 목록은 불릿 목록이 아니다 — 들여쓰기와 마지막 항목 여백 차이 제거 */
+.prose .tags { padding-left: 0; }
+.prose .tags li { margin-bottom: 0; }
