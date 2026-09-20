@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>메타버스 에너지 전시관 — 정유리 포트폴리오</title>
-  <meta name="description" content="한전KDN 데이터 결합·활용 아이디어 공모전 장려상 수상작. Unity로 만든 1인칭 메타버스 에너지 전시관 케이스 스터디.">
+  <meta name="description" content="한전KDN 데이터 결합·활용 아이디어 공모전 장려상 수상작, Unity로 만든 1인칭 메타버스 에너지 전시관 케이스 스터디.">
 
   <link rel="canonical" href="https://theglass-1002.github.io/projects/energy.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="정유리 · Frontend Developer">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="메타버스 에너지 전시관 — 정유리 포트폴리오">
-  <meta property="og:description" content="한전KDN 데이터 결합·활용 아이디어 공모전 장려상 수상작. Unity로 만든 1인칭 메타버스 에너지 전시관 케이스 스터디.">
+  <meta property="og:description" content="한전KDN 데이터 결합·활용 아이디어 공모전 장려상 수상작, Unity로 만든 1인칭 메타버스 에너지 전시관 케이스 스터디.">
   <meta property="og:url" content="https://theglass-1002.github.io/projects/energy.html">
   <meta property="og:image" content="https://theglass-1002.github.io/images/projects/energy/energy-home-exhibit.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
-  <link rel="stylesheet" href="../css/style.css?v=20260920e">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260924">
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
@@ -53,7 +54,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" data-pan="8" data-accent="yellow">
 
 
     <div class="wrap">
@@ -72,7 +73,7 @@
           <header class="ph">
           <span class="ph__kicker">Case study</span>
           <h1>메타버스 에너지 전시관</h1>
-          <p class="ph__lead">전시관에 갈 수 없는 사람도 에너지 데이터를 직접 둘러볼 수 있게 만든 가상 전시관. 4인 팀의 팀장으로 기획과 팀 리딩을 맡았고, 한전KDN 공모전에서 장려상을 받았습니다.</p>
+          <p class="ph__lead">전시관에 갈 수 없는 사람도 에너지 데이터를 둘러볼 수 있게 만든 가상 전시관입니다. 4인 팀의 팀장으로 기획을 맡았고, 한전KDN 공모전에서 장려상을 받았습니다.</p>
 
           <dl class="ph__meta">
           <div>
@@ -80,15 +81,15 @@
           <dd>2021.12.01 – 2022.01.12</dd>
           </div>
           <div>
-          <dt>유형</dt>
+          <dt>프로젝트 성격</dt>
           <dd>공모전 참가작 (팀 4명)</dd>
           </div>
           <div>
-          <dt>역할</dt>
+          <dt>맡은 일</dt>
           <dd>팀장 · 기획 및 팀 리딩</dd>
           </div>
           <div>
-          <dt>핵심 기술</dt>
+          <dt>사용 기술</dt>
           <dd>Unity · C# · MySQL</dd>
           </div>
           </dl>
@@ -104,7 +105,7 @@
           </div>
 
           <div class="side__box">
-            <h2>담당 업무</h2>
+            <h2>주요 작업</h2>
             <ul>
               <li>팀장 · 기획과 팀 리딩</li>
               <li>프론트엔드 개발 (50%)</li>
@@ -113,13 +114,13 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
-            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#team">팀과 담당 범위</a></li>
-            <li><a href="#experience">관람 경험 설계</a></li>
+            <li><a href="#experience">관람 동선 설계</a></li>
             <li><a href="#features">주요 기능</a></li>
             <li><a href="#award">수상</a></li>
-            <li><a href="#stack">기술 스택</a></li>
-            <li><a href="#closing">정리</a></li>
+            <li><a href="#stack">사용 기술</a></li>
+            <li><a href="#closing">돌아보며</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -149,43 +150,38 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
-              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#team">팀과 담당 범위</a></li>
-              <li><a href="#experience">관람 경험 설계</a></li>
+              <li><a href="#experience">관람 동선 설계</a></li>
               <li><a href="#features">주요 기능</a></li>
               <li><a href="#award">수상</a></li>
-              <li><a href="#stack">기술 스택</a></li>
-              <li><a href="#closing">정리</a></li>
+              <li><a href="#stack">사용 기술</a></li>
+              <li><a href="#closing">돌아보며</a></li>
             </ul>
           </details>
 
           <figure class="fig-hero">
           <div class="shot-frame">
           <img src="../images/projects/energy/energy-home-exhibit.webp" width="1200" height="580"
-          alt="가상 전시관의 가정집 주방 전시물. 전자레인지에 5.25kWh, 냉장고에 72kWh라고 적힌 말풍선이 붙어 있고 벽면에 전기 생산 과정을 묻는 안내판이 있다."
+          alt="가정집 주방 전시물. 가전제품에 소비 전력 말풍선이 붙어 있다."
           fetchpriority="high" decoding="async">
           </div>
-          <figcaption>전시관의 가정 공간. 숫자를 표로 나열하는 대신 <b>실제 가전제품 옆에 소비 전력을 붙여</b>, 관람자가 자기 집을 떠올리며 값을 읽게 했습니다.</figcaption>
+          <figcaption>전시관의 가정 공간. 표 대신 <b>실제 가전제품 옆에 소비 전력을 붙여</b>, 자기 집을 떠올리며 값을 읽게 했습니다.</figcaption>
           </figure>
 
 
           <section class="cs-section" aria-labelledby="overview">
-            <h2 id="overview">프로젝트 개요</h2>
+            <h2 id="overview">프로젝트 소개</h2>
             <p class="lead-note">
-              <strong>“에너지 데이터는 공개돼 있는데, 왜 아무도 보지 않는가.”</strong>
-              공공 API로 열려 있는 에너지 데이터는 표와 수치로만 존재했고, 전시관은 거리와 코로나 때문에 갈 수 없었습니다.
-              이 프로젝트는 그 데이터를 <em>걸어 들어가 볼 수 있는 공간</em>으로 바꾸는 시도였습니다.
+              <strong>“에너지 데이터는 공개돼 있는데, 왜 아무도 보지 않는가.”</strong> 공공 API의 에너지 데이터는 표와 수치로만 있었습니다. 이 프로젝트는 그 데이터를 <em>걸어 들어가 볼 수 있는 공간</em>으로 바꾸는 시도였습니다.
             </p>
             <p>
-              코로나19나 거리상의 제약으로 전시관 방문이 어려운 이들을 위해,
-              에너지 데이터를 메타버스 공간에서 체험할 수 있도록 기획한 가상 전시관 체험 프로그램입니다.
-              국토교통부, 에너지경제연구원, 한국전력거래소의 공개 데이터를 결합해 전시물로 구성했습니다.
+              코로나19나 거리 때문에 전시관에 가기 어려운 사람을 위한 가상 전시관입니다. 국토교통부, 에너지경제연구원, 한국전력거래소의 공개 데이터를 전시물로 만들었습니다.
             </p>
           </section>
 
           <section class="cs-section" aria-labelledby="team">
             <h2 id="team">팀과 담당 범위</h2>
-            <p>4인 팀 프로젝트에서 <strong>팀장</strong>을 맡아 기획과 팀 리딩을 담당했습니다.</p>
             <ul>
               <li><strong>팀장</strong> — 기획 및 팀 리딩</li>
               <li><strong>프론트엔드 개발</strong> — 기여도 50%</li>
@@ -193,22 +189,17 @@
               <li><strong>백엔드 개발</strong> — 기여도 10%</li>
             </ul>
             <p>
-              공모전은 아이디어 분야로 출품했기 때문에, 구현물 자체보다
-              <strong>“왜 이 데이터를 공간으로 보여줘야 하는가”</strong>를 설명하는 일이 팀장의 몫이었습니다.
-              전시 동선과 각 존에서 관람자가 무엇을 알게 되는지를 먼저 정하고, 그다음에 만들 화면을 나눴습니다.
+              공모전은 아이디어 분야로 출품해, 구현물보다 <strong>“왜 이 데이터를 공간으로 보여줘야 하는가”</strong>를 설명하는 일이 팀장의 몫이었습니다. 전시 동선과 각 존에서 알게 될 것을 먼저 정하고 화면을 나눴습니다.
             </p>
           </section>
 
           <section class="cs-section" aria-labelledby="experience">
-            <h2 id="experience">관람 경험 설계</h2>
+            <h2 id="experience">관람 동선 설계</h2>
             <p>
-              웹 페이지로 데이터를 보여주는 방식과 가장 크게 갈리는 지점이 <strong>시점</strong>입니다.
-              현실감을 높이기 위해 <strong>1인칭 사용자 시점으로 전시관에 입장</strong>하고,
-              사용자의 시선 이동에 따라 화면이 전환되도록 만들었습니다.
+              가장 크게 다른 점은 <strong>시점</strong>입니다. <strong>1인칭으로 전시관에 입장</strong>해 걸어 다니며 보고, 시선 이동에 따라 화면이 바뀝니다.
             </p>
             <p>
-              화면을 넘기는 것이 아니라 걸어서 이동하기 때문에, 관람자는 <strong>자기가 고른 순서대로</strong> 전시물을 봅니다.
-              그래서 전시물마다 앞뒤 설명에 의존하지 않고 그 자리에서 독립적으로 읽히도록 구성했습니다.
+              걸어서 이동하다 보니 관람자는 <strong>자기가 고른 순서대로</strong> 전시물을 봅니다. 그래서 전시물마다 앞뒤 설명 없이도 그 자리에서 읽히게 만들었습니다.
             </p>
           </section>
 
@@ -217,19 +208,16 @@
 
             <h3>1. 반응형 전시물</h3>
             <p>
-              사용자의 클릭을 통해 원하는 전시물의 데이터를 확인할 수 있습니다.
-              모든 정보를 벽에 붙여 두면 읽지 않고 지나치기 때문에,
-              <strong>궁금한 전시물을 직접 눌렀을 때 자세한 값이 열리는</strong> 방식으로 나눴습니다.
+              모든 정보를 벽에 붙여 두면 읽지 않고 지나치기 때문에, <strong>궁금한 전시물을 눌렀을 때 자세한 값이 열리게</strong> 했습니다.
             </p>
 
             <h3>2. 데이터 전시물</h3>
             <figure>
               <img src="../images/projects/energy/energy-data-exhibit.webp" width="1200" height="564"
-                   alt="전지구 온실가스 배출 평균 예측 전시물. 200에서 500ppm까지 초록에서 빨강으로 변하는 띠 위에 안전 350ppm, 10년 전 391.68ppm, 회복 불가능 450ppm 표시와 2021년 3월 예측 배출량 414.30ppm이 표시돼 있다."
+                   alt="온실가스 배출 예측 전시물. 색 띠 위에 안전·회복 불가능 기준선과 예측값이 표시돼 있다."
                    loading="lazy" decoding="async">
               <figcaption>
-                온실가스 전시물. <b>변동성이 생기는 전시물은 매년 최신 데이터로 제공</b>되도록 만들었고,
-                값의 위험도를 색 띠와 기준선(안전·회복 불가능) 위에 함께 얹어 숫자 하나만 봐도 위치를 알 수 있게 했습니다.
+                온실가스 전시물. <b>값이 해마다 달라지는 전시물은 매년 최신 데이터로 바꿉니다.</b> 위험도는 색 띠와 기준선(안전·회복 불가능) 위에 얹어, 숫자 하나로도 위치를 알 수 있습니다.
               </figcaption>
             </figure>
 
@@ -237,35 +225,27 @@
             <div class="fig-pair">
               <figure>
                 <img src="../images/projects/energy/energy-experience-miniature.webp" width="1200" height="600"
-                     alt="체험 존의 도시 미니어처 모형. 초록과 빨강 건물이 놓인 모형 앞에 x키를 누르면 미니어처 안으로 들어갈 수 있다는 안내판이 있다."
+                     alt="체험 존의 도시 미니어처. 앞 안내판에 x키로 들어갈 수 있다고 적혀 있다."
                      loading="lazy" decoding="async">
-                <figcaption>미니어처 도시 모형과 진입 안내.</figcaption>
               </figure>
               <figure>
                 <img src="../images/projects/energy/energy-experience-inside.webp" width="1200" height="611"
-                     alt="미니어처 안으로 들어가 도시 상공에서 내려다본 화면. 건물 사이로 도로와 횡단보도가 보인다."
+                     alt="미니어처 안에서 본 도시. 건물 사이로 도로와 횡단보도가 보인다."
                      loading="lazy" decoding="async">
-                <figcaption>미니어처 내부로 들어간 뒤의 시점.</figcaption>
               </figure>
             </div>
             <p>
-              체험 기능의 핵심은 <strong>축척 전환</strong>입니다.
-              모형을 위에서 내려다보던 관람자가 <code>x</code>키를 누르면 그 모형 안으로 들어가,
-              같은 도시를 건물 사이에서 다시 봅니다. 도시 단위 통계와 개인의 체감을 같은 공간에서 연결하려는 장치였습니다.
-              진입 조건은 추측하지 않도록 <strong>안내판을 모형 바로 앞에</strong> 세워 뒀습니다.
+              체험 존의 핵심은 <strong>축척 전환</strong>입니다. 모형을 내려다보던 관람자가 <code>x</code>키를 누르면 모형 안으로 들어가, 같은 도시를 건물 사이에서 다시 봅니다. 진입 방법은 <strong>모형 바로 앞 안내판</strong>에 적어 뒀습니다.
             </p>
 
             <h3>4. 영상 존</h3>
             <figure>
               <img src="../images/projects/energy/energy-video-zone.webp" width="1200" height="647"
-                   alt="전시관 영상 존. ‘PART 5. 영상존’이라고 적힌 대형 스크린에서 풍력발전기 영상이 자막과 함께 재생되고 있다."
+                   alt="전시관 영상 존. 대형 스크린에서 풍력발전기 영상이 자막과 함께 재생된다."
                    loading="lazy" decoding="async">
-              <figcaption>영상 존에서 한전KDN의 유튜브 영상을 제공합니다.</figcaption>
             </figure>
             <p>
-              존마다 <strong>PART 번호를 스크린 상단에 붙였습니다.</strong>
-              자유롭게 돌아다니는 구조라 순서가 보장되지 않기 때문에, 지금 몇 번째 존인지를 공간 안에 표시해
-              관람자가 자기 진행 상황을 짚을 수 있게 했습니다.
+              존마다 <strong>PART 번호를 스크린 상단에 붙였습니다.</strong> 자유롭게 돌아다니는 구조라 지금 몇 번째 존인지 공간 안에서 알 수 있게 했습니다.
             </p>
           </section>
 
@@ -274,29 +254,21 @@
             <div class="story">
               <div class="story__text">
                 <p>
-                  한전KDN 주관 <strong>「데이터 결합·활용 아이디어 및 사업모델 공모전」</strong>에서
-                  아이디어 분야 <strong>장려상</strong>을 수상했습니다. 팀명은 ‘강화유리’입니다.
-                </p>
-                <p>
-                  기술 구현보다 데이터를 쓰는 방식으로 평가받은 결과라, 팀장으로서 정한 기획 방향이
-                  실제로 설득력이 있었는지를 확인할 수 있는 계기였습니다.
+                  한전KDN 주관 <strong>「데이터 결합·활용 아이디어 및 사업모델 공모전」</strong>에서 아이디어 분야 <strong>장려상</strong>을 받았습니다. 팀명은 ‘강화유리’입니다.
                 </p>
               </div>
               <figure>
                 <img src="../images/projects/energy/energy-award.webp" width="866" height="1000"
-                     alt="한전KDN이 발급한 수상 경력 확인 공문. 공모분야 아이디어, 시상명 장려상, 팀명 강화유리(정유리)가 기재돼 있고 한전KDN 사장 직인이 찍혀 있다."
+                     alt="한전KDN이 발급한 수상 확인 공문. 아이디어 분야 장려상, 팀명 강화유리(정유리)가 적혀 있다."
                      loading="lazy" decoding="async">
-                <figcaption>한전KDN 수상 경력 확인 공문.</figcaption>
               </figure>
             </div>
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">기술 스택</h2>
+            <h2 id="stack">사용 기술</h2>
             <p>
-              1인칭으로 걸어 다니는 3D 공간이 전제였기 때문에 웹 기술이 아니라 <strong>Unity</strong>를 선택했습니다.
-              공간 이동과 충돌, 시선 기반 화면 전환을 직접 만들지 않고 엔진에 맡길 수 있어
-              4명이 6주 안에 전시관 전체를 채우는 데 필요한 선택이었습니다.
+              1인칭으로 걸어 다니는 3D 공간이 전제여서 웹 대신 <strong>Unity</strong>를 골랐습니다. 이동과 충돌, 시선 기반 화면 전환은 엔진에 맡겨, 4명이 6주 안에 전시관을 채울 수 있었습니다.
             </p>
             <ul class="tags tags--brand">
               <li>Unity</li>
@@ -310,16 +282,12 @@
           </section>
 
           <section class="cs-section" aria-labelledby="closing">
-            <h2 id="closing">정리</h2>
+            <h2 id="closing">돌아보며</h2>
             <p>
-              이 프로젝트에서 가장 오래 붙잡은 질문은 “어떻게 만들까”가 아니라
-              <strong>“이 데이터를 왜 공간으로 봐야 하는가”</strong>였습니다.
-              표로 충분한 데이터를 3D로 옮기면 오히려 읽기 어려워지기 때문에,
-              가전제품 옆의 소비 전력이나 축척을 바꾸는 체험처럼 <strong>공간이어야 의미가 생기는 것</strong>만 남겼습니다.
+              가장 오래 붙잡은 질문은 <strong>“이 데이터를 왜 공간으로 봐야 하는가”</strong>였습니다. 표로 충분한 데이터를 3D로 옮기면 오히려 읽기 어려워져서, 가전제품 옆 소비 전력이나 축척 전환처럼 <strong>공간이어야 의미가 있는 것</strong>만 남겼습니다.
             </p>
             <p>
-              팀장으로 처음 진행한 프로젝트이기도 했습니다.
-              각자 맡은 파트에서 판단을 내려야 하는 구조였고, 그 판단들을 하나의 동선으로 묶는 일이 제 역할이었습니다.
+              팀장으로 처음 한 프로젝트였습니다. 각자 파트에서 내린 판단을 하나의 동선으로 묶는 일이 제 역할이었습니다.
             </p>
           </section>
 
@@ -336,7 +304,7 @@
     <section class="cta" aria-labelledby="cta-title">
       <div class="wrap wrap--content">
         <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
-        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <p>제가 맡았던 일이나 구현 과정이 더 궁금하다면 편하게 연락해 주세요.</p>
         <div class="cta__actions">
           <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
           <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
@@ -351,7 +319,7 @@
         <div class="footer-bio">
           <h2>정유리</h2>
           <p class="role">Frontend Developer</p>
-          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 만듭니다.</p>
         </div>
         <div class="footer-col">
           <h3>Contact</h3>

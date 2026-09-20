@@ -21,11 +21,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=20260920e">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css?v=20260924">
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="px-cloud" viewBox="0 0 24 5" shape-rendering="crispEdges">
+      <path fill="currentColor" d="M5 0h7v1H5zM2 1h15v1H2zM0 2h22v1H0zM1 3h23v1H1zM3 4h17v1H3z"/>
+    </symbol>
+  </svg>
 
   <a class="skip-link" href="#main" data-en="Skip to content">본문으로 건너뛰기</a>
 
@@ -60,19 +66,23 @@
 
     <!-- ================= Intro ================= -->
     <section class="intro">
-      <img class="intro__scene" src="images/hero/pixel-forest.webp" width="1200" height="675"
-           alt="" aria-hidden="true" fetchpriority="high" decoding="async">
-      <div class="wrap wrap--stage">
-        <p class="intro__eyebrow"><span class="intro__name" data-en="Yuri Jung">정유리</span><span class="intro__role" aria-hidden="true">Frontend Developer</span></p>
-        <h1 data-en="A Frontend Developer Who Thinks About the Context of Use">사용 환경까지 생각하는 프론트엔드 개발자</h1>
-        <p class="intro__lead" data-en="I turn complex services into screens that are easy to understand.">복잡한 서비스를 이해하기 쉬운 화면으로 만듭니다.</p>
-        <p class="intro__sub" data-en="Web accessibility, real-time data, AI services — I have built screens for many different usage environments.">웹 접근성, 실시간 데이터, AI 서비스까지. 다양한 사용 환경의 화면을 만들어 왔습니다.</p>
-        <div class="hero-cta">
+      <div class="wrap wrap--stage intro__grid">
+        <div class="intro__text">
+          <p class="intro__eyebrow" aria-hidden="true">Frontend Developer · Portfolio 2026</p>
+          <h1 data-break="2" data-break-en="4" data-en="Turning complex features into screens that are easy to use">복잡한 기능을 쓰이기 쉬운 화면으로</h1>
+          <p class="intro__lead" data-en="I&#x27;ve built products for AI services, real-time monitoring, and accessibility.">AI 서비스와 실시간 모니터링, 접근성이 중요한 제품을 개발해 왔습니다.</p>
+          <p class="intro__sub" data-en="I care about screens people can use to the end without getting lost.">사용자가 헤매지 않고 끝까지 쓸 수 있는 화면을 고민합니다.</p>
+          <div class="hero-cta">
           <a class="btn btn--primary btn--arrow" href="#work" data-en="View projects">프로젝트 보기</a>
-          <a class="btn btn--ghost" href="#career" data-en="Career">이력 확인</a>
+          <a class="btn btn--ghost" href="#career" data-en="View career">경력 보기</a>
         </div>
+        </div>
+        <figure class="intro__plate">
+          <img class="intro__art" src="images/hero/pixel-interface-studio.webp" width="1000" height="800"
+               alt="화면 세 개 앞에서 작업하는 개발자. 왼쪽은 AI 대화 파형, 가운데는 화면 구성, 오른쪽은 실시간 심박 그래프이고, 벽에는 키보드 포커스 링이 보인다." data-en-alt="A developer working in front of three screens: an AI conversation waveform on the left, a UI layout in the middle, and a real-time heart-rate graph on the right, with a keyboard focus ring on the wall."
+               fetchpriority="high" decoding="async">
+        </figure>
       </div>
-      <a class="scroll-cue" href="#work"><span class="sr-only" data-en="Scroll to projects">프로젝트로 이동</span></a>
     </section>
 
     <!--
@@ -89,24 +99,23 @@
       <header class="section-head">
         <p class="eyebrow" aria-hidden="true"><b>01</b><span>WORK</span></p>
         <h2 id="work-title">Selected Works</h2>
-        <p class="section-head__sub" data-en="Six selected projects. Open a card for the full case study.">대표 프로젝트 6개입니다. 카드를 누르면 상세 케이스 스터디로 이동합니다.</p>
+        <p class="section-head__sub" data-en="Selected projects, organized around my role and how I solved each problem.">맡았던 역할과 해결 과정을 중심으로 대표 프로젝트를 정리했습니다.</p>
       </header>
 
         <div class="work">
-        <article class="project-card">
+        <article class="project-card" data-accent="coral">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">01</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">01</p><span class="project-kind" data-en="Busan demo project">부산 실증 사업</span></div>
             <div class="project-logo">
               <img src="images/projects/kiosk/logo.webp" width="1024" height="1024"
                    alt="HoloOrder 로고" data-en-alt="HoloOrder logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/kiosk.html" data-en="Holographic AI Kiosk">홀로그램 AI 키오스크</a></h3>
-            <p class="project-desc" data-en="A café kiosk where you order by talking to a hologram.">홀로그램 화면과 대화하며 주문하는 카페 키오스크입니다.</p>
+            <p class="project-desc" data-en="A holographic kiosk where you order by talking to an AI clerk or tapping the screen.">AI 점원과 대화하거나 화면을 터치해 주문하는 홀로그램 키오스크입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="Busan demonstration project">부산실증사업</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Frontend development &amp; AI integration">프론트엔드 개발 및 AI 연동</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="Gemini API · Speech recognition · Hologram display">Gemini API · 음성 인식 · 홀로그램 디스플레이</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="A screen flow where a natural-language conversation carries through to ordering and payment">자연어 대화로 주문·결제까지 이어지는 화면 흐름</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Ordering screens · Gemini API integration">주문 화면 개발 · Gemini API 연동</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="Gemini API · Speech recognition · Hologram display">Gemini API · 음성 인식 · 홀로그램 디스플레이</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="Ordering continues by touch even when voice recognition fails.">음성이 끊겨도 터치로 주문을 이어갈 수 있게 했습니다.</dd></div>
             </dl>
           </div>
 
@@ -115,19 +124,18 @@
                  width="1462" height="2600" alt="홀로그램 키오스크 메뉴 선택 화면" data-en-alt="Holographic kiosk menu selection screen" loading="lazy">
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-accent="violet">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">02</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">02</p><span class="project-kind" data-en="Government project">정부과제</span></div>
             <div class="project-logo">
               <img src="images/logos/jango-logo-new.svg" width="79" height="22" alt="장고 로고" data-en-alt="Jango logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/jango.html" data-en="Jango">장고</a></h3>
-            <p class="project-desc" data-en="An employment platform for job seekers with disabilities. Its core is a tailored interview whose format and on-screen support change with the type of disability.">장애인 구직자를 위한 고용 플랫폼입니다. 장애 유형에 따라 면접 형식과 화면 지원 방식이 달라지는 맞춤 면접이 핵심입니다.</p>
+            <p class="project-desc" data-en="An employment platform where job seekers with disabilities find postings and prepare for interviews.">장애인 구직자가 채용 공고를 찾고 면접까지 준비하는 고용 플랫폼입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="Government-funded project">정부과제</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Frontend · three sites for job seekers, companies, and welfare organizations">프론트엔드 · 구직자·기업·복지관 3개 사이트</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="React 19 · TypeScript · Firebase">React 19 · TypeScript · Firebase</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="Screens designed with accessibility as the starting criterion, not a later check">접근성을 나중에 점검할 항목이 아니라 화면 설계의 기준으로 두고 구성</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Screens for job seekers, companies, and welfare centers">구직자·기업·복지관 화면 개발</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="React · TypeScript · Firebase">React · TypeScript · Firebase</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="The interview format and on-screen support change with the type of disability.">장애 유형에 따라 면접 방식과 화면 지원이 달라지게 했습니다.</dd></div>
             </dl>
           </div>
 
@@ -138,19 +146,18 @@
                  width="750" height="1333" alt="장고 모바일 화면 - AI 면접 진행" data-en-alt="Jango mobile screen - AI interview in progress" loading="lazy">
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-accent="cobalt">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">03</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">03</p><span class="project-kind" data-en="Government project">정부과제</span></div>
             <div class="project-logo">
               <img src="images/logos/jobkok-logo.webp" width="220" height="40" alt="잡콕 로고" data-en-alt="Jobkok logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/jobkok.html" data-en="Jobkok">잡콕</a></h3>
-            <p class="project-desc" data-en="A recruiting platform that ties together job search, AI recommendations, résumé writing, AI mock interviews, and result reports.">채용 공고 탐색, AI 추천, 이력서 작성, AI 모의면접, 결과 리포트를 하나로 묶은 채용 플랫폼입니다.</p>
+            <p class="project-desc" data-en="A recruiting service that runs from job postings to résumés, AI mock interviews, and results.">채용 공고부터 이력서, AI 모의면접, 결과 확인까지 이어지는 채용 서비스입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="Government-funded project">정부과제</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Frontend UI/UX development &amp; backend integration">프론트엔드 UI/UX 개발 및 백엔드 연동</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="Java Spring · MySQL · AI interview analysis integration">Java Spring · MySQL · AI 면접 분석 연동</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="Résumé writing, AI mock interview, and result report connected in one flow">이력서 작성부터 AI 모의면접, 결과 리포트까지 한 흐름으로 연결</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Frontend UI/UX · backend integration">프론트엔드 UI/UX · 백엔드 연동</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="Java Spring · MySQL · AI analysis integration">Java Spring · MySQL · AI 분석 연동</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="The résumé you write is used directly for the mock interview.">작성한 이력서로 바로 모의면접을 보게 했습니다.</dd></div>
             </dl>
           </div>
 
@@ -161,19 +168,18 @@
                  width="750" height="1333" alt="잡콕 모바일 화면" data-en-alt="Jobkok mobile screen" loading="lazy">
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-accent="yellow">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">04</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">04</p><span class="project-kind" data-en="Education service">교육 서비스</span></div>
             <div class="project-logo">
               <img src="images/logos/literacy-logo.webp" width="247" height="42" alt="선생님 문해력 탐험대 로고" data-en-alt="Teacher&#x27;s Literacy Expedition logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/literacy.html" data-en="Teacher&#x27;s Literacy Expedition">선생님 문해력 탐험대</a></h3>
-            <p class="project-desc" data-en="An education service where elementary students practice listening, speaking, reading, and writing like explorers, and teachers check class-wide diagnostics and progress through statistics.">초등학생이 듣기·말하기·읽기·쓰기를 탐험하듯 학습하고, 선생님은 학급의 진단·학습 현황을 통계로 확인하는 교육 서비스입니다.</p>
+            <p class="project-desc" data-en="An education service where students study literacy and teachers review diagnostic results.">학생은 문해력을 학습하고, 선생님은 진단 결과를 확인하는 교육 서비스입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="Education service">교육 서비스</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Frontend development · teacher admin pages and student service upgrades">프론트엔드 개발 · 선생님용 관리 페이지, 학생 서비스 고도화</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="HTML/CSS/JavaScript · Windows Desktop">HTML/CSS/JavaScript · Windows Desktop</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="Account-type-based screens and a three-step diagnostic report">계정 유형별 화면 분기와 3단계 진단 리포트</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Teacher admin screens · student service upgrades">선생님용 관리 화면 · 학생 서비스 고도화</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="JavaScript · Windows Desktop">JavaScript · Windows Desktop</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="Screens and information are separated for students and teachers.">학생과 선생님에게 필요한 화면과 정보를 나눴습니다.</dd></div>
             </dl>
           </div>
 
@@ -182,19 +188,18 @@
                  width="1600" height="1000" alt="문해력 탐험대 메인 화면" data-en-alt="Literacy Expedition main screen" loading="lazy">
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-accent="peri">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">05</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">05</p><span class="project-kind" data-en="Commercial service">상용 서비스</span></div>
             <div class="project-logo">
               <img src="images/logos/interview-logo.webp" width="172" height="68" alt="면접왕 로고" data-en-alt="Interview King logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/interview.html" data-en="Interview King">면접왕</a></h3>
-            <p class="project-desc" data-en="An AI mock-interview service for preparing for university-admission and airline cabin-crew interviews in one place.">대입 면접과 항공사 승무원 면접을 한 곳에서 준비하는 AI 모의면접 서비스입니다.</p>
+            <p class="project-desc" data-en="An AI mock-interview service for university-admission and cabin-crew interviews.">대입과 승무원 면접을 준비하는 AI 모의면접 서비스입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="Commercial service (delivered to academies)">상용 서비스 (학원 납품)</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Frontend development">프론트엔드 개발</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="React 19 · TypeScript · Vite · Firebase">React 19 · TypeScript · Vite · Firebase</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="Screens from the preparation guide and the interview itself to the result report">준비 안내부터 응시, 결과 리포트까지 이어지는 화면</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Preparation, interview, and result screens">준비·응시·결과 화면 개발</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="React · TypeScript · Vite · Firebase">React · TypeScript · Vite · Firebase</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="First-time users can finish an interview just by following the guidance.">처음 이용해도 안내에 따라 면접을 끝낼 수 있게 했습니다.</dd></div>
             </dl>
           </div>
 
@@ -203,19 +208,18 @@
                  width="1200" height="613" alt="면접왕 메인 화면 - 모의면접 유형 선택" data-en-alt="Interview King main screen - choosing a mock interview type" loading="lazy">
           </div>
         </article>
-        <article class="project-card">
+        <article class="project-card" data-accent="cyan">
           <div class="project-summary">
-            <p class="project-no" aria-hidden="true">06</p>
+            <div class="project-tag"><p class="project-no" aria-hidden="true">06</p><span class="project-kind" data-en="In-house project">재직 중 참여</span></div>
             <div class="project-logo">
               <img src="images/logos/zentry-logo.webp" width="1428" height="533" alt="젠트리 로고" data-en-alt="Zentry logo" loading="lazy">
             </div>
             <h3 class="project-title"><a href="projects/zentry.html" data-en="Zentry · Doolittle">젠트리 · 두리틀</a></h3>
-            <p class="project-desc" data-en="The Doolittle series lets you check the heart rate and breathing of pets with heart failure in real time through a wearable.">심부전 반려동물의 심박과 호흡을 웨어러블로 실시간 확인하는 두리틀 시리즈입니다.</p>
+            <p class="project-desc" data-en="A monitoring service for checking a pet&#x27;s heart rate and breathing in real time.">반려동물의 심박과 호흡을 실시간으로 확인하는 모니터링 서비스입니다.</p>
             <dl class="project-facts">
-              <div><dt data-en="Type">유형</dt><dd data-en="In-house project at (주)젠트리">재직 중 참여 프로젝트 ((주)젠트리)</dd></div>
-              <div><dt data-en="Role">역할</dt><dd data-en="Vet app publishing · official &amp; admin website development">수의사용 앱 퍼블리싱 · 공식/관리자 웹사이트 개발</dd></div>
-              <div><dt data-en="Stack">기술</dt><dd data-en="Flutter · Dart · React · TCP/WebSocket">Flutter · Dart · React · TCP/WebSocket</dd></div>
-              <div><dt data-en="Focus">핵심</dt><dd data-en="Interfaces for reading real-time vitals at a glance, including anesthesia monitoring in operating rooms">수술실 마취 모니터링 등 실시간 수치를 한눈에 보는 화면</dd></div>
+              <div><dt data-en="My role">맡은 일</dt><dd data-en="Vet app screens · official and admin websites">수의사용 앱 화면 · 공식·관리자 웹 개발</dd></div>
+              <div><dt data-en="Tech">사용 기술</dt><dd data-en="Flutter · Dart · React · TCP">Flutter · Dart · React · TCP</dd></div>
+              <div><dt data-en="Problem solved">해결한 문제</dt><dd data-en="Staff can watch the changing condition of several patients on one screen.">여러 환자의 상태 변화를 한 화면에서 확인하게 했습니다.</dd></div>
             </dl>
           </div>
 
@@ -234,37 +238,37 @@
             <p data-en="Early projects, a contest entry, and personal work.">초기 프로젝트와 공모전, 개인 작업입니다.</p>
           </div>
           <ul class="archive__list">
-          <li class="archive__item">
+          <li class="archive__item" data-accent="violet">
             <img class="archive__thumb" src="images/projects/newo/newo-landing.webp" width="1180" height="634" alt="뉴오 랜딩 페이지" data-en-alt="NEW:O landing page" loading="lazy">
             <div class="archive__body">
               <h4 class="archive__name"><a href="projects/newo.html" data-en="NEW:O">뉴오 (NEW:O)</a></h4>
               <p class="archive__desc" data-en="Pixel-art metaverse office · startup project">도트 그래픽 메타버스 오피스 · 창업 프로젝트</p>
             </div>
-            <p class="archive__tech">Phaser.js</p>
+            <p class="archive__tech"><span class="archive__year">2022</span>Phaser.js</p>
           </li>
-          <li class="archive__item">
+          <li class="archive__item" data-accent="yellow">
             <img class="archive__thumb" src="images/projects/energy/energy-data-exhibit.webp" width="1200" height="564" alt="메타버스 에너지 전시관 - 데이터 전시 구역" data-en-alt="Metaverse Energy Exhibition - data exhibit area" loading="lazy">
             <div class="archive__body">
               <h4 class="archive__name"><a href="projects/energy.html" data-en="Metaverse Energy Exhibition">메타버스 에너지 전시관</a></h4>
               <p class="archive__desc" data-en="A virtual exhibition for walking through energy data · contest Encouragement Award">에너지 데이터를 걸어 다니며 보는 가상 전시관 · 공모전 장려상</p>
             </div>
-            <p class="archive__tech">Unity · C#</p>
+            <p class="archive__tech"><span class="archive__year">2021–22</span>Unity · C#</p>
           </li>
-          <li class="archive__item">
+          <li class="archive__item" data-accent="mint">
             <img class="archive__thumb" src="images/projects/careform/careform-splash.webp" width="327" height="640" alt="케어팜 앱 스플래시 화면" data-en-alt="Carefarm app splash screen" loading="lazy">
             <div class="archive__body">
               <h4 class="archive__name"><a href="projects/careform.html" data-en="Carefarm">케어팜</a></h4>
               <p class="archive__desc" data-en="Android app for caregiver matching and finding care facilities · solo project">간병인 매칭과 요양 시설 검색 안드로이드 앱 · 1인 개발</p>
             </div>
-            <p class="archive__tech">Java · PHP · MySQL</p>
+            <p class="archive__tech"><span class="archive__year">2021–22</span>Java · PHP · MySQL</p>
           </li>
-          <li class="archive__item">
+          <li class="archive__item" data-accent="coral">
             <img class="archive__thumb" src="images/projects/sketchers/sketchers-splash.webp" width="331" height="640" alt="스케치스 앱 스플래시 화면" data-en-alt="Skeches app splash screen" loading="lazy">
             <div class="archive__body">
               <h4 class="archive__name"><a href="projects/sketchers.html" data-en="Skeches">스케치스</a></h4>
               <p class="archive__desc" data-en="Android app for organizing sketch references · solo project">스케치 자료를 정리하는 안드로이드 앱 · 1인 개발</p>
             </div>
-            <p class="archive__tech">Java</p>
+            <p class="archive__tech"><span class="archive__year">2021</span>Java</p>
           </li>
           </ul>
         </div>
@@ -286,23 +290,14 @@
           <div class="bio__text">
             <h3 class="bio__name" data-en="Yuri Jung">정유리</h3>
             <p class="bio__role">Frontend Developer</p>
-            <p data-en="I&#x27;m a developer who chases practicality. As much as making screens look good, I care whether they hold up in real work and real usage environments.">
-              실용성을 쫓는 개발자입니다. 화면을 예쁘게 만드는 것만큼,
-              그 화면이 실제 업무와 사용 환경에서 버티는지를 중요하게 봅니다.
-            </p>
-            <p data-en="I&#x27;ve built screens that can&#x27;t afford to fail, like the monitoring app used in animal hospital operating rooms, and screens where accessibility decides whether the service is usable at all, like the service for job seekers with disabilities.">
-              동물병원 수술실에서 쓰이는 모니터링 앱처럼 실패하면 안 되는 화면과,
-              장애인 구직자가 쓰는 서비스처럼 접근성이 곧 사용 가능 여부를 결정하는 화면을 만들어 왔습니다.
-            </p>
-            <p data-en="I value consistency over flash. I check requirements carefully and communicate with my teammates. I don&#x27;t stay within familiar habits — I keep learning, documenting, and improving the services I build.">
-              화려함보다 꾸준함을 중요하게 생각합니다. 요구사항을 꼼꼼히 확인하고 동료와 소통합니다.
-              익숙한 방식에 머무르지 않고, 배우고 기록하며 서비스를 개선합니다.
-            </p>
+            <p class="bio__lead" data-en="I&#x27;m a developer who builds screens that actually work in use.">실제로 잘 쓰이는 화면을 만드는 개발자입니다.</p>
+            <p data-en="Beyond good-looking screens, I care whether they run reliably in the field.">보기 좋은 화면만큼, 현장에서 안정적으로 사용할 수 있는지도 중요하게 생각합니다.</p>
+            <p data-en="Building an animal-hospital monitoring screen and a hiring service for job seekers with disabilities taught me that a small inconvenience can change the usability of a whole service.">동물병원 모니터링 화면과 장애인 채용 서비스를 만들며, 작은 불편이 서비스 전체의 사용성을 바꿀 수 있다는 점을 배웠습니다.</p>
             <ul class="tags tags--pixel" aria-label="Focus areas">
-              <li>Web Accessibility</li>
-              <li>AI Service Integration</li>
-              <li>Real-time Interface</li>
-              <li>Responsive UI</li>
+              <li class="tag--a">Web Accessibility</li>
+              <li class="tag--b">AI Service Integration</li>
+              <li class="tag--b">Real-time Interface</li>
+              <li class="tag--a">Responsive UI</li>
               <li>Cross-functional Communication</li>
             </ul>
             <dl class="bio__facts">
@@ -329,31 +324,35 @@
       </header>
         <ol class="timeline">
           <li class="timeline__item">
-            <p class="timeline__when" data-en="2025.07 – Present">2025.07 – 현재</p>
+            <p class="timeline__when" data-en="2025.07 — Present">2025.07 — 현재</p>
             <div class="timeline__body">
               <h3 class="timeline__org" data-en="(주)위드마인드 (Withmind)">(주)위드마인드</h3>
               <p class="timeline__desc">Frontend Developer</p>
             </div>
           </li>
           <li class="timeline__item">
-            <p class="timeline__when" data-en="2022.09 – 2025.02 (2 yrs 6 mos)">2022.09 – 2025.02 (2년 6개월)</p>
+            <p class="timeline__when" data-en="2022.09 — 2025.02 (2 yrs 6 mos)">2022.09 — 2025.02 (2년 6개월)</p>
             <div class="timeline__body">
               <h3 class="timeline__org" data-en="(주)젠트리 (Zentry)">(주)젠트리</h3>
-              <p class="timeline__desc" data-en="Doolittle vet app publishing; official and admin website development">두리틀 수의사용 앱 퍼블리싱, 공식·관리자 웹사이트 개발</p>
+              <p class="timeline__desc">Frontend Developer</p>
+              <ul class="timeline__list">
+                <li data-en="Vet monitoring app screens (Flutter)">수의사용 모니터링 앱 화면 개발 (Flutter)</li>
+                <li data-en="Official and admin website development">공식·관리자 웹사이트 개발</li>
+              </ul>
             </div>
           </li>
           <li class="timeline__item timeline__item--award">
-            <p class="timeline__when">2022.03</p>
+            <p class="timeline__when" data-en="2022.03">2022.03</p>
             <div class="timeline__body">
-              <h3 class="timeline__org" data-en="KEPCO KDN Data Combination &amp; Utilization Idea Contest">한전KDN 데이터 결합·활용 아이디어 공모전</h3>
+              <h3 class="timeline__org" data-en="KEPCO KDN Idea Contest">한전KDN 아이디어 공모전</h3>
               <p class="timeline__desc" data-en="Encouragement Award (Metaverse Energy Exhibition)">장려상 (메타버스 에너지 전시관)</p>
             </div>
           </li>
           <li class="timeline__item">
-            <p class="timeline__when">2022.02 – 2022.06</p>
+            <p class="timeline__when" data-en="2022.02 — 2022.06">2022.02 — 2022.06</p>
             <div class="timeline__body">
               <h3 class="timeline__org" data-en="뉴오 (NEW:O)">뉴오</h3>
-              <p class="timeline__desc" data-en="Metaverse office startup project · backend 40% · frontend 30% · ideas 30%">메타버스 오피스 창업 프로젝트 · 백엔드 40% · 프론트엔드 30% · 아이디어 30%</p>
+              <p class="timeline__desc" data-en="Metaverse office startup (backend 40% · frontend 30% · ideas 30%)">메타버스 오피스 창업 프로젝트 (백엔드 40% · 프론트엔드 30% · 아이디어 30%)</p>
             </div>
           </li>
         </ol>
@@ -367,12 +366,17 @@
       <header class="section-head">
         <p class="eyebrow" aria-hidden="true"><b>04</b><span>CONTACT</span></p>
         <h2 id="contact-title">Contact</h2>
-        <p class="section-head__sub" data-en="Feel free to reach out about projects or collaboration.">프로젝트나 협업에 대해 궁금한 점이 있다면 편하게 연락 주세요.</p>
+        <p class="section-head__sub" data-en="If you would like to hear more about what I worked on or how I built it, feel free to reach out.">제가 맡았던 일이나 구현 과정이 더 궁금하다면 편하게 연락해 주세요.</p>
       </header>
+        <svg class="contact-px" viewBox="0 0 60 16" width="180" height="48" aria-hidden="true" focusable="false" shape-rendering="crispEdges">
+          <g fill="#8d96f2"><rect x="0" y="6" width="2" height="4"/><rect x="4" y="2" width="2" height="12"/><rect x="8" y="5" width="2" height="6"/><rect x="12" y="0" width="2" height="16"/><rect x="16" y="4" width="2" height="8"/></g>
+          <g fill="#50bec8"><rect x="24" y="8" width="4" height="2"/><rect x="28" y="4" width="2" height="4"/><rect x="30" y="10" width="2" height="6"/><rect x="32" y="0" width="2" height="10"/><rect x="34" y="8" width="4" height="2"/></g>
+          <g fill="#f07f72"><rect x="44" y="2" width="12" height="2"/><rect x="44" y="12" width="12" height="2"/><rect x="44" y="4" width="2" height="8"/><rect x="54" y="4" width="2" height="8"/></g>
+        </svg>
         <ul class="contact-list">
           <li><a href="mailto:glass.xcx@gmail.com"><span>Email</span>glass.xcx@gmail.com</a></li>
-          <li><a href="tel:01040965625"><span>Phone</span>010-4096-5625</a></li>
           <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener"><span>GitHub</span>github.com/theglass-1002</a></li>
+          <li><a href="tel:01040965625"><span>Phone</span>010-4096-5625</a></li>
         </ul>
       </div>
     </section>
@@ -385,7 +389,7 @@
     </div>
   </footer>
 
-  <script src="locales/common.en.js?v=20260921" defer></script>
-  <script src="js/site.js?v=20260921" defer></script>
+  <script src="locales/common.en.js?v=20260924" defer></script>
+  <script src="js/site.js?v=20260924" defer></script>
 </body>
 </html>

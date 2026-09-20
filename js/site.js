@@ -36,8 +36,8 @@
 
   // 스크립트가 만드는 문구 (라이트박스 등)
   var UI = {
-    ko: { zoom: '확대해서 보기', chart: '플로우차트', image: '이미지', dialog: '확대 보기', close: '닫기' },
-    en: { zoom: 'view enlarged', chart: 'Flowchart', image: 'Image', dialog: 'Enlarged view', close: 'Close' }
+    ko: { zoom: '확대해서 보기', chart: '플로우차트', image: '이미지', dialog: '확대 보기', close: '닫기', enlarge: '크게 보기' },
+    en: { zoom: 'view enlarged', chart: 'Flowchart', image: 'Image', dialog: 'Enlarged view', close: 'Close', enlarge: 'Enlarge' }
   };
   function ui(key) { return UI[lang][key]; }
 
@@ -481,12 +481,19 @@
 
     // 이미지 설명(alt)에 '확대해서 보기'를 붙인 접근성 이름 — 언어가 바뀌면 다시 만든다
     function zoomLabel(el) {
-      var base = el.tagName.toLowerCase() === 'svg' ? ui('chart') : (el.getAttribute('alt') || ui('image'));
+      var isSvg = el.tagName.toLowerCase() === 'svg';
+      var t = isSvg && el.querySelector('title');
+      var base = isSvg ? (t && t.textContent.trim() || ui('chart')) : (el.getAttribute('alt') || ui('image'));
       return lang === 'en' ? base + ' — ' + ui('zoom') : base + ' ' + ui('zoom');
     }
+    var zoomButtons = [];
     langListeners.push(function () {
       Array.prototype.forEach.call(triggers, function (el) {
-        if (el.classList.contains('is-zoomable')) el.setAttribute('aria-label', zoomLabel(el));
+        if (el.classList.contains('is-zoomable') && el.tagName.toLowerCase() !== 'svg') el.setAttribute('aria-label', zoomLabel(el));
+      });
+      zoomButtons.forEach(function (z) {
+        z.btn.textContent = ui('enlarge');
+        z.btn.setAttribute('aria-label', zoomLabel(z.svg));
       });
       if (box) {
         box.setAttribute('aria-label', ui('dialog'));
@@ -498,10 +505,24 @@
       // 링크 안에 든 이미지는 링크가 우선이다
       if (el.closest('a')) return;
       el.classList.add('is-zoomable');
+      el.addEventListener('click', function () { open(el); });
+      if (el.tagName.toLowerCase() === 'svg') {
+        // 도표는 제목·설명(<title>, <desc>)을 읽을 수 있게 그대로 두고, 확대는 실제 버튼으로 제공한다
+        var fig = el.closest('figure');
+        if (!fig) return;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'zoom-btn';
+        btn.textContent = ui('enlarge');
+        btn.setAttribute('aria-label', zoomLabel(el));
+        btn.addEventListener('click', function () { open(el); });
+        fig.insertBefore(btn, fig.firstChild);
+        zoomButtons.push({ btn: btn, svg: el });
+        return;
+      }
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'button');
       el.setAttribute('aria-label', zoomLabel(el));
-      el.addEventListener('click', function () { open(el); });
       el.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
       });
@@ -527,6 +548,7 @@
       title.setAttribute('data-split', '');
       title.textContent = '';
       chars.length = 0;
+      var brk = parseInt(title.getAttribute(lang === 'en' ? 'data-break-en' : 'data-break'), 10) || 0;
       text.split(/\s+/).forEach(function (word, w, words) {
         var wordEl = document.createElement('span');
         wordEl.className = 'intro__word';
@@ -540,7 +562,8 @@
           chars.push({ el: c, x: 0, y: 0, k: 0 });
         });
         title.appendChild(wordEl);
-        if (w < words.length - 1) title.appendChild(document.createTextNode(' '));
+        if (w === brk - 1 && w < words.length - 1) title.appendChild(document.createElement('br'));   // 의도한 줄바꿈
+        else if (w < words.length - 1) title.appendChild(document.createTextNode(' '));
       });
       wake();
     }
@@ -595,6 +618,17 @@
       intro.style.setProperty('--py', '0');
       wake();
     });
+  })();
+
+  /* ------------------------------------------------------------------
+     5b. 상세 페이지 — CASE STUDY 옆에 프로젝트 번호 (main[data-pan])
+     ------------------------------------------------------------------ */
+  (function projectNumber() {
+    var main = document.querySelector('main[data-pan]');
+    var kicker = document.querySelector('.ph__kicker');
+    if (!main || !kicker) return;
+    var n = main.getAttribute('data-pan');
+    kicker.setAttribute('data-no', ('0' + n).slice(-2));
   })();
 
   /* ------------------------------------------------------------------

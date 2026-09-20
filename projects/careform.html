@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>케어팜 — 정유리 포트폴리오</title>
-  <meta name="description" content="간병인이 필요한 사용자와 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
+  <meta name="description" content="간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
 
   <link rel="canonical" href="https://theglass-1002.github.io/projects/careform.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="정유리 · Frontend Developer">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:title" content="케어팜 — 정유리 포트폴리오">
-  <meta property="og:description" content="간병인이 필요한 사용자와 간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
+  <meta property="og:description" content="간병인을 매칭하고 주변 요양 시설을 찾는 안드로이드 앱 ‘케어팜’ 케이스 스터디.">
   <meta property="og:url" content="https://theglass-1002.github.io/projects/careform.html">
   <meta property="og:image" content="https://theglass-1002.github.io/images/projects/careform/careform-splash.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
-  <link rel="stylesheet" href="../css/style.css?v=20260920e">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../css/style.css?v=20260924">
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
@@ -53,7 +54,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" data-pan="9" data-accent="mint">
 
 
     <div class="wrap">
@@ -72,7 +73,7 @@
           <header class="ph">
           <span class="ph__kicker">Case study</span>
           <h1>케어팜</h1>
-          <p class="ph__lead">간병인이 필요한 사람과 간병인을 하고 싶은 사람을 매칭하고, 주변 요양 시설을 찾을 수 있는 안드로이드 앱. 기획부터 프론트엔드와 백엔드까지 혼자 만들었습니다.</p>
+          <p class="ph__lead">간병인이 필요한 사람과 간병인을 매칭하고, 주변 요양 시설을 찾을 수 있는 안드로이드 앱입니다. 기획부터 프론트엔드·백엔드까지 혼자 만들었습니다.</p>
 
           <dl class="ph__meta">
           <div>
@@ -80,15 +81,15 @@
           <dd>2021.10 – 2022.01 (3개월)</dd>
           </div>
           <div>
-          <dt>유형</dt>
+          <dt>프로젝트 성격</dt>
           <dd>개인 프로젝트 (1인 개발)</dd>
           </div>
           <div>
-          <dt>역할</dt>
+          <dt>맡은 일</dt>
           <dd>기획 · 프론트엔드 · 백엔드 전체</dd>
           </div>
           <div>
-          <dt>핵심 기술</dt>
+          <dt>사용 기술</dt>
           <dd>Java · PHP · MySQL</dd>
           </div>
           </dl>
@@ -104,7 +105,7 @@
           </div>
 
           <div class="side__box">
-            <h2>담당 업무</h2>
+            <h2>주요 작업</h2>
             <ul>
               <li>기획 및 아이디어</li>
               <li>안드로이드 프론트엔드 개발</li>
@@ -113,10 +114,10 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
-            <li><a href="#overview">프로젝트 개요</a></li>
+            <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#scope">담당 범위</a></li>
             <li><a href="#features">주요 기능</a></li>
-            <li><a href="#stack">기술 스택</a></li>
+            <li><a href="#stack">사용 기술</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -140,10 +141,10 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
-              <li><a href="#overview">프로젝트 개요</a></li>
+              <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#scope">담당 범위</a></li>
               <li><a href="#features">주요 기능</a></li>
-              <li><a href="#stack">기술 스택</a></li>
+              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
@@ -151,61 +152,42 @@
           <img src="../images/projects/careform/careform-splash.webp" width="327" height="640"
           alt="케어팜 앱 시작 화면. 제목 아래 ‘당신의 새로운 가족을 찾아드리겠습니다’ 문구와 노란색 일러스트가 있다."
           fetchpriority="high" decoding="async">
-          <figcaption>앱 시작 화면. 매칭 서비스의 목적을 한 문장으로 먼저 밝힙니다.</figcaption>
+          <figcaption>앱 시작 화면.</figcaption>
           </figure>
 
           <section class="cs-section" aria-labelledby="overview">
-            <h2 id="overview">프로젝트 개요</h2>
+            <h2 id="overview">프로젝트 소개</h2>
             <p>
-              케어팜은 <strong>간병인이 필요한 사용자와 간병인을 하고 싶은 사용자를 매칭</strong>시켜 주며,
-              주변 요양 시설을 찾을 수 있는 안드로이드 앱입니다.
-            </p>
-            <p>
-              간병은 급하게 필요해지는 경우가 많고, 그때 정보를 찾을 여유가 없습니다.
-              그래서 구인·구직 게시판 형태가 아니라 <strong>양쪽 조건을 등록해 두고 매칭되는 구조</strong>로 잡았습니다.
-              동시에 시설을 직접 찾는 경로도 필요하다고 봐서, 지도 기반 요양 시설 검색을 함께 넣었습니다.
+              간병은 급하게 필요해지는 경우가 많아 정보를 찾을 여유가 없습니다. 그래서 구인·구직 게시판 대신 <strong>양쪽 조건을 등록해 두고 매칭되는 구조</strong>로 만들고, 시설을 직접 찾을 수 있게 지도 기반 검색도 넣었습니다.
             </p>
           </section>
 
           <section class="cs-section" aria-labelledby="scope">
             <h2 id="scope">담당 범위</h2>
-            <p>3개월간 혼자 진행한 프로젝트로, 아이디어부터 배포까지 전 과정을 담당했습니다.</p>
             <ul>
               <li><strong>아이디어 제공</strong> — 기여도 100%</li>
               <li><strong>프론트엔드 개발</strong> — 기여도 100%</li>
               <li><strong>백엔드 개발</strong> — 기여도 100%</li>
             </ul>
             <p>
-              혼자 하는 프로젝트라 화면과 서버 사이에서 타협할 상대가 없었습니다.
-              대신 <strong>기능을 하나씩 끝까지 붙여 동작하는 상태를 유지</strong>하면서 늘리는 방식으로 진행했습니다.
+              혼자 하는 프로젝트라 <strong>기능을 하나씩 끝까지 붙여 동작하는 상태를 유지</strong>하면서 늘려 갔습니다.
             </p>
           </section>
 
           <section class="cs-section" aria-labelledby="features">
             <h2 id="features">주요 기능</h2>
             <ul>
-              <li><strong>간병인 매칭</strong> — 간병이 필요한 사용자와 간병인 희망자를 연결합니다.</li>
-              <li><strong>주변 요양 시설 검색</strong> — 위치를 기준으로 인근 요양 시설을 찾습니다.</li>
-              <li><strong>회원가입 및 프로필 관리</strong> — 양쪽 사용자의 조건을 등록·수정합니다.</li>
+              <li><strong>간병인 매칭</strong> — 양쪽 조건을 등록해 연결합니다.</li>
+              <li><strong>요양 시설 검색</strong> — 위치 기준으로 인근 시설을 찾습니다.</li>
             </ul>
             <p>
-              지도와 장소 검색은 <strong>카카오·네이버 API</strong>로 붙였고,
-              서버 통신은 <strong>Volley</strong> 라이브러리로 처리했습니다.
+              지도와 장소 검색은 <strong>카카오·네이버 API</strong>, 서버 통신은 <strong>Volley</strong>로 처리했습니다.
             </p>
-            <div class="fig-pair fig-pair--phones">
-              <figure>
-                <div class="ph-slot ph-slot--phone">(간병인 매칭 화면)</div>
-                <figcaption>양쪽 조건을 등록해 두고 매칭되는 흐름.</figcaption>
-              </figure>
-              <figure>
-                <div class="ph-slot ph-slot--phone">(주변 요양 시설 검색)</div>
-                <figcaption>위치 기준 지도 검색.</figcaption>
-              </figure>
-            </div>
+            
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">기술 스택</h2>
+            <h2 id="stack">사용 기술</h2>
             <ul class="tags tags--brand">
               <li>Java (Android)</li>
               <li>PHP</li>
@@ -216,9 +198,7 @@
               <li>Volley</li>
             </ul>
             <div class="note">
-              <strong>남은 자료</strong> — 이 페이지에는 앱 시작 화면 외의 캡처가 없습니다.
-              매칭 흐름과 요양 시설 검색 화면은 위 <a href="https://youtube.com/playlist?list=PLGlP69JJ_dOxD_eBhicZ3IUA_8EeCJixE" target="_blank" rel="noopener">작품 영상</a>에서
-              확인할 수 있고, 정지 화면 캡처를 확보하면 이 페이지에 추가할 예정입니다.
+              <strong>참고</strong> — 시작 화면 외의 캡처가 없어, 나머지 화면은 위 <a href="https://youtube.com/playlist?list=PLGlP69JJ_dOxD_eBhicZ3IUA_8EeCJixE" target="_blank" rel="noopener">작품 영상</a>으로 대신합니다.
             </div>
           </section>
 
@@ -235,7 +215,7 @@
     <section class="cta" aria-labelledby="cta-title">
       <div class="wrap wrap--content">
         <h2 id="cta-title">더 자세한 이야기가 필요하다면</h2>
-        <p>담당 범위나 구현 방식에 대해 궁금한 점은 메일로 편하게 물어봐 주세요.</p>
+        <p>제가 맡았던 일이나 구현 과정이 더 궁금하다면 편하게 연락해 주세요.</p>
         <div class="cta__actions">
           <a class="btn btn--primary" href="mailto:glass.xcx@gmail.com">메일 보내기</a>
           <a class="btn btn--ghost" href="../index.html#work">다른 프로젝트 보기</a>
@@ -250,7 +230,7 @@
         <div class="footer-bio">
           <h2>정유리</h2>
           <p class="role">Frontend Developer</p>
-          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 구현합니다.</p>
+          <p>AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 만듭니다.</p>
         </div>
         <div class="footer-col">
           <h3>Contact</h3>
