@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="../css/style.css?v=20260920e">
+  <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
+  (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
 <body>
 
@@ -30,6 +32,12 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="../index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="lang-toggle" type="button" role="switch" aria-checked="false" data-lang-toggle
+              aria-label="영문 버전 · English version">
+        <span class="lang-toggle__thumb" aria-hidden="true"></span>
+        <span class="lang-toggle__opt" aria-hidden="true">KO</span>
+        <span class="lang-toggle__opt" aria-hidden="true">EN</span>
+      </button>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span>
         <span class="sr-only">메뉴 열기</span>
@@ -324,6 +332,8 @@
   </footer>
 
 
-  <script src="../js/site.js" defer></script>
+  <script src="../locales/common.en.js?v=20260921" defer></script>
+  <script src="../locales/jobkok.en.js?v=20260921" defer></script>
+  <script src="../js/site.js?v=20260921" defer></script>
 </body>
 </html>

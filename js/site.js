@@ -8,51 +8,235 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ------------------------------------------------------------------
-     0. 언어 전환 (홈) — KO ⇄ EN
-     한국어 원문이 기준이다. data-en / data-en-alt 가 붙은 요소만 바뀌고,
-     처음 한 번 원문을 data-ko 에 보관해 둔다. 선택은 localStorage 에 기억한다.
+     0. 언어 전환 — KO ⇄ EN (홈 + 모든 상세 페이지)
+
+     한국어 원문이 기준이다. 번역 대상은 두 가지 방식으로 찾는다.
+       - 홈: data-en / data-en-alt 속성이 붙은 요소
+       - 상세: locales/*.en.js 의 사전 (원문 innerHTML → 영어) 으로 글 덩어리를 찾아 바꾼다
+     원문은 처음 한 번 보관해 두고, 되돌릴 때 그대로 복원한다.
+
+     언어 결정 우선순위: URL ?lang=  →  localStorage 'portfolio-lang'  →  ko
      ------------------------------------------------------------------ */
   var LANG_KEY = 'portfolio-lang';
   var lang = 'ko';
   var langListeners = [];
-  try {
-    var saved = localStorage.getItem(LANG_KEY);
-    if (saved === 'en' || saved === 'ko') lang = saved;
-  } catch (e) { /* 저장소를 못 쓰면 한국어로 시작 */ }
+  (function initialLang() {
+    var q = null;
+    try { q = new URLSearchParams(window.location.search).get('lang'); } catch (e) { /* 무시 */ }
+    if (q === 'en' || q === 'ko') {
+      lang = q;
+      try { localStorage.setItem(LANG_KEY, q); } catch (e) { /* 무시 */ }
+      return;
+    }
+    try {
+      var saved = localStorage.getItem(LANG_KEY);
+      if (saved === 'en' || saved === 'ko') lang = saved;
+    } catch (e) { /* 저장소를 못 쓰면 한국어로 시작 */ }
+  })();
+
+  // 스크립트가 만드는 문구 (라이트박스 등)
+  var UI = {
+    ko: { zoom: '확대해서 보기', chart: '플로우차트', image: '이미지', dialog: '확대 보기', close: '닫기' },
+    en: { zoom: 'view enlarged', chart: 'Flowchart', image: 'Image', dialog: 'Enlarged view', close: 'Close' }
+  };
+  function ui(key) { return UI[lang][key]; }
+
+  var HANGUL = /[가-힣]/;
+  var INLINE = { A: 1, STRONG: 1, EM: 1, CODE: 1, BR: 1, SPAN: 1, B: 1, I: 1, SMALL: 1, SUP: 1, SUB: 1, MARK: 1, KBD: 1, ABBR: 1, WBR: 1, U: 1, S: 1, TIME: 1, CITE: 1, Q: 1 };
+  var SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEMPLATE: 1, SVG: 1, VIDEO: 1, IMG: 1, PICTURE: 1, IFRAME: 1, TEXTAREA: 1 };
+  var TEXT_ATTRS = ['alt', 'aria-label', 'title', 'placeholder'];
+  var META_SEL = 'meta[name="description"], meta[property^="og:"], meta[name^="twitter:"]';
+  function norm(s) { return String(s).replace(/\s+/g, ' ').trim(); }
+
+  function inlineOnly(el) {
+    for (var i = 0; i < el.children.length; i++) {
+      var c = el.children[i];
+      if (!INLINE[c.tagName] || !inlineOnly(c)) return false;
+    }
+    return true;
+  }
+
+  // 글 덩어리 = 안에 인라인 태그만 든 가장 바깥 요소. 목차처럼 li 안에 링크 하나뿐이면 링크 자체가 덩어리다.
+  function collectUnits(root) {
+    var units = [];
+    (function walk(el) {
+      if (SKIP[el.tagName.toUpperCase()] && el.tagName.toLowerCase() !== 'svg') return;
+      if (el.matches && el.matches('[data-en], [data-lang-toggle], .lightbox, head')) return;
+      if (el.tagName.toLowerCase() === 'svg') {
+        Array.prototype.forEach.call(el.querySelectorAll('text, title, desc'), function (t) {
+          if (HANGUL.test(t.textContent) && !t.querySelector('text, title, desc')) units.push(t);
+        });
+        return;
+      }
+      if (HANGUL.test(el.textContent) && inlineOnly(el)) {
+        // 링크만 나열된 묶음(목차 li, 이전/다음 nav, 버튼 줄)은 링크 하나하나가 덩어리다
+        var kids = Array.prototype.slice.call(el.children);
+        var linksOnly = kids.length > 0 && kids.every(function (c) { return c.tagName === 'A'; }) &&
+          Array.prototype.every.call(el.childNodes, function (n) { return n.nodeType !== 3 || !n.nodeValue.trim(); });
+        if (linksOnly) { kids.forEach(function (c) { if (HANGUL.test(c.textContent)) units.push(c); }); return; }
+        units.push(el);
+        return;
+      }
+      Array.prototype.forEach.call(el.children, walk);
+    })(root);
+    return units;
+  }
+
+  function collectAttrs(root) {
+    var out = [];
+    Array.prototype.forEach.call(root.querySelectorAll('*'), function (el) {
+      if (el.closest('[data-lang-toggle], [data-en-alt], .lightbox')) return;
+      TEXT_ATTRS.forEach(function (a) {
+        var v = el.getAttribute(a);
+        if (v && HANGUL.test(v)) out.push({ el: el, attr: a, value: v });
+      });
+    });
+    return out;
+  }
+
+  var i18n = { items: [], dict: {}, ready: false };
+
+  // 한국어 글자가 사전에 없어 한국어로 남은 곳 — 개발 중 ?i18n-debug 로 확인한다
+  // (키는 번역을 적용하기 전에 저장해 둔 원문 기준이다)
+  function report() {
+    var missing = [];
+    i18n.unitKeys.forEach(function (k) { if (!i18n.dict[k]) missing.push(k); });
+    i18n.attrKeys.forEach(function (k) { if (!i18n.dict[k.value]) missing.push('[' + k.attr + '] ' + k.value); });
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    var n;
+    while ((n = walker.nextNode())) {
+      if (!HANGUL.test(n.nodeValue) || /^(SCRIPT|STYLE)$/.test(n.parentNode.tagName)) continue;
+      if (n.parentNode.closest('[data-en], [data-lang-toggle], .lightbox, svg')) continue;
+      if (!i18n.units.some(function (u) { return u.contains(n); })) missing.push('(unit 밖) ' + norm(n.nodeValue));
+    }
+    return missing;
+  }
 
   (function language() {
     var toggle = document.querySelector('[data-lang-toggle]');
-    var nodes = document.querySelectorAll('[data-en]');
-    var altNodes = document.querySelectorAll('[data-en-alt]');
-    if (!toggle || !nodes.length) return;
+    var dict = {};
+    [window.I18N_COMMON, window.I18N_PAGE].forEach(function (src) {
+      if (!src) return;
+      Object.keys(src).forEach(function (k) { dict[norm(k)] = src[k]; });
+    });
+    i18n.dict = dict;
 
-    var TITLE = { ko: document.title, en: 'Yuri Jung — Frontend Developer' };
-    nodes.forEach(function (n) { n.setAttribute('data-ko', n.innerHTML); });
-    altNodes.forEach(function (n) { n.setAttribute('data-ko-alt', n.getAttribute('alt')); });
+    var items = [];   // { el, attr|null, ko, en }
+    var titleKo = document.title;
+
+    // 홈 방식: data-en / data-en-alt
+    Array.prototype.forEach.call(document.querySelectorAll('[data-en]'), function (n) {
+      n.setAttribute('data-ko', n.innerHTML);      // 홈 제목 스크립트가 원문을 다시 읽는다
+      items.push({ el: n, attr: null, ko: n.innerHTML, en: n.getAttribute('data-en') });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-en-alt]'), function (n) {
+      items.push({ el: n, attr: 'alt', ko: n.getAttribute('alt'), en: n.getAttribute('data-en-alt') });
+    });
+
+    // 상세 방식: 사전
+    i18n.units = collectUnits(document.body);
+    i18n.attrs = collectAttrs(document.body);
+    i18n.units = i18n.units.filter(function (u) { return !u.closest('[data-en]'); });   // 홈 방식 요소와 겹치지 않게
+    i18n.units.forEach(function (u) {
+      var en = dict[norm(u.innerHTML)];
+      if (en != null) items.push({ el: u, attr: null, ko: u.innerHTML, en: en });
+    });
+    i18n.attrs.forEach(function (a) {
+      var en = dict[norm(a.value)];
+      if (en != null) items.push({ el: a.el, attr: a.attr, ko: a.value, en: en });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(META_SEL), function (m) {
+      var v = m.getAttribute('content');
+      if (v && dict[norm(v)] != null) items.push({ el: m, attr: 'content', ko: v, en: dict[norm(v)] });
+    });
+    i18n.unitKeys = i18n.units.map(function (u) { return norm(u.innerHTML); });
+    i18n.attrKeys = i18n.attrs.map(function (a) { return { attr: a.attr, value: norm(a.value) }; });
+    i18n.items = items;
+    i18n.ready = true;
+
+    if (!items.length && !toggle) return;
+
+    // 내부 링크에 현재 언어를 실어 보낸다 (저장소를 못 써도 유지되도록)
+    function withLang(href, l) {
+      var i = href.indexOf('#');
+      var hash = i > -1 ? href.slice(i) : '';
+      var path = i > -1 ? href.slice(0, i) : href;
+      path = path.replace(/([?&])lang=(?:en|ko)(&|$)/, function (m, a, c) { return c === '&' ? a : ''; }).replace(/[?&]$/, '');
+      if (l === 'en') path += (path.indexOf('?') > -1 ? '&' : '?') + 'lang=en';
+      return path + hash;
+    }
+    function decorateLinks(l) {
+      Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (a) {
+        var h = a.getAttribute('href');
+        if (!h || h.charAt(0) === '#' || /^[a-z][a-z0-9+.-]*:/i.test(h)) return;   // 앵커·외부·mailto·tel
+        var path = h.split('#')[0].split('?')[0];
+        if (path && !/\.html?$/.test(path) && path.slice(-1) !== '/') return;      // 이미지 같은 파일 제외
+        a.setAttribute('href', withLang(h, l));
+      });
+    }
 
     function apply(next) {
       lang = next;
-      var attr = next === 'en' ? 'data-en' : 'data-ko';
-      var altAttr = next === 'en' ? 'data-en-alt' : 'data-ko-alt';
       document.documentElement.lang = next;
-      document.title = TITLE[next];
-      toggle.setAttribute('aria-checked', String(next === 'en'));
-      // 글자 단위로 쪼개진 제목은 intro 스크립트가 직접 다시 만든다
-      nodes.forEach(function (n) {
-        if (!n.hasAttribute('data-split')) n.innerHTML = n.getAttribute(attr);
+      document.title = next === 'en' && dict[norm(titleKo)] != null ? dict[norm(titleKo)] : titleKo;
+      if (toggle) toggle.setAttribute('aria-checked', String(next === 'en'));
+      items.forEach(function (it) {
+        var val = next === 'en' ? it.en : it.ko;
+        if (it.attr) it.el.setAttribute(it.attr, val);
+        // 글자가 쪼개진 홈 제목은 intro 스크립트가 직접 다시 만든다
+        else if (!it.el.hasAttribute('data-split')) it.el.innerHTML = val;
       });
-      altNodes.forEach(function (n) { n.setAttribute('alt', n.getAttribute(altAttr)); });
+      decorateLinks(next);
       langListeners.forEach(function (fn) { fn(next); });
+      document.documentElement.classList.remove('i18n-pending');
     }
 
-    toggle.addEventListener('click', function () {
-      var next = lang === 'en' ? 'ko' : 'en';
-      apply(next);
-      try { localStorage.setItem(LANG_KEY, next); } catch (e) { /* 무시 */ }
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var next = lang === 'en' ? 'ko' : 'en';
+        apply(next);
+        try { localStorage.setItem(LANG_KEY, next); } catch (e) { /* 무시 */ }
+        try {   // 새로고침 없이 주소창의 ?lang= 만 갱신 — 공유하면 같은 언어로 열린다
+          var u = new URL(window.location.href);
+          u.searchParams.set('lang', next);
+          window.history.replaceState(window.history.state, '', u.toString());
+        } catch (e) { /* 무시 */ }
+      });
+    }
+
+    // 뒤로/앞으로 가기(bfcache)로 돌아왔을 때 다른 쪽에서 바꾼 언어를 따라간다
+    window.addEventListener('pageshow', function (e) {
+      if (!e.persisted) return;
+      try {
+        var saved = localStorage.getItem(LANG_KEY);
+        if ((saved === 'en' || saved === 'ko') && saved !== lang) apply(saved);
+      } catch (err) { /* 무시 */ }
     });
 
-    if (lang === 'en') apply('en');
+    if (lang === 'en') apply('en'); else document.documentElement.classList.remove('i18n-pending');
+    if (/[?&]i18n-debug\b/.test(window.location.search)) {
+      var miss = report();
+      if (miss.length) console.warn('[i18n] 번역이 없는 글 ' + miss.length + '건\n' + miss.join('\n'));
+    }
   })();
+
+  // 개발용: 번역 대상을 뽑아 낸다 (브라우저 콘솔 / 검증 스크립트에서 사용)
+  window.PortfolioI18n = {
+    dump: function () {
+      var seen = {};
+      var entries = [];
+      function add(k) { if (k && !seen[k]) { seen[k] = 1; entries.push(k); } }
+      i18n.unitKeys.forEach(add);
+      i18n.attrKeys.forEach(function (a) { add(a.value); });
+      Array.prototype.forEach.call(document.querySelectorAll(META_SEL), function (m) {
+        var k = norm(m.getAttribute('data-ko-content') || m.getAttribute('content') || '');
+        if (HANGUL.test(k)) add(k);
+      });
+      return entries;
+    },
+    missing: report,
+    lang: function () { return lang; }
+  };
 
   /* ------------------------------------------------------------------
      1. 모바일 내비게이션
@@ -238,9 +422,9 @@
       box.hidden = true;
       box.setAttribute('role', 'dialog');
       box.setAttribute('aria-modal', 'true');
-      box.setAttribute('aria-label', '확대 보기');
+      box.setAttribute('aria-label', ui('dialog'));
       box.innerHTML =
-        '<button type="button" class="lightbox__close" aria-label="닫기">&#10005;</button>' +
+        '<button type="button" class="lightbox__close" aria-label="' + ui('close') + '">&#10005;</button>' +
         '<div class="lightbox__scroll"><figure class="lightbox__body">' +
         '<div class="lightbox__stage"></div>' +
         '<figcaption class="lightbox__cap"></figcaption>' +
@@ -295,14 +479,28 @@
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
 
+    // 이미지 설명(alt)에 '확대해서 보기'를 붙인 접근성 이름 — 언어가 바뀌면 다시 만든다
+    function zoomLabel(el) {
+      var base = el.tagName.toLowerCase() === 'svg' ? ui('chart') : (el.getAttribute('alt') || ui('image'));
+      return lang === 'en' ? base + ' — ' + ui('zoom') : base + ' ' + ui('zoom');
+    }
+    langListeners.push(function () {
+      Array.prototype.forEach.call(triggers, function (el) {
+        if (el.classList.contains('is-zoomable')) el.setAttribute('aria-label', zoomLabel(el));
+      });
+      if (box) {
+        box.setAttribute('aria-label', ui('dialog'));
+        closeBtn.setAttribute('aria-label', ui('close'));
+      }
+    });
+
     Array.prototype.forEach.call(triggers, function (el) {
       // 링크 안에 든 이미지는 링크가 우선이다
       if (el.closest('a')) return;
       el.classList.add('is-zoomable');
       el.setAttribute('tabindex', '0');
       el.setAttribute('role', 'button');
-      var label = el.tagName.toLowerCase() === 'svg' ? '플로우차트' : (el.alt || '이미지');
-      el.setAttribute('aria-label', label + ' 확대해서 보기');
+      el.setAttribute('aria-label', zoomLabel(el));
       el.addEventListener('click', function () { open(el); });
       el.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }

@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/style.css?v=20260920e">
+  <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
+  (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
 <body>
 
@@ -329,14 +331,14 @@
           <li class="timeline__item">
             <p class="timeline__when" data-en="2025.07 – Present">2025.07 – 현재</p>
             <div class="timeline__body">
-              <h3 class="timeline__org">(주)위드마인드</h3>
+              <h3 class="timeline__org" data-en="(주)위드마인드 (Withmind)">(주)위드마인드</h3>
               <p class="timeline__desc">Frontend Developer</p>
             </div>
           </li>
           <li class="timeline__item">
             <p class="timeline__when" data-en="2022.09 – 2025.02 (2 yrs 6 mos)">2022.09 – 2025.02 (2년 6개월)</p>
             <div class="timeline__body">
-              <h3 class="timeline__org">(주)젠트리</h3>
+              <h3 class="timeline__org" data-en="(주)젠트리 (Zentry)">(주)젠트리</h3>
               <p class="timeline__desc" data-en="Doolittle vet app publishing; official and admin website development">두리틀 수의사용 앱 퍼블리싱, 공식·관리자 웹사이트 개발</p>
             </div>
           </li>
@@ -350,7 +352,7 @@
           <li class="timeline__item">
             <p class="timeline__when">2022.02 – 2022.06</p>
             <div class="timeline__body">
-              <h3 class="timeline__org">뉴오</h3>
+              <h3 class="timeline__org" data-en="뉴오 (NEW:O)">뉴오</h3>
               <p class="timeline__desc" data-en="Metaverse office startup project · backend 40% · frontend 30% · ideas 30%">메타버스 오피스 창업 프로젝트 · 백엔드 40% · 프론트엔드 30% · 아이디어 30%</p>
             </div>
           </li>
@@ -383,6 +385,7 @@
     </div>
   </footer>
 
-  <script src="js/site.js" defer></script>
+  <script src="locales/common.en.js?v=20260921" defer></script>
+  <script src="js/site.js?v=20260921" defer></script>
 </body>
 </html>

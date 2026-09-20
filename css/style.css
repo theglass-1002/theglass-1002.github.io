@@ -1821,7 +1821,7 @@ html.is-locked { overflow: hidden; }
 .project-card::before {
   content: "";
   position: absolute;
-  inset: 0 -24px;
+  inset: 0 max(-24px, calc(var(--pad) * -1));   /* 좁은 화면에서는 좌우 여백 안쪽에서 멈춘다 */
   z-index: -1;
   border-radius: 10px;
   background: transparent;
@@ -2131,3 +2131,10 @@ figure img, figure video { border-color: var(--border-strong); }
 /* 본문 안의 태그 목록은 불릿 목록이 아니다 — 들여쓰기와 마지막 항목 여백 차이 제거 */
 .prose .tags { padding-left: 0; }
 .prose .tags li { margin-bottom: 0; }
+
+/* 영어로 열릴 때 번역이 끝나기 전 한국어가 비치지 않게 — 스크립트가 없으면 이 클래스도 붙지 않는다 */
+html.i18n-pending body { visibility: hidden; }
+
+/* CSS 로 만든 안내 문구도 언어를 따라간다 (<html lang> 기준) */
+html[lang="en"] .ph-slot::after { content: "Photo needed"; }
+html[lang="en"] .todo::after { content: " — to be filled in"; }
