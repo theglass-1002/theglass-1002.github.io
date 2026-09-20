@@ -8,6 +8,53 @@
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ------------------------------------------------------------------
+     0. 언어 전환 (홈) — KO ⇄ EN
+     한국어 원문이 기준이다. data-en / data-en-alt 가 붙은 요소만 바뀌고,
+     처음 한 번 원문을 data-ko 에 보관해 둔다. 선택은 localStorage 에 기억한다.
+     ------------------------------------------------------------------ */
+  var LANG_KEY = 'portfolio-lang';
+  var lang = 'ko';
+  var langListeners = [];
+  try {
+    var saved = localStorage.getItem(LANG_KEY);
+    if (saved === 'en' || saved === 'ko') lang = saved;
+  } catch (e) { /* 저장소를 못 쓰면 한국어로 시작 */ }
+
+  (function language() {
+    var toggle = document.querySelector('[data-lang-toggle]');
+    var nodes = document.querySelectorAll('[data-en]');
+    var altNodes = document.querySelectorAll('[data-en-alt]');
+    if (!toggle || !nodes.length) return;
+
+    var TITLE = { ko: document.title, en: 'Yuri Jung — Frontend Developer' };
+    nodes.forEach(function (n) { n.setAttribute('data-ko', n.innerHTML); });
+    altNodes.forEach(function (n) { n.setAttribute('data-ko-alt', n.getAttribute('alt')); });
+
+    function apply(next) {
+      lang = next;
+      var attr = next === 'en' ? 'data-en' : 'data-ko';
+      var altAttr = next === 'en' ? 'data-en-alt' : 'data-ko-alt';
+      document.documentElement.lang = next;
+      document.title = TITLE[next];
+      toggle.setAttribute('aria-checked', String(next === 'en'));
+      // 글자 단위로 쪼개진 제목은 intro 스크립트가 직접 다시 만든다
+      nodes.forEach(function (n) {
+        if (!n.hasAttribute('data-split')) n.innerHTML = n.getAttribute(attr);
+      });
+      altNodes.forEach(function (n) { n.setAttribute('alt', n.getAttribute(altAttr)); });
+      langListeners.forEach(function (fn) { fn(next); });
+    }
+
+    toggle.addEventListener('click', function () {
+      var next = lang === 'en' ? 'ko' : 'en';
+      apply(next);
+      try { localStorage.setItem(LANG_KEY, next); } catch (e) { /* 무시 */ }
+    });
+
+    if (lang === 'en') apply('en');
+  })();
+
+  /* ------------------------------------------------------------------
      1. 모바일 내비게이션
      ------------------------------------------------------------------ */
   (function navigation() {
@@ -261,6 +308,125 @@
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
       });
     });
+  })();
+
+  /* ------------------------------------------------------------------
+     5. 인트로 (홈) — 도트 풍경 히어로
+     제목을 글자 단위로 쪼개 순서대로 떠오르게 하고, 포인터가 가까울수록
+     글자가 떠오르고 커지며 물든다. 풍경은 포인터 위치에 따라 아주 조금 움직인다.
+     ------------------------------------------------------------------ */
+  (function introTypography() {
+    var intro = document.querySelector('.intro');
+    var title = intro && intro.querySelector('h1');
+    if (!title || reduceMotion) return;
+
+    var chars = [];
+
+    // 현재 언어의 원문으로 글자를 다시 만든다 (언어를 바꿀 때도 사용)
+    function build() {
+      var text = title.getAttribute(lang === 'en' ? 'data-en' : 'data-ko').trim();
+      title.setAttribute('aria-label', text);      // 스크린리더는 원문 그대로
+      title.setAttribute('data-split', '');
+      title.textContent = '';
+      chars.length = 0;
+      text.split(/\s+/).forEach(function (word, w, words) {
+        var wordEl = document.createElement('span');
+        wordEl.className = 'intro__word';
+        wordEl.setAttribute('aria-hidden', 'true');
+        Array.from(word).forEach(function (ch) {
+          var c = document.createElement('span');
+          c.className = 'intro__char';
+          c.style.setProperty('--i', chars.length);
+          c.textContent = ch;
+          wordEl.appendChild(c);
+          chars.push({ el: c, x: 0, y: 0, k: 0 });
+        });
+        title.appendChild(wordEl);
+        if (w < words.length - 1) title.appendChild(document.createTextNode(' '));
+      });
+      wake();
+    }
+    langListeners.push(build);
+
+    var RADIUS = 150;             // 반응 반경(px)
+    var pointer = null;           // {x, y} 또는 null
+    var raf = 0;
+
+    function frame() {
+      var busy = false;
+      chars.forEach(function (c) {
+        var r = c.el.getBoundingClientRect();
+        // 이동값이 섞이지 않도록 목표는 '원래 자리' 기준으로 계산
+        var cx = r.left + r.width / 2 - c.x;
+        var cy = r.top + r.height / 2 - c.y;
+        var k = 0, dx = 0, dy = 0;
+        if (pointer) {
+          var ddx = pointer.x - cx, ddy = pointer.y - cy;
+          var d = Math.sqrt(ddx * ddx + ddy * ddy);
+          k = Math.max(0, 1 - d / RADIUS);
+          k = k * k * (3 - 2 * k);                // smoothstep
+          dx = -ddx / (d || 1) * k * 6;           // 살짝 밀려나는 느낌
+          dy = -k * 16;
+        }
+        c.x += (dx - c.x) * .16;
+        c.y += (dy - c.y) * .16;
+        c.k += (k - c.k) * .16;
+        if (Math.abs(dx - c.x) + Math.abs(dy - c.y) + Math.abs(k - c.k) > .01) busy = true;
+        c.el.style.translate = c.x.toFixed(2) + 'px ' + c.y.toFixed(2) + 'px';
+        c.el.style.scale = (1 + c.k * .3).toFixed(3);
+        c.el.style.setProperty('--k', c.k.toFixed(3));
+      });
+      raf = (pointer || busy) ? requestAnimationFrame(frame) : 0;
+    }
+    function wake() { if (!raf) raf = requestAnimationFrame(frame); }
+
+    build();
+    intro.classList.add('intro--live');
+
+    intro.addEventListener('pointermove', function (e) {
+      pointer = { x: e.clientX, y: e.clientY };
+      // 풍경 시차: 인트로 중심에서 얼마나 떨어졌는지(-1 ~ 1)
+      var box = intro.getBoundingClientRect();
+      intro.style.setProperty('--px', (((e.clientX - box.left) / box.width) * 2 - 1).toFixed(3));
+      intro.style.setProperty('--py', (((e.clientY - box.top) / box.height) * 2 - 1).toFixed(3));
+      wake();
+    });
+    intro.addEventListener('pointerleave', function () {
+      pointer = null;
+      intro.style.setProperty('--px', '0');
+      intro.style.setProperty('--py', '0');
+      wake();
+    });
+  })();
+
+  /* ------------------------------------------------------------------
+     6. 상단 메뉴 현재 위치 (홈)
+     화면 가운데에 걸린 섹션의 메뉴 링크에 aria-current 를 준다.
+     ------------------------------------------------------------------ */
+  (function navCurrent() {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav__list a[href^="#"]'));
+    if (!links.length || !('IntersectionObserver' in window)) return;
+
+    var byId = {};
+    links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var sections = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+
+    function mark(id) {
+      links.forEach(function (a) {
+        if (a === byId[id]) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) mark(en.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });   // 화면 세로 가운데 선에 걸릴 때
+    sections.forEach(function (sec) { io.observe(sec); });
+
+    // 맨 위(히어로)에서는 표시하지 않는다
+    window.addEventListener('scroll', function () {
+      if (window.scrollY < 80) mark('');
+    }, { passive: true });
   })();
 
 })();
