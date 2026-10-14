@@ -23,10 +23,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/style.css?v=20260924">
+  <link rel="stylesheet" href="css/y2k.css?v=20261014">
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
-<body>
+<body class="y2k">
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="px-cloud" viewBox="0 0 24 5" shape-rendering="crispEdges">
       <path fill="currentColor" d="M5 0h7v1H5zM2 1h15v1H2zM0 2h22v1H0zM1 3h23v1H1zM3 4h17v1H3z"/>
@@ -67,7 +68,9 @@
     <!-- ================= Intro ================= -->
     <section class="intro">
       <div class="wrap wrap--stage intro__grid">
-        <div class="intro__text">
+        <div class="intro__text win">
+          <div class="win__bar" aria-hidden="true"><span class="win__title">hello_world.txt</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
+          <div class="win__body">
           <p class="intro__eyebrow" aria-hidden="true">Frontend Developer · Portfolio 2026</p>
           <h1 data-break="2" data-break-en="4" data-en="Turning complex features into screens that are easy to use">복잡한 기능을 쓰이기 쉬운 화면으로</h1>
           <p class="intro__lead" data-en="I&#x27;ve built products for AI services, real-time monitoring, and accessibility.">AI 서비스와 실시간 모니터링, 접근성이 중요한 제품을 개발해 왔습니다.</p>
@@ -75,14 +78,22 @@
           <div class="hero-cta">
           <a class="btn btn--primary btn--arrow" href="#work" data-en="View projects">프로젝트 보기</a>
           <a class="btn btn--ghost" href="#career" data-en="View career">경력 보기</a>
+          <a class="btn btn--ghost" href="#contact" data-en="Contact me">연락하기</a>
         </div>
         </div>
-        <figure class="intro__plate">
+        </div>
+        <figure class="intro__plate win win--photo">
+          <div class="win__bar" aria-hidden="true"><span class="win__title">studio_2026.png</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
           <img class="intro__art" src="images/hero/pixel-interface-studio.webp" width="1000" height="800"
                alt="화면 세 개 앞에서 작업하는 개발자. 왼쪽은 AI 대화 파형, 가운데는 화면 구성, 오른쪽은 실시간 심박 그래프이고, 벽에는 키보드 포커스 링이 보인다." data-en-alt="A developer working in front of three screens: an AI conversation waveform on the left, a UI layout in the middle, and a real-time heart-rate graph on the right, with a keyboard focus ring on the wall."
                fetchpriority="high" decoding="async">
+          <span class="sticker sticker--star" aria-hidden="true"><svg viewBox="0 0 9 9" shape-rendering="crispEdges"><path fill="currentColor" d="M4 0h1v2H4zM4 7h1v2H4zM0 4h2v1H0zM7 4h2v1H7zM3 2h3v1H3zM2 3h5v3H2zM3 6h3v1H3z"/></svg></span>
+          <span class="sticker sticker--heart" aria-hidden="true"><svg viewBox="0 0 9 8" shape-rendering="crispEdges"><path fill="currentColor" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/></svg></span>
+          <span class="sticker sticker--tag" aria-hidden="true">a11y first ♡</span>
+          <span class="sticker sticker--chip" aria-hidden="true">AI · real-time · web</span>
         </figure>
       </div>
+      <div class="marquee" aria-hidden="true"><div class="marquee__track"><span>Frontend Developer ✦ Web Accessibility ✦ AI Service Integration ✦ Real-time Interface ✦ Responsive UI ✦ Portfolio 2026 ✦&nbsp;</span><span>Frontend Developer ✦ Web Accessibility ✦ AI Service Integration ✦ Real-time Interface ✦ Responsive UI ✦ Portfolio 2026 ✦&nbsp;</span></div></div>
     </section>
 
     <!--
@@ -120,6 +131,7 @@
           </div>
 
           <div class="project-media has-mobile-only">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">kiosk.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__mobile" src="images/projects/kiosk/hero.webp"
                  width="1462" height="2600" alt="홀로그램 키오스크 메뉴 선택 화면" data-en-alt="Holographic kiosk menu selection screen" loading="lazy">
           </div>
@@ -140,6 +152,7 @@
           </div>
 
           <div class="project-media has-desktop-and-mobile">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">jango.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__desktop project-media__contain" src="images/projects/jango/jango-main-cropped.webp"
                  width="1600" height="1000" alt="장고 메인 화면 - 채용 공고 목록" data-en-alt="Jango main screen - job listings" loading="lazy">
             <img class="project-media__mobile project-media__contain" src="images/projects/jango/jango-mobile-cropped.webp"
@@ -162,6 +175,7 @@
           </div>
 
           <div class="project-media has-desktop-and-mobile">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">jobkok.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__desktop project-media__contain" src="images/projects/jobkok/jobkok-main-cropped.webp"
                  width="1600" height="1000" alt="잡콕 메인 화면 - 채용 공고 검색" data-en-alt="Jobkok main screen - job search" loading="lazy">
             <img class="project-media__mobile project-media__contain" src="images/projects/jobkok/jobkok-mobile-cropped.webp"
@@ -184,6 +198,7 @@
           </div>
 
           <div class="project-media has-desktop-only">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">literacy.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__desktop project-media__contain" src="images/projects/literacy/literacy-main-cropped.webp"
                  width="1600" height="1000" alt="문해력 탐험대 메인 화면" data-en-alt="Literacy Expedition main screen" loading="lazy">
           </div>
@@ -204,6 +219,7 @@
           </div>
 
           <div class="project-media has-desktop-only">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">interview.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__desktop" src="images/projects/interview/screen-1.webp"
                  width="1200" height="613" alt="면접왕 메인 화면 - 모의면접 유형 선택" data-en-alt="Interview King main screen - choosing a mock interview type" loading="lazy">
           </div>
@@ -224,6 +240,7 @@
           </div>
 
           <div class="project-media has-desktop-and-mobile">
+            <div class="win__bar" aria-hidden="true"><span class="win__title">zentry.exe</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
             <img class="project-media__desktop" src="images/projects/zentry/zentry-device-hero.webp"
                  width="1600" height="1067" alt="젠트리 의료기기 제품 사진" data-en-alt="Zentry medical device product photo" loading="lazy">
             <img class="project-media__mobile" src="images/projects/zentry/zentry-web-mobile.webp"
@@ -312,6 +329,15 @@
             </dl>
           </div>
         </div>
+        <div class="skills">
+          <h3 class="skills__title" id="skills-title">Skills</h3>
+          <ul class="skills__grid" aria-labelledby="skills-title">
+            <li class="folder"><p class="folder__name">Frontend</p><ul class="folder__items"><li>HTML · CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Vite</li></ul></li>
+            <li class="folder"><p class="folder__name">Mobile</p><ul class="folder__items"><li>Flutter · Dart</li><li>Android · Java</li></ul></li>
+            <li class="folder"><p class="folder__name">Backend · Data</p><ul class="folder__items"><li>Firebase</li><li>Java Spring</li><li>MySQL</li><li>PHP</li><li>TCP</li></ul></li>
+            <li class="folder"><p class="folder__name">AI · Interactive</p><ul class="folder__items"><li>Gemini API</li><li>Speech recognition</li><li>Unity · C#</li><li>Phaser.js</li></ul></li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -322,6 +348,8 @@
         <p class="eyebrow" aria-hidden="true"><b>03</b><span>CAREER</span></p>
         <h2 id="career-title">Career</h2>
       </header>
+        <div class="diary win">
+          <div class="win__bar" aria-hidden="true"><span class="win__title">diary.log</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
         <ol class="timeline">
           <li class="timeline__item">
             <p class="timeline__when" data-en="2025.07 — Present">2025.07 — 현재</p>
@@ -356,6 +384,7 @@
             </div>
           </li>
         </ol>
+        </div>
         <p class="career__note"><span data-en="Expected salary">희망연봉</span> <span data-en="KRW 38M or more (negotiable)">3,800만원 이상 (협의)</span></p>
       </div>
     </section>
@@ -373,11 +402,14 @@
           <g fill="#50bec8"><rect x="24" y="8" width="4" height="2"/><rect x="28" y="4" width="2" height="4"/><rect x="30" y="10" width="2" height="6"/><rect x="32" y="0" width="2" height="10"/><rect x="34" y="8" width="4" height="2"/></g>
           <g fill="#f07f72"><rect x="44" y="2" width="12" height="2"/><rect x="44" y="12" width="12" height="2"/><rect x="44" y="4" width="2" height="8"/><rect x="54" y="4" width="2" height="8"/></g>
         </svg>
+        <div class="mail win">
+          <div class="win__bar" aria-hidden="true"><span class="win__title">new_message.eml</span><span class="win__ctrl"><i></i><i></i><i></i></span></div>
         <ul class="contact-list">
           <li><a href="mailto:glass.xcx@gmail.com"><span>Email</span>glass.xcx@gmail.com</a></li>
           <li><a href="https://github.com/theglass-1002" target="_blank" rel="noopener"><span>GitHub</span>github.com/theglass-1002</a></li>
           <li><a href="tel:01040965625"><span>Phone</span>010-4096-5625</a></li>
         </ul>
+        </div>
       </div>
     </section>
 
