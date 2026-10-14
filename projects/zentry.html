@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015l">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -352,42 +352,33 @@
               </div>
             </div>
 
-            <div class="story">
-              <div class="story__text">
-                <p>
-                  데스크톱과 모바일에서 같은 내용을 각 폭에 맞게 표시. 제품 소개는 <strong>수의사 / 보호자 / 반려동물</strong> 세 갈래로 나눠, 방문자가 자기 갈래를 먼저 찾도록 구성.
-                </p>
-              </div>
-              <figure class="fig-portrait">
-                <img src="../images/projects/zentry/zentry-web-mobile.webp" width="332" height="720"
-                     alt="모바일에서 본 젠트리 공식 웹사이트."
-                     loading="lazy" decoding="async">
-              </figure>
-            </div>
-
-            <figure class="is-plain">
-              <img src="../images/projects/zentry/zentry-web-desktop.webp" width="1200" height="1200"
+            <p>
+              데스크톱과 모바일에서 같은 내용을 각 폭에 맞게 표시. 제품 소개는 <strong>수의사 / 보호자 / 반려동물</strong> 세 갈래로 나눠, 방문자가 자기 갈래를 먼저 찾도록 구성.
+            </p>
+            <figure class="devices">
+              <img class="devices__desk" src="../images/projects/zentry/zentry-web-desktop.webp" width="1200" height="1200"
                    alt="데스크톱에서 본 젠트리 공식 웹사이트. 소개 문구와 진료 사진이 좌우로 놓여 있다."
                    loading="lazy" decoding="async">
+              <img class="devices__phone" src="../images/projects/zentry/zentry-web-mobile.webp" width="332" height="720"
+                   alt="모바일에서 본 젠트리 공식 웹사이트."
+                   loading="lazy" decoding="async">
+              <figcaption>같은 페이지의 데스크톱 · 모바일 화면</figcaption>
             </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="feedback">
             <h2 id="feedback">서비스 보완과 피드백</h2>
-            <div class="story">
-              <div class="story__text">
-                <p>
-                  개발 중 팀원들이 문서로 공유한 기능별 개선사항과 사용자 피드백을 근거로 <strong>UI/UX, 동작 흐름, 예외 처리</strong> 보완.
-                </p>
-                <p>
-                  문서에는 “같은 QR코드로 중복 등록이 되고 같은 차트번호도 등록된다”처럼 정상 흐름에서는 드러나지 않는 문제 다수. 병원에서는 이런 중복이 오진으로 이어질 수 있어 <strong>예외 처리 항목을 따로 추적</strong>.
-                </p>
-              </div>
-              <figure>
-                <img src="../images/projects/zentry/zentry-feedback-doc.webp" width="1012" height="916"
-                     alt="피드백 정리 문서. 개선 요청 옆에 관련 앱 화면이 붙어 있다."
-                     loading="lazy" decoding="async">
-              </figure>
+            <p>
+              개발 중 팀원들이 문서로 공유한 기능별 개선사항과 사용자 피드백을 근거로 <strong>UI/UX, 동작 흐름, 예외 처리</strong> 보완.
+            </p>
+            <div class="case">
+              <p class="case__tag">예외 사례</p>
+              <ul class="case__items">
+                <li>같은 QR코드로 중복 등록</li>
+                <li>같은 차트번호 중복 등록</li>
+              </ul>
+              <p class="case__arrow" aria-hidden="true"></p>
+              <p class="case__result"><b>오진 위험</b>정상 흐름에서는 드러나지 않아 예외 처리 항목을 따로 추적</p>
             </div>
           </section>
 
@@ -462,7 +453,7 @@
 
 
   <script src="../locales/common.en.js?v=20261015q" defer></script>
-  <script src="../locales/zentry.en.js?v=20261015q" defer></script>
+  <script src="../locales/zentry.en.js?v=20261015r" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

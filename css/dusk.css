@@ -931,3 +931,30 @@ body.dusk:not(.home) .sitemap, body.dusk:not(.home) .lanes, body.dusk:not(.home)
   .lanes__cols, .flowsteps ol { grid-template-columns: 1fr; }
   .flowsteps li { margin: 0 0 -2px; }
 }
+
+/* 기기 묶음: 데스크톱 화면 위에 모바일 화면을 겹쳐 같은 페이지임을 보여 준다 */
+body.dusk:not(.home) .prose figure.devices {
+  position: relative; margin: var(--s-5) 0 var(--s-7); padding: clamp(24px, 4vw, 48px) clamp(24px, 4vw, 48px) clamp(16px, 2vw, 24px);
+  display: block; background: color-mix(in srgb, var(--acc, var(--pg-label)) 12%, var(--pg-card));
+  border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line);
+}
+body.dusk:not(.home) .prose figure.devices img { border: 0; box-shadow: none; background: none; max-height: none; margin: 0; }
+body.dusk:not(.home) .prose figure.devices .devices__desk { width: 78%; height: auto; }
+body.dusk:not(.home) .prose figure.devices .devices__phone {
+  position: absolute; right: clamp(24px, 4vw, 48px); bottom: clamp(48px, 6vw, 64px); width: 22%; height: auto;
+  border: 2px solid var(--pg-line); border-radius: 14px; background: #ffffff; box-shadow: 6px 6px 0 var(--pg-line);
+}
+body.dusk:not(.home) .prose figure.devices figcaption { margin-top: 12px; text-align: left; }
+
+/* 예외 사례 카드 */
+.case { display: grid; grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr); align-items: center; gap: 0 12px; margin: var(--s-5) 0 var(--s-7); padding: 20px; background: var(--pg-card); border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line); }
+.case__tag { grid-column: 1 / -1; margin: 0 0 12px; font: 700 14px/1 var(--d-sans); color: var(--pg-label); }
+.case__items { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.case__items li { padding: 10px 12px; font-size: 15px; font-weight: 600; color: var(--pg-ink); background: color-mix(in srgb, #cf573c 10%, var(--pg-card)); border-left: 4px solid #cf573c; }
+.case__arrow { margin: 0; height: 14px; background: var(--pg-ink); clip-path: polygon(0 35%, 70% 35%, 70% 0, 100% 50%, 70% 100%, 70% 65%, 0 65%); }
+.case__result { margin: 0; padding: 12px 14px; font-size: 15px; line-height: 1.6; color: var(--pg-sub); background: color-mix(in srgb, var(--pg-ink) 6%, var(--pg-card)); }
+.case__result b { display: block; margin-bottom: 4px; color: #a53030; }
+@media (max-width: 640px) {
+  .case { grid-template-columns: 1fr; gap: 12px; }
+  .case__arrow { width: 14px; height: 24px; justify-self: center; clip-path: polygon(35% 0, 65% 0, 65% 70%, 100% 70%, 50% 100%, 0 70%, 35% 70%); }
+}

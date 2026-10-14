@@ -1,5 +1,10 @@
 /* 자동 생성 — 한국어 원문(키) → 영어. 원문이 바뀌면 키가 맞지 않아 그 글은 한국어로 남는다(?i18n-debug 로 확인) */
 window.I18N_PAGE = {
+  "같은 페이지의 데스크톱 · 모바일 화면": "The same page on desktop and mobile",
+  "예외 사례": "Edge cases",
+  "같은 QR코드로 중복 등록": "Same QR code registered twice",
+  "같은 차트번호 중복 등록": "Same chart number registered twice",
+  "<b>오진 위험</b>정상 흐름에서는 드러나지 않아 예외 처리 항목을 따로 추적": "<b>Risk of misdiagnosis</b>Invisible in the normal flow, so edge cases were tracked as separate items",
   "<span aria-current=\"page\">젠트리 · 두리틀</span>": "<span aria-current=\"page\">Zentry · Doolittle</span>",
   "젠트리 · 두리틀": "Zentry · Doolittle",
   "2022.09 – 2025.02 (2년 6개월)": "Sep 2022 – Feb 2025 (2 yrs 6 mos)",
