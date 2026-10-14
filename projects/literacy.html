@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015h">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -167,11 +167,11 @@
 
           <figure class="fig-hero">
             <div class="shot-frame">
-              <img src="../images/projects/literacy/teacher-dashboard.webp" width="1600" height="1346"
-          alt="기관 계정 홈. 학생·학급·선생님 수와 진단·학습 현황 카드가 놓여 있다."
+              <img src="../images/projects/literacy/teacher-dashboard-home.webp" width="1600" height="1069"
+          alt="기관 계정 홈. 학생·학급·선생님 수, 진단·학습 현황 카드, 계약 현황, 공지사항"
           fetchpriority="high" decoding="async">
             </div>
-            <figcaption>소속 학급과 학생의 진단·학습 현황을 한눈에 보는 기관 계정 홈 화면.</figcaption>
+            <figcaption>기관 계정 홈. 소속 학급·학생의 진단·학습 현황과 이용권 남은 기간</figcaption>
           </figure>
 
           <section class="cs-section" aria-labelledby="overview">
@@ -206,12 +206,26 @@
             <p>
               쓸 수 없는 기능을 회색으로 남겨 두면 그것부터 눈에 걸림. 선생님 계정은 통계·계정 관리를 메뉴에서 제외하고, 범위만 좁아지는 화면은 같은 컴포넌트에 조회 범위 표기.
             </p>
-            <figure>
-              <img src="../images/projects/literacy/teacher-management.webp" width="1600" height="900"
-                   alt="선생님 계정의 학급 관리 화면. 메뉴가 기관 계정보다 짧고, 표에 학급·학년·학생 수·평균 점수·상태가 있다."
+            <figure class="fig-diagram-img">
+              <img src="../images/projects/literacy/service-flow.webp" width="1600" height="896"
+                   alt="기관·학생·선생님 3개 레인 서비스 흐름도. 기관은 학급·계정 생성, 선생님은 학생 배정·학습 관리, 학생은 로그인·진단·리포트 생성·트레이닝, 리포트는 기관 통계와 선생님 학급 관리로 회수"
                    loading="lazy" decoding="async">
-              <figcaption>계정 유형에 따라 달라지는 메뉴 구성.</figcaption>
+              <figcaption>기획 단계 서비스 흐름도. 역할별 레인과 리포트 회수 경로</figcaption>
             </figure>
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/literacy/menu-institution.webp" width="1100" height="1400"
+                     alt="기관 계정 사이드 메뉴. 학급 관리(모든 학급·1~6학년), 사용자 관리(선생님·학생), 통계(종합·읽기·기타)"
+                     loading="lazy" decoding="async">
+                <figcaption>기관 계정 메뉴</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/literacy/menu-teacher.webp" width="1100" height="1400"
+                     alt="선생님 계정 사이드 메뉴. 학급 관리(모든 학급·1~3학년), 학생 관리, 자료 관리(진단·학습 자료). 통계·선생님 관리 없음"
+                     loading="lazy" decoding="async">
+                <figcaption>선생님 계정 메뉴. 통계·선생님 관리 제외</figcaption>
+              </figure>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="manage">
@@ -222,14 +236,18 @@
             <p>
               일괄 등록에는 실패 행이 반드시 발생. 파일을 다시 열어 대조하지 않도록 결과를 행 단위로 반환하고 고칠 곳을 화면에서 표시. 등록한 계정의 그룹·학급 배정과 수정·정지까지 같은 화면에서 처리.
             </p>
-            <div class="fig-pair fig-pair--single">
-              <figure>
-                <img src="../images/projects/literacy/pdf-source/student-page-25.webp" width="1600" height="1157"
-                     alt="그룹 관리 화면. 그룹 목록 표와 그룹 추가·일괄 추가 버튼, 행별 수정·삭제 메뉴가 있다."
-                     loading="lazy" decoding="async">
-                <figcaption>그룹 목록. 그룹 추가와 일괄 추가로 학급·모둠 생성 후 학생 배정.</figcaption>
-              </figure>
-            </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/literacy/bulk-upload-sb.webp" width="1600" height="1221"
+                   alt="학생 일괄 추가 화면 설계. 학생 목록의 일괄 추가 버튼 → 양식 다운로드·파일 업로드 팝업, 실패 팝업(34번 행 학급명 오입력 등 사유), 성공 팝업(등록 학생 수·계정 다운로드)"
+                   loading="lazy" decoding="async">
+              <figcaption>학생 일괄 추가 화면 설계. 실패 시 행 번호와 사유, 성공 시 등록 인원과 계정 파일</figcaption>
+            </figure>
+            <figure class="fig-wide">
+              <img src="../images/projects/literacy/pdf-source/student-page-25.webp" width="1600" height="1157"
+                   alt="그룹 관리 화면. 그룹 목록 표, 그룹 추가·일괄 추가 버튼, 행별 수정·삭제 메뉴"
+                   loading="lazy" decoding="async">
+              <figcaption>그룹 목록. 그룹 추가·일괄 추가로 학급·모둠 생성 후 학생 배정</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="report">
@@ -240,25 +258,24 @@
             <p>
               세 화면을 하나의 흐름으로 연결하고, 한 단계 내려가도 앞에서 보던 기준 유지. 정답률과 성취 수준은 표와 그래프를 함께 배치해 수치를 읽기 전에 형태가 먼저 보이도록 구성.
             </p>
-            <figure class="fig-portrait">
-              <img src="../images/projects/literacy/pdf-source/teacher-page-47.webp" width="1600" height="2249"
-                   alt="학급 종합 리포트. 총 진단·학습 횟수, 레벨 변화, 점수 분포도, 학습 진행 현황, 이해 유형별 점수가 이어진다."
-                   loading="lazy" decoding="async">
-              <figcaption>학급 전체의 진단·학습 진행 현황.</figcaption>
-            </figure>
-            <div class="fig-pair">
-              <figure class="fig-portrait">
-                <img src="../images/projects/literacy/pdf-source/student-page-54.webp" width="1600" height="2530"
-                     alt="학생 단위 리포트. 탐험 등급, 레벨 변화, 듣기·말하기·읽기·쓰기 기록, 복습 어휘, 문제 해결 능력 오각형 분석이 이어진다."
+            <div class="split">
+              <figure>
+                <img src="../images/projects/literacy/class-report-top.webp" width="1600" height="1107"
+                     alt="학급 종합 리포트 상단. 진단·학습 횟수 카드, 진단 회차별 레벨 변화 그래프, 학급·학년·학교 평균 점수 비교, 점수 분포 막대그래프"
                      loading="lazy" decoding="async">
               </figure>
-              <figure class="fig-portrait">
-                <img src="../images/projects/literacy/pdf-source/student-page-46.webp" width="1600" height="2146"
-                     alt="개별 진단 결과 화면. 진단 등급을 학급 평균과 나란히 보여주고, 오각형 분석과 문항별 정답 표시가 이어진다."
-                     loading="lazy" decoding="async">
-                <figcaption>문항별 정답 여부와 오답 유형. 고른 답과 정답을 색과 아이콘으로 함께 구분.</figcaption>
-              </figure>
+              <ul>
+                <li><b>학급 종합 리포트</b>진단·학습 횟수, 레벨 변화, 점수 분포로 우리 반 위치 확인</li>
+                <li><b>학생 리포트</b>학생 목록 탭에서 학생 선택 후 개인 기록으로 이동</li>
+                <li><b>개별 진단 결과</b>진단 한 회차의 등급, 5개 이해 유형, 문항별 정오답</li>
+              </ul>
             </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/literacy/diagnosis-questions.webp" width="1600" height="817"
+                   alt="개별 진단 결과의 문제 영역. 문제 1~10 탭, 고른 오답은 빨간 테두리·X, 정답은 초록 테두리·체크"
+                   loading="lazy" decoding="async">
+              <figcaption>문항별 정오답. 고른 답과 정답을 색·아이콘으로 구분</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="stats">
@@ -266,9 +283,9 @@
             <p>
               기관 관리자는 학교·학년·학급 단위로 데이터 조회. 기간과 단위를 바꿔 가며 보다 보면 무엇을 보고 있는지 놓치기 쉬워, 적용된 기준을 화면 위에 표시.
             </p>
-            <figure>
+            <figure class="fig-wide">
               <img src="../images/projects/literacy/teacher-report.webp" width="1600" height="902"
-                   alt="기관 읽기 통계 화면. 읽기 유형을 우리 학교와 전국 학교로 비교한 막대그래프와 읽기 속도 같은 지표가 있다."
+                   alt="기관 읽기 통계 화면. 읽기 유형별 우리 학교·전국 학교 비교 막대그래프, 읽기 속도·시선 고정 시간·시선 폭·역행 비율 카드"
                    loading="lazy" decoding="async">
             </figure>
           </section>
@@ -277,18 +294,18 @@
             <p>
               관리자 사이트와 함께 이미 운영 중이던 학생용 화면 일부도 개선.
             </p>
-            <div class="fig-pair">
+            <div class="shots-row">
               <figure>
-                <img src="../images/projects/literacy/student-quiz.webp" width="1600" height="1000"
-                     alt="학생용 문제 풀이 화면. 질문과 보기 카드 네 개, 고른 보기의 주황 테두리, 다음 문제 버튼이 있다."
+                <img src="../images/projects/literacy/student-journey.webp" width="1600" height="1000"
+                     alt="학생용 탐험 지도 화면. 어휘의 숲 지도 위 진단·학습 단계, 오른쪽에 어휘 복습 카드, 탐험 기록 점수 그래프, 오답 노트 버튼"
                      loading="lazy" decoding="async">
-                <figcaption>학생용 문제 풀이 화면. 고른 보기를 테두리와 색으로 표시.</figcaption>
+                <figcaption>탐험 지도. 단계별 진단·학습 진입</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/literacy/pdf-source/student-page-74.webp" width="1600" height="1666"
-                     alt="학생용 듣기 학습 결과 화면. 정답·오답 수와 문제별 탭, 다른 지문 선택·다시 학습 버튼이 있다."
+                <img src="../images/projects/literacy/student-quiz.webp" width="1600" height="1000"
+                     alt="학생용 문제 풀이 화면. 질문, 보기 카드 4개, 고른 보기 주황 테두리, 다음 문제 풀기 버튼"
                      loading="lazy" decoding="async">
-                <figcaption>학습 결과 화면. 틀린 문항에서 같은 지문 재학습으로 바로 연결.</figcaption>
+                <figcaption>문제 풀이. 고른 보기를 테두리와 색으로 표시</figcaption>
               </figure>
             </div>
           </section>
@@ -359,8 +376,8 @@
   </footer>
 
 
-  <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/literacy.en.js?v=20261015a" defer></script>
+  <script src="../locales/common.en.js?v=20261015q" defer></script>
+  <script src="../locales/literacy.en.js?v=20261015q" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

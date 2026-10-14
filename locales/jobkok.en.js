@@ -1,6 +1,6 @@
 /* 자동 생성 — 한국어 원문(키) → 영어. 원문이 바뀌면 키가 맞지 않아 그 글은 한국어로 남는다(?i18n-debug 로 확인) */
 window.I18N_PAGE = {
-  "잡콕 메인 화면. 채용 공고 검색창과 직무 카테고리 아이콘이 놓여 있다.": "The Jobkok main screen, with a job search bar and job-category icons.",
+  "잡콕 메인 화면. 채용 공고 검색창 아래 직무 카테고리 아이콘 20개": "Jobkok main screen: job search bar above 20 job-category icons",
   "잡콕 모의면접 분석 결과 화면. 진행 정보 아래 종합 분석 · 상세 분석 · 이력서-면접 일치도 탭과 역량 등급이 보인다.": "The Jobkok mock-interview results screen. Below the session details are tabs for overall analysis, detailed analysis, and résumé–interview match, plus a competency grade.",
   "<span aria-current=\"page\">잡콕</span>": "<span aria-current=\"page\">Jobkok</span>",
   "잡콕": "Jobkok",
@@ -38,5 +38,25 @@ window.I18N_PAGE = {
   "구직자와 기업이 같은 데이터를 다른 목적으로 보는 서비스. 구직자에게는 더 채워야 할 것이, 기업에게는 이 지원자를 봐야 할 이유가 보이도록 구성": "Job seekers and companies look at the same data for different purposes. Job seekers needed to see what to fill in next; companies needed a reason to look at this applicant.",
   "잡콕 메인 화면. ‘이제, 잡콕에서 검색만 하세요!’ 아래 검색창과 20개 직군 아이콘 격자가 있다.": "Jobkok main screen. Under \"Now, just search on Jobkok!\" are a search box and a grid of 20 job-category icons.",
   "이력서 작성부터 AI 모의면접, 공고 탐색까지 이어지는 채용 플랫폼 ‘잡콕’ 케이스 스터디.": "Case study of Jobkok, a recruiting platform from résumé writing to AI mock interviews and job search.",
-  "메인 화면. 검색과 직군 격자 모두 같은 공고 목록으로 연결": "Main screen: search and the category grid both lead to the same postings."
+  "메인 화면. 검색과 직군 격자 모두 같은 공고 목록으로 연결": "Main screen: search and the category grid both lead to the same postings.",
+  "잡콕 기획서 메뉴 구조도. 메인, 로그인/회원가입, 채용공고, MY이력서, 모의면접, 공고등록 6개 메뉴와 하위 화면": "Jobkok menu structure from the planning doc: six menus (Main, Login/Sign-up, Jobs, My Résumé, Mock Interview, Post a Job) and their sub-screens",
+  "기획서 메뉴 구조(IA). 채용공고·이력서·모의면접·공고등록 중심 화면 구성": "Menu structure (IA) from the planning doc. Screens built around jobs, résumés, mock interviews, and job posting",
+  "잡콕 이력서 작성 화면. 경력 칸 AI 문장 추천 버튼, 하드 스킬·소프트 스킬 AI 추천 키워드 칩": "Jobkok résumé form: AI sentence suggestion button in the experience card, AI keyword chips for hard and soft skills",
+  "<b>항목별 카드 분리</b>경력, 학력, 스킬을 카드 단위로 나눠 한 번에 하나씩 입력": "<b>One card per section</b>Experience, education, and skills are split into cards, filled in one at a time",
+  "<b>AI 추천 키워드 칩</b>경력과 학력 기반 추천 스킬을 칩으로 제시, 눌러서 바로 추가": "<b>AI keyword chips</b>Skills recommended from experience and education appear as chips, added with one tap",
+  "<b>AI 문장 추천</b>담당 업무 작성 후 버튼 하나로 성과 중심 문장 제안": "<b>AI sentence suggestions</b>After writing duties, one button suggests achievement-focused sentences",
+  "잡콕 AI 모의면접 결과 리포트 목록. 행마다 종합 점수·희망 직무·날짜·상태, 상태에 따라 결과 분석 보기 또는 이어서 하기 버튼": "Jobkok AI mock interview report list: each row shows score, desired job, date, and status, with a View results or Continue button by status",
+  "결과 리포트 목록. 분석 완료와 진행 중을 상태 열로 구분, 버튼도 상태에 맞게 변경": "Report list: a status column separates analyzed from in-progress sessions, and the button changes to match.",
+  "모바일 분석 결과의 역량 분석 카드. 최우수 등급, 평가 문장, 92점 위치 5단계 막대": "Competency card in the mobile results: Excellent grade, evaluation text, 5-level bar marking 92 points",
+  "역량 분석": "Competency",
+  "모바일 분석 결과의 태도 분석 카드. 매우 미흡 등급, 14점 막대, 자세·시선·제스처·표정 탭": "Attitude card in the mobile results: Very poor grade, 14-point bar, posture/gaze/gesture/expression tabs",
+  "태도 분석": "Attitude",
+  "모바일 분석 결과의 목소리 분석 카드. 우수 등급, 76점 막대, 목소리 톤·말하는 속도 탭": "Voice card in the mobile results: Good grade, 76-point bar, tone and speaking-speed tabs",
+  "목소리 분석": "Voice",
+  "잡콕 채용 공고 목록. 검색창 아래 이력서 기반 추천 토글과 직군·직무·경력·학력·지역·채용 유형 필터, 추천 공고 카드에 보라색 추천 배지": "Jobkok job list: résumé-based recommendation toggle and job/experience/education/region/type filters under the search bar, purple badge on recommended cards",
+  "공고 목록. 이력서 기반 추천 토글과 필터를 목록 위에 배치, 추천 공고는 배지로 구분": "Job list. Résumé-based recommendation toggle and filters above the list; recommended postings marked with a badge",
+  "기업용 AI 인재매칭 화면. 공고 URL 입력란, AI 공고 진단(연봉 수준·모호한 표현·차별 표현 지적), 지원자 목록의 AI 면접 공개 여부와 적합률": "Company AI talent matching: posting URL input, AI posting check (salary level, vague wording, discriminatory wording), applicant list with AI interview visibility and fit rate",
+  "<b>URL로 공고 등록</b>다른 채용 사이트 공고 주소만 붙여 넣어 등록": "<b>Post by URL</b>Paste a posting link from another job site to register it",
+  "<b>AI 공고 진단</b>연봉 수준, 모호한 표현, 차별·허위 의심 문구를 항목별로 표시": "<b>AI posting check</b>Salary level, vague wording, and possibly discriminatory or false phrases flagged item by item",
+  "<b>지원자 목록</b>AI 면접 공개 여부와 적합률을 한 줄에 배치, 적합률 순 정렬": "<b>Applicant list</b>AI interview visibility and match rate on one line, sorted by match rate"
 };

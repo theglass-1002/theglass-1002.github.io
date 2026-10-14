@@ -855,3 +855,45 @@ body.dusk:not(.home) .prose figure:not(.fig-longshot) figcaption { text-align: c
 .tgrid a figure { position: absolute; inset: 0; }
 .tgrid a:hover figure, .tgrid a:focus-visible figure { border-color: var(--d-butter); outline: 2px solid var(--d-butter); }
 .tgrid img { background: transparent !important; border: 0 !important; border-radius: 0 !important; }
+
+/* ==========================================================================
+   상세 이미지 배치 패턴 (케이스 스터디 공통 구성)
+   .shots-row  — 관련 모바일 화면 2–3장을 같은 높이로 한 줄 (패널 하나, 캡션은 각 화면 아래 짧게)
+   .fig-wide   — 데스크톱 화면 한 장을 본문 폭 그대로
+   .split      — 데스크톱 화면 + 핵심 포인트 2–4개
+   .fig-diagram-img — 흐름도 · 구조도 (액자 없이 본문 폭)
+   ========================================================================== */
+body.dusk:not(.home) .shots-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: clamp(16px, 2.4vw, 28px); align-items: end;
+  margin: var(--s-5) 0 var(--s-7); padding: clamp(20px, 3vw, 32px);
+  background: color-mix(in srgb, var(--acc, var(--pg-label)) 12%, var(--pg-card));
+  border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line);
+}
+body.dusk:not(.home) .shots-row figure { margin: 0; padding: 0; background: none; border: 0; box-shadow: none; display: flex; flex-direction: column; align-items: center; }
+body.dusk:not(.home) .shots-row img { width: auto; max-width: 100%; max-height: 440px; border: 2px solid var(--pg-line); border-radius: 14px; background: #ffffff; }
+body.dusk:not(.home) .shots-row figcaption { margin-top: 10px; font-size: 14px; text-align: center; }
+body.dusk:not(.home) .shots-row figcaption::before { display: none; }
+
+body.dusk:not(.home) .fig-wide { margin: var(--s-5) 0 var(--s-7); }
+body.dusk:not(.home) .fig-wide img { width: 100%; max-height: none; border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line); }
+
+body.dusk:not(.home) .split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(20px, 3vw, 36px); align-items: center; margin: var(--s-5) 0 var(--s-7); }
+body.dusk:not(.home) .split > figure { margin: 0; }
+body.dusk:not(.home) .split > figure img { width: 100%; max-height: none; border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line); }
+body.dusk:not(.home) .split > ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+body.dusk:not(.home) .split > ul li { padding: 12px 14px; background: var(--pg-card); border: 2px solid var(--pg-line); font-size: 15.5px; line-height: 1.6; color: var(--pg-sub); }
+body.dusk:not(.home) .split > ul li b { display: block; margin-bottom: 4px; color: var(--pg-ink); }
+
+body.dusk:not(.home) .fig-diagram-img { margin: var(--s-5) 0 var(--s-7); }
+body.dusk:not(.home) .fig-diagram-img img { width: 100%; max-height: none; border: 0; box-shadow: none; background: transparent; }
+
+@media (max-width: 760px) {
+  body.dusk:not(.home) .split { grid-template-columns: 1fr; }
+  body.dusk:not(.home) .shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* 배치 패턴이 공통 높이 상한(560px)보다 우선하도록 */
+body.dusk:not(.home) .prose figure.fig-wide img,
+body.dusk:not(.home) .prose .split > figure img,
+body.dusk:not(.home) .prose figure.fig-diagram-img img { width: 100%; max-height: none; }
+body.dusk:not(.home) .prose .shots-row figure img { width: auto; max-height: 440px; }

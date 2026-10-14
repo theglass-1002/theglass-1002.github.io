@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015h">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -166,11 +166,11 @@
           <figure class="fig-hero">
           <div class="shot-frame">
           <img src="../images/projects/interview/screen-1.webp" width="1200" height="613"
-          alt="진로 구분 화면. 대입 모의면접과 취업 모의면접 카드가 나란히 있다."
+          alt="진로 구분 화면. 대입 모의면접·취업 모의면접 카드 2개"
           fetchpriority="high" decoding="async">
           </div>
           <figcaption>
-          서비스에 들어오면 가장 먼저 만나는 <b>진로 구분 화면</b>. 대입과 취업(승무원) 중 선택에 따라 이후 질문과 입력 항목 분기.
+          첫 화면 <b>진로 구분</b>. 대입·취업(승무원) 선택에 따라 이후 질문과 입력 항목 분기
           </figcaption>
           </figure>
 
@@ -193,13 +193,17 @@
             <p>
               승무원 버전은 설정 단계에서 국내·해외 항공사와 지원 항공사를 먼저 입력받아 질문 구성. 해외 항공사 선택 시 질문과 답변이 영어로 진행되므로, 선택 바로 아래에 안내 배치.
             </p>
-            <div class="fig-pair fig-pair--single">
+            <div class="split">
               <figure>
-                <img src="../images/projects/interview/screen-5.webp" width="1200" height="613"
-                     alt="승무원 버전 설정 화면. 단계 표시와 항공사 선택 카드, 해외 항공사는 영어로 진행된다는 안내가 있다."
+                <img src="../images/projects/interview/setup-airline.webp" width="660" height="235"
+                     alt="승무원 버전 설정 단계. 상단 4단계 탭, 항공사 구분(해외 항공사)·지원 항공사 입력, 해외 항공사 선택 시 영어 진행 안내 문구"
                      loading="lazy" decoding="async">
-                <figcaption>승무원 버전 설정 단계. 항공사 구분과 지원 항공사 우선 선택.</figcaption>
               </figure>
+              <ul>
+                <li><b>항공사 구분 우선</b>국내·해외 항공사 선택이 질문 언어와 구성의 기준</li>
+                <li><b>영어 진행 안내</b>해외 항공사 선택 시 입력란 바로 아래에 안내 노출</li>
+                <li><b>4단계 진행 탭</b>설정부터 응시 완료까지 현재 단계 상단 표시</li>
+              </ul>
             </div>
           </section>
 
@@ -214,22 +218,24 @@
             <p>
               환경 체크 전 안내 단계 배치. 복장·메이크업 가이드 영상 이후 얼굴과 어깨를 가리지 않기, 화면에 지원자만 나오기, 마스크·모자 벗기, 정확한 발음으로 답하기를 화면 하나에 하나씩 안내. 응시 중에는 되돌릴 수 없는 조건이라 시작 전에 끊어서 안내.
             </p>
-            <figure>
-              <img src="../images/projects/interview/screen-2.webp" width="1200" height="613"
-                   alt="사전 안내 화면. 복장·메이크업 가이드 영상과 건너뛰기·다음 버튼이 있다."
-                   loading="lazy" decoding="async">
-            </figure>
-            <div class="fig-pair">
+            <div class="shots-row">
               <figure>
-                <img src="../images/projects/interview/screen-3.webp" width="1200" height="613"
-                     alt="주의사항 첫 화면. ‘얼굴과 어깨를 가리지 않게’, ‘화면엔 지원자 한 명만’ 카드가 있다."
+                <img src="../images/projects/interview/guide-video.webp" width="640" height="540"
+                     alt="사전 안내 화면. 복장·메이크업 가이드 영상, 건너뛰기·다음 버튼"
                      loading="lazy" decoding="async">
+                <figcaption>복장·메이크업 가이드 영상</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/interview/screen-4.webp" width="1200" height="613"
-                     alt="주의사항 두 번째 화면. ‘마스크와 모자는 벗고’, ‘정확한 발음과 적절한 목소리’ 카드가 있다."
+                <img src="../images/projects/interview/guide-notice-1.webp" width="640" height="540"
+                     alt="주의사항 첫 화면. ‘외모는 단정히!’(얼굴·어깨 가리지 않기), ‘화면엔 한명만!’ 카드"
                      loading="lazy" decoding="async">
-                <figcaption>안 되는 경우는 X 표시로 구분.</figcaption>
+                <figcaption>주의사항 1. 외모·화면 인원</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/interview/guide-notice-2.webp" width="640" height="540"
+                     alt="주의사항 두 번째 화면. ‘얼굴이 다 보이게!’(마스크·모자 벗기, X 표시), ‘적절한 목소리!’ 카드"
+                     loading="lazy" decoding="async">
+                <figcaption>주의사항 2. 안 되는 경우는 X 표시</figcaption>
               </figure>
             </div>
           </section>
@@ -242,7 +248,18 @@
             <p>
               점수 하나로 끝내면 다음에 뭘 고칠지 남지 않아, 위에서 아래로 갈수록 범위가 좁아지도록 설계하고 각 단계에서 바로 다음 단계로 내려가도록 연결.
             </p>
-            
+            <figure class="fig-wide">
+              <img src="../images/projects/interview/report-summary.webp" width="1594" height="1071"
+                   alt="결과 리포트 종합분석. 태도·음성·긴장도·답변 카드별 도넛 차트, 등급, 항목 점수, 역량 강점·약점"
+                   loading="lazy" decoding="async">
+              <figcaption>리포트 2단계 종합분석. 태도·음성·긴장도·답변 카드별 점수와 등급</figcaption>
+            </figure>
+            <figure class="fig-wide">
+              <img src="../images/projects/interview/report-answer.webp" width="1594" height="597"
+                   alt="질문별 답변분석. 영어 질문, 내 답변, 빨간 글씨 문법 개선 제안, 한국어 총평, 왼쪽 등급"
+                   loading="lazy" decoding="async">
+              <figcaption>리포트 3단계 질문별 답변분석. 해외 항공사 영어 답변에 문법 개선 제안 병기.</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="history">
@@ -319,8 +336,8 @@
   </footer>
 
 
-  <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/interview.en.js?v=20261015a" defer></script>
+  <script src="../locales/common.en.js?v=20261015q" defer></script>
+  <script src="../locales/interview.en.js?v=20261015q" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

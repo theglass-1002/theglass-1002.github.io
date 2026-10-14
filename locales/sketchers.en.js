@@ -13,10 +13,12 @@ window.I18N_PAGE = {
   "스케치스 — 정유리 포트폴리오": "Skeches — Yuri Jung Portfolio",
   "스케치 자료를 올리고 종류별로 정리해 보며 연습하는 안드로이드 앱. 2개월간 기획부터 개발까지 1인 진행": "An Android app for uploading sketch references, sorting them by type, and practicing from them. I planned and built it alone in two months.",
   "그림 연습에서 시간이 가장 오래 걸리는 일은 <strong>참고 자료 찾기</strong>. 자료 수집 기능과 분류 기능을 함께 구현하고, 보면서 바로 연습할 수 있도록 구성": "What takes longest in drawing practice is <strong>finding references</strong>. So I built collecting and sorting together, so you can start practicing right while looking.",
-  "<strong>업로드</strong> — 참고 자료 업로드 및 보관": "<strong>Upload</strong> — Collect your references.",
-  "<strong>분류</strong> — 카테고리별 정리, 필요한 자료만 조회": "<strong>Sort</strong> — Organize by category and see only what you need.",
-  "<strong>열람</strong> — 모아 둔 자료를 보며 연습": "<strong>View</strong> — Practice while looking at your saved references.",
+  "<strong>업로드</strong>: 참고 자료 업로드 및 보관": "<strong>Upload</strong>: Collect your references.",
+  "<strong>분류</strong>: 카테고리별 정리, 필요한 자료만 조회": "<strong>Sort</strong>: Organize by category and see only what you need.",
+  "<strong>열람</strong>: 모아 둔 자료를 보며 연습": "<strong>View</strong>: Practice while looking at your saved references.",
   "외부 자료는 <strong>카카오·네이버 API</strong>, 영상 자료는 <strong>유튜브 API</strong> 활용": "I used the <strong>Kakao and Naver APIs</strong> for external references and the <strong>YouTube API</strong> for videos.",
-  "<strong>참고</strong> — 시작 화면 외의 캡처가 없어, 나머지 화면은 위 <a href=\"https://youtu.be/AGeLkyVxhA4\" target=\"_blank\" rel=\"noopener\">작품 영상</a>으로 대체": "<strong>Note</strong> — There are no captures besides the start screen; the <a href=\"https://youtu.be/AGeLkyVxhA4\" target=\"_blank\" rel=\"noopener\">demo video</a> above covers the rest.",
-  "스케치 자료를 올리고 종류별로 정리하는 안드로이드 앱 ‘스케치스’ 케이스 스터디.": "Case study of Skeches, an Android app for uploading and sorting sketch references."
+  "<strong>참고</strong>: 시작 화면 외의 캡처가 없어, 나머지 화면은 위 <a href=\"https://youtu.be/AGeLkyVxhA4\" target=\"_blank\" rel=\"noopener\">작품 영상</a>으로 대체": "<strong>Note</strong>: There are no captures besides the start screen; the <a href=\"https://youtu.be/AGeLkyVxhA4\" target=\"_blank\" rel=\"noopener\">demo video</a> above covers the rest.",
+  "스케치 자료를 올리고 종류별로 정리하는 안드로이드 앱 ‘스케치스’ 케이스 스터디.": "Case study of Skeches, an Android app for uploading and sorting sketch references.",
+  "<strong>아이디어 제공</strong>: 기여도 100%": "<strong>Ideas</strong>: 100% contribution",
+  "<strong>프론트엔드 개발</strong>: 기여도 100%": "<strong>Frontend development</strong>: 100% contribution"
 };

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015h">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -132,8 +132,8 @@
             <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#scope">담당 범위</a></li>
             <li><a href="#system">두리틀 시스템 구조</a></li>
-            <li><a href="#vet">두리틀 벳 — 수의사용 앱</a></li>
-            <li><a href="#home">두리틀 홈 — 가정용 앱</a></li>
+            <li><a href="#vet">두리틀 벳: 수의사용 앱</a></li>
+            <li><a href="#home">두리틀 홈: 가정용 앱</a></li>
             <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
             <li><a href="#feedback">서비스 보완과 피드백</a></li>
             <li><a href="#stack">사용 기술</a></li>
@@ -161,8 +161,8 @@
               <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#scope">담당 범위</a></li>
               <li><a href="#system">두리틀 시스템 구조</a></li>
-              <li><a href="#vet">두리틀 벳 — 수의사용 앱</a></li>
-              <li><a href="#home">두리틀 홈 — 가정용 앱</a></li>
+              <li><a href="#vet">두리틀 벳: 수의사용 앱</a></li>
+              <li><a href="#home">두리틀 홈: 가정용 앱</a></li>
               <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
               <li><a href="#feedback">서비스 보완과 피드백</a></li>
               <li><a href="#stack">사용 기술</a></li>
@@ -251,7 +251,7 @@
           </section>
 
           <section class="cs-section" aria-labelledby="vet">
-            <h2 id="vet">두리틀 벳 — 수의사용 앱</h2>
+            <h2 id="vet">두리틀 벳: 수의사용 앱</h2>
             <p>
               두리틀 벳은 병원에 등록된 반려동물의 심박수와 호흡수를 수의사가 실시간으로 확인하는 앱. 수술 중에는 <strong>두리틀 멀티</strong>로 생체 데이터 연동 확인 가능. 초기 화면 구성과 기획 단계부터 참여.
             </p>
@@ -262,13 +262,13 @@
                 <img src="../images/projects/zentry/zentry-vet-list.webp" width="643" height="900"
                      alt="두리틀 벳 환자 목록. 차트번호, 이름, 품종, 나이, 심부전 단계가 한 줄씩 있다."
                      loading="lazy" decoding="async">
-                <figcaption><b>Heart Failure 탭</b> — 차트번호·이름·품종·나이·성별·단계로 환자를 찾는 목록.</figcaption>
+                <figcaption><b>Heart Failure 탭</b>: 차트번호·이름·품종·나이·성별·단계로 환자를 찾는 목록.</figcaption>
               </figure>
               <figure class="fig-portrait">
                 <img src="../images/projects/zentry/zentry-vet-monitor.webp" width="643" height="900"
                      alt="두리틀 벳 실시간 모니터. 환자별 카드에 심박수와 호흡수가 큰 숫자로 표시된다."
                      loading="lazy" decoding="async">
-                <figcaption><b>Patient Monitor 탭</b> — 병실별 실시간 심박수(초록)·호흡수(파랑).</figcaption>
+                <figcaption><b>Patient Monitor 탭</b>: 병실별 실시간 심박수(초록)·호흡수(파랑).</figcaption>
               </figure>
             </div>
             <p>
@@ -293,32 +293,25 @@
             <h3>실제 병원에서의 사용</h3>
             <figure>
               <img src="../images/projects/zentry/zentry-multi-clinic.webp" width="1200" height="861"
-                   alt="동물병원 벽에 설치된 태블릿의 두리틀 멀티 화면. 병실 카드 여섯 개가 보인다."
+                   alt="동물병원 입원장 앞에서 켠 태블릿의 두리틀 멀티 화면. 병실 카드 6개."
                    loading="lazy" decoding="async">
               <figcaption>
                 동물병원에 설치된 <b>두리틀 멀티</b>. 여섯 개 병실을 한 화면에 배치, 카드마다 품종·체중·나이·담당 수의사와 CPR/DNR 표시.
               </figcaption>
             </figure>
-            <div class="fig-pair">
-              <figure>
-                <img src="../images/projects/zentry/zentry-ward-live.webp" width="1400" height="786"
-                     alt="태블릿과 스마트폰에서 동시에 실행 중인 입원환자 모니터링 화면."
-                     loading="lazy" decoding="async">
-              </figure>
-              <figure>
-                <img src="../images/projects/zentry/zentry-anesthesia-live.webp" width="900" height="562"
-                     alt="수술실 장비 옆 태블릿의 마취 모니터링 화면. 심전도와 호흡 파형이 그려진다."
-                     loading="lazy" decoding="async">
-                <figcaption>수술실 장비 옆에서 동작하는 마취 모니터링 화면.</figcaption>
-              </figure>
-            </div>
+            <figure>
+              <img src="../images/projects/zentry/zentry-anesthesia-live.webp" width="900" height="562"
+                   alt="수술실 장비 옆 태블릿의 마취 모니터링 화면. 심전도와 호흡 파형이 그려진다."
+                   loading="lazy" decoding="async">
+              <figcaption>수술실 장비 옆에서 동작하는 마취 모니터링 화면.</figcaption>
+            </figure>
             <p>
               화면이 놓이는 자리에 맞춘 조정. 태블릿이 벽에 붙거나 장비 사이에 끼워져 있어 <strong>서 있는 거리에서 읽히는 크기</strong>로 맞추고, 장갑을 낀 손으로도 누를 수 있게 터치 영역 넉넉히 확보.
             </p>
           </section>
 
           <section class="cs-section" aria-labelledby="home">
-            <h2 id="home">두리틀 홈 — 가정용 앱</h2>
+            <h2 id="home">두리틀 홈: 가정용 앱</h2>
             <div class="story">
               <div class="story__text">
                 <p>
@@ -391,7 +384,7 @@
                 </p>
               </div>
               <figure>
-                <img src="../images/projects/zentry/zentry-feedback-doc.webp" width="1100" height="970"
+                <img src="../images/projects/zentry/zentry-feedback-doc.webp" width="1012" height="916"
                      alt="피드백 정리 문서. 개선 요청 옆에 관련 앱 화면이 붙어 있다."
                      loading="lazy" decoding="async">
               </figure>
@@ -468,8 +461,8 @@
   </footer>
 
 
-  <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/zentry.en.js?v=20261015a" defer></script>
+  <script src="../locales/common.en.js?v=20261015q" defer></script>
+  <script src="../locales/zentry.en.js?v=20261015q" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

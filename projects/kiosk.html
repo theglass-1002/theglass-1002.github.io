@@ -15,7 +15,7 @@
   <meta property="og:title" content="홀로그램 AI 키오스크 — 정유리 포트폴리오">
   <meta property="og:description" content="Gemini API로 대화하며 주문하는 홀로그램 카페 키오스크 케이스 스터디.">
   <meta property="og:url" content="https://theglass-1002.github.io/projects/kiosk.html">
-  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/zentry/zentry-device-hero.jpg">
+  <meta property="og:image" content="https://theglass-1002.github.io/images/projects/kiosk/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015h">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -329,6 +329,26 @@
                 시작부터 결제까지의 경로. 점선은 되돌아가는 경로로, 장바구니의 <b>더 주문하기</b>는 주문 입력으로, <b>결제 실패</b>는 결제수단 선택으로 복귀. 오른쪽 칸은 되묻기·타임아웃·실패 처리
               </figcaption>
             </figure>
+            <p>
+              화면은 <strong>홀로그램 AI 휴먼 영상과 터치 화면 두 겹</strong>으로 구성. 두 겹은 따로 움직여서, 같은 메뉴 화면이라도 AI가 말하는 동안에만 발화 영상 재생
+            </p>
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/kiosk/holo-brewing.webp" width="720" height="1280" loading="lazy" decoding="async"
+                     alt="뒤돌아 커피를 내리는 AI 휴먼 전신 영상 장면. 손님이 없을 때 반복 재생된다.">
+                <figcaption>대기 · Brewing</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/holo-greeting.webp" width="720" height="1280" loading="lazy" decoding="async"
+                     alt="AI 휴먼이 손님 쪽으로 걸어 나오는 진입 인사 영상 장면.">
+                <figcaption>진입 인사 · Greeting-IN</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/holo-speaking.webp" width="720" height="1280" loading="lazy" decoding="async"
+                     alt="AI 휴먼이 정면을 보고 말하는 발화 영상 장면.">
+                <figcaption>발화 · Speaking</figcaption>
+              </figure>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="roles">
@@ -357,6 +377,23 @@
               <li><strong>주문 확인</strong> — AI가 담긴 메뉴를 읽어 주고 총 금액 안내. 수량 변경·삭제는 여기서 가능, 옵션 변경은 삭제 후 다시 담기</li>
               <li><strong>매장·포장 → 결제 → 완료</strong> — 매장·포장 미선택 시 결제 진행 불가. 결제 완료 후 주문번호 표시, 15초 뒤 대기화면 복귀</li>
             </ul>
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/kiosk/screen-idle.webp" width="716" height="1280" loading="lazy" decoding="async"
+                     alt="대기화면. 위쪽에 뒤돌아 커피를 내리는 AI 휴먼, 아래 패널에 ‘화면을 바라보면 시작돼요’ 문구와 시선 인식 대기 표시, [눌러서 주문 시작하기] 버튼, 한국어·English 언어 선택이 있다.">
+                <figcaption>대기 · 시선 인식</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/screen-option.webp" width="716" height="1280" loading="lazy" decoding="async"
+                     alt="카페라떼 옵션 선택 화면. AI 휴먼이 따뜻한 것과 차가운 것 중 무엇으로 할지 묻고, 아래 온도·사이즈·우유 종류가 필수 항목으로 놓인다. 아직 고르기 전이라 [담기] 버튼이 흐린 비활성 상태다.">
+                <figcaption>옵션 · 담기 비활성</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/screen-complete.webp" width="716" height="1280" loading="lazy" decoding="async"
+                     alt="결제 완료 화면. AI 휴먼이 고개 숙여 인사하고, 아래에 주문번호 #0003, 영수증 출력 선택 버튼, 처음 화면으로 돌아가기까지 남은 시간 막대가 있다.">
+                <figcaption>완료 · 자동 복귀</figcaption>
+              </figure>
+            </div>
 
             <h3>AI 음성 주문</h3>
             <ul>
@@ -368,6 +405,18 @@
             <p>
               음성 입력의 가장 큰 문제는 <strong>기기가 지금 듣고 있는지 알 수 없다는 점</strong>. 반응이 없으면 손님이 같은 말을 반복해 인식이 더 어긋나는 문제. 그래서 인식 상태를 화면에 상시 표시하고, 음성 실패 시 같은 화면에서 터치로 넘어가도록 처리
             </p>
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/kiosk/screen-clarify.webp" width="716" height="1280" loading="lazy" decoding="async"
+                     alt="‘라떼’ 되묻기 화면. 맨 위에 ‘듣고 있어요’ 상태 표시, AI 휴먼 아래 ‘라떼 종류를 모았어요’ 안내와 딸기라떼·카페라떼·호박 라떼 후보 카드만 남아 있다.">
+                <figcaption>되묻기 · 후보만 표시</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/kiosk/screen-cancel.webp" width="716" height="1280" loading="lazy" decoding="async"
+                     alt="주문 취소 확인 팝업. 어두워진 메뉴 화면 위에 ‘주문을 취소할까요?’ 문구와 [계속 주문하기]·[취소] 버튼, 음성으로도 대답할 수 있다는 안내가 있다.">
+                <figcaption>되돌리기 · 1회 확인</figcaption>
+              </figure>
+            </div>
 
             <h3>공통 요소</h3>
             <ul>
@@ -390,35 +439,31 @@
             <p>
               관리 기능은 <strong>매장에서 바로 처리해야 하는 것들만</strong> 배치. 품절·주문 중단처럼 지금 눌러야 하는 기능만 넣고, 통계처럼 나중에 봐도 되는 기능은 제외. 관리 화면 60초 방치 시 손님 화면으로 복귀
             </p>
-            <div class="fig-pair fig-pair--quad">
-              <figure class="fig-portrait">
+            <div class="shots-row">
+              <figure>
                 <img src="../images/projects/kiosk/admin-pin.webp" width="540" height="960" loading="lazy" decoding="async"
-                     alt="관리자 PIN 입력 화면. 어두운 모달에 숫자 키패드가 있다.">
-                <figcaption>PIN 입력</figcaption>
+                     alt="관리자 PIN 입력 화면. 어두운 모달에 숫자 키패드가 있고, 반복 오류로 잠겨 다시 시도까지 남은 시간이 표시된다.">
+                <figcaption>PIN · 오류 시 잠금</figcaption>
               </figure>
-              <figure class="fig-portrait">
-                <img src="../images/projects/kiosk/admin-menu.webp" width="540" height="960" loading="lazy" decoding="async"
-                     alt="관리 메뉴 화면. 결제 관리·품절 관리 카드와 주문 접수 토글, 로그아웃 버튼이 있다.">
-                <figcaption>관리 메뉴</figcaption>
-              </figure>
-              <figure class="fig-portrait">
+              <figure>
                 <img src="../images/projects/kiosk/admin-payment.webp" width="540" height="960" loading="lazy" decoding="async"
                      alt="결제 관리 화면. 오늘 주문이 카드로 놓이고 취소·환불, 영수증 재발급 버튼이 있다.">
-                <figcaption>결제 관리</figcaption>
+                <figcaption>결제 관리 · 당일 주문</figcaption>
               </figure>
-              <figure class="fig-portrait">
+              <figure>
                 <img src="../images/projects/kiosk/admin-soldout.webp" width="540" height="960" loading="lazy" decoding="async"
                      alt="품절 관리 화면. 메뉴별 판매 상태 토글이 있고 품절 처리된 메뉴만 꺼져 있다.">
-                <figcaption>품절 관리</figcaption>
+                <figcaption>품절 관리 · 즉시 반영</figcaption>
               </figure>
             </div>
             <figure class="fig-tall">
               <video width="540" height="960"
-                     poster="../images/projects/kiosk/booth-poster.webp"
+                     poster="../images/projects/kiosk/booth-kiosk-poster.webp"
                      autoplay muted loop playsinline preload="none"
-                     aria-label="부산 실증 사업 전시 부스의 홀로그램 AI 키오스크.">
-                <source src="../images/projects/kiosk/booth.mp4" type="video/mp4">
+                     aria-label="부산 실증 사업 전시 부스의 홀로그램 AI 키오스크. 세로형 본체 화면에 AI 휴먼과 메뉴 카드가 보인다.">
+                <source src="../images/projects/kiosk/booth-kiosk.mp4" type="video/mp4">
               </video>
+              <figcaption>부산 실증 사업 전시 부스의 세로형 키오스크. 상단 AI 휴먼, 하단 주문 화면 구성</figcaption>
             </figure>
           </section>
 
@@ -502,8 +547,8 @@
   </footer>
 
 
-  <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/kiosk.en.js?v=20261015a" defer></script>
+  <script src="../locales/common.en.js?v=20261015q" defer></script>
+  <script src="../locales/kiosk.en.js?v=20261015q" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

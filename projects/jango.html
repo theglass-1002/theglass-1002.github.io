@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015h">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -213,8 +213,8 @@
           -->
           <figure class="fig-hero">
           <div class="shot-frame">
-          <img src="../images/projects/jango/jango-hero.webp" width="1600" height="1138"
-          alt="장고 메인 화면. 배너 아래 채용 공고·이력서·AI 모의면접 카드가 있다."
+          <img src="../images/projects/jango/jango-hero.webp" width="1600" height="932"
+          alt="장고 메인 화면. 배너, 검색창, 채용 공고·이력서·AI 모의면접 바로가기 카드"
           fetchpriority="high" decoding="async">
           </div>
           </figure>
@@ -253,11 +253,11 @@
               과제 목표는 장애인 구직자와 취업지원 담당 복지사의 동시 지원.
               직무 추천 · 이력서 자동 생성 · 면접 훈련 분석 · 지원 챗봇 · 공고 알림을 한 플랫폼에 통합
             </p>
-            <figure>
-              <img src="../images/projects/jango/jango-main-cropped.webp" width="1600" height="1000"
-                   alt="장고 구직자 사이트 공고 목록. 검색창과 필터 아래 공고 카드가 3열로 놓여 있다."
+            <figure class="fig-diagram-img">
+              <img src="../images/projects/jango/jango-service-flow.webp" width="1600" height="1050"
+                   alt="장고 서비스 흐름도. 구직자 경력·역량 → 이력서 생성·면접 훈련·직무 추천 AI → 추천 직무 목록, 기업 채용 요청 → 기업 요청 처리 AI → 인재 추천"
                    loading="lazy" decoding="async">
-              <figcaption>구직자 사이트 메인.</figcaption>
+              <figcaption>서비스 흐름. 구직자 역량 데이터와 기업 채용 요청을 AI가 연결 (연구개발계획서 도식)</figcaption>
             </figure>
           </section>
 
@@ -275,32 +275,33 @@
               답변은 표정 · 시선 · 음성 · 답변 내용을 종합해 리포트로 정리되므로,
               화면에서 현재 무엇이 기록되고 있는지 드러나도록 설계
             </p>
-            <figure>
-              <img src="../images/projects/jango/jango-video-interview.webp" width="1600" height="784"
-                   alt="장고 영상 모의면접 화면. 면접관 영상과 응시자 화면, 답변 시작·종료 버튼, 면접 단계가 있다."
-                   loading="lazy" decoding="async">
-              <figcaption>영상 면접. 말하기와 표정 인식이 가능한 사용자용</figcaption>
-            </figure>
-            <figure>
-              <img src="../images/projects/jango/jango-text-interview.webp" width="1600" height="783"
-                   alt="장고 텍스트 모의면접 화면. 면접관 영상과 답변 입력창, 면접 단계가 있다."
-                   loading="lazy" decoding="async">
-              <figcaption>텍스트 면접. 청각·언어·안면장애 사용자는 영상 없이 진행</figcaption>
-            </figure>
-            <div class="fig-pair fig-pair--single fig-pair--phones">
-              <figure class="fig-portrait">
-                <img src="../images/projects/jango/jango-mobile-interview.webp" width="750" height="1624"
-                     alt="장고 모바일 모의면접 화면. 타이머와 면접관 영상, 답변 시작·종료 버튼이 있다."
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/jango/jango-video-interview.webp" width="1600" height="784"
+                     alt="장고 영상 모의면접 화면. 면접관 영상, 응시자 카메라, 답변 시작·종료 버튼, 오른쪽 면접 단계"
                      loading="lazy" decoding="async">
-                <figcaption>모바일 면접 진행.</figcaption>
+                <figcaption>영상 면접. 말하기와 표정 인식이 가능한 사용자용</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/jango/jango-text-interview.webp" width="1600" height="783"
+                     alt="장고 텍스트 모의면접 화면. 면접관 영상 위 답변 입력창, 오른쪽 면접 단계"
+                     loading="lazy" decoding="async">
+                <figcaption>텍스트 면접. 청각·언어·안면장애 사용자는 영상 없이 진행</figcaption>
               </figure>
             </div>
-            <figure class="fig-portrait fig-longshot">
-              <img src="../images/projects/jango/jango-interview-report.webp" width="453" height="2000"
-                   alt="장고 면접 분석 결과. 종합 평가, 오각형 그래프, AI 분석 요약, 맞는 공고 목록이 이어진다."
-                   loading="lazy" decoding="async">
-              <figcaption>면접 분석 리포트. 종합 평가부터 항목별 분석, 맞는 공고 추천까지 연결(위쪽 일부)</figcaption>
-            </figure>
+            <div class="split">
+              <figure>
+                <img src="../images/projects/jango/jango-report-summary.webp" width="1200" height="1469"
+                     alt="장고 모의면접 분석 결과. 종합 평가 우수 70점, 직무 적합도 78%, 강점·약점 태그, 4개 항목 점수 그래프와 코멘트"
+                     loading="lazy" decoding="async">
+              </figure>
+              <ul>
+                <li><b>종합 평가</b>5단계 등급과 점수, 응시자 중 위치 표시</li>
+                <li><b>직무 적합도</b>희망 직무 기준 적합도와 근거 문장</li>
+                <li><b>강점 · 약점</b>AI 분석 요약을 키워드 태그로 정리</li>
+                <li><b>항목별 점수</b>태도 · 목소리 · 긴장도 · 역량 4축 그래프와 항목별 코멘트</li>
+              </ul>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="resume">
@@ -308,7 +309,24 @@
             <p>
               인적 사항과 희망 직무 입력 시 이력서·자기소개서·경력기술서 초안 자동 생성. 빈 칸을 한꺼번에 보여주면 첫 화면에서 멈추기 때문에 입력을 잘게 분리하고, 생성 중에는 진행 상태 표시
             </p>
-            
+            <div class="split">
+              <figure>
+                <img src="../images/projects/jango/jango-resume-steps.webp" width="1600" height="962"
+                     alt="장고 챗봇 이력서 작성 중 희망 직무 단계. AI 직무 추천 칩 3개, 오른쪽에 8단계 진행 패널과 입력값 태그"
+                     loading="lazy" decoding="async">
+              </figure>
+              <ul>
+                <li><b>한 화면에 한 항목</b>기본 정보부터 이력서 제목까지 8단계로 분리</li>
+                <li><b>작성 단계 패널</b>완료한 단계의 입력값을 태그로 요약</li>
+                <li><b>AI 직무 추천</b>이력과 장애 특성으로 예측한 직무를 눌러서 추가</li>
+              </ul>
+            </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/jango/jango-resume-ai.webp" width="1400" height="1271"
+                   alt="장고 이력서 경력 입력 화면. 담당 업무 입력창 아래 AI 추천 문구 5개"
+                   loading="lazy" decoding="async">
+              <figcaption>경력 단계 AI 문구 추천. 짧게 적은 업무 내용을 이력서 문장으로 정리</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="match">
@@ -316,11 +334,11 @@
             <p>
               추천 공고에 <code>AI Pick</code> 배지 적용. 색에만 의존하지 않고 테두리·배지·문구를 함께 사용해, 하나만 인식돼도 구분 가능
             </p>
-            <figure>
-              <img src="../images/projects/jango/jango-job-grid.webp" width="1600" height="1750"
-                   alt="장고 추천 공고 목록. 상위 카드에 초록 테두리와 AI Pick 배지, 추천 이유가 붙어 있다."
+            <figure class="fig-wide">
+              <img src="../images/projects/jango/jango-match-ai.webp" width="1600" height="1268"
+                   alt="장고 채용 공고 목록, 이력서 기반 추천 켠 상태. 추천 공고 45개, 카드마다 AI 적합도·추천 이유·AI Pick 배지"
                    loading="lazy" decoding="async">
-              <figcaption>추천 공고 목록과 필터.</figcaption>
+              <figcaption>이력서 기반 추천 켠 상태. 카드마다 AI 적합도와 추천 이유 표시</figcaption>
             </figure>
             <figure>
               <img src="../images/projects/jango/screen-5.webp" width="1200" height="493"
@@ -334,11 +352,25 @@
             <p>
               텍스트·음성 챗봇으로 서류 작성과 공고 검색 지원. 자유 입력 대신 직무 → 강점 → 경험 순서의 선택형으로 구성
             </p>
-            <figure>
-              <img src="../images/projects/jango/jango-support.webp" width="1262" height="917"
-                   alt="장고 지원사업 목록. 카드마다 부처명·사업명·요약·자세히 보기 버튼이 같은 자리에 있다."
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/jango/jango-chat-support.webp" width="750" height="1042"
+                     alt="장고 도우미 챗봇. '지원사업 알려줘'에 고용촉진장려금 등 지원사업 카드로 답변, 입력창 옆 음성 입력 버튼"
+                     loading="lazy" decoding="async">
+                <figcaption>지원사업 안내</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/jango/jango-chat-jobs.webp" width="750" height="1042"
+                     alt="장고 도우미 챗봇. 공고 추천 요청에 점수·추천 이유가 붙은 공고 카드로 답변"
+                     loading="lazy" decoding="async">
+                <figcaption>이력서 기반 공고 추천</figcaption>
+              </figure>
+            </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/jango/jango-support-list.webp" width="1600" height="1246"
+                   alt="장고 지원사업 목록. 총 598건, 카드마다 같은 위치의 부처명·사업명·요약·자세히 보기 버튼"
                    loading="lazy" decoding="async">
-              <figcaption>카테고리별 지원사업 목록.</figcaption>
+              <figcaption>지원사업 목록. 부처 · 사업명 · 요약 · 버튼 위치 통일</figcaption>
             </figure>
           </section>
 
@@ -352,12 +384,18 @@
               <li>기업 — 공고 등록, 지원자 이력서와 면접 리포트 확인</li>
               <li>복지관 — 담당 구직자 준비 상황 확인 (연동 코드로 연결)</li>
             </ul>
-            <figure class="fig-portrait">
-              <img src="../images/projects/jango/screen-4.webp" width="1029" height="1200"
-                   alt="장고 모의면접 내역. 점수, 희망 직무, 일자, 상태 표와 상태별 버튼이 있다."
-                   loading="lazy" decoding="async">
-              <figcaption>상태에 따라 버튼이 ‘분석 결과 보기’와 ‘이어서 진행하기’로 전환</figcaption>
-            </figure>
+            <div class="split">
+              <figure>
+                <img src="../images/projects/jango/jango-welfare-dashboard.webp" width="1600" height="1155"
+                     alt="장고 복지관 대시보드. 담당 인재·이번 달 면접 완료·이력서 미등록 수, 장애유형 분포 막대, 최근 모의면접 완료 인재 표"
+                     loading="lazy" decoding="async">
+              </figure>
+              <ul>
+                <li><b>복지관 대시보드</b>담당 인재 · 이번 달 면접 완료 · 이력서 미등록을 첫 줄에 요약</li>
+                <li><b>장애유형 분포</b>담당 인재의 주장애 비율을 막대로 표시</li>
+                <li><b>최근 면접 완료 인재</b>목록에서 면접 결과로 바로 이동</li>
+              </ul>
+            </div>
           </section>
 
           <section class="cs-section" aria-labelledby="stack">
@@ -373,6 +411,18 @@
               <li>React Router</li>
               <li>웹 접근성</li>
             </ul>
+            <div class="split">
+              <figure>
+                <img src="../images/projects/jango/jango-a11y-tool.webp" width="1600" height="1062"
+                     alt="장고 접근성 도구 패널. 글자 크기 3단계 버튼, TTS 음성 읽기 설정, 매우 크게(22px) 적용 상태"
+                     loading="lazy" decoding="async">
+              </figure>
+              <ul>
+                <li><b>글자 크기 3단계</b>16 · 18 · 22px 중 선택, 화면 전체에 적용</li>
+                <li><b>TTS 음성 읽기</b>켠 뒤 텍스트를 누르면 읽어 주는 방식</li>
+                <li><b>설정 유지</b>브라우저에 저장해 새로고침 후에도 유지</li>
+              </ul>
+            </div>
           </section>
 
 
@@ -433,8 +483,8 @@
   </footer>
 
 
-  <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/jango.en.js?v=20261015a" defer></script>
+  <script src="../locales/common.en.js?v=20261015q" defer></script>
+  <script src="../locales/jango.en.js?v=20261015q" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>
