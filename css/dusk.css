@@ -280,16 +280,24 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { filter: drop-shadow(0
 .lights { -webkit-mask: var(--m) center bottom / auto 100% repeat-x; mask: var(--m) center bottom / auto 100% repeat-x; opacity: var(--win); }
 .layer--far  { --m: url("../images/scene/far.svg");  bottom: 44px; background: var(--far); }
 .layer--mid  { --m: url("../images/scene/mid.svg");  bottom: 20px; background: var(--mid); }
-.layer--near { --m: url("../images/scene/near.svg"); bottom: 0;    background: var(--d-ground); }
+.layer--near { --m: url("../images/scene/near.svg"); bottom: 14px; background: var(--d-shadow); }
 .lights--far  { --m: url("../images/scene/far-win.svg");  bottom: 44px; background: #e7d5b3; opacity: calc(var(--win) * .6); }
 .lights--mid  { --m: url("../images/scene/mid-win.svg");  bottom: 20px; background: #e8c170; opacity: calc(var(--win) * .7); }
-.lights--near { --m: url("../images/scene/near-win.svg"); bottom: 0;    background: #e8c170; }
-.trees { position: absolute; left: 0; right: 0; bottom: 0; height: clamp(70px, 8vw, 104px); pointer-events: none;
+.lights--near { --m: url("../images/scene/near-win.svg"); bottom: 14px; background: #e8c170; }
+.trees { position: absolute; left: 0; right: 0; bottom: 12px; height: clamp(70px, 8vw, 104px); pointer-events: none;
   -webkit-mask: var(--m) center bottom / auto 100% repeat-x; mask: var(--m) center bottom / auto 100% repeat-x; }
 .trees--base  { --m: url("../images/scene/trees.svg");    background: var(--leaf); }
 .trees--hi    { --m: url("../images/scene/trees-hi.svg"); background: var(--leaf-hi); }
 .trees--trunk { --m: url("../images/scene/trunks.svg");   background: var(--trunk); }
-.snowline { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: #ebede9; opacity: 0; }
+.snowline { position: absolute; left: 0; right: 0; bottom: 10px; height: 6px; background: #ebede9; opacity: 0; z-index: 2; }
+/* 땅: 잔디(계절색) · 흙길 — 하늘과 아래 구역의 경계 */
+.skyline::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 16px; z-index: 1;
+  background:
+    linear-gradient(180deg, var(--leaf-hi) 0 4px, var(--leaf) 4px 8px, #4d2b32 8px 10px, #7a4841 10px 14px, #4d2b32 14px 16px);
+  -webkit-mask: linear-gradient(#000, #000) 0 4px / 100% 12px no-repeat, repeating-linear-gradient(90deg, #000 0 12px, transparent 12px 16px, #000 16px 28px, transparent 28px 32px) 0 0 / 100% 4px no-repeat;
+          mask: linear-gradient(#000, #000) 0 4px / 100% 12px no-repeat, repeating-linear-gradient(90deg, #000 0 12px, transparent 12px 16px, #000 16px 28px, transparent 28px 32px) 0 0 / 100% 4px no-repeat;
+}
 html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opacity: 1; }
 
 /* 픽셀 테두리 창 (대화창) */
@@ -545,6 +553,7 @@ html[data-time="afternoon"] .dusk .cta h2 { text-shadow: none; }
    ========================================================================== */
 .sky--page { height: clamp(200px, 22vw, 300px); }
 .sky--page .skyline { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; height: 100%; }
+.sky + main .ground:first-child, .sky--page + .wrap { border-top: 0; }
 .sky--page .layer, .sky--page .lights { height: clamp(130px, 15vw, 200px); }
 .sky--page .trees { height: clamp(56px, 6vw, 80px); }
 .sky--page .cloud--c { top: 26%; }
