@@ -3,62 +3,60 @@
    style.css 위에 덮어쓴다. body.y2k 아래에서만 동작한다.
    원칙: 레트로 장치는 시그니처 몇 곳(히어로 그림 창 · 상세 대표 이미지 창 · Skills 폴더)에만 둔다.
          나머지는 1px 선, 옅은 톤 면, 넉넉한 여백으로 정돈한다.
-   색: 따뜻한 종이 바탕 + 잉크 + 라일락 바이올렛 하나.
-       프로젝트 색은 같은 채도의 한 가족(블러시 · 라일락 · 인디고 · 버터 · 페리 · 아이스 · 세이지).
+   색: 데님 & 필름 — 하얀 여백 + 데님 블루. 형광 그라데이션은 히어로 창 제목줄 한 곳에만.
+       영문 제목 · 메뉴는 소문자로 써서 가볍게.
    ========================================================================== */
 .y2k {
-  --y-bg: #f5f3ef;            /* 따뜻한 종이 */
-  --y-paper: #fdfcfa;         /* 카드 면 */
-  --y-ink: #17161c;
-  --y-lilac: #ebe7f8;
-  --y-blush: #f5e7ea;
-  --y-ice: #e5edf2;
-  --y-butter: #f4eedd;
-  --y-silver: linear-gradient(180deg, #fdfdfe 0%, #ebebf0 100%);
-  --y-line: rgba(23, 22, 28, .14);
-  --y-line-strong: rgba(23, 22, 28, .30);
-  --y-shadow: 0 1px 2px rgba(23, 22, 28, .04), 0 14px 36px rgba(48, 40, 90, .08);
+  /* 데님 & 필름 — 하얀 여백 + 데님 블루 + 아주 조금의 형광 */
+  --y-bg: #f6f8fb;            /* 차가운 흰색 */
+  --y-paper: #ffffff;
+  --y-ink: #0f1424;
+  --y-denim: #2f52c4;         /* on white 6.7:1 */
+  --y-denim-deep: #1d3a8f;
+  --y-sky: #e3ecf9;
+  --y-sky-2: #c9d9f2;
+  --y-pink: #fbe8f2;
+  --y-film: #eef0ec;          /* 바랜 필름 톤 */
+  --y-neon: linear-gradient(90deg, #ff9ad5 0%, #ffe86b 50%, #b9f56a 100%);
+  --y-silver: linear-gradient(180deg, #ffffff 0%, #eef1f6 100%);
+  --y-line: rgba(15, 20, 36, .12);
+  --y-line-strong: rgba(15, 20, 36, .26);
+  --y-shadow: 0 1px 2px rgba(15, 20, 36, .04), 0 16px 40px rgba(29, 58, 143, .10);
 
   /* 기존 토큰 재지정 — style.css 의 링크 · 버튼 · 브랜드가 모두 이 색을 따른다 */
   --bg: var(--y-bg);
   --surface: var(--y-paper);
-  --subtle: #efece6;
-  --surface-blue: var(--y-lilac);
+  --subtle: #eef3fa;
+  --surface-blue: var(--y-sky);
   --heading: var(--y-ink);
-  --text: #26252d;
-  --muted: #64616c;           /* on --y-bg 5.4:1 */
-  --muted-strong: #4b4853;
+  --text: #1f2536;
+  --muted: #5c6475;           /* on --y-bg 5.6:1 */
+  --muted-strong: #444b5c;
   --border: var(--y-line);
   --border-strong: var(--y-line-strong);
-  --navy: #1b1a22;
-  --cobalt: #5a3fd6;
-  --primary: #5a3fd6;         /* 라일락 바이올렛 — on white 6.6:1 */
-  --primary-hover: #4630b4;
-  --primary-soft: var(--y-lilac);
-  --primary-ring: #c9bdf3;
-  --accent: #5a3fd6;
-  --accent-fill: #7a62e6;
-  --accent-soft: var(--y-lilac);
+  --navy: var(--y-denim-deep);
+  --cobalt: var(--y-denim);
+  --primary: var(--y-denim);
+  --primary-hover: var(--y-denim-deep);
+  --primary-soft: var(--y-sky);
+  --primary-ring: #a9c0ef;
+  --accent: var(--y-denim);
+  --accent-fill: #4d6fe0;
+  --accent-soft: var(--y-sky);
 
   background: var(--y-bg);
   color: var(--text);
 }
+.y2k ::selection { background: #e4ff7a; color: var(--y-ink); }
 
-/* 프로젝트 색 — 한 가족으로 낮춘 톤 (선 · 작은 면 · 라벨에만) */
-.y2k [data-accent="coral"]  { --acc: #d98a9b; --acc-ink: #9c3a52; --acc-soft: #f7eaed; }
-.y2k [data-accent="violet"] { --acc: #a493ea; --acc-ink: #5a3fd6; --acc-soft: #efebfa; }
-.y2k [data-accent="cobalt"] { --acc: #8e9be6; --acc-ink: #3d47b8; --acc-soft: #eceefa; }
-.y2k [data-accent="yellow"] { --acc: #d8bd6e; --acc-ink: #6f5300; --acc-soft: #f6f0dd; }
-.y2k [data-accent="peri"]   { --acc: #a9b0e4; --acc-ink: #464fae; --acc-soft: #eef0f9; }
-.y2k [data-accent="cyan"]   { --acc: #91bccb; --acc-ink: #1f6578; --acc-soft: #e7f0f3; }
-.y2k [data-accent="mint"]   { --acc: #9fc1ab; --acc-ink: #2f6a4c; --acc-soft: #eaf2ec; }
-.y2k main[data-accent="coral"]  { --acc: #d98a9b; --acc-ink: #9c3a52; --acc-soft: #f7eaed; }
-.y2k main[data-accent="violet"] { --acc: #a493ea; --acc-ink: #5a3fd6; --acc-soft: #efebfa; }
-.y2k main[data-accent="cobalt"] { --acc: #8e9be6; --acc-ink: #3d47b8; --acc-soft: #eceefa; }
-.y2k main[data-accent="yellow"] { --acc: #d8bd6e; --acc-ink: #6f5300; --acc-soft: #f6f0dd; }
-.y2k main[data-accent="peri"]   { --acc: #a9b0e4; --acc-ink: #464fae; --acc-soft: #eef0f9; }
-.y2k main[data-accent="cyan"]   { --acc: #91bccb; --acc-ink: #1f6578; --acc-soft: #e7f0f3; }
-.y2k main[data-accent="mint"]   { --acc: #9fc1ab; --acc-ink: #2f6a4c; --acc-soft: #eaf2ec; }
+/* 프로젝트 색 — 데님 · 스카이 · 필름 가족 안에서 (선 · 작은 면 · 라벨에만) */
+.y2k [data-accent="coral"],  .y2k main[data-accent="coral"]  { --acc: #ef9cc4; --acc-ink: #a8306b; --acc-soft: #fbedf4; }
+.y2k [data-accent="violet"], .y2k main[data-accent="violet"] { --acc: #9fb0ee; --acc-ink: #3a4fb8; --acc-soft: #edf1fc; }
+.y2k [data-accent="cobalt"], .y2k main[data-accent="cobalt"] { --acc: #6f8ee6; --acc-ink: #2f52c4; --acc-soft: #e8eefb; }
+.y2k [data-accent="yellow"], .y2k main[data-accent="yellow"] { --acc: #e3cf6a; --acc-ink: #6a5600; --acc-soft: #f7f3de; }
+.y2k [data-accent="peri"],   .y2k main[data-accent="peri"]   { --acc: #a8c2ec; --acc-ink: #2c5a9e; --acc-soft: #eaf1fb; }
+.y2k [data-accent="cyan"],   .y2k main[data-accent="cyan"]   { --acc: #8cc6dc; --acc-ink: #1d6680; --acc-soft: #e8f3f7; }
+.y2k [data-accent="mint"],   .y2k main[data-accent="mint"]   { --acc: #a9d58c; --acc-ink: #3b6b1f; --acc-soft: #eef6e8; }
 
 /* ---- 시그니처: OS 창 ---- */
 .y2k .win {
@@ -82,36 +80,42 @@
 .y2k .win__ctrl i { width: 9px; height: 9px; border: 1px solid var(--y-line-strong); border-radius: 2px; background: #fff; }
 
 /* ---- 헤더 ---- */
-.y2k .site-header { background: rgba(245, 243, 239, .88); border-bottom: 1px solid var(--y-line); backdrop-filter: blur(10px); }
+.y2k .site-header { background: rgba(246, 248, 251, .88); border-bottom: 1px solid var(--y-line); backdrop-filter: blur(10px); }
 .y2k .nav__list a[aria-current] { box-shadow: inset 0 -2px 0 var(--primary); }
 
 /* ---- 버튼 ---- */
 .y2k .btn { border-radius: 10px; box-shadow: none; transition: background-color .15s, border-color .15s, transform .15s var(--ease); }
 .y2k .btn:hover { transform: translateY(-1px); box-shadow: none; }
 .y2k .btn:active { transform: none; }
-.y2k .btn--primary { background: var(--y-ink); border-color: var(--y-ink); color: #fff; }
-.y2k .btn--primary:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+.y2k .btn--primary { background: var(--y-denim); border-color: var(--y-denim); color: #fff; }
+.y2k .btn--primary:hover { background: var(--y-denim-deep); border-color: var(--y-denim-deep); color: #fff; }
 .y2k .btn--ghost { background: var(--y-paper); border: 1px solid var(--y-line-strong); color: var(--y-ink); }
-.y2k .btn--ghost:hover { background: var(--y-lilac); color: var(--y-ink); }
+.y2k .btn--ghost:hover { background: var(--y-sky); color: var(--y-ink); }
 
 /* ---- 히어로 ---- */
 .y2k .intro { position: relative; isolation: isolate; background: none; }
 .y2k .intro::before {   /* 옅은 라일락 · 블러시 번짐 */
   content: ""; position: absolute; inset: 0 0 8%; z-index: -1; pointer-events: none;
   background:
-    radial-gradient(34% 58% at 76% 42%, #e6e0fa 0%, transparent 70%),
-    radial-gradient(28% 48% at 8% 76%, var(--y-blush) 0%, transparent 70%);
+    radial-gradient(36% 60% at 78% 42%, var(--y-sky) 0%, transparent 70%),
+    radial-gradient(26% 44% at 6% 80%, var(--y-pink) 0%, transparent 70%);
 }
 .y2k .intro__grid { align-items: center; }
 .y2k .intro__eyebrow { color: var(--primary); }
 .y2k .intro h1 { letter-spacing: -.025em; }
 .y2k .intro__char { color: color-mix(in srgb, var(--primary) calc(var(--k, 0) * 100%), var(--y-ink)); }
 .y2k .hero-cta { flex-wrap: wrap; gap: 10px; }
-.y2k .intro__plate.win { background: var(--y-lilac); }
+.y2k .intro__plate.win { background: var(--y-sky); }
+.y2k .intro__plate .win__bar { background: var(--y-neon); color: var(--y-ink); }   /* 형광은 여기 한 곳 */
 .y2k .intro__plate .intro__art { aspect-ratio: 5 / 4; object-fit: cover; border-radius: 0; }
 
+/* ---- 소문자 라벨 (영문 제목 · 메뉴) ---- */
+.y2k .nav__list a, .y2k .section-head h2, .y2k .eyebrow span, .y2k .archive__title, .y2k .skills__title { text-transform: lowercase; }
+.y2k .section-head h2 { font-weight: 800; letter-spacing: -.04em; }
+.y2k .intro__eyebrow, .y2k .ph__kicker { text-transform: lowercase; font-family: var(--font-body); font-weight: 600; font-size: 13px; letter-spacing: .02em; }
+
 /* ---- 섹션 ---- */
-.y2k .section--band { background: #efece6; border-block: 1px solid var(--y-line); }
+.y2k .section--band { background: #eef3fa; border-block: 1px solid var(--y-line); }
 .y2k .section-head h2 { letter-spacing: -.025em; }
 .y2k .eyebrow b { background: var(--y-ink); color: #fff; }
 .y2k .eyebrow { color: var(--muted-strong); }
@@ -127,9 +131,9 @@
 .y2k .archive__item:hover { background: var(--y-paper); }
 
 /* ---- About · Skills ---- */
-.y2k .bio__photo::before { background: var(--y-lilac); }
-.y2k .tags--pixel .tag--a { background: var(--y-lilac); border-color: #d6cdf3; color: #45309e; }
-.y2k .tags--pixel .tag--b { background: var(--y-ice); border-color: #c9d9e2; color: #1f5566; }
+.y2k .bio__photo::before { background: var(--y-sky-2); }
+.y2k .tags--pixel .tag--a { background: var(--y-sky); border-color: var(--y-sky-2); color: var(--y-denim-deep); }
+.y2k .tags--pixel .tag--b { background: var(--y-pink); border-color: #f2cde0; color: #8f2a5c; }
 .y2k .tags--pixel li::before { background: var(--y-ink); }
 
 .y2k .skills { margin-top: clamp(48px, 6vw, 72px); }
@@ -145,40 +149,42 @@
 .y2k .folder::before {
   content: ""; position: absolute; top: -10px; left: -1px; width: 56px; height: 10px;
   border: 1px solid var(--y-line-strong); border-bottom: 0; border-radius: 5px 5px 0 0;
-  background: var(--y-lilac);
+  background: var(--y-sky-2);
 }
-.y2k .folder:nth-child(2)::before { background: var(--y-blush); }
-.y2k .folder:nth-child(3)::before { background: var(--y-ice); }
-.y2k .folder:nth-child(4)::before { background: var(--y-butter); }
+.y2k .folder:nth-child(2)::before { background: #f6c9e0; }
+.y2k .folder:nth-child(3)::before { background: #f3ea9e; }
+.y2k .folder:nth-child(4)::before { background: #cdeeb0; }
 .y2k .folder__name { margin: 0 0 12px; font-size: 15px; font-weight: 700; color: var(--y-ink); }
 .y2k .folder__items { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .y2k .folder__items li {
   padding: 3px 9px; font-size: 13.5px; line-height: 1.5; color: var(--muted-strong);
-  background: #f1eee8; border-radius: 6px;
+  background: #eef3fa; border-radius: 6px;
 }
 
 /* ---- Career ---- */
 .y2k .diary { max-width: 860px; }
 .y2k .timeline__item::before { background: var(--y-ink); }
 .y2k .timeline__item:first-child::before { background: var(--primary); }
-.y2k .timeline__item--award::before { background: #d8bd6e; }
+.y2k .timeline__item--award::before { background: #e3cf6a; }
 
 /* ---- Contact · 푸터: 잉크 ---- */
 .y2k .mail { max-width: 720px; }
-.y2k #contact.section--band { background: var(--y-ink); border-color: transparent; }
-.y2k #contact .eyebrow { color: #b9acf2; }
-.y2k #contact .eyebrow b { background: #fff; color: var(--y-ink); }
-.y2k #contact .section-head__sub { color: #bdbac6; }
-.y2k #contact .contact-list a { background: rgba(255, 255, 255, .05); border-color: rgba(255, 255, 255, .18); }
-.y2k #contact .contact-list a::after { color: #b9acf2; }
-.y2k #contact .contact-list span { color: #a9a5b5; }
-.y2k #contact .contact-list li:first-child a { background: var(--primary); border-color: var(--primary); }
-.y2k #contact .contact-list li:first-child a:hover { background: #6c52e4; }
-.y2k .contact-px g:nth-child(1) { fill: #b9acf2; }
-.y2k .contact-px g:nth-child(2) { fill: #a9cbd8; }
-.y2k .contact-px g:nth-child(3) { fill: #e4a7b4; }
-.y2k .site-footer { background: var(--y-ink); }
-.y2k .footer-bio .role, .y2k .footer-col h3 { color: #b9acf2; }
+.y2k #contact.section--band { background: var(--y-denim-deep); border-color: transparent; }
+.y2k #contact .eyebrow { color: #c9d8ff; }
+.y2k #contact .eyebrow b { background: #fff; color: var(--y-denim-deep); }
+.y2k #contact .section-head__sub { color: #c9d8ff; }
+.y2k #contact .contact-list a { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .24); }
+.y2k #contact .contact-list a::after { color: #c9d8ff; }
+.y2k #contact .contact-list span { color: #b4c3e8; }
+.y2k #contact .contact-list li:first-child a { background: #fff; border-color: #fff; color: var(--y-denim-deep); }
+.y2k #contact .contact-list li:first-child a span { color: var(--y-denim); }
+.y2k #contact .contact-list li:first-child a::after { color: var(--y-denim); }
+.y2k #contact .contact-list li:first-child a:hover { background: #e4ff7a; border-color: #e4ff7a; }
+.y2k .contact-px g:nth-child(1) { fill: #ff9ad5; }
+.y2k .contact-px g:nth-child(2) { fill: #ffe86b; }
+.y2k .contact-px g:nth-child(3) { fill: #b9f56a; }
+.y2k .site-footer { background: #142a6b; }
+.y2k .footer-bio .role, .y2k .footer-col h3 { color: #c9d8ff; }
 
 /* ==========================================================================
    상세 페이지
@@ -204,7 +210,7 @@
 .y2k .zoom-btn { border-radius: 8px; box-shadow: none; }
 .y2k .zoom-btn:hover, .y2k .zoom-btn:active { box-shadow: none; }
 .y2k .pager a { border-radius: 12px; background: var(--y-paper); }
-.y2k .cta { background: #efece6; }
+.y2k .cta { background: #eef3fa; }
 
 /* ---- 반응형 ---- */
 @media (max-width: 1024px) {
