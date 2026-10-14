@@ -143,5 +143,14 @@ window.I18N_PAGE = {
   "개별 진단 결과의 문제 영역. 문제 1~10 탭, 고른 오답은 빨간 테두리·X, 정답은 초록 테두리·체크": "Question area of an individual diagnosis result: tabs for questions 1–10; the chosen wrong answer in a red border with an X, the correct answer in green with a check",
   "학생용 탐험 지도 화면. 어휘의 숲 지도 위 진단·학습 단계, 오른쪽에 어휘 복습 카드, 탐험 기록 점수 그래프, 오답 노트 버튼": "Student exploration map: diagnosis and learning stages along a path in the Vocabulary Forest; vocabulary review card, score history chart, and wrong-answer notebook button on the right",
   "탐험 지도. 단계별 진단·학습 진입": "Expedition map. Entry to each diagnosis and learning stage",
-  "문제 풀이. 고른 보기를 테두리와 색으로 표시": "Solving a question. The chosen option is marked with border and color"
+  "문제 풀이. 고른 보기를 테두리와 색으로 표시": "Solving a question. The chosen option is marked with border and color",
+  "HTML · CSS · JavaScript": "HTML · CSS · JavaScript",
+  "통계<small>리포트 확인</small>": "Statistics<small>View reports</small>",
+  "트레이닝<small>진단으로 반복</small>": "Training<small>Repeat via diagnosis</small>",
+  "학습 관리<small>리포트 확인</small>": "Learning management<small>View reports</small>",
+  "<b>양식 다운로드</b><span>학생 계정 생성 양식 (.xlsx)</span>": "<b>Download template</b><span>Student account template (.xlsx)</span>",
+  "<b>파일 업로드</b><span>작성한 양식 업로드 후 계정 생성</span>": "<b>Upload file</b><span>Upload the filled template to create accounts</span>",
+  "<b>실패 시</b><span>행 번호와 사유 표시. 예: 34번 행 학급명 오입력</span>": "<b>On failure</b><span>Shows the row number and reason, e.g. row 34: wrong class name</span>",
+  "<b>완료 시</b><span>등록 인원 표시, 등록 완료 계정 파일 다운로드</span>": "<b>On success</b><span>Shows how many were registered and offers the account file for download</span>",
+  "스크롤해서 전체 화면 보기": "Scroll to see the full screen",
 };

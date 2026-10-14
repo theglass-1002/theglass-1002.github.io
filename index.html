@@ -133,11 +133,11 @@
         <li class="row" data-accent="yellow">
           <div class="thumb"><img src="images/projects/literacy/literacy-lab-map.webp" width="1280" height="800" alt="문해력 탐험대 학생 탐험 지도. 분석의 연구소 지도 위 진단·학습 단계와 어휘 복습·탐험 기록 카드" data-en-alt="Literacy Expedition student map: diagnosis and learning steps on the Analysis Lab map, with vocabulary review and expedition log cards" loading="lazy"></div>
           <div class="body"><span class="no">stage 4</span><h3><a href="projects/literacy.html" data-en="Literacy Expedition · Teacher">문해력 탐험대 · 선생님</a></h3><p data-en="An education service where students study literacy and teachers review diagnostic results.">학생은 문해력 학습, 선생님은 진단 결과 확인. 역할별로 화면을 나눈 교육 서비스</p></div>
-          <div class="meta"><ul class="chips-s"><li>JavaScript</li><li>Windows Desktop</li></ul><span class="go" aria-hidden="true"><span data-en="View">보기</span><span class="tri"></span></span></div>
+          <div class="meta"><ul class="chips-s"><li>HTML · CSS</li><li>JavaScript</li></ul><span class="go" aria-hidden="true"><span data-en="View">보기</span><span class="tri"></span></span></div>
         </li>
         <li class="row" data-accent="peri">
           <div class="thumb"><img src="images/projects/interview/screen-1.webp" width="1200" height="613" alt="면접왕 모의면접 유형 선택 화면" data-en-alt="Interview King mock interview type selection screen" loading="lazy"></div>
-          <div class="body"><span class="no">stage 5</span><h3><a href="projects/interview.html" data-en="Interview King">면접왕</a></h3><p data-en="An AI mock-interview service for university-admission and cabin-crew interviews. First-time users can finish an interview just by following the guidance.">대입 · 승무원 면접 대비 AI 모의면접 서비스. 처음 이용해도 안내만 따라 면접을 마치도록 흐름 설계</p></div>
+          <div class="body"><span class="no">stage 5</span><h3><a href="projects/interview.html" data-en="Interview King">면접왕</a></h3><p data-en="An AI mock-interview service for university-admission and cabin-crew interviews. I published the screens that guide first-time users through to the end.">대입 · 승무원 면접 대비 AI 모의면접 서비스. 처음 이용해도 안내만 따라 면접을 마치는 화면 퍼블리싱</p></div>
           <div class="meta"><ul class="chips-s"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><span class="go" aria-hidden="true"><span data-en="View">보기</span><span class="tri"></span></span></div>
         </li>
         <li class="row" data-accent="cyan">
@@ -179,12 +179,12 @@
       <div class="wrap">
         <div class="sec-head"><div><span class="tag"><i class="ico ico--heart" aria-hidden="true"></i>character</span><h2 id="about-t" data-en="About">소개</h2></div></div>
         <div class="profile">
-          <aside class="charcard" aria-label="정유리 기본 정보">
+          <aside class="charcard" aria-labelledby="charcard-name">
             <figure class="portrait">
               <img src="images/profile/jung-yuri.webp" width="1015" height="1440" alt="정유리 프로필 사진" data-en-alt="Profile photo of Yuri Jung" loading="lazy">
             </figure>
             <div class="charcard__name">
-              <h3 data-en="Yuri Jung">정유리</h3>
+              <h3 id="charcard-name" data-en="Yuri Jung">정유리</h3>
               <p class="role">frontend developer</p>
             </div>
             <dl class="facts">
@@ -199,8 +199,8 @@
             <div class="dialog"><p class="say" data-en="I build screens people can use on their first try.">처음 쓰는 사람도 헤매지 않는 화면을 만드는 개발자</p><span class="dialog__next" aria-hidden="true"></span></div>
             <p data-en="When building a voice-ordering kiosk, what I wrestled with longest was the customer's worry: “Is it even listening to me?” The answer turned out to be a single “Listening” indicator at the top of the screen.">음성 주문 키오스크를 만들 때 제일 오래 붙잡은 건 ‘지금 내 말 듣고 있나?’ 하는 손님의 불안이었어요. 답은 화면 맨 위의 ‘듣고 있어요’ 표시 하나였어요.</p>
             <p data-en="I like finding and fixing those small moments where people get stuck. I spent two and a half years building a vet app at Zentry, and now I work on the frontend at Withmind.">이렇게 사소한 데서 막히는 순간을 찾아 고치는 일을 좋아해요. 젠트리에서 2년 반 동안 수의사용 앱을 만들었고, 지금은 위드마인드에서 프론트엔드를 맡고 있어요.</p>
-            <p class="focus-label" data-en="Strengths">특기</p>
-            <ul class="chips" aria-label="특기">
+            <p class="focus-label" id="strengths-label" data-en="Strengths">특기</p>
+            <ul class="chips" aria-labelledby="strengths-label">
               <li data-en="Web accessibility">웹 접근성</li><li data-en="AI service integration">AI 서비스 연동</li><li data-en="Real-time interfaces">실시간 화면</li><li data-en="Responsive UI">반응형 화면</li><li data-en="Working with planners and designers">기획·디자인 협업</li>
             </ul>
           </div>
@@ -222,7 +222,7 @@
         <div class="sec-head"><div><span class="tag"><i class="ico ico--flag" aria-hidden="true"></i>quest log</span><h2 id="career-t" data-en="Career">경력</h2></div></div>
         <ol class="quests">
           <li class="quest quest--now"><div><p class="when" data-en="2025.07 — Present">2025.07 — 현재</p><span class="state">in progress</span></div><div><h3 data-en="Withmind Inc.">(주)위드마인드</h3><p>Frontend Developer</p></div></li>
-          <li class="quest"><div><p class="when" data-en="2022.09 — 2025.02 (2 yrs 6 mos)">2022.09 — 2025.02 (2년 6개월)</p><span class="state state--done">clear</span></div><div><h3 data-en="Zentry Inc.">(주)젠트리</h3><p>Frontend Developer</p><ul><li data-en="Vet monitoring app screens (Flutter)">수의사용 모니터링 앱 화면 개발 (Flutter)</li><li data-en="Official and admin website development">공식·관리자 웹사이트 개발</li></ul></div></li>
+          <li class="quest"><div><p class="when" data-en="2022.09 — 2025.02 (2 yrs 6 mos)">2022.09 — 2025.02 (2년 6개월)</p><span class="state state--done">clear</span></div><div><h3 data-en="Zentry Inc.">(주)젠트리</h3><p>Frontend Developer</p><ul><li data-en="Vet monitoring app screens and real-time readings (Flutter · TCP)">수의사용 모니터링 앱 화면 · 실시간 수치 표시 (Flutter · TCP)</li><li data-en="Official and admin website development">공식·관리자 웹사이트 개발</li></ul></div></li>
           <li class="quest"><div><p class="when">2022.03</p><span class="state state--award">award</span></div><div><h3 data-en="KEPCO KDN Idea Contest">한전KDN 아이디어 공모전</h3><p data-en="Encouragement Award (Metaverse Energy Exhibition)">장려상 (메타버스 에너지 전시관)</p></div></li>
           <li class="quest"><div><p class="when">2022.02 — 2022.06</p><span class="state state--done">clear</span></div><div><h3 data-en="NEW:O">뉴오</h3><p data-en="Metaverse office startup (backend 40% · frontend 30% · ideas 30%)">메타버스 오피스 창업 프로젝트 (백엔드 40% · 프론트엔드 30% · 아이디어 30%)</p></div></li>
         </ol>

@@ -50,5 +50,7 @@ window.I18N_COMMON = {
   "주요 작업": "Key tasks",
   "돌아보며": "Looking back",
   "제가 맡았던 일이나 구현 과정이 더 궁금하다면 편하게 연락해 주세요.": "If you'd like to hear more about what I worked on or how I built it, feel free to reach out.",
-  "AI 서비스 · 헬스케어 기기 화면을 만드는 프론트엔드 개발자. 기획 단계부터 참여해 실제로 쓰이는 화면 구현": "I'm a frontend developer who builds screens for AI services and healthcare devices. I join from the planning stage and build screens that are actually used."
+  "AI 서비스 · 헬스케어 기기 화면을 만드는 프론트엔드 개발자. 기획 단계부터 참여해 실제로 쓰이는 화면 구현": "I'm a frontend developer who builds screens for AI services and healthcare devices. I join from the planning stage and build screens that are actually used.",
+  "내 담당": "My part",
+  "© 2026 정유리. All rights reserved.": "© 2026 Yuri Jung. All rights reserved.",
 };

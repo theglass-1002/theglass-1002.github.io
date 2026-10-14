@@ -106,5 +106,9 @@ window.I18N_PAGE = {
   "모든 화면 오른쪽 아래 고정 버튼으로 여는 공통 패널. 저시력 사용자를 위한 글자 크기 조절과 음성 읽기 제공": "A shared panel opened from a fixed button at the bottom right of every screen, offering text-size control and read-aloud for low-vision users.",
   "<b>글자 크기 3단계</b>16 · 18 · 22px 중 선택, 화면 전체에 적용": "<b>Three text sizes</b>Choose 16, 18, or 22px, applied to the whole screen",
   "<b>TTS 음성 읽기</b>켠 뒤 텍스트를 누르면 읽어 주는 방식": "<b>TTS read-aloud</b>Once on, tap any text to hear it read",
-  "<b>설정 유지</b>브라우저에 저장해 새로고침 후에도 유지": "<b>Saved settings</b>Stored in the browser, so they survive a refresh"
+  "<b>설정 유지</b>브라우저에 저장해 새로고침 후에도 유지": "<b>Saved settings</b>Stored in the browser, so they survive a refresh",
+  "<b>구직자</b><span>장애인 구직자 · 담당 복지사</span>": "<b>Job seekers</b><span>Job seekers with disabilities · caseworkers</span>",
+  "프로필 등록<small>경력 · 역량 입력</small>": "Profile setup<small>Experience · skills</small>",
+  "생성 이력서<small>추천 직무 목록</small>": "Generated résumé<small>Recommended jobs</small>",
+  "<b>기업</b><span>채용 담당자</span>": "<b>Companies</b><span>Recruiters</span>",
 };
