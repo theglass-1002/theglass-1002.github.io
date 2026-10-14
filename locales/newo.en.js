@@ -2,7 +2,7 @@
 window.I18N_PAGE = {
   "<span aria-current=\"page\">뉴오</span>": "<span aria-current=\"page\">NEW:O</span>",
   "뉴오 (NEW:O)": "NEW:O",
-  "2022.02 – 2022.06 (4개월)": "Feb 2022 – Jun 2022 (4 months)",
+  "2022.02 – 2022.06 (5개월)": "Feb 2022 – Jun 2022 (5 months)",
   "창업 프로젝트 (팀 4명)": "Startup project (team of 4)",
   "백엔드 40% · 프론트엔드 30% · 아이디어 30%": "Backend 40% · Frontend 30% · Ideas 30%",
   "백엔드 개발 (40%)": "Backend development (40%)",
@@ -33,7 +33,7 @@ window.I18N_PAGE = {
   "코로나로 대면 활동이 멈춘 학원 커뮤니티를 도트 그래픽 메타버스 오피스로 옮긴 창업 프로젝트. 개발 전 설문으로 실제 사용 습관부터 확인": "A startup project that moved an academy community, stalled by COVID, into a pixel-art metaverse office. Before building, I checked real usage habits with a survey.",
   "학원 직원이 팀노바 학생들을 관리하는 서비스. 코로나로 대면 업무가 어려워져 <strong>메타버스 공간에서 소통하고 학생을 관리하는 구조</strong>로 전환": "NEW:O is a service for academy staff to manage Team Nova students. When COVID made face-to-face work hard, it was rebuilt so that <strong>staff communicate and manage students in a metaverse space</strong>.",
   "화상회의 도구는 회의가 있을 때만 켜지는 반면, 학원 커뮤니티에는 <strong>용건이 없어도 같은 공간에 있다는 감각</strong>이 필요. 접속하면 계속 머무는 2D 공간으로 결정": "A video call is only on during a meeting, but an academy community needed <strong>the feeling of being in the same space with no particular errand</strong>. So I chose a 2D space where people stay once logged in.",
-  "4명, 4개월 진행. 담당 기여도는 다음과 같음": "Four of us worked on it for four months; my contribution was as follows.",
+  "4명, 5개월 진행. 담당 기여도는 다음과 같음": "Four of us worked on it for five months; my contribution was as follows.",
   "한 사람이 한 레이어만 맡기 어려운 규모라, 게시판·할 일·멘토링처럼 <strong>기능 단위로 화면부터 서버까지 한 사람이 끝까지 담당</strong>": "The team was too small for one person per layer, so for features like the board, to-dos, and mentoring, <strong>one person carried a feature from screen to server.</strong>",
   "개발 전 <strong>사전 설문</strong> 진행. 기수 구분, 게더타운 사용 경험, 사용 시 일주일에 몇 번 그 공간에서 공부하는지 질문": "Before development I ran <strong>a pre-survey</strong>: which cohort people were in, whether they had used Gather Town, and if so, how many times a week they studied there.",
   "핵심은 “메타버스가 필요한가”가 아닌 <strong>이미 하고 있는 행동의 빈도</strong>를 물은 것. 기존 도구 사용량을 알면 새 공간이 대체해야 할 수준이 정해짐": "The point is that it asked not \"do you need a metaverse?\" but <strong>how often people already do the behavior</strong>. Knowing how much they use existing tools sets what a new space has to replace.",

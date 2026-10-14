@@ -2,7 +2,7 @@
 window.I18N_PAGE = {
   "<span aria-current=\"page\">케어팜</span>": "<span aria-current=\"page\">Carefarm</span>",
   "케어팜": "Carefarm",
-  "2021.10 – 2022.01 (3개월)": "Oct 2021 – Jan 2022 (3 months)",
+  "2021.10 – 2022.01 (4개월)": "Oct 2021 – Jan 2022 (4 months)",
   "기획 · 프론트엔드 · 백엔드 전체": "Planning · Full frontend · Full backend",
   "백엔드 개발": "Backend development",
   "기획 · 프론트엔드 · 백엔드 각 100%": "Planning, frontend, and backend, 100% each",

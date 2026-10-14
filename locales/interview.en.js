@@ -7,7 +7,7 @@ window.I18N_PAGE = {
   "주의사항 두 번째 화면. ‘얼굴이 다 보이게!’(마스크 X 표시), ‘적절한 목소리!’ 카드, 이전·확인 버튼": "Second notice screen: 'Show your whole face!' (mask marked with an X) and 'Speak clearly!' cards, Back and Confirm buttons",
   "<span aria-current=\"page\">면접왕</span>": "<span aria-current=\"page\">Interview King</span>",
   "면접왕": "Interview King",
-  "2025.07 – 2025.09 (2개월)": "Jul 2025 – Sep 2025 (2 months)",
+  "2025.07 – 2025.09 (3개월)": "Jul 2025 – Sep 2025 (3 months)",
   "상용 서비스 (학원 납품)": "Commercial service (delivered to academies)",
   "면접왕 사이트": "Interview King site",
   "진로 선택·응시 설정 화면": "Career-path and interview setup screens",
