@@ -23,9 +23,9 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261014d">
-  <script src="../js/time.js?v=20261014d"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.39.6/dist/galmuri.css">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261014h">
+  <script src="../js/time.js?v=20261014f"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
@@ -58,6 +58,18 @@
   </header>
 
   <main id="main" data-pan="5" data-accent="peri">
+    <div class="sky sky--page" aria-hidden="true">
+      <div class="weather"></div><div class="orb-glow"></div><div class="orb"></div>
+      <div class="clouds"><span class="cloud cloud--a"><i></i><i></i></span><span class="cloud cloud--b"><i></i><i></i></span><span class="cloud cloud--c"><i></i><i></i></span></div>
+      <div class="fall"></div>
+      <div class="stars"><i style="left:8%;top:20%"></i><i style="left:24%;top:12%"></i><i style="left:41%;top:30%"></i><i style="left:58%;top:10%"></i><i style="left:73%;top:26%"></i><i style="left:90%;top:14%"></i></div>
+      <div class="skyline">
+        <span class="layer layer--far"></span><span class="lights lights--far"></span>
+        <span class="layer layer--mid"></span><span class="lights lights--mid"></span>
+        <span class="layer layer--near"></span><span class="lights lights--near"></span>
+        <span class="trees trees--base"></span><span class="trees trees--hi"></span><span class="trees trees--trunk"></span><span class="snowline"></span>
+      </div>
+    </div>
 
 
     <div class="wrap">

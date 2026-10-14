@@ -6,62 +6,46 @@
    글꼴: 제목 · 버튼 · 라벨은 한글 픽셀 폰트 갈무리(13px 이상), 긴 글은 Pretendard
    ========================================================================== */
 :root {
-  /* 로파이 픽셀 노을 — 라벤더 → 핑크 → 피치 하늘, 짙은 청회색 도시 */
-  --d-sky-0: #5f5294;
-  --d-sky-1: #7a68aa;
-  --d-sky-2: #c89ac2;
-  --d-dusk: #f0a6a8;
-  --d-glow: #f6b597;
-  --d-sun: #fff1dc;
-  --d-ground: #2b2560;      /* 도시 앞줄 · 아래 구역 — 선명한 밤 인디고 */
-  --d-card: #3b3480;
-  --d-card-hi: #4a4296;
-  --d-edge: #f3dfe4;
-  --d-shadow: #16123c;
-  --d-text: #fffaf3;
-  --d-sub: #e3defa;         /* on --d-card 8.9:1 */
-  --d-butter: #ffe28a;      /* 켜진 창문 불빛 — 버튼 · 강조 */
-  --d-sky: #ffb8cf;         /* 라벨 · 번호 (핑크) */
-  --d-rose: #ff9fc0;
-  --d-paper: #fbf4f0;       /* 상세 본문 종이 */
-  --d-paper-2: #f5ebe6;
-  --d-ink: #241f4f;         /* on paper */
-  --d-ink-sub: #4f4a72;     /* on paper */
-  --d-plum: #8a3f6e;        /* 링크 on paper 6.4:1 */
+  /* 고정 색 (시간대와 무관) — Apollo 팔레트 */
+  --d-paper: #f4f2ee;       /* 상세 본문 종이 (#ebede9 보다 한 단계 밝게) */
+  --d-paper-2: #ebede9;
+  --d-ink: #172038;         /* on paper 14.4:1 */
+  --d-ink-sub: #394a50;     /* on paper 8.3:1 */
+  --d-plum: #7a367b;        /* 링크 on paper 7.1:1 */
 
-  --d-pix: "NeoDunggeunmo", "Galmuri11", monospace;
+  --d-pix: "Galmuri11", "NeoDunggeunmo", monospace;   /* 굵은 픽셀 제목 — 12px 배수에서 또렷하다 */
   --d-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
 }
 
 .dusk {
-  /* style.css 토큰 재지정 */
-  --bg: var(--d-paper);
-  --surface: #fffaf5;
-  --subtle: var(--d-paper-2);
-  --text: var(--d-ink);
-  --heading: var(--d-ink);
-  --muted: var(--d-ink-sub);
-  --muted-strong: #4a3f5c;
-  --border: rgba(42, 34, 64, .16);
-  --border-strong: rgba(42, 34, 64, .34);
-  --primary: var(--d-plum);
-  --primary-hover: #523873;
-  --primary-soft: #efe4f4;
-  --primary-ring: #c9b3e0;
-  --accent: var(--d-plum);
-  --accent-fill: #8a69b8;
-  --accent-soft: #efe4f4;
+  /* style.css 토큰 재지정 — 상세 본문도 메인 아래 구역과 같은 지면 색 위에 놓는다 */
+  --bg: var(--d-ground);
+  --surface: var(--d-card);
+  --subtle: var(--d-card);
+  --text: var(--d-text);
+  --heading: var(--d-text);
+  --muted: var(--d-sub);
+  --muted-strong: var(--d-sub);
+  --border: rgba(235, 237, 233, .18);
+  --border-strong: rgba(235, 237, 233, .34);
+  --primary: var(--d-sky);
+  --primary-hover: var(--d-butter);
+  --primary-soft: var(--d-card-hi);
+  --primary-ring: var(--d-sky);
+  --accent: var(--d-sky);
+  --accent-fill: var(--d-sky);
+  --accent-soft: var(--d-card-hi);
   --navy: var(--d-ground);
-  --cobalt: var(--d-plum);
+  --cobalt: var(--d-sky);
   --font-pixel: var(--d-sans);
   --font-body: var(--d-sans);
   --font-heading: var(--d-sans);
-  background: var(--d-paper);
-  color: var(--d-ink);
+  background: var(--d-ground);
+  color: var(--d-text);
   word-break: keep-all;
 }
-.dusk ::selection { background: var(--d-butter); color: var(--d-ink); }
-.dusk :focus-visible { outline: 2px dashed var(--d-plum); outline-offset: 4px; }
+.dusk ::selection { background: var(--d-butter); color: #172038; }
+.dusk :focus-visible { outline: 2px dashed var(--d-butter); outline-offset: 4px; }
 html:has(body.dusk) { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) { html:has(body.dusk) { scroll-behavior: auto; } }
 
@@ -76,7 +60,7 @@ html:has(body.dusk) { scroll-behavior: smooth; }
   box-shadow: inset -3px -3px 0 rgba(0, 0, 0, .16), inset 3px 3px 0 rgba(255, 255, 255, .5), 4px 4px 0 var(--d-shadow);
   cursor: pointer; transition: none;
 }
-.pbtn:hover, .dusk .btn:hover { background: #ffe6bf; color: var(--d-shadow); transform: none; }
+.pbtn:hover, .dusk .btn:hover { background: color-mix(in srgb, var(--d-butter) 80%, #ffffff); color: var(--d-shadow); transform: none; }
 .pbtn:active, .dusk .btn:active { transform: translate(3px, 3px); box-shadow: inset 3px 3px 0 rgba(0, 0, 0, .16), 1px 1px 0 var(--d-shadow); }
 .pbtn--ghost, .dusk .btn--ghost {
   color: var(--d-text); background: var(--d-card);
@@ -91,7 +75,6 @@ html:has(body.dusk) { scroll-behavior: smooth; }
 .dusk .site-header { background: var(--hud); border-bottom: 2px solid var(--d-shadow); backdrop-filter: blur(8px); }
 .dusk .site-header__inner { min-height: 64px; }
 .dusk .brand { font: 600 17px/1 var(--d-sans); color: var(--d-text); gap: 12px; }
-.dusk .brand::before { content: "1P"; color: var(--d-butter); }
 .dusk .brand span { font: 600 14px/1 var(--d-sans); color: var(--d-sub); }
 .dusk .brand:hover { color: var(--d-butter); }
 .dusk .nav__list { gap: 8px; }
@@ -107,9 +90,9 @@ html:has(body.dusk) { scroll-behavior: smooth; }
 .dusk .lang-toggle { font: 600 14px/1 var(--d-sans); color: var(--d-sub); background: var(--d-card); border-color: var(--d-shadow); box-shadow: 2px 2px 0 var(--d-shadow); }
 .dusk .lang-toggle:hover { box-shadow: 3px 3px 0 var(--d-shadow); }
 .dusk .lang-toggle__thumb { background: var(--d-butter); }
-.dusk .lang-toggle__opt { color: var(--d-sub); }
+.dusk .lang-toggle .lang-toggle__opt { position: relative; z-index: 1; color: var(--d-sub); }
 .dusk .lang-toggle[aria-checked="false"] .lang-toggle__opt:first-of-type,
-.dusk .lang-toggle[aria-checked="true"] .lang-toggle__opt:last-of-type { color: var(--d-shadow); font-weight: 800; }
+.dusk .lang-toggle[aria-checked="true"] .lang-toggle__opt:last-of-type { color: #172038; font-weight: 800; }
 .dusk .nav-toggle { border: 2px solid var(--d-shadow); border-radius: 0; background: var(--d-card); }
 .dusk .nav-toggle__bars, .dusk .nav-toggle__bars::before, .dusk .nav-toggle__bars::after { background: var(--d-text); border-radius: 0; }
 .dusk .nav-toggle[aria-expanded="true"] .nav-toggle__bars { background: transparent; }
@@ -118,46 +101,87 @@ html:has(body.dusk) { scroll-behavior: smooth; }
   .dusk .nav__list a { min-height: 48px; }
 }
 
-/* ---------- 시간대별 하늘 (js/time.js 가 html[data-time] 을 정한다) ----------
-   morning 06–11 맑은 낮 · afternoon 11–17 파란 오후 · sunset 17–20 핑크 노을 · night 20–06 보랏빛 밤 */
+/* ---------- 시간대 · 날씨 · 계절 하늘 ----------
+   색은 모두 Apollo 팔레트(Lospec, AdamCYounis)에서만 골랐다 — 서로 안 어울리는 색이 끼어들지 않게.
+   js/time.js 가 html[data-time · data-weather · data-season] 을 정한다.
+   morning 06–11 · afternoon 11–17 · sunset 17–20 · night 20–06 */
 :root,
 html[data-time="sunset"] {
-  --s-a: #5f5294; --s-b: #7a68aa; --s-c: #a88bbd; --s-d: #c89ac2; --s-e: #f0a6a8; --s-f: #f6b597; --s-g: #f8c7a6;
-  --far: #d99aab; --mid: #8e6f9c; --cloud: #f7c9cf; --cloud-o: .75;
-  --orb: #fff1dc; --orb-glow: rgba(255, 241, 220, .5); --stars: .6; --win: .9;
-  --sky-ink: #fff7f2; --sky-shadow: #10171e; --sky-sub: #fff7f2; --sky-label: #f1e3a4;
-  --hud: rgba(95, 82, 148, .94);
+  --s-a: #402751; --s-b: #7a367b; --s-c: #a23e8c; --s-d: #c65197; --s-e: #df84a5; --s-f: #de9e41; --s-g: #e8c170;
+  --far: #df84a5; --mid: #7a367b;
+  --cl-1: #e7d5b3; --cl-2: #df84a5; --cl-3: #a23e8c; --cloud-o: .85;
+  --orb: #e7d5b3; --orb-glow: rgba(232, 193, 112, .55); --stars: .5; --win: .9;
+  --sky-ink: #ebede9; --sky-shadow: #241527; --sky-sub: #ebede9; --sky-label: #e8c170;
+  --hud: rgba(64, 39, 81, .95);
+  --d-ground: #241527; --d-card: #402751; --d-card-hi: #4e305f; --d-shadow: #090a14;
+  --d-text: #ebede9; --d-sub: #e2cfe0; --d-butter: #e8c170; --d-sky: #df84a5; --d-rose: #df84a5; --d-edge: #e7d5b3;
 }
 html[data-time="morning"] {
-  --s-a: #4aa8ee; --s-b: #66b8f2; --s-c: #82c7f5; --s-d: #a0d6f8; --s-e: #bfe4fa; --s-f: #daf0fc; --s-g: #eef8ff;
-  --far: #a9d4ee; --mid: #6fa9d6; --cloud: #ffffff; --cloud-o: .95;
-  --orb: #fff6c9; --orb-glow: rgba(255, 246, 201, .75); --stars: 0; --win: 0;
-  --sky-ink: #12202e; --sky-shadow: #ffffff; --sky-sub: #13263a; --sky-label: #0f4c8a;
-  --hud: rgba(30, 96, 170, .94);
+  --s-a: #73bed3; --s-b: #86c8d8; --s-c: #a4dddb; --s-d: #b9e4df; --s-e: #cdeae4; --s-f: #ddf0ea; --s-g: #ebede9;
+  --far: #a4dddb; --mid: #73bed3;
+  --cl-1: #ffffff; --cl-2: #ebede9; --cl-3: #a8b5b2; --cloud-o: 1;
+  --orb: #ffffff; --orb-glow: rgba(255, 255, 255, .7); --stars: 0; --win: 0;
+  --sky-ink: #172038; --sky-shadow: transparent; --sky-sub: #172038; --sky-label: #253a5e;
+  --hud: rgba(37, 58, 94, .95);
 }
 html[data-time="afternoon"] {
-  --s-a: #3a86e0; --s-b: #4f98ea; --s-c: #67aaf1; --s-d: #84bdf5; --s-e: #a5d0f8; --s-f: #c6e2fb; --s-g: #ddeefd;
-  --far: #a7c6e6; --mid: #6b92bd; --cloud: #ffffff; --cloud-o: 1;
-  --orb: #fffbe6; --orb-glow: rgba(255, 251, 230, .8); --stars: 0; --win: 0;
-  --sky-ink: #0f1a26; --sky-shadow: #ffffff; --sky-sub: #13202d; --sky-label: #12407a;
-  --hud: rgba(30, 86, 160, .94);
+  --s-a: #4f8fba; --s-b: #5e9fc4; --s-c: #73bed3; --s-d: #8ccdd7; --s-e: #a4dddb; --s-f: #c3e6e0; --s-g: #ebede9;
+  --far: #a4dddb; --mid: #4f8fba;
+  --cl-1: #ffffff; --cl-2: #ebede9; --cl-3: #a8b5b2; --cloud-o: 1;
+  --orb: #ffffff; --orb-glow: rgba(255, 255, 255, .8); --stars: 0; --win: 0;
+  --sky-ink: #172038; --sky-shadow: transparent; --sky-sub: #172038; --sky-label: #172038;
+  --hud: rgba(37, 58, 94, .95);
 }
 html[data-time="morning"],
 html[data-time="afternoon"] {
-  --d-ground: #1f4f9c;      /* 낮엔 아래 구역도 맑은 파랑 */
-  --d-card: #2b5fae;
-  --d-card-hi: #366dbd;
-  --d-shadow: #0f2754;
-  --d-sub: #e6f0ff;         /* on --d-card 5.6:1 */
-  --d-sky: #d6efff;         /* 라벨 on --d-card 5.4:1 */
+  --d-ground: #253a5e; --d-card: #2c4569; --d-card-hi: #36527a; --d-shadow: #172038;
+  --d-text: #ebede9; --d-sub: #d6e2ea; --d-butter: #a8ca58; --d-sky: #ebede9; --d-rose: #a4dddb; --d-edge: #ebede9;
 }
 html[data-time="night"] {
-  --s-a: #352f7c; --s-b: #43398f; --s-c: #5446a0; --s-d: #6553b0; --s-e: #7862bd; --s-f: #8a71c6; --s-g: #9c82ce;
-  --far: #6c5aa8; --mid: #4a3d86; --cloud: #a68bd6; --cloud-o: .7;
-  --orb: #e6d98f; --orb-glow: rgba(230, 217, 143, .35); --stars: 1; --win: 1;
-  --sky-ink: #fbf6ff; --sky-shadow: #10171e; --sky-sub: #efe8fb; --sky-label: #e6d98f;
-  --hud: rgba(53, 47, 124, .94);
+  --s-a: #1e1d39; --s-b: #2a2547; --s-c: #402751; --s-d: #533066; --s-e: #7a367b; --s-f: #8e4a8a; --s-g: #a23e8c;
+  --far: #533066; --mid: #2e2246;
+  --cl-1: #7a367b; --cl-2: #533066; --cl-3: #402751; --cloud-o: .8;
+  --orb: #e8c170; --orb-glow: rgba(232, 193, 112, .3); --stars: 1; --win: 1;
+  --sky-ink: #ebede9; --sky-shadow: #090a14; --sky-sub: #ebede9; --sky-label: #e8c170;
+  --hud: rgba(30, 29, 57, .95);
+  --d-ground: #1e1d39; --d-card: #402751; --d-card-hi: #4e305f; --d-shadow: #090a14;
+  --d-text: #ebede9; --d-sub: #d9cfe6; --d-butter: #e8c170; --d-sky: #a4dddb; --d-rose: #df84a5; --d-edge: #e7d5b3;
 }
+/* 비: 청록빛 회색 하늘 (낮/저녁), 밤엔 더 어둡게 */
+html[data-weather="rain"],
+html[data-weather="storm"] {
+  --s-a: #394a50; --s-b: #4a5f63; --s-c: #577277; --s-d: #6c8584; --s-e: #819796; --s-f: #a8b5b2; --s-g: #c7cfcc;
+  --far: #a8b5b2; --mid: #577277;
+  --cl-1: #c7cfcc; --cl-2: #a8b5b2; --cl-3: #819796; --cloud-o: .9;
+  --orb-glow: transparent; --stars: 0; --win: .7;
+  --sky-ink: #ebede9; --sky-shadow: #202e37; --sky-sub: #ebede9; --sky-label: #c7cfcc;
+  --hud: rgba(32, 46, 55, .95);
+  --d-ground: #202e37; --d-card: #394a50; --d-card-hi: #45585f; --d-shadow: #10141f;
+  --d-text: #ebede9; --d-sub: #c7cfcc; --d-butter: #a8ca58; --d-sky: #a4dddb; --d-rose: #a4dddb; --d-edge: #c7cfcc;
+}
+html[data-weather="rain"][data-time="night"],
+html[data-weather="storm"][data-time="night"] { --s-a: #151d28; --s-b: #202e37; --s-c: #2a3a42; --s-d: #394a50; --s-e: #45585f; --s-f: #577277; --s-g: #6c8584; --far: #577277; --mid: #394a50; }
+/* 눈: 짙은 남색 겨울 밤하늘 */
+html[data-weather="snow"] {
+  --s-a: #172038; --s-b: #1f2b48; --s-c: #253a5e; --s-d: #31496f; --s-e: #3c5e8b; --s-f: #4f8fba; --s-g: #73bed3;
+  --far: #3c5e8b; --mid: #253a5e;
+  --cl-1: #73bed3; --cl-2: #4f8fba; --cl-3: #3c5e8b; --cloud-o: .9;
+  --orb: #e7d5b3; --orb-glow: rgba(231, 213, 179, .35); --stars: .6; --win: 1;
+  --sky-ink: #ebede9; --sky-shadow: #090a14; --sky-sub: #ebede9; --sky-label: #e8c170;
+  --hud: rgba(23, 32, 56, .95);
+  --d-ground: #172038; --d-card: #253a5e; --d-card-hi: #2f4870; --d-shadow: #090a14;
+  --d-text: #ebede9; --d-sub: #c7cfcc; --d-butter: #e8c170; --d-sky: #a4dddb; --d-rose: #a4dddb; --d-edge: #ebede9;
+}
+/* 계절 — 앞쪽 나무 색 (여름 기본) */
+:root { --leaf: #468232; --leaf-hi: #75a743; --trunk: #4d2b32; }
+html[data-season="spring"] { --leaf: #c65197; --leaf-hi: #df84a5; }
+html[data-season="autumn"] { --leaf: #be772b; --leaf-hi: #de9e41; --trunk: #4d2b32; }
+html[data-season="autumn"] .trees--base { background: linear-gradient(90deg, #a53030 0 18%, #be772b 18% 46%, #cf573c 46% 64%, #be772b 64% 82%, #a53030 82%); }
+html[data-season="winter"],
+html[data-weather="snow"] { --leaf: #a8b5b2; --leaf-hi: #ebede9; --trunk: #394a50; }
+html[data-time="night"] { --leaf: #25562e; --leaf-hi: #468232; }
+html[data-time="night"][data-season="autumn"] { --leaf-hi: #884b2b; }
+html[data-time="night"][data-season="autumn"] .trees--base { background: #602c2c; }
 
 .sky {
   position: relative; overflow: hidden; color: var(--sky-ink);
@@ -169,13 +193,31 @@ html[data-time="night"] {
 .stars i:nth-child(4n) { animation: d-tw 3.4s steps(2) infinite; }
 @keyframes d-tw { 50% { opacity: .1; } }
 
-/* 픽셀 구름 */
+/* 픽셀 뭉게구름 — 그림자 · 중간 · 하이라이트 3단 */
 .clouds { position: absolute; inset: 0; pointer-events: none; opacity: var(--cloud-o); }
-.cloud { position: absolute; display: block; background: var(--cloud); image-rendering: pixelated; animation: d-drift 160s linear infinite; }
-.cloud--a { left: 6%; top: 18%; width: 240px; height: 60px; -webkit-mask: url("../images/scene/cloud-a.svg") center / 100% 100%; mask: url("../images/scene/cloud-a.svg") center / 100% 100%; }
-.cloud--b { left: 46%; top: 9%; width: 150px; height: 42px; -webkit-mask: url("../images/scene/cloud-b.svg") center / 100% 100%; mask: url("../images/scene/cloud-b.svg") center / 100% 100%; animation-duration: 210s; }
-.cloud--c { left: 70%; top: 44%; width: 300px; height: 70px; -webkit-mask: url("../images/scene/cloud-c.svg") center / 100% 100%; mask: url("../images/scene/cloud-c.svg") center / 100% 100%; animation-duration: 190s; }
+.cloud { position: absolute; display: block; background: var(--cl-3); animation: d-drift 160s linear infinite;
+  -webkit-mask: var(--c) center / 100% 100% no-repeat; mask: var(--c) center / 100% 100% no-repeat; }
+.cloud i { position: absolute; inset: 0; -webkit-mask: var(--cm) center / 100% 100% no-repeat; mask: var(--cm) center / 100% 100% no-repeat; background: var(--cl-2); }
+.cloud i + i { -webkit-mask-image: var(--ch); mask-image: var(--ch); background: var(--cl-1); }
+.cloud--a { --c: url("../images/scene/cloud-a.svg"); --cm: url("../images/scene/cloud-a-mid.svg"); --ch: url("../images/scene/cloud-a-hi.svg"); left: 60%; top: 24%; width: 288px; height: 120px; }
+.cloud--b { --c: url("../images/scene/cloud-b.svg"); --cm: url("../images/scene/cloud-b-mid.svg"); --ch: url("../images/scene/cloud-b-hi.svg"); left: 82%; top: 4%; width: 176px; height: 80px; animation-duration: 210s; }
+.cloud--c { --c: url("../images/scene/cloud-c.svg"); --cm: url("../images/scene/cloud-c-mid.svg"); --ch: url("../images/scene/cloud-c-hi.svg"); left: 48%; top: 62%; width: 384px; height: 152px; animation-duration: 190s; }
+.cloud--d { --c: url("../images/scene/cloud-b.svg"); --cm: url("../images/scene/cloud-b-mid.svg"); --ch: url("../images/scene/cloud-b-hi.svg"); left: 4%; top: 72%; width: 132px; height: 60px; animation-duration: 240s; }
 @keyframes d-drift { from { transform: translateX(0); } 50% { transform: translateX(60px); } to { transform: translateX(0); } }
+
+/* 계절에 떨어지는 것: 가을 낙엽 · 봄 꽃잎 */
+.fall { position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0; }
+html[data-season="autumn"]:not([data-weather="rain"]):not([data-weather="storm"]):not([data-weather="snow"]) .fall {
+  opacity: 1; animation: d-fall 9s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' shape-rendering='crispEdges'%3E%3Cpath fill='%23cf573c' d='M20 20h3v2h-3zM21 22h2v1h-2z'/%3E%3Cpath fill='%23de9e41' d='M110 60h3v2h-3zM111 62h2v1h-2z'/%3E%3Cpath fill='%23be772b' d='M60 120h3v2h-3zM61 122h2v1h-2z'/%3E%3Cpath fill='%23a53030' d='M150 150h3v2h-3zM151 152h2v1h-2z'/%3E%3Cpath fill='%23de9e41' d='M140 10h2v2h-2z'/%3E%3C/svg%3E");
+  background-size: 270px 270px;
+}
+html[data-season="spring"]:not([data-weather="rain"]):not([data-weather="storm"]) .fall {
+  opacity: 1; animation: d-fall 12s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' shape-rendering='crispEdges'%3E%3Cg fill='%23df84a5'%3E%3Cpath d='M20 20h2v2h-2zM110 60h2v2h-2zM60 120h2v2h-2zM150 150h2v2h-2z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 270px 270px;
+}
+@keyframes d-fall { to { background-position: 90px 270px; } }
 
 /* 해 · 달 — 시각에 따라 하늘을 가로지른다 (--orb-x, --orb-y 는 time.js) */
 .orb {
@@ -190,32 +232,29 @@ html[data-time="night"] .orb {   /* 초승달: 원에서 한쪽을 파낸다 */
           mask: radial-gradient(circle at 72% 34%, transparent 0 38%, #000 39%);
 }
 
-/* 오늘 서울 날씨 (js/time.js 가 html[data-weather] 을 정한다) */
+/* 날씨 효과 */
 .weather { position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0; }
 html[data-weather="rain"] .weather,
-html[data-weather="storm"] .weather {
+html[data-weather="storm"] .weather {   /* 레퍼런스처럼 가는 흰 빗줄기 + 가로 결 */
   opacity: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' shape-rendering='crispEdges'%3E%3Cg fill='%23dbe9ff' fill-opacity='.75'%3E%3Crect x='4' y='2' width='2' height='8'/%3E%3Crect x='22' y='30' width='2' height='8'/%3E%3Crect x='40' y='12' width='2' height='8'/%3E%3Crect x='56' y='44' width='2' height='8'/%3E%3Crect x='14' y='50' width='2' height='8'/%3E%3Crect x='34' y='54' width='2' height='6'/%3E%3C/g%3E%3C/svg%3E");
-  animation: d-rain .5s steps(4) infinite;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' shape-rendering='crispEdges'%3E%3Cg fill='%23ebede9' fill-opacity='.7'%3E%3Crect x='8' y='4' width='1' height='18'/%3E%3Crect x='46' y='60' width='1' height='14'/%3E%3Crect x='80' y='22' width='1' height='20'/%3E%3Crect x='104' y='84' width='1' height='14'/%3E%3Crect x='26' y='92' width='1' height='16'/%3E%3C/g%3E%3C/svg%3E"),
+    repeating-linear-gradient(180deg, rgba(235, 237, 233, .05) 0 2px, transparent 2px 6px);
+  animation: d-rain .6s steps(4) infinite;
 }
 html[data-weather="snow"] .weather {
   opacity: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' shape-rendering='crispEdges'%3E%3Cg fill='%23ffffff'%3E%3Crect x='6' y='8' width='3' height='3'/%3E%3Crect x='40' y='30' width='3' height='3'/%3E%3Crect x='64' y='12' width='3' height='3'/%3E%3Crect x='22' y='58' width='3' height='3'/%3E%3Crect x='58' y='66' width='3' height='3'/%3E%3C/g%3E%3C/svg%3E");
-  animation: d-snow 4s linear infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' shape-rendering='crispEdges'%3E%3Cg fill='%23ebede9'%3E%3Crect x='6' y='8' width='2' height='2'/%3E%3Crect x='40' y='30' width='3' height='3'/%3E%3Crect x='70' y='12' width='2' height='2'/%3E%3Crect x='22' y='58' width='2' height='2'/%3E%3Crect x='62' y='70' width='3' height='3'/%3E%3Cpath d='M48 76h1v1h1v1h-1v1h-1v-1h-1v-1h1z'/%3E%3C/g%3E%3C/svg%3E");
+  animation: d-snow 5s linear infinite;
 }
-@keyframes d-rain { to { background-position: -16px 64px; } }
-@keyframes d-snow { to { background-position: 20px 80px; } }
-/* 비 · 눈 · 흐림: 하늘을 살짝 가라앉히고 구름을 짙게 */
-html[data-weather="rain"] .sky::after,
-html[data-weather="storm"] .sky::after,
-html[data-weather="cloudy"] .sky::after,
-html[data-weather="snow"] .sky::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: rgba(70, 80, 110, .22); }
-html[data-weather="cloudy"] .sky::after { background: rgba(120, 130, 150, .16); }
-html[data-weather="rain"] .clouds, html[data-weather="storm"] .clouds, html[data-weather="cloudy"] .clouds, html[data-weather="snow"] .clouds { opacity: 1; filter: saturate(.4) brightness(.92); }
-html[data-weather="rain"] .orb, html[data-weather="storm"] .orb, html[data-weather="cloudy"] .orb { opacity: .45; }
-/* 해 짱짱: 빛 번짐을 크게, 픽셀 햇살 */
-html[data-weather="clear"]:not([data-time="night"]) .orb-glow { width: clamp(300px, 34vw, 480px); background: radial-gradient(circle, var(--orb-glow) 0%, rgba(255, 246, 201, .25) 40%, transparent 68%); }
-html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; filter: drop-shadow(0 0 40px var(--orb-glow)) drop-shadow(0 0 80px var(--orb-glow)); }
+@keyframes d-rain { to { background-position: -10px 120px, 0 0; } }
+@keyframes d-snow { to { background-position: 20px 90px; } }
+html[data-weather="cloudy"] { --cloud-o: 1; }
+html[data-weather="cloudy"] .sky::after { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: rgba(129, 151, 150, .18); }
+html[data-weather="rain"] .orb, html[data-weather="storm"] .orb, html[data-weather="cloudy"] .orb { opacity: .4; }
+/* 해 짱짱 */
+html[data-weather="clear"]:not([data-time="night"]) .orb-glow { width: clamp(300px, 34vw, 480px); background: radial-gradient(circle, var(--orb-glow) 0%, rgba(255, 255, 255, .25) 40%, transparent 68%); }
+html[data-weather="clear"]:not([data-time="night"]) .orb { filter: drop-shadow(0 0 40px var(--orb-glow)) drop-shadow(0 0 80px var(--orb-glow)); }
 .clock__weather { color: var(--d-text); }
 .clock__weather:empty { display: none; }
 
@@ -223,10 +262,10 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .clock {
   position: absolute; z-index: 2; top: 20px; right: max(24px, calc((100% - 1180px) / 2 + 24px));
   display: flex; align-items: center; gap: 12px; margin: 0; padding: 8px 12px;
-  font: 600 15px/1 var(--d-sans); color: var(--d-text); background: rgba(22, 18, 60, .6);
+  font: 600 15px/1 var(--d-sans); color: var(--d-text); background: color-mix(in srgb, var(--d-ground) 80%, transparent);
   border: 2px solid var(--d-shadow); box-shadow: 3px 3px 0 var(--d-shadow);
 }
-.clock__time { font: 400 24px/1 var(--d-pix); letter-spacing: .04em; color: var(--d-butter); }
+.clock__time { font: 700 24px/1 var(--d-pix); letter-spacing: .04em; color: var(--d-butter); }
 .clock__label { color: var(--d-text); }
 .clock button {
   margin-left: 4px; padding: 6px 8px; font: 600 14px/1 var(--d-sans); cursor: pointer;
@@ -242,9 +281,16 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .layer--far  { --m: url("../images/scene/far.svg");  bottom: 44px; background: var(--far); }
 .layer--mid  { --m: url("../images/scene/mid.svg");  bottom: 20px; background: var(--mid); }
 .layer--near { --m: url("../images/scene/near.svg"); bottom: 0;    background: var(--d-ground); }
-.lights--far  { --m: url("../images/scene/far-win.svg");  bottom: 44px; background: #f6c3c6; opacity: calc(var(--win) * .6); }
-.lights--mid  { --m: url("../images/scene/mid-win.svg");  bottom: 20px; background: #e9b9c8; opacity: calc(var(--win) * .7); }
-.lights--near { --m: url("../images/scene/near-win.svg"); bottom: 0;    background: var(--d-butter); }
+.lights--far  { --m: url("../images/scene/far-win.svg");  bottom: 44px; background: #e7d5b3; opacity: calc(var(--win) * .6); }
+.lights--mid  { --m: url("../images/scene/mid-win.svg");  bottom: 20px; background: #e8c170; opacity: calc(var(--win) * .7); }
+.lights--near { --m: url("../images/scene/near-win.svg"); bottom: 0;    background: #e8c170; }
+.trees { position: absolute; left: 0; right: 0; bottom: 0; height: clamp(70px, 8vw, 104px); pointer-events: none;
+  -webkit-mask: var(--m) center bottom / auto 100% repeat-x; mask: var(--m) center bottom / auto 100% repeat-x; }
+.trees--base  { --m: url("../images/scene/trees.svg");    background: var(--leaf); }
+.trees--hi    { --m: url("../images/scene/trees-hi.svg"); background: var(--leaf-hi); }
+.trees--trunk { --m: url("../images/scene/trunks.svg");   background: var(--trunk); }
+.snowline { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: #ebede9; opacity: 0; }
+html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opacity: 1; }
 
 /* 픽셀 테두리 창 (대화창) */
 .pbox {
@@ -258,16 +304,10 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .home .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 .home section[id], .home main[id] { scroll-margin-top: 80px; }
 
-.title { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 40px; align-items: end; padding-top: 64px; }
+.title { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: end; padding-top: 64px; }
 .title .logo { margin: 0 0 18px; font: 600 16px/1.4 var(--d-sans); color: var(--sky-label); }
-.title h1 { margin: 0; font: 400 48px/1.3 var(--d-pix); letter-spacing: 0; max-width: none; text-wrap: balance; color: var(--sky-ink); text-shadow: 4px 4px 0 var(--sky-shadow); }
+.title h1 { margin: 0; font: 700 48px/1.35 var(--d-pix); letter-spacing: 0; max-width: 11em; text-wrap: balance; color: var(--sky-ink); text-shadow: 4px 4px 0 var(--sky-shadow); }
 .title .lead { margin: 22px 0 0; font-size: 18px; line-height: 1.8; color: var(--sky-sub); max-width: 46ch; text-wrap: pretty; }
-.status { padding: 20px 22px; font: 600 15px/2 var(--d-sans); }
-.status dl { margin: 0 0 6px; display: grid; grid-template-columns: auto 1fr; gap: 0 16px; }
-.status dt { color: var(--d-sky); }
-.status dd { margin: 0; text-align: right; }
-.meter { display: block; height: 10px; margin: 2px 0 8px; background: rgba(243, 227, 234, .18); }
-.meter b { display: block; height: 100%; width: var(--v); background: repeating-linear-gradient(90deg, var(--d-butter) 0 6px, transparent 6px 8px); }
 
 .select { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 48px; margin-top: 72px; align-items: start; }
 .menu { padding: 22px 20px 20px; }
@@ -282,27 +322,27 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .stage a:hover, .stage a.is-on { background: var(--d-card-hi); border-color: var(--d-butter); }
 .stage a:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--d-shadow); }
 .no { display: block; margin-bottom: 6px; font: 600 14px/1 var(--d-sans); color: var(--d-sky); }
-.stage h2 { margin: 0; font: 400 24px/1.3 var(--d-pix); color: var(--d-text); }
+.stage h2 { margin: 0; font: 700 24px/1.3 var(--d-pix); color: var(--d-text); }
 .stage p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; color: var(--d-sub); }
 .go { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; font: 600 14px/1 var(--d-sans); color: var(--d-shadow); background: var(--d-butter); border: 2px solid var(--d-shadow); white-space: nowrap; }
 .all { display: flex; justify-content: center; margin-top: 18px; }
 
-.monitor { position: sticky; top: 100px; margin: 0; padding: 16px 16px 12px; background: linear-gradient(180deg, #f7eeee, #dccdd6); border-radius: 18px 18px 10px 10px; box-shadow: 0 0 0 2px var(--d-shadow), 10px 10px 0 rgba(16, 23, 30, .4); }
-.screen { position: relative; overflow: hidden; border-radius: 8px; background: #3b3480; border: 2px solid var(--d-shadow); aspect-ratio: 5 / 4; }
+.monitor { position: sticky; top: 100px; margin: 0; padding: 16px 16px 12px; background: linear-gradient(180deg, #ebede9, #c7cfcc); border-radius: 18px 18px 10px 10px; box-shadow: 0 0 0 2px var(--d-shadow), 10px 10px 0 rgba(16, 23, 30, .4); }
+.screen { position: relative; overflow: hidden; border-radius: 8px; background: var(--d-card); border: 2px solid var(--d-shadow); aspect-ratio: 5 / 4; }
 .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity .2s steps(3); }
 .screen img.is-on { opacity: 1; }
 .screen img[data-k="home"] { object-fit: cover; image-rendering: pixelated; }
 .screen::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .07) 0 1px, transparent 1px 3px); }
-.monitor figcaption { display: flex; justify-content: space-between; margin-top: 10px; font: 600 14px/1 var(--d-sans); color: #4f5866; }
+.monitor figcaption { display: flex; justify-content: space-between; margin-top: 10px; font: 600 14px/1 var(--d-sans); color: #394a50; }
 .led { display: inline-flex; align-items: center; gap: 6px; }
-.led::before { content: ""; width: 8px; height: 8px; background: #6fbf8a; }
+.led::before { content: ""; width: 8px; height: 8px; background: #75a743; }
 
 /* 지평선 아래 */
 .ground { background: var(--d-ground); color: var(--d-text); padding: 40px 0 96px; }
 .ground + .ground { padding-top: 0; }
 .sec-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 28px; }
 .sec-head .tag { font: 600 15px/1 var(--d-sans); color: var(--d-butter); }
-.sec-head h2 { margin: 8px 0 0; font: 400 32px/1.3 var(--d-pix); color: var(--d-text); }
+.sec-head h2 { margin: 8px 0 0; font: 700 36px/1.3 var(--d-pix); color: var(--d-text); }
 .sec-head p { margin: 10px 0 0; color: var(--d-sub); font-size: 16.5px; }
 
 .list { display: flex; flex-direction: column; gap: 18px; list-style: none; margin: 0; padding: 0; }
@@ -313,11 +353,11 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .row:hover { border-color: var(--d-butter); background: var(--d-card-hi); }
 .row:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--d-shadow); }
 .row:has(a:focus-visible) { outline: 2px dashed var(--d-butter); outline-offset: 4px; }
-.thumb { position: relative; margin: 0; background: #f7eeee; border: 2px solid var(--d-shadow); aspect-ratio: 16 / 10; overflow: hidden; }
+.thumb { position: relative; margin: 0; background: #ebede9; border: 2px solid var(--d-shadow); aspect-ratio: 16 / 10; overflow: hidden; }
 .thumb img { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: contain; object-position: center; }   /* 비율이 달라도 사진 전체가 보인다 */
 .row .body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .row .no { margin: 0; }
-.row h3 { margin: 0; font: 400 24px/1.3 var(--d-pix); color: var(--d-text); }
+.row h3 { margin: 0; font: 700 24px/1.3 var(--d-pix); color: var(--d-text); }
 .row h3 a { color: inherit; text-decoration: none; }
 .row h3 a::after { content: ""; position: absolute; inset: 0; }   /* 줄 전체가 눌린다 */
 .row p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--d-sub); }
@@ -329,10 +369,10 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 
 /* 소개: 캐릭터 정보 */
 .profile { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start; }
-.portrait { margin: 0; padding: 10px; background: #f7eeee; box-shadow: 0 0 0 2px var(--d-shadow), 8px 8px 0 2px var(--d-shadow); }
+.portrait { margin: 0; padding: 10px; background: #ebede9; box-shadow: 0 0 0 2px var(--d-shadow), 8px 8px 0 2px var(--d-shadow); }
 .portrait img { display: block; width: 100%; height: auto; }
 .portrait figcaption { margin-top: 10px; text-align: center; font: 600 15px/1 var(--d-sans); color: var(--d-ink); }
-.bio h3 { margin: 0; font: 400 32px/1.3 var(--d-pix); color: var(--d-text); }
+.bio h3 { margin: 0; font: 700 36px/1.3 var(--d-pix); color: var(--d-text); }
 .bio .role { margin: 8px 0 0; font: 600 16px/1 var(--d-sans); color: var(--d-butter); }
 .bio .say { margin: 22px 0 0; font: 700 21px/1.5 var(--d-sans); color: var(--d-text); }
 .bio > p:not([class]) { margin: 12px 0 0; font-size: 16.5px; line-height: 1.8; color: var(--d-sub); max-width: 58ch; }
@@ -358,7 +398,7 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .quest .state { display: inline-block; margin-top: 8px; padding: 4px 8px; font: 600 14px/1 var(--d-sans); color: var(--d-shadow); background: var(--d-butter); }
 .quest .state--done { background: var(--d-sky); }
 .quest .state--award { background: var(--d-rose); }
-.quest h3 { margin: 0; font: 400 24px/1.3 var(--d-pix); color: var(--d-text); }
+.quest h3 { margin: 0; font: 700 24px/1.3 var(--d-pix); color: var(--d-text); }
 .quest p { margin: 6px 0 0; font-size: 15.5px; line-height: 1.6; color: var(--d-sub); }
 .quest ul { margin: 8px 0 0; padding-left: 18px; color: var(--d-sub); font-size: 15px; line-height: 1.7; }
 .salary { margin: 20px 0 0; font-size: 15.5px; color: var(--d-sub); }
@@ -366,7 +406,7 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 
 /* 연락 */
 .contact { text-align: center; }
-.contact h2 { margin: 0; font: 400 48px/1.2 var(--d-pix); color: var(--d-text); }
+.contact h2 { margin: 0; font: 700 48px/1.2 var(--d-pix); color: var(--d-text); }
 .contact > p { margin: 12px 0 0; color: var(--d-sub); font-size: 16.5px; }
 .contact .btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 28px; }
 .home .site-footer, .dusk .site-footer { background: var(--d-shadow); color: #d9cfe4; border-top: 0; }
@@ -411,20 +451,20 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 }
 .dusk .ph__kicker[data-no]::before,
 .dusk main[data-accent] .ph__kicker[data-no]::before { content: "stage " attr(data-no); color: var(--d-shadow); background: none; padding: 0; font: inherit; }
-.dusk .ph h1 { margin-top: 20px; font: 400 48px/1.25 var(--d-pix); letter-spacing: 0; color: var(--d-ink); }
-.dusk .ph__lead { color: var(--d-ink-sub); }
+.dusk .ph h1 { margin-top: 20px; font: 700 48px/1.25 var(--d-pix); letter-spacing: 0; color: var(--d-text); }
+.dusk .ph__lead { color: var(--d-sub); }
 .dusk .ph__meta,
 .dusk main[data-accent] .ph__meta {
-  padding: 18px 20px; background: #fffaf5; border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 5px 5px 0 var(--d-shadow);
+  padding: 18px 20px; background: var(--d-card); border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 5px 5px 0 var(--d-shadow);
 }
 .dusk .ph__meta dt { font: 600 14px/1.4 var(--d-sans); letter-spacing: 0; text-transform: none; color: var(--d-plum); }
-.dusk .ph__meta dd { color: var(--d-ink); }
+.dusk .ph__meta dd { color: var(--d-text); }
 
 /* 사이드: 대화창 */
 .dusk .side__cta { gap: 12px; }
 .dusk .side__box,
 .dusk main[data-accent] .side__box {
-  padding: 16px 18px; margin-bottom: var(--s-5); background: #fffaf5;
+  padding: 16px 18px; margin-bottom: var(--s-5); background: var(--d-card);
   border: 2px solid var(--d-shadow); box-shadow: 4px 4px 0 var(--d-shadow);
 }
 .dusk .side__box h2 { font: 600 15px/1.4 var(--d-sans); letter-spacing: 0; color: var(--d-plum); }
@@ -432,42 +472,42 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .dusk .side__title { font: 600 15px/1.4 var(--d-sans); letter-spacing: 0; text-transform: none; color: var(--d-plum); }
 .dusk .toc { border-left: 2px solid var(--d-shadow); }
 .dusk .toc a[aria-current="true"],
-.dusk main[data-accent] .toc a[aria-current="true"] { color: var(--d-ink); background: var(--d-butter); border-left-color: var(--d-shadow); }
+.dusk main[data-accent] .toc a[aria-current="true"] { color: #172038; background: var(--d-butter); border-left-color: var(--d-shadow); }
 .dusk .side__facts dt { font: 600 14px/1.4 var(--d-sans); color: var(--d-plum); }
-.dusk .toc-mobile { border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); background: #fffaf5; }
+.dusk .toc-mobile { border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); background: var(--d-card); }
 .dusk .toc-mobile > summary { font-weight: 700; }
 
 /* 본문 */
-.dusk .cs-section > h2 { font: 400 32px/1.35 var(--d-pix); color: var(--d-ink); }
+.dusk .cs-section > h2 { font: 700 36px/1.35 var(--d-pix); color: var(--d-text); }
 .dusk main[data-accent] .cs-section > h2::before,
 .dusk .cs-section > h2::before {
   display: inline-block; padding: 5px 8px; margin-right: 12px; vertical-align: .3em;
   font: 600 14px/1 var(--d-sans); color: var(--d-text); background: var(--d-ground);
 }
 .dusk .cs-section > h3 { font-weight: 800; }
-.dusk .prose a, .dusk main[data-accent] .prose a { color: var(--d-plum); }
+.dusk .prose a, .dusk main[data-accent] .prose a { color: var(--d-sky); }
 .dusk .lead-note,
-.dusk main[data-accent] .lead-note { background: #fffaf5; border: 2px solid var(--d-shadow); border-left: 8px solid var(--d-dusk); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); }
-.dusk .note { background: #fffaf5; border: 2px dashed rgba(42, 34, 64, .4); border-radius: 0; }
+.dusk main[data-accent] .lead-note { background: var(--d-card); border: 2px solid var(--d-shadow); border-left: 8px solid var(--acc, #a23e8c); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); }
+.dusk .note { background: var(--d-card); color: var(--d-sub); border: 2px dashed rgba(235, 237, 233, .3); border-radius: 0; }
 
 /* 이미지: 모니터 액자 */
 .dusk .shot-frame,
 .dusk main[data-accent] .shot-frame {
-  padding: 14px; background: linear-gradient(180deg, #f3ecf1, #d4c9dc);
+  padding: 14px; background: linear-gradient(180deg, #ebede9, #c7cfcc);
   border: 2px solid var(--d-shadow); border-radius: 14px 14px 8px 8px; box-shadow: 6px 6px 0 var(--d-shadow);
 }
 .dusk .shot-frame img { border: 2px solid var(--d-shadow); border-radius: 4px; }
 .dusk .prose figure img { border: 2px solid var(--d-shadow); border-radius: 0; }
-.dusk figcaption { font-size: 15px; color: var(--d-ink-sub); }
-.dusk main[data-accent] figcaption::before { background: var(--d-dusk); }
+.dusk figcaption { font-size: 15px; color: var(--d-sub); }
+.dusk main[data-accent] figcaption::before { background: var(--acc); }
 .dusk .zoom-btn { font-family: var(--d-sans); font-weight: 600; border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 3px 3px 0 var(--d-shadow); background: var(--d-butter); }
 .dusk .zoom-btn:hover { box-shadow: 4px 4px 0 var(--d-shadow); border-color: var(--d-shadow); }
 .dusk .zoom-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--d-shadow); }
 
 /* 이전 · 다음 */
-.dusk .pager { border-top: 2px dashed rgba(42, 34, 64, .35); }
-.dusk .pager a { background: #fffaf5; border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); }
-.dusk .pager a:hover { background: var(--d-butter); border-color: var(--d-shadow); }
+.dusk .pager { border-top: 2px dashed rgba(23, 32, 56, .35); }
+.dusk .pager a { background: var(--d-card); border: 2px solid var(--d-shadow); border-radius: 0; box-shadow: 4px 4px 0 var(--d-shadow); }
+.dusk .pager a:hover { background: var(--d-card-hi); border-color: var(--d-butter); }
 .dusk .pager a:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--d-shadow); }
 .dusk .pager small { font: 600 14px/1.4 var(--d-sans); letter-spacing: 0; text-transform: none; color: var(--d-plum); }
 .dusk .pager b { font-weight: 700; }
@@ -480,10 +520,10 @@ html[data-weather="clear"]:not([data-time="night"]) .orb { box-shadow: none; fil
 .dusk .cta::after {   /* 픽셀 도시 */
   content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 160px;
   background: var(--d-ground);
-  -webkit-mask: url("../images/scene/near-mask.svg") center bottom / cover no-repeat;
-          mask: url("../images/scene/near-mask.svg") center bottom / cover no-repeat;
+  -webkit-mask: url("../images/scene/near.svg") center bottom / cover no-repeat;
+          mask: url("../images/scene/near.svg") center bottom / cover no-repeat;
 }
-.dusk .cta h2 { font: 400 32px/1.3 var(--d-pix); color: var(--sky-ink); text-shadow: 3px 3px 0 var(--sky-shadow); }
+.dusk .cta h2 { font: 700 36px/1.3 var(--d-pix); color: var(--sky-ink); text-shadow: 3px 3px 0 var(--sky-shadow); }
 .dusk .cta p { color: var(--sky-sub); }
 .dusk .cta__actions { justify-content: center; gap: 14px; }
 .dusk .site-footer { background: var(--d-ground); }
@@ -499,3 +539,49 @@ html[data-time="morning"] .title h1,
 html[data-time="afternoon"] .title h1,
 html[data-time="morning"] .dusk .cta h2,
 html[data-time="afternoon"] .dusk .cta h2 { text-shadow: none; }
+
+/* ==========================================================================
+   상세 페이지 머리: 메인과 같은 시간대 · 날씨 하늘 띠
+   ========================================================================== */
+.sky--page { height: clamp(200px, 22vw, 300px); }
+.sky--page .skyline { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; height: 100%; }
+.sky--page .layer, .sky--page .lights { height: clamp(130px, 15vw, 200px); }
+.sky--page .trees { height: clamp(56px, 6vw, 80px); }
+.sky--page .cloud--c { top: 26%; }
+.dusk main:has(.sky--page) .layout { position: relative; }
+.dusk .sky--page + .wrap { padding-top: 8px; }
+
+/* 프로젝트 색 — Apollo 안에서 프로젝트마다 하나씩 (선 · 라벨 · 작은 면) */
+.dusk [data-accent="coral"]  { --acc: #cf573c; --acc-ink: #a53030; --acc-soft: #f4e3dc; }
+.dusk [data-accent="violet"] { --acc: #a23e8c; --acc-ink: #7a367b; --acc-soft: #f1e2ec; }
+.dusk [data-accent="cobalt"] { --acc: #4f8fba; --acc-ink: #253a5e; --acc-soft: #e1edf3; }
+.dusk [data-accent="yellow"] { --acc: #de9e41; --acc-ink: #884b2b; --acc-soft: #f4ead6; }
+.dusk [data-accent="peri"]   { --acc: #73bed3; --acc-ink: #253a5e; --acc-soft: #e2f1f2; }
+.dusk [data-accent="cyan"]   { --acc: #4f8fba; --acc-ink: #253a5e; --acc-soft: #e1edf3; }
+.dusk [data-accent="mint"]   { --acc: #75a743; --acc-ink: #25562e; --acc-soft: #e6eedb; }
+.dusk .pager a::before { color: var(--d-plum); }
+.dusk main[data-accent] .ph__meta { border-color: var(--d-shadow); }
+.dusk main[data-accent] .side__box li::before { background: var(--acc); }
+.dusk main[data-accent] .cs-section > h2::before { background: var(--d-butter); color: #172038; }
+.dusk main[data-accent] .shot-frame { background: linear-gradient(180deg, #ebede9, #c7cfcc); }
+.dusk .breadcrumb [aria-current], .dusk main[data-accent] .breadcrumb [aria-current] { color: var(--d-butter); }
+.dusk .ph__meta dt, .dusk .side__box h2, .dusk .side__title, .dusk .side__facts dt, .dusk .pager small { color: var(--d-sky); }
+.dusk .side__box, .dusk main[data-accent] .side__box { border-color: var(--d-shadow); box-shadow: 4px 4px 0 var(--d-shadow); }
+
+/* 상세: 지면 위 글 · 표 · 사이드 */
+.dusk .prose, .dusk .prose p, .dusk .prose li { color: var(--d-sub); }
+.dusk .prose strong, .dusk .prose b { color: var(--d-text); }
+.dusk .toc { border-left-color: rgba(235, 237, 233, .3); }
+.dusk .toc a { color: var(--d-sub); }
+.dusk .toc a:hover { color: var(--d-text); }
+.dusk .side__box li, .dusk .side__facts dd { color: var(--d-text); }
+.dusk .breadcrumb a { color: var(--d-sub); }
+.dusk .side { scrollbar-width: none; }
+.dusk .side::-webkit-scrollbar { display: none; }
+.dusk .lead-note, .dusk main[data-accent] .lead-note { background: var(--d-card); color: var(--d-sub); }
+.dusk .lead-note strong { color: var(--d-text); }
+.dusk .pager { border-top-color: rgba(235, 237, 233, .25); }
+.dusk .pager a { color: var(--d-text); }
+.dusk .cs-section > h3 { color: var(--d-text); }
+.dusk .prose table th, .dusk .prose table td { border-color: rgba(235, 237, 233, .2); color: var(--d-sub); }
+.dusk .side__box, .dusk main[data-accent] .side__box, .dusk .ph__meta, .dusk main[data-accent] .ph__meta { background: var(--d-card); }

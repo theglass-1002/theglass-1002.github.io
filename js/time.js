@@ -2,6 +2,7 @@
    시간대별 하늘 — <head> 에서 바로 실행해 첫 화면부터 맞는 하늘로 그린다.
    morning 06–11 · afternoon 11–17 · sunset 17–20 · night 20–06 (보는 사람의 현지 시각)
    ?time=morning|afternoon|sunset|night 로 고정해서 볼 수 있다.
+   계절: 월 기준 data-season (나무 색 · 낙엽 · 꽃잎).
    날씨: 오늘 서울 현재 날씨(Open-Meteo, 키 없음)를 30분 캐시. ?weather=clear|cloudy|rain|snow|storm 로 고정.
    ========================================================================== */
 (function () {
@@ -26,13 +27,22 @@
   var shown = forced || phase(hoursNow());
   root.setAttribute('data-time', shown);
 
+  /* 계절: 봄 3–5월 · 여름 6–8월 · 가을 9–11월 · 겨울 12–2월 (?season= 으로 고정) */
+  var SEASONS = ['spring', 'summer', 'autumn', 'winter'];
+  var season = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'autumn', 'autumn', 'autumn', 'winter'][new Date().getMonth()];
+  try {
+    var qs = new URLSearchParams(location.search).get('season');
+    if (SEASONS.indexOf(qs) > -1) season = qs;
+  } catch (e) { /* 무시 */ }
+  root.setAttribute('data-season', season);
+
   /* 해는 06–20시, 달은 20–06시 동안 떠서 진다.
-     제목과 상태창 사이 빈 하늘(가로 47–69%, 세로 위쪽)만 지나가서 글과 패널을 가리지 않는다 */
+     제목과 상태창 사이 빈 하늘(가로 62–88%, 제목 오른쪽, 세로 위쪽)만 지나가서 글과 패널을 가리지 않는다 */
   function place(h) {
     var day = h >= 6 && h < 20;
     var t = day ? (h - 6) / 14 : ((h - 20 + 24) % 24) / 10;
-    root.style.setProperty('--orb-x', (47 + 22 * t).toFixed(1) + '%');
-    root.style.setProperty('--orb-y', (30 - 20 * Math.sin(Math.PI * t)).toFixed(1) + '%');
+    root.style.setProperty('--orb-x', (62 + 26 * t).toFixed(1) + '%');
+    root.style.setProperty('--orb-y', (30 - 16 * Math.sin(Math.PI * t)).toFixed(1) + '%');
   }
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }

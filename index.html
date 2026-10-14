@@ -20,11 +20,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.39.6/dist/galmuri.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/style.css?v=20260924">
-  <link rel="stylesheet" href="css/dusk.css?v=20261014d">
-  <script src="js/time.js?v=20261014d"></script>
+  <link rel="stylesheet" href="css/dusk.css?v=20261014h">
+  <script src="js/time.js?v=20261014f"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
 </head>
@@ -58,7 +58,8 @@
     <div class="weather" aria-hidden="true"></div>
     <div class="orb-glow" aria-hidden="true"></div>
     <div class="orb" aria-hidden="true"></div>
-    <div class="clouds" aria-hidden="true"><span class="cloud cloud--a"></span><span class="cloud cloud--b"></span><span class="cloud cloud--c"></span></div>
+    <div class="clouds" aria-hidden="true"><span class="cloud cloud--a"><i></i><i></i></span><span class="cloud cloud--b"><i></i><i></i></span><span class="cloud cloud--c"><i></i><i></i></span><span class="cloud cloud--d"><i></i><i></i></span></div>
+    <div class="fall" aria-hidden="true"></div>
     <p class="clock"><span class="clock__time" data-clock-time>--:--</span><span class="clock__label" data-clock-label aria-live="polite">sunset</span><span class="clock__weather" aria-hidden="false"><span aria-hidden="true">seoul · </span><span data-clock-weather></span></span><button type="button" data-time-cycle data-en="Change sky">하늘 바꾸기</button></p>
     <div class="stars" aria-hidden="true"><i style="left:6%;top:12%"></i><i style="left:14%;top:30%"></i><i style="left:22%;top:8%"></i><i style="left:31%;top:22%"></i><i style="left:40%;top:6%"></i><i style="left:47%;top:34%"></i><i style="left:55%;top:14%"></i><i style="left:63%;top:28%"></i><i style="left:70%;top:9%"></i><i style="left:77%;top:20%"></i><i style="left:84%;top:5%"></i><i style="left:91%;top:26%"></i></div>
     <div class="wrap">
@@ -67,11 +68,6 @@
           <p class="logo">frontend developer · portfolio 2026</p>
           <h1 id="t" data-en="Turning complex features into easy screens">복잡한 기능을 쓰이기 쉬운 화면으로</h1>
           <p class="lead" data-en="I&#x27;m Yuri Jung, a frontend developer who has built products for AI services, real-time monitoring, and accessibility.">AI 서비스와 실시간 모니터링, 접근성이 중요한 제품을 개발해 온 프론트엔드 개발자 정유리입니다.</p>
-        </div>
-        <div class="pbox status" aria-label="정유리 요약">
-          <dl><dt>class</dt><dd>frontend</dd><dt>exp</dt><dd>3 yrs+</dd><dt>base</dt><dd>seoul</dd></dl>
-          <span data-en="Web accessibility">웹 접근성</span><span class="meter"><b style="--v:92%"></b></span>
-          <span data-en="AI · real-time UI">AI · 실시간 화면</span><span class="meter"><b style="--v:84%"></b></span>
         </div>
       </section>
 
@@ -102,6 +98,7 @@
       <span class="layer layer--far"></span><span class="lights lights--far"></span>
       <span class="layer layer--mid"></span><span class="lights lights--mid"></span>
       <span class="layer layer--near"></span><span class="lights lights--near"></span>
+      <span class="trees trees--base"></span><span class="trees trees--hi"></span><span class="trees trees--trunk"></span><span class="snowline"></span>
     </div>
   </div>
 
@@ -146,7 +143,7 @@
         </ol>
 
         <div class="bonus">
-          <div class="sec-head"><div><span class="tag">bonus stages</span><h2 data-en="Early work">초기 작업</h2></div></div>
+          <div class="sec-head"><div><span class="tag">side quests</span><h2 data-en="Personal projects">개인 작업물</h2></div></div>
           <ul class="list">
         <li class="row">
           <div class="thumb"><img src="images/projects/newo/newo-landing.webp" alt="뉴오 랜딩 페이지" data-en-alt="NEW:O landing page" loading="lazy"></div>
