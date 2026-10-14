@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015k">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015l">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -164,11 +164,16 @@
             <p>
               구직자는 이력서 작성과 모의면접 후 맞는 공고를 추천받고, 기업은 그 결과를 보고 지원자 선별. 같은 이력서와 면접 리포트를 두 화면에서 다르게 배치하는 작업이 핵심
             </p>
-            <figure class="fig-diagram-img">
-              <img src="../images/projects/jobkok/jobkok-ia.webp" width="1490" height="760"
-                   alt="잡콕 기획서 메뉴 구조도. 메인, 로그인/회원가입, 채용공고, MY이력서, 모의면접, 공고등록 6개 메뉴와 하위 화면"
-                   loading="lazy" decoding="async">
-              <figcaption>기획서 메뉴 구조(IA). 채용공고·이력서·모의면접·공고등록 중심 화면 구성</figcaption>
+                        <figure class="sitemap" aria-label="잡콕 메뉴 구조">
+              <div class="sitemap__cols">
+                <div class="sitemap__col"><p class="sitemap__head">메인</p><ul><li>검색</li><li>직군 선택</li><li>로그인 · 회원가입</li><li>주요 기능 소개</li></ul></div>
+                <div class="sitemap__col"><p class="sitemap__head">로그인 · 회원가입</p><ul><li>이메일 로그인</li><li>소셜 로그인 (카카오 · 네이버 · 구글)</li><li>비밀번호 찾기 · 재설정</li><li>이메일 · 소셜 가입</li></ul></div>
+                <div class="sitemap__col"><p class="sitemap__head">채용공고</p><ul><li>직군 리스트</li><li>키워드 · 지역 · 직무 필터</li><li>정렬 (최신 · 마감 · 추천)</li><li>공고 검색</li><li class="is-ai">이력서 기반 추천</li><li>공고 상세</li></ul></div>
+                <div class="sitemap__col"><p class="sitemap__head">MY 이력서</p><ul><li>이력서 리스트 · 등록</li><li class="is-ai">AI 작성 지원 (키워드 · 문장 추천)</li><li>이력서 상세</li><li>수정 · 삭제</li></ul></div>
+                <div class="sitemap__col"><p class="sitemap__head">모의면접</p><ul><li class="is-ai">AI 모의면접 시작</li><li>결과 리포트 리스트</li><li class="is-ai">리포트 상세 (종합 · 상세 · 이력서 분석)</li></ul></div>
+                <div class="sitemap__col"><p class="sitemap__head">공고등록 (기업)</p><ul><li>공고 URL 입력</li></ul></div>
+              </div>
+              <figcaption>메뉴 구조. 강조 항목은 AI 기능</figcaption>
             </figure>
           </section>
 
@@ -341,7 +346,7 @@
 
 
   <script src="../locales/common.en.js?v=20261015q" defer></script>
-  <script src="../locales/jobkok.en.js?v=20261015q" defer></script>
+  <script src="../locales/jobkok.en.js?v=20261015r" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

@@ -897,3 +897,37 @@ body.dusk:not(.home) .prose figure.fig-wide img,
 body.dusk:not(.home) .prose .split > figure img,
 body.dusk:not(.home) .prose figure.fig-diagram-img img { width: 100%; max-height: none; }
 body.dusk:not(.home) .prose .shots-row figure img { width: auto; max-height: 440px; }
+
+/* ==========================================================================
+   HTML 도식 — 기획서 캡처 대신 사이트 디자인으로 다시 그린 구조도 · 흐름
+   ========================================================================== */
+body.dusk:not(.home) .sitemap, body.dusk:not(.home) .lanes, body.dusk:not(.home) .flowsteps { margin: var(--s-5) 0 var(--s-7); padding: 0; background: none; border: 0; box-shadow: none; display: block; }
+.sitemap__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.sitemap__head, .lanes__head { margin: 0 0 10px; padding: 10px 12px; font: 700 15px/1.3 var(--d-sans); color: var(--pg); background: var(--pg-ink); }
+.sitemap ul, .lanes ol { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.sitemap li { padding: 9px 12px; font-size: 14px; line-height: 1.45; color: var(--pg-ink); background: var(--pg-card); border: 2px solid color-mix(in srgb, var(--pg-ink) 22%, transparent); }
+.sitemap li.is-ai { border-color: var(--pg-ink); background: color-mix(in srgb, var(--d-butter) 55%, var(--pg-card)); font-weight: 700; }
+
+.lanes__cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.lanes__col { padding: 12px; background: var(--pg-card); border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line); }
+.lanes__col--1 .lanes__head { background: #be772b; color: #ffffff; }
+.lanes__col--2 .lanes__head { background: #3c5e8b; color: #ffffff; }
+.lanes__col--3 .lanes__head { background: #468232; color: #ffffff; }
+.lanes ol { counter-reset: st; }
+.lanes li { position: relative; padding: 10px 12px 10px 40px; font-size: 15px; font-weight: 600; color: var(--pg-ink); background: color-mix(in srgb, var(--pg-ink) 5%, var(--pg-card)); counter-increment: st; }
+.lanes li::before { content: counter(st); position: absolute; left: 10px; top: 10px; width: 20px; height: 20px; display: grid; place-items: center; font: 700 12px/1 var(--d-sans); color: var(--pg); background: var(--pg-ink); }
+.lanes li + li::after { content: ""; position: absolute; left: 19px; top: -8px; width: 2px; height: 8px; background: var(--pg-ink); }
+.lanes li small { display: block; margin-top: 3px; font-size: 13px; font-weight: 500; color: var(--pg-sub); }
+
+.flowsteps ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: fs; }
+.flowsteps li { position: relative; padding: 16px 18px 16px; background: var(--pg-card); border: 2px solid var(--pg-line); margin-right: -2px; counter-increment: fs; }
+.flowsteps li::before { content: "0" counter(fs); display: block; margin-bottom: 8px; font: 400 22px/1 var(--d-pix); color: var(--pg-label); }
+.flowsteps li:nth-child(3) { background: color-mix(in srgb, #cf573c 10%, var(--pg-card)); }
+.flowsteps li:nth-child(4) { background: color-mix(in srgb, #75a743 14%, var(--pg-card)); }
+.flowsteps b { display: block; font-size: 16px; color: var(--pg-ink); }
+.flowsteps span { display: block; margin-top: 6px; font-size: 14px; line-height: 1.55; color: var(--pg-sub); }
+.sitemap figcaption, .lanes figcaption, .flowsteps figcaption { margin-top: 14px; text-align: left; }
+@media (max-width: 760px) {
+  .lanes__cols, .flowsteps ol { grid-template-columns: 1fr; }
+  .flowsteps li { margin: 0 0 -2px; }
+}
