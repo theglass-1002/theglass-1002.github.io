@@ -41,7 +41,7 @@ window.I18N_COMMON = {
   "실제 사이트 보기": "Visit the live site",
   "2025.09 – 2026.04 (8개월)": "Sep 2025 – Apr 2026 (8 months)",
   "정유리 — Frontend Developer": "Yuri Jung — Frontend Developer",
-  "정유리 프론트엔드 개발자 포트폴리오. 잡콕, 장고, 면접왕, 문해력 탐험대, 젠트리 등 AI 채용·교육 서비스와 반려동물 헬스케어 플랫폼의 화면을 만들었습니다.": "Portfolio of Yuri Jung, a frontend developer. I have built screens for AI recruiting and education services such as Jobkok, Jango, Interview King, and Literacy Expedition, and for Zentry, a pet healthcare platform.",
+  "정유리 프론트엔드 개발자 포트폴리오. 잡콕, 장고, 면접왕, 문해력 탐험대, 젠트리 등 AI 채용·교육 서비스와 반려동물 헬스케어 플랫폼 화면 개발.": "Portfolio of Yuri Jung, a frontend developer. I have built screens for AI recruiting and education services such as Jobkok, Jango, Interview King, and Literacy Expedition, and for Zentry, a pet healthcare platform.",
   "정유리 — Frontend Developer 포트폴리오": "Yuri Jung — Frontend Developer Portfolio",
   "프로젝트 소개": "Overview",
   "맡은 일": "My role",
@@ -50,5 +50,5 @@ window.I18N_COMMON = {
   "주요 작업": "Key tasks",
   "돌아보며": "Looking back",
   "제가 맡았던 일이나 구현 과정이 더 궁금하다면 편하게 연락해 주세요.": "If you'd like to hear more about what I worked on or how I built it, feel free to reach out.",
-  "AI 서비스와 헬스케어 기기 화면을 만드는 프론트엔드 개발자입니다. 기획 단계부터 참여해 실제로 쓰이는 화면을 만듭니다.": "I'm a frontend developer who builds screens for AI services and healthcare devices. I join from the planning stage and build screens that are actually used."
+  "AI 서비스 · 헬스케어 기기 화면을 만드는 프론트엔드 개발자. 기획 단계부터 참여해 실제로 쓰이는 화면 구현": "I'm a frontend developer who builds screens for AI services and healthcare devices. I join from the planning stage and build screens that are actually used."
 };
