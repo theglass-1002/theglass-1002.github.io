@@ -812,3 +812,9 @@ body.dusk:not(.home) .prose table th, body.dusk:not(.home) .prose table td { col
 .prose .fig-portrait:not(.fig-longshot) img { width: 100%; height: auto; }
 .prose .fig-portrait figcaption { text-align: center; }
 .story > figure img[width="750"] { max-width: 260px; }
+
+/* 글 + 세로 사진 묶음: 글을 사진 높이 가운데로, 왼쪽 색 띠로 묶음 표시 */
+.dusk .story { align-items: center; gap: clamp(28px, 4vw, 56px); }
+.dusk .story__text { padding: 4px 0 4px 20px; border-left: 4px solid var(--acc, var(--pg-label)); }
+.dusk .story__text p { font-size: 17.5px; line-height: 1.85; }
+.dusk .story > figure img[width="750"], .dusk .story > figure .shot--phone img { max-width: 260px; }
