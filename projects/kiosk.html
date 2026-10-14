@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -125,11 +125,11 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#roles">제가 맡은 일</a></li>
             <li><a href="#customer">고객 주문 흐름</a></li>
             <li><a href="#operator">기기 · 운영자 흐름</a></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -147,11 +147,11 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#roles">제가 맡은 일</a></li>
               <li><a href="#customer">고객 주문 흐름</a></li>
               <li><a href="#operator">기기 · 운영자 흐름</a></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
@@ -165,6 +165,19 @@
             </video>
             <figcaption>주문 흐름 영상. ‘듣고 있어요’ 상태를 맨 위에 고정, 그 아래 손으로 고를 수 있는 메뉴 배치</figcaption>
           </figure>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              손님이 말한 주문을 알아듣는 일은 <strong>Gemini API</strong>가 담당. 화면 쪽은 지금 듣는 중인지, 제대로 알아들었는지 보여주고, 메뉴 담기부터 결제까지 주문 진행을 관리
+            </p>
+            <ul class="tags tags--brand">
+              <li>HTML5 · CSS3 · JavaScript</li>
+              <li>Gemini API</li>
+              <li>음성 인식 · 자연어 처리</li>
+              <li>홀로그램 세로 화면 구성</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
@@ -334,18 +347,30 @@
             </p>
             <div class="shots-row">
               <figure>
-                <img src="../images/projects/kiosk/holo-brewing.webp" width="720" height="1280" loading="lazy" decoding="async"
-                     alt="뒤돌아 커피를 내리는 AI 휴먼 전신 영상 장면. 손님이 없을 때 반복 재생된다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/holo-brewing.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="뒤돌아 커피를 내리는 AI 휴먼 전신 영상 장면. 손님이 없을 때 반복 재생된다.">
+                  <source src="../images/projects/kiosk/holo-brewing.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/holo-brewing.mp4" type="video/mp4">
+                </video>
                 <figcaption>대기 · Brewing</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/kiosk/holo-greeting.webp" width="720" height="1280" loading="lazy" decoding="async"
-                     alt="AI 휴먼이 손님 쪽으로 걸어 나오는 진입 인사 영상 장면.">
+                <video width="480" height="858" poster="../images/projects/kiosk/holo-greeting.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="AI 휴먼이 손님 쪽으로 걸어 나오는 진입 인사 영상 장면.">
+                  <source src="../images/projects/kiosk/holo-greeting.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/holo-greeting.mp4" type="video/mp4">
+                </video>
                 <figcaption>진입 인사 · Greeting-IN</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/kiosk/holo-speaking.webp" width="720" height="1280" loading="lazy" decoding="async"
-                     alt="AI 휴먼이 정면을 보고 말하는 발화 영상 장면.">
+                <video width="480" height="858" poster="../images/projects/kiosk/holo-speaking.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="AI 휴먼이 정면을 보고 말하는 발화 영상 장면.">
+                  <source src="../images/projects/kiosk/holo-speaking.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/holo-speaking.mp4" type="video/mp4">
+                </video>
                 <figcaption>발화 · Speaking</figcaption>
               </figure>
             </div>
@@ -379,18 +404,30 @@
             </ul>
             <div class="shots-row">
               <figure>
-                <img src="../images/projects/kiosk/screen-idle.webp" width="716" height="1280" loading="lazy" decoding="async"
-                     alt="대기화면. 위쪽에 뒤돌아 커피를 내리는 AI 휴먼, 아래 패널에 ‘화면을 바라보면 시작돼요’ 문구와 시선 인식 대기 표시, [눌러서 주문 시작하기] 버튼, 한국어·English 언어 선택이 있다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/screen-idle.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="대기화면. 위쪽에 뒤돌아 커피를 내리는 AI 휴먼, 아래 패널에 ‘화면을 바라보면 시작돼요’ 문구와 시선 인식 대기 표시, [눌러서 주문 시작하기] 버튼, 한국어·English 언어 선택이 있다.">
+                  <source src="../images/projects/kiosk/screen-idle.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/screen-idle.mp4" type="video/mp4">
+                </video>
                 <figcaption>대기 · 시선 인식</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/kiosk/screen-option.webp" width="716" height="1280" loading="lazy" decoding="async"
-                     alt="카페라떼 옵션 선택 화면. AI 휴먼이 따뜻한 것과 차가운 것 중 무엇으로 할지 묻고, 아래 온도·사이즈·우유 종류가 필수 항목으로 놓인다. 아직 고르기 전이라 [담기] 버튼이 흐린 비활성 상태다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/screen-option.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="카페라떼 옵션 선택 화면. AI 휴먼이 따뜻한 것과 차가운 것 중 무엇으로 할지 묻고, 아래 온도·사이즈·우유 종류가 필수 항목으로 놓인다. 아직 고르기 전이라 [담기] 버튼이 흐린 비활성 상태다.">
+                  <source src="../images/projects/kiosk/screen-option.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/screen-option.mp4" type="video/mp4">
+                </video>
                 <figcaption>옵션 · 담기 비활성</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/kiosk/screen-complete.webp" width="716" height="1280" loading="lazy" decoding="async"
-                     alt="결제 완료 화면. AI 휴먼이 고개 숙여 인사하고, 아래에 주문번호 #0003, 영수증 출력 선택 버튼, 처음 화면으로 돌아가기까지 남은 시간 막대가 있다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/screen-complete.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="결제 완료 화면. AI 휴먼이 고개 숙여 인사하고, 아래에 주문번호 #0003, 영수증 출력 선택 버튼, 처음 화면으로 돌아가기까지 남은 시간 막대가 있다.">
+                  <source src="../images/projects/kiosk/screen-complete.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/screen-complete.mp4" type="video/mp4">
+                </video>
                 <figcaption>완료 · 자동 복귀</figcaption>
               </figure>
             </div>
@@ -407,13 +444,21 @@
             </p>
             <div class="shots-row">
               <figure>
-                <img src="../images/projects/kiosk/screen-clarify.webp" width="716" height="1280" loading="lazy" decoding="async"
-                     alt="‘라떼’ 되묻기 화면. 맨 위에 ‘듣고 있어요’ 상태 표시, AI 휴먼 아래 ‘라떼 종류를 모았어요’ 안내와 딸기라떼·카페라떼·호박 라떼 후보 카드만 남아 있다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/screen-clarify.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="‘라떼’ 되묻기 화면. 맨 위에 ‘듣고 있어요’ 상태 표시, AI 휴먼 아래 ‘라떼 종류를 모았어요’ 안내와 딸기라떼·카페라떼·호박 라떼 후보 카드만 남아 있다.">
+                  <source src="../images/projects/kiosk/screen-clarify.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/screen-clarify.mp4" type="video/mp4">
+                </video>
                 <figcaption>되묻기 · 후보만 표시</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/kiosk/screen-cancel.webp" width="716" height="1280" loading="lazy" decoding="async"
-                     alt="주문 취소 확인 팝업. 어두워진 메뉴 화면 위에 ‘주문을 취소할까요?’ 문구와 [계속 주문하기]·[취소] 버튼, 음성으로도 대답할 수 있다는 안내가 있다.">
+                <video width="480" height="858" poster="../images/projects/kiosk/screen-cancel.webp"
+                     autoplay muted loop playsinline preload="metadata"
+                     aria-label="주문 취소 확인 팝업. 어두워진 메뉴 화면 위에 ‘주문을 취소할까요?’ 문구와 [계속 주문하기]·[취소] 버튼, 음성으로도 대답할 수 있다는 안내가 있다.">
+                  <source src="../images/projects/kiosk/screen-cancel.webm" type="video/webm">
+                  <source src="../images/projects/kiosk/screen-cancel.mp4" type="video/mp4">
+                </video>
                 <figcaption>되돌리기 · 1회 확인</figcaption>
               </figure>
             </div>
@@ -465,19 +510,6 @@
               </video>
               <figcaption>부산 실증 사업 전시 부스의 세로형 키오스크. 상단 AI 휴먼, 하단 주문 화면 구성</figcaption>
             </figure>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
-            <p>
-              자연어 주문 해석은 직접 규칙을 짜지 않고 <strong>Gemini API</strong>에 위임, 프론트엔드는 인식 상태 표시와 주문 상태 관리에 집중
-            </p>
-            <ul class="tags tags--brand">
-              <li>HTML5 · CSS3 · JavaScript</li>
-              <li>Gemini API</li>
-              <li>음성 인식 · 자연어 처리</li>
-              <li>홀로그램 세로 화면 구성</li>
-            </ul>
           </section>
 
           <section class="cs-section" aria-labelledby="assets">

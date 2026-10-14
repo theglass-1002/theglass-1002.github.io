@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -129,14 +129,12 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
-            <li><a href="#scope">담당 범위</a></li>
-            <li><a href="#system">두리틀 시스템 구조</a></li>
             <li><a href="#vet">두리틀 벳: 수의사용 앱</a></li>
             <li><a href="#home">두리틀 홈: 가정용 앱</a></li>
             <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
             <li><a href="#feedback">서비스 보완과 피드백</a></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -158,93 +156,60 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
-              <li><a href="#scope">담당 범위</a></li>
-              <li><a href="#system">두리틀 시스템 구조</a></li>
               <li><a href="#vet">두리틀 벳: 수의사용 앱</a></li>
               <li><a href="#home">두리틀 홈: 가정용 앱</a></li>
               <li><a href="#web">공식 웹사이트 리뉴얼</a></li>
               <li><a href="#feedback">서비스 보완과 피드백</a></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
-          <figure class="fig-hero is-plain">
+          <figure class="fig-hero">
+          <div class="shot-frame">
           <img src="../images/projects/zentry/zentry-device-hero.webp" width="1600" height="1067"
           alt="두리틀 밴드를 찬 반려견이 아이 곁에서 잠들어 있다."
           fetchpriority="high" decoding="async">
-          <figcaption>집에서 자는 동안의 심박·호흡도 같은 데이터로 축적.</figcaption>
+          </div>
+          <figcaption>가정용 <b>두리틀 밴드</b>. 집에서 자는 동안의 심박·호흡도 같은 데이터로 축적</figcaption>
           </figure>
 
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              앱은 아이폰과 안드로이드에 한 번에 내기 위해 <strong>Flutter</strong>로 제작. 측정 기기와 실시간으로 데이터를 주고받는 데는 <strong>TCP 소켓과 WebSocket</strong> 사용. 공식 웹사이트는 화면을 부품 단위로 나눠 고치기 쉽게 <strong>React</strong>로 제작
+            </p>
+            <ul class="tags tags--brand">
+              <li>Flutter · Dart</li>
+              <li>React</li>
+              <li>HTML/CSS · JavaScript</li>
+              <li>TCP/IP · WebSocket</li>
+              <li>REST API</li>
+              <li>MySQL · MariaDB · Redis</li>
+              <li>Apache · Nginx</li>
+              <li>Git · GitHub · Postman · Notion · Trello</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
             <p>
               (주)젠트리는 심부전 등 만성 질환이 있는 반려동물을 위한 헬스케어 서비스 기업. 가정용 기기부터 수의사용 마취 모니터링 장비까지, 심박과 호흡을 실시간으로 확인하는 <strong>‘두리틀’ 시리즈</strong>가 대표 제품.
             </p>
-            <div class="story">
-              <div class="story__text">
-                <p>
-                  반려동물이 착용한 웨어러블 밴드가 심박수와 호흡수를 읽어 블루투스로 전송, 그 값을 앱과 병원 화면에 실시간 표시.
-                </p>
-                <p>
-                  담당 업무는 이 <strong>숫자를 사람이 판단할 수 있는 화면으로 만드는 것</strong>. 같은 심박수라도 집에서 보호자가 보는 화면과 수술실에서 수의사가 보는 화면은 다르게 설계.
-                </p>
-              </div>
-              <figure class="is-plain">
-                <img src="../images/projects/zentry/zentry-wearable.webp" width="1000" height="847"
-                     alt="두리틀 웨어러블 밴드 제품 사진."
-                     loading="lazy" decoding="async">
-              </figure>
-            </div>
-          </section>
-
-          <section class="cs-section" aria-labelledby="scope">
-            <h2 id="scope">담당 범위</h2>
-            <ul class="role-list">
-              <li>
-                <strong>두리틀 수의사용 앱</strong> <span>초기 화면 구성·기획 참여, Flutter로 퍼블리싱</span>
-              </li>
-              <li>
-                <strong>공식 웹사이트</strong> <span>PHP 기반 사이트를 React 컴포넌트 구조로 재구축, 반응형 적용</span>
-              </li>
-              <li>
-                <strong>관리자 웹사이트</strong> <span>운영 데이터를 확인하는 관리자 화면 개발 담당</span>
-              </li>
-            </ul>
-          </section>
-
-          <section class="cs-section" aria-labelledby="system">
-            <h2 id="system">두리틀 시스템 구조</h2>
             <p>
-              두리틀은 앱 하나가 아니라 <strong>쓰는 장소에 따라 갈라지는 여러 화면의 묶음</strong>. 화면을 정하기 전에 데이터가 어디서 와서 어디로 가는지부터 도식화.
+              반려동물이 착용한 웨어러블 밴드가 심박수와 호흡수를 읽어 블루투스로 전송, 그 값을 앱과 병원 화면에 실시간 표시.
             </p>
-
-            <figure>
-              <img src="../images/projects/zentry/zentry-architecture.webp" width="1000" height="826"
-                   alt="두리틀 초기 서비스 구조도. 가정·병원 경로가 웨어러블에서 서버를 거쳐 각 앱과 웹페이지로 이어진다."
-                   loading="lazy" decoding="async">
+            <p>
+              담당 업무는 이 <strong>숫자를 사람이 판단할 수 있는 화면으로 만드는 것</strong>. 같은 심박수라도 집에서 보호자가 보는 화면과 수술실에서 수의사가 보는 화면은 다르게 설계.
+            </p>
+            <figure class="lanes lanes--2" aria-label="두리틀 서비스 구조">
+              <div class="lanes__cols">
+                <div class="lanes__col lanes__col--1"><p class="lanes__head">가정 (Home care)</p><ol><li>만성 심부전용 웨어러블<small>심박 · 호흡 측정</small></li><li>블루투스 → 보호자 스마트폰</li><li>와이파이 · LTE → 서버</li><li>두리틀 홈<small>보호자 앱 · 기간별 흐름 확인</small></li></ol></div>
+                <div class="lanes__col lanes__col--2"><p class="lanes__head">병원 (Hospital care)</p><ol><li>입원환자용 웨어러블 · 마취 모니터링 디바이스</li><li>블루투스 → BLE 라우터 · 크롬북</li><li>유선 · 무선 네트워크 → 서버</li><li>두리틀 벳 · 싱글 · 마취 · 멀티<small>수의사 화면 · 실시간 수치 확인</small></li></ol></div>
+              </div>
+              <figcaption>서비스 구조. 쓰는 장소에 따라 가정 · 병원 두 갈래로 나뉜다 (초기 구조도 재구성)</figcaption>
             </figure>
-
-            <div class="compare">
-              <div>
-                <h3>가정 (Home care)</h3>
-                <ul>
-                  <li>만성 심부전용 웨어러블 → 블루투스 → 보호자 스마트폰</li>
-                  <li>와이파이 또는 LTE로 서버에 전송</li>
-                  <li>보호자용 <strong>두리틀 홈</strong> 화면</li>
-                </ul>
-              </div>
-              <div>
-                <h3>병원 (Hospital care)</h3>
-                <ul>
-                  <li>입원환자용 웨어러블 → 블루투스 → BLE 라우터 → 유선/무선 네트워크</li>
-                  <li>마취 모니터링 디바이스 → 크롬북 디스플레이</li>
-                  <li>수의사용 <strong>두리틀 벳 · 싱글 · 마취 · 멀티</strong> 화면</li>
-                </ul>
-              </div>
-            </div>
-
             <p>
               화면 분리 기준은 <strong>보는 사람이 그 순간 무엇을 결정해야 하는가</strong>. 보호자는 “며칠간의 흐름이 괜찮은가”, 마취실 수의사는 “지금 이 숫자가 위험한가”를 확인. 그래서 전자는 그래프, 후자는 큰 숫자와 색으로 구성.
             </p>
@@ -281,7 +246,7 @@
             </p>
 
             <h3>수술 · 회복 기록 시각화</h3>
-            <figure>
+            <figure class="fig-wide">
               <img src="../images/projects/zentry/zentry-anesthesia-graph.webp" width="1100" height="594"
                    alt="마취 이력 그래프. 심박수와 호흡수가 시간축으로 찍혀 있다."
                    loading="lazy" decoding="async">
@@ -291,20 +256,22 @@
             </figure>
 
             <h3>실제 병원에서의 사용</h3>
-            <figure>
-              <img src="../images/projects/zentry/zentry-multi-clinic.webp" width="1200" height="861"
-                   alt="동물병원 입원장 앞에서 켠 태블릿의 두리틀 멀티 화면. 병실 카드 6개."
-                   loading="lazy" decoding="async">
-              <figcaption>
-                동물병원에 설치된 <b>두리틀 멀티</b>. 여섯 개 병실을 한 화면에 배치, 카드마다 품종·체중·나이·담당 수의사와 CPR/DNR 표시.
-              </figcaption>
-            </figure>
-            <figure>
-              <img src="../images/projects/zentry/zentry-anesthesia-live.webp" width="900" height="562"
-                   alt="수술실 장비 옆 태블릿의 마취 모니터링 화면. 심전도와 호흡 파형이 그려진다."
-                   loading="lazy" decoding="async">
-              <figcaption>수술실 장비 옆에서 동작하는 마취 모니터링 화면.</figcaption>
-            </figure>
+            <div class="fig-pair fig-pair--photos">
+              <figure>
+                <img src="../images/projects/zentry/zentry-multi-clinic.webp" width="1200" height="861"
+                     alt="동물병원 입원장 앞에서 켠 태블릿의 두리틀 멀티 화면. 병실 카드 6개."
+                     loading="lazy" decoding="async">
+                <figcaption>
+                  동물병원에 설치된 <b>두리틀 멀티</b>. 여섯 개 병실을 한 화면에 배치, 카드마다 품종·체중·나이·담당 수의사와 CPR/DNR 표시.
+                </figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/zentry/zentry-anesthesia-live.webp" width="900" height="562"
+                     alt="수술실 장비 옆 태블릿의 마취 모니터링 화면. 심전도와 호흡 파형이 그려진다."
+                     loading="lazy" decoding="async">
+                <figcaption>수술실 장비 옆에서 동작하는 마취 모니터링 화면.</figcaption>
+              </figure>
+            </div>
             <p>
               화면이 놓이는 자리에 맞춘 조정. 태블릿이 벽에 붙거나 장비 사이에 끼워져 있어 <strong>서 있는 거리에서 읽히는 크기</strong>로 맞추고, 장갑을 낀 손으로도 누를 수 있게 터치 영역 넉넉히 확보.
             </p>
@@ -380,23 +347,6 @@
               <p class="case__arrow" aria-hidden="true"></p>
               <p class="case__result"><b>오진 위험</b>정상 흐름에서는 드러나지 않아 예외 처리 항목을 따로 추적</p>
             </div>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
-            <p>
-              앱은 iOS·안드로이드 동시 출시를 위해 <strong>Flutter</strong>, 측정 기기와의 실시간 통신은 <strong>TCP 소켓과 WebSocket</strong> 사용. 공식 웹사이트는 컴포넌트 구조로 유지보수를 개선하기 위해 <strong>React</strong> 선택.
-            </p>
-            <ul class="tags tags--brand">
-              <li>Flutter · Dart</li>
-              <li>React</li>
-              <li>HTML/CSS · JavaScript</li>
-              <li>TCP/IP · WebSocket</li>
-              <li>REST API</li>
-              <li>MySQL · MariaDB · Redis</li>
-              <li>Apache · Nginx</li>
-              <li>Git · GitHub · Postman · Notion · Trello</li>
-            </ul>
           </section>
 
 

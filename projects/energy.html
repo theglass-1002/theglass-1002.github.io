@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -129,12 +129,12 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#team">팀과 담당 범위</a></li>
             <li><a href="#experience">관람 동선 설계</a></li>
             <li><a href="#features">주요 기능</a></li>
             <li><a href="#award">수상</a></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -164,12 +164,12 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#team">팀과 담당 범위</a></li>
               <li><a href="#experience">관람 동선 설계</a></li>
               <li><a href="#features">주요 기능</a></li>
               <li><a href="#award">수상</a></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
@@ -182,6 +182,22 @@
           <figcaption>전시관의 가정 공간. 표 대신 <b>실제 가전제품 옆에 소비 전력을 표시</b>해 자기 집을 떠올리며 값을 읽도록 구성</figcaption>
           </figure>
 
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              전시관 안을 직접 걸어 다니는 3D 공간이라 웹 대신 게임 엔진 <strong>Unity</strong>로 제작. 걷기, 벽에 부딪히기, 바라보는 곳에 따라 화면 바뀌기는 엔진 기본 기능을 써서 4명이 6주 만에 완성
+            </p>
+            <ul class="tags tags--brand">
+              <li>Unity</li>
+              <li>C#</li>
+              <li>MySQL</li>
+              <li>국토교통부 API</li>
+              <li>에너지경제연구원 API</li>
+              <li>한국전력거래소 API</li>
+              <li>Git · GitHub</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
@@ -276,22 +292,6 @@
                      loading="lazy" decoding="async">
               </figure>
             </div>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
-            <p>
-              1인칭으로 걸어 다니는 3D 공간이 전제라 웹 대신 <strong>Unity</strong> 선택. 이동·충돌·시선 기반 화면 전환은 엔진에 맡겨 4명이 6주 안에 전시관 완성
-            </p>
-            <ul class="tags tags--brand">
-              <li>Unity</li>
-              <li>C#</li>
-              <li>MySQL</li>
-              <li>국토교통부 API</li>
-              <li>에너지경제연구원 API</li>
-              <li>한국전력거래소 API</li>
-              <li>Git · GitHub</li>
-            </ul>
           </section>
 
 

@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -127,12 +127,12 @@
 
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#resume">이력서 작성과 공개 범위</a></li>
             <li><a href="#interview">AI 모의면접과 리포트</a></li>
             <li><a href="#match">공고 추천과 검색</a></li>
             <li><a href="#company">기업 화면</a></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
         </aside>
 
@@ -140,24 +140,38 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#resume">이력서 작성과 공개 범위</a></li>
               <li><a href="#interview">AI 모의면접과 리포트</a></li>
               <li><a href="#match">공고 추천과 검색</a></li>
               <li><a href="#company">기업 화면</a></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
-          <figure class="fig-hero">
+          <figure class="fig-hero fig-hero--full">
             <div class="shot-frame">
-              <img src="../images/projects/jobkok/jobkok-main-cropped.webp"
-               width="1600" height="1075"
-               alt="잡콕 메인 화면. 채용 공고 검색창 아래 직무 카테고리 아이콘 20개"
+              <img src="../images/projects/jobkok/jobkok-main-full.webp"
+               width="1600" height="1558"
+               alt="잡콕 메인 화면 전체. 채용 공고 검색창, 직무 카테고리 아이콘 20개, 이력서 작성 안내 배너, 푸터"
                fetchpriority="high" decoding="async">
             </div>
           </figure>
 
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              <strong>Java Spring</strong>으로 만든 웹사이트에서 화면과, 화면이 서버와 데이터를 주고받는 부분 담당. 구직자·기업 화면을 PC와 휴대폰 어디서든 쓸 수 있게 제작. AI 모델은 과제 팀이 만들고, 저는 AI 분석 결과를 받아 화면에 보여주는 부분 담당
+            </p>
+            <ul class="tags">
+              <li>Java Spring</li>
+              <li>MySQL</li>
+              <li>JavaScript</li>
+              <li>반응형 웹</li>
+              <li>AI 면접 분석 연동</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
@@ -185,14 +199,17 @@
             <p>
               이력서, 면접 영상, 분석 리포트의 공개 여부를 항목별로 설정. 면접 영상에는 얼굴과 목소리가 담기므로, 토글 하나 대신 누구에게 어디까지 보이는지 화면에 함께 표시
             </p>
-            <div class="split">
-              <figure>
-                <img src="../images/projects/jobkok/jobkok-resume-ai.webp" width="1205" height="1010"
-                     alt="잡콕 이력서 작성 화면. 경력 칸 AI 문장 추천 버튼, 하드 스킬·소프트 스킬 AI 추천 키워드 칩"
-                     loading="lazy" decoding="async">
+            <div class="split split--stack">
+              <figure class="jk-fig scroll-fig">
+                <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-resume-write.webp" width="1512" height="10611"
+                       alt="잡콕 이력서 작성 화면 전체. 기본 정보, 희망 근무 지역, 경력 칸마다 AI 추천 문장 박스, 학력, 희망 직무·하드 스킬·소프트 스킬의 AI 추천 키워드 칩, 활동, 자격증, 포트폴리오, 자기소개서 AI 추천 문장, 오른쪽에 작성 항목 체크 목록"
+                       loading="lazy" decoding="async">
+                </div>
+                <figcaption>이력서 작성 화면 전체. 안쪽을 스크롤하면 끝까지 보임</figcaption>
               </figure>
               <ul>
-                <li><b>항목별 카드 분리</b>경력, 학력, 스킬을 카드 단위로 나눠 한 번에 하나씩 입력</li>
+                <li><b>항목별 카드 분리</b>경력, 학력, 스킬을 카드 단위로 나누고, 오른쪽 목록에서 작성한 항목 체크</li>
                 <li><b>AI 추천 키워드 칩</b>경력과 학력 기반 추천 스킬을 칩으로 제시, 눌러서 바로 추가</li>
                 <li><b>AI 문장 추천</b>담당 업무 작성 후 버튼 하나로 성과 중심 문장 제안</li>
               </ul>
@@ -207,35 +224,48 @@
             <p>
               분석 완료까지 시간이 걸려, 목록에서 완료 여부를 바로 보이게 하고 진행 중인 건은 상태를 문장으로 표시
             </p>
-            <figure class="fig-wide">
-              <img src="../images/projects/jobkok/jobkok-interview-list.webp" width="1210" height="1000"
-                   alt="잡콕 AI 모의면접 결과 리포트 목록. 행마다 종합 점수·희망 직무·날짜·상태, 상태에 따라 결과 분석 보기 또는 이어서 하기 버튼"
-                   loading="lazy" decoding="async">
-              <figcaption>결과 리포트 목록. 분석 완료와 진행 중을 상태 열로 구분, 버튼도 상태에 맞게 변경</figcaption>
+            <div class="desk-row">
+              <figure>
+                <img src="../images/projects/jobkok/jobkok-iv-guide.webp" width="1600" height="784"
+                     alt="모의면접 시작 전 안내 2단계. 질문 12개, 생각 시간 60초와 답변 시간 90초 안내" loading="lazy" decoding="async">
+                <figcaption>시작 전 안내</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/jobkok/jobkok-iv-check.webp" width="1600" height="784"
+                     alt="환경 테스트 화면. 얼굴 위치 가이드 점선과 따라 읽을 문장, 왼쪽 단계 목록과 오른쪽 면접 정보" loading="lazy" decoding="async">
+                <figcaption>환경 테스트</figcaption>
+              </figure>
+              <figure class="desk-row__wide">
+                <img src="../images/projects/jobkok/jobkok-iv-live.webp" width="1600" height="784"
+                     alt="면접 진행 화면. 가상 면접관 영상과 오른쪽 위 내 카메라, 남은 시간, 질문 단계와 진행률, 답변 시작·답변 종료 버튼" loading="lazy" decoding="async">
+                <figcaption>면접 진행. 남은 시간과 질문 단계, 진행률을 한 화면에</figcaption>
+              </figure>
+            </div>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-interview-history.webp" width="1512" height="3622"
+                       alt="모의면접 내역 목록. 행마다 면접 영상 썸네일, 종합 점수, 희망 직무, 면접 일자, 상태(진행 완료·진행 중)와 상태별 버튼(분석 결과 보기·이어서 진행하기), 아래 줄에 선택한 이력서"
+                       loading="lazy" decoding="async">
+                </div>
+              <figcaption>모의면접 내역. 진행 완료와 진행 중을 상태 열로 구분, 버튼도 상태에 맞게 변경</figcaption>
             </figure>
             <p>
               결과 리포트는 점수만 크게 보여주지 않고 표정·음성·내용으로 나눠, 다음에 고칠 점이 보이도록 구성
             </p>
-            <div class="shots-row">
-              <figure>
-                <img src="../images/projects/jobkok/jobkok-report-competency.webp" width="750" height="1150"
-                     alt="모바일 분석 결과의 역량 분석 카드. 최우수 등급, 평가 문장, 92점 위치 5단계 막대"
-                     loading="lazy" decoding="async">
-                <figcaption>역량 분석</figcaption>
-              </figure>
-              <figure>
-                <img src="../images/projects/jobkok/jobkok-report-attitude.webp" width="750" height="1150"
-                     alt="모바일 분석 결과의 태도 분석 카드. 매우 미흡 등급, 14점 막대, 자세·시선·제스처·표정 탭"
-                     loading="lazy" decoding="async">
-                <figcaption>태도 분석</figcaption>
-              </figure>
-              <figure>
-                <img src="../images/projects/jobkok/jobkok-report-voice.webp" width="750" height="1150"
-                     alt="모바일 분석 결과의 목소리 분석 카드. 우수 등급, 76점 막대, 목소리 톤·말하는 속도 탭"
-                     loading="lazy" decoding="async">
-                <figcaption>목소리 분석</figcaption>
-              </figure>
-            </div>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-report-desktop.webp" width="1512" height="4792"
+                       alt="데스크톱 분석 결과 화면. 응시 정보, 종합 분석·상세 분석·이력서-면접 일치도 분석 탭, 모의면접 종합 평가 우수 등급, 직무 적합도 80%, 종합 점수 분포 막대그래프, 항목별 종합 평가 레이더 차트"
+                       loading="lazy" decoding="async">
+                </div>
+              <figcaption>데스크톱 분석 결과. 종합 등급, 직무 적합도, 점수 분포, 항목별 평가</figcaption>
+            </figure>
+            <figure class="fig-wide fig-report">
+              <img src="../images/projects/jobkok/jobkok-report-full.webp" width="2019" height="1420"
+                   alt="모바일 AI 면접 분석 결과 화면 전체를 다섯 단으로 펼친 모습. 응시 정보, 역량 분석(최우수 92점), 답변 영상과 답변 분석, 태도 분석(매우 미흡 14점)과 자세 각도, 목소리 분석(우수 76점)과 음역대 표, 긴장도 분석(보통 62점)과 심박 수치, 모의면접 다시 보기 버튼"
+                   loading="lazy" decoding="async">
+              <figcaption>모바일 분석 결과 화면 전체. 역량 → 답변 → 태도 → 목소리 → 긴장도 순서</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="match">
@@ -246,11 +276,24 @@
             <p>
               검색 조건이 늘수록 무엇이 걸려 있는지 놓치기 쉬워, 적용된 필터를 목록 위에 항상 유지
             </p>
-            <figure class="fig-wide">
-              <img src="../images/projects/jobkok/jobkok-job-list.webp" width="1240" height="825"
-                   alt="잡콕 채용 공고 목록. 검색창 아래 이력서 기반 추천 토글과 직군·직무·경력·학력·지역·채용 유형 필터, 추천 공고 카드에 보라색 추천 배지"
-                   loading="lazy" decoding="async">
-              <figcaption>공고 목록. 이력서 기반 추천 토글과 필터를 목록 위에 배치, 추천 공고는 배지로 구분</figcaption>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-job-recommend.webp" width="1512" height="2777"
+                       alt="이력서 기반 추천을 켠 채용 공고 목록 전체. AI가 추천 공고 103개를 찾았다는 안내 띠, 적합도순 정렬, AI Pick 배지와 AI 적합도가 붙은 공고 카드, 페이지 이동"
+                       loading="lazy" decoding="async">
+                </div>
+              <figcaption>이력서 기반 추천을 켠 공고 목록. 추천 공고는 AI Pick 배지와 적합도로 구분</figcaption>
+            </figure>
+            <p>
+              공고 상세에서는 근무 조건을 오른쪽에 고정하고, 해당 공고로 바로 모의면접을 볼 수 있도록 연결
+            </p>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-job-detail.webp" width="1512" height="2650"
+                       alt="채용 공고 상세 화면. 주요 업무·자격 요건·우대 사항, 오른쪽에 직무·경력·학력·근무 지역·고용 형태·마감일과 지원하기 버튼, 해당 공고로 모의면접 보기 버튼, 아래에 추천 채용 공고"
+                       loading="lazy" decoding="async">
+                </div>
+              <figcaption>공고 상세. 오른쪽 요약과 지원하기, 이 공고로 모의면접 보기</figcaption>
             </figure>
           </section>
 
@@ -259,35 +302,40 @@
             <p>
               기업은 다른 채용 사이트의 공고 URL만 올려도 공고 등록 가능. AI가 보완할 점 제안과 허위·차별 표현 표시, 고칠 곳은 공고 본문 안에서 바로 짚어 주도록 구현
             </p>
-            <p>
-              지원자 목록에서 이력서, 면접 영상, AI 리포트를 함께 확인. 구직자 화면과 같은 데이터지만 정렬과 강조 항목이 달라 컴포넌트 별도 구현
-            </p>
-            <div class="split">
-              <figure>
-                <img src="../images/projects/jobkok/jobkok-company-matching.webp" width="863" height="656"
-                     alt="기업용 AI 인재매칭 화면. 공고 URL 입력란, AI 공고 진단(연봉 수준·모호한 표현·차별 표현 지적), 지원자 목록의 AI 면접 공개 여부와 적합률"
-                     loading="lazy" decoding="async">
+            <div class="split split--stack">
+              <figure class="jk-fig scroll-fig">
+                <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/jobkok/jobkok-biz-matching.webp" width="1512" height="1496"
+                       alt="기업용 AI 인재 매칭 화면. 공고 URL 검색창, AI 공고 진단 분석(연봉 수준 낮음, 모호한 표현 개선 필요, 부적절한 내용 감지됨), 지원자 목록의 이름·정보·AI 면접 공개 여부·적합률·등록일과 자세히 보기 버튼"
+                       loading="lazy" decoding="async">
+                </div>
+                <figcaption>AI 인재 매칭. 공고 URL 진단과 지원자 목록을 한 화면에</figcaption>
               </figure>
               <ul>
                 <li><b>URL로 공고 등록</b>다른 채용 사이트 공고 주소만 붙여 넣어 등록</li>
                 <li><b>AI 공고 진단</b>연봉 수준, 모호한 표현, 차별·허위 의심 문구를 항목별로 표시</li>
-                <li><b>지원자 목록</b>AI 면접 공개 여부와 적합률을 한 줄에 배치, 적합률 순 정렬</li>
+                <li><b>지원자 목록</b>AI 면접 공개 여부와 적합률을 한 줄에 배치</li>
               </ul>
             </div>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
             <p>
-              Java Spring MVC 구조에서 화면과 컨트롤러 작업, 구직자·기업 화면을 데스크톱과 모바일 모두에서 쓸 수 있게 구현. AI 모델은 과제 팀 담당, 분석 결과를 받아 화면에 연동
+              지원자 목록에서 이력서, 면접 영상, AI 리포트를 함께 확인. 구직자 화면과 같은 데이터지만 정렬과 강조 항목이 달라 컴포넌트 별도 구현
             </p>
-            <ul class="tags">
-              <li>Java Spring</li>
-              <li>MySQL</li>
-              <li>JavaScript</li>
-              <li>반응형 웹</li>
-              <li>AI 면접 분석 연동</li>
-            </ul>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/jobkok/jobkok-biz-report-resume.webp" width="1512" height="1132"
+                     alt="기업용 AI 리포트의 이력서 탭. 왼쪽 위 AI 적합률 92%와 기술·경험·문제 해결·협업 4개 항목 분석 요약, 아래에 지원자 이력서"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>AI 리포트 · 이력서. 적합률과 분석 요약을 이력서 위에</figcaption>
+            </figure>
+            <figure class="jk-fig scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/jobkok/jobkok-biz-report-ai.webp" width="1512" height="1909"
+                     alt="기업용 AI 리포트의 AI 분석 탭. 지원자 면접 종합 평가 우수 등급, 직무 적합도 80%, 종합 점수 분포, 항목별 평가 레이더 차트"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>AI 리포트 · AI 분석. 구직자와 같은 면접 결과를 기업 화면에</figcaption>
+            </figure>
           </section>
 
 
@@ -299,7 +347,7 @@
       <nav class="pager" aria-label="프로젝트 이동">
         <a href="jango.html"><small>이전</small><b>← 장고</b></a>
         <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
-        <a class="is-end" href="literacy.html"><small>다음</small><b>선생님 문해력 탐험대 →</b></a>
+        <a class="is-end" href="literacy.html"><small>다음</small><b>문해력 탐험대 · 선생님 →</b></a>
       </nav>
     </div>
 
@@ -346,7 +394,7 @@
 
 
   <script src="../locales/common.en.js?v=20261015q" defer></script>
-  <script src="../locales/jobkok.en.js?v=20261015r" defer></script>
+  <script src="../locales/jobkok.en.js?v=20261015v" defer></script>
   <script src="../js/site.js?v=20261015a" defer></script>
 </body>
 </html>

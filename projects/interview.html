@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -88,7 +88,7 @@
           <header class="ph">
           <span class="ph__kicker">Case study</span>
           <h1>면접왕</h1>
-          <p class="ph__lead">AI가 예상질문을 만들고 모의면접 결과 리포트를 제공하는 면접왕의 승무원·항공사 지망생 전용 버전. 승무원학원 납품 제품으로, 준비부터 결과 확인까지의 화면 개발.</p>
+          <p class="ph__lead">AI가 예상질문을 만들고 모의면접 결과 리포트를 제공하는 면접왕의 승무원·항공사 지망생 전용 버전. 승무원학원 납품 제품으로, 준비부터 결과 확인까지의 화면 퍼블리싱.</p>
 
           <dl class="ph__meta">
           <div>
@@ -101,11 +101,11 @@
           </div>
           <div>
           <dt>맡은 일</dt>
-          <dd>프론트엔드 개발</dd>
+          <dd>퍼블리싱</dd>
           </div>
           <div>
           <dt>사용 기술</dt>
-          <dd>React 19 · TypeScript · Vite · Firebase</dd>
+          <dd>HTML5 · CSS3 · JavaScript</dd>
           </div>
           </dl>
           </header>
@@ -121,26 +121,26 @@
           <div class="side__box">
             <h2>주요 작업</h2>
             <ul>
-              <li>카메라·마이크 환경 체크</li>
-              <li>모의면접 진행 화면</li>
+              <li>진로 선택·응시 설정 화면</li>
+              <li>응시 전 안내·진행 화면</li>
               <li>결과 리포트 3단 구성</li>
-              <li>응시 이력과 추이</li>
+              <li>응시 이력 화면</li>
             </ul>
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
             <li><a href="#questions">예상질문과 면접 구성</a></li>
             <li><a href="#flow">면접 진행 화면</a></li>
             <li><a href="#report">결과 리포트</a></li>
             <li><a href="#history">응시 이력</a></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
 
           <dl class="side__facts">
             <div>
               <dt>팀 구성</dt>
-              <dd>프론트엔드 개발</dd>
+              <dd>퍼블리싱</dd>
             </div>
             <div>
               <dt>대상 사용자</dt>
@@ -154,12 +154,12 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
               <li><a href="#questions">예상질문과 면접 구성</a></li>
               <li><a href="#flow">면접 진행 화면</a></li>
               <li><a href="#report">결과 리포트</a></li>
               <li><a href="#history">응시 이력</a></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
@@ -174,6 +174,18 @@
           </figcaption>
           </figure>
 
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              <strong>HTML</strong>·<strong>CSS</strong>로 진로 선택부터 결과 리포트까지 화면 퍼블리싱 담당. 카메라·마이크 연동과 AI 분석 같은 기능 개발은 개발팀 몫이고, 그 결과가 들어갈 화면 구조와 스타일 작업
+            </p>
+            <ul class="tags">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
@@ -193,9 +205,9 @@
             <p>
               승무원 버전은 설정 단계에서 국내·해외 항공사와 지원 항공사를 먼저 입력받아 질문 구성. 해외 항공사 선택 시 질문과 답변이 영어로 진행되므로, 선택 바로 아래에 안내 배치.
             </p>
-            <div class="split">
-              <figure>
-                <img src="../images/projects/interview/setup-airline.webp" width="660" height="235"
+            <div class="split split--stack">
+              <figure class="fig-wide">
+                <img src="../images/projects/interview/screen-5.webp" width="1200" height="613"
                      alt="승무원 버전 설정 단계. 상단 4단계 탭, 항공사 구분(해외 항공사)·지원 항공사 입력, 해외 항공사 선택 시 영어 진행 안내 문구"
                      loading="lazy" decoding="async">
               </figure>
@@ -210,7 +222,7 @@
           <section class="cs-section" aria-labelledby="flow">
             <h2 id="flow">면접 진행 화면</h2>
             <p>
-              응시 전 카메라·마이크 확인 단계 배치. 여기서 걸러내지 못하면 8문제를 다 본 뒤에야 영상이 비어 있음을 알게 되므로, 건너뛸 수 없게 막고 무엇이 문제인지 그 자리에서 안내.
+              응시 전 카메라·마이크 확인 화면. 여기서 걸러내지 못하면 8문제를 다 본 뒤에야 영상이 비어 있음을 알게 되므로, 무엇이 문제인지 그 자리에서 보이도록 안내 영역 배치.
             </p>
             <p>
               면접은 시간 제한으로 진행. 생각시간 30초 동안 질문 확인, 답변시간 90초 경과 시 자동 제출. 넘어가는 조건이 여러 개라 남은 시간과 현재 단계를 항상 같은 위치에 표시.
@@ -218,24 +230,32 @@
             <p>
               환경 체크 전 안내 단계 배치. 복장·메이크업 가이드 영상 이후 얼굴과 어깨를 가리지 않기, 화면에 지원자만 나오기, 마스크·모자 벗기, 정확한 발음으로 답하기를 화면 하나에 하나씩 안내. 응시 중에는 되돌릴 수 없는 조건이라 시작 전에 끊어서 안내.
             </p>
-            <div class="shots-row">
-              <figure>
-                <img src="../images/projects/interview/guide-video.webp" width="640" height="540"
+            <div class="split split--stack">
+              <figure class="fig-wide">
+                <img src="../images/projects/interview/interview-guide-video.webp" width="1200" height="613"
                      alt="사전 안내 화면. 복장·메이크업 가이드 영상, 건너뛰기·다음 버튼"
                      loading="lazy" decoding="async">
-                <figcaption>복장·메이크업 가이드 영상</figcaption>
+                <figcaption>사전 안내 첫 화면. 복장·메이크업 가이드 영상</figcaption>
+              </figure>
+              <ul>
+                <li><b>가이드 영상</b>복장·메이크업 기준. 건너뛰기 가능</li>
+                <li><b>주의사항 1</b>외모 · 화면 인원</li>
+                <li><b>주의사항 2</b>얼굴 · 목소리</li>
+                <li><b>카메라·마이크 확인</b>통과해야 면접 시작</li>
+              </ul>
+            </div>
+            <div class="fig-pair">
+              <figure>
+                <img src="../images/projects/interview/interview-notice-1.webp" width="1200" height="613"
+                     alt="주의사항 첫 화면. ‘외모는 단정히!’, ‘화면엔 한명만!’ 카드, 이전·다음 버튼"
+                     loading="lazy" decoding="async">
+                <figcaption>주의사항 1. 외모 · 화면 인원</figcaption>
               </figure>
               <figure>
-                <img src="../images/projects/interview/guide-notice-1.webp" width="640" height="540"
-                     alt="주의사항 첫 화면. ‘외모는 단정히!’(얼굴·어깨 가리지 않기), ‘화면엔 한명만!’ 카드"
+                <img src="../images/projects/interview/interview-notice-2.webp" width="1200" height="613"
+                     alt="주의사항 두 번째 화면. ‘얼굴이 다 보이게!’(마스크 X 표시), ‘적절한 목소리!’ 카드, 이전·확인 버튼"
                      loading="lazy" decoding="async">
-                <figcaption>주의사항 1. 외모·화면 인원</figcaption>
-              </figure>
-              <figure>
-                <img src="../images/projects/interview/guide-notice-2.webp" width="640" height="540"
-                     alt="주의사항 두 번째 화면. ‘얼굴이 다 보이게!’(마스크·모자 벗기, X 표시), ‘적절한 목소리!’ 카드"
-                     loading="lazy" decoding="async">
-                <figcaption>주의사항 2. 안 되는 경우는 X 표시</figcaption>
+                <figcaption>주의사항 2. 얼굴 · 목소리, 안 되는 경우는 X 표시로 구분</figcaption>
               </figure>
             </div>
           </section>
@@ -265,22 +285,8 @@
           <section class="cs-section" aria-labelledby="history">
             <h2 id="history">응시 이력</h2>
             <p>
-              학원 수업에서는 한 학생이 같은 면접을 여러 번 응시. 응시한 면접을 모아 실력 추이를 보는 화면을 두고, 목록에서 바로 결과 리포트로 들어가 이전 면접과 비교하도록 구현.
+              학원 수업에서는 한 학생이 같은 면접을 여러 번 응시. 응시한 면접을 모아 실력 추이를 보는 화면을 두고, 목록에서 바로 결과 리포트로 들어가 이전 면접과 비교하도록 구성.
             </p>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
-            <p>
-              React 19와 TypeScript로 화면 분리 및 라우팅 구성. 가장 손이 많이 간 부분은 카메라·마이크 스트림 처리와 응시 중 상태 관리. AI 분석 결과는 받아서 리포트 화면에 연결.
-            </p>
-            <ul class="tags">
-              <li>React 19</li>
-              <li>TypeScript</li>
-              <li>Vite</li>
-              <li>Firebase</li>
-              <li>WebRTC · 미디어 스트림</li>
-            </ul>
           </section>
 
 
@@ -288,7 +294,7 @@
       </div>
 
       <nav class="pager" aria-label="프로젝트 이동">
-        <a href="literacy.html"><small>이전</small><b>← 선생님 문해력 탐험대</b></a>
+        <a href="literacy.html"><small>이전</small><b>← 문해력 탐험대 · 선생님</b></a>
         <a class="is-mid" href="../index.html#work"><small>Index</small><b>프로젝트 전체 보기</b></a>
         <a class="is-end" href="zentry.html"><small>다음</small><b>젠트리 · 두리틀 →</b></a>
       </nav>

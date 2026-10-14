@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>선생님 문해력 탐험대 — 정유리 포트폴리오</title>
+  <title>문해력 탐험대 · 선생님 — 정유리 포트폴리오</title>
   <meta name="description" content="문해력 탐험대 학생 서비스 고도화와 선생님용 학습 관리 페이지 개발 케이스 스터디.">
 
   <link rel="canonical" href="https://theglass-1002.github.io/projects/literacy.html">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="정유리 · Frontend Developer">
   <meta property="og:locale" content="ko_KR">
-  <meta property="og:title" content="선생님 문해력 탐험대 — 정유리 포트폴리오">
+  <meta property="og:title" content="문해력 탐험대 · 선생님 — 정유리 포트폴리오">
   <meta property="og:description" content="문해력 탐험대 학생 서비스 고도화와 선생님용 학습 관리 페이지 개발 케이스 스터디.">
   <meta property="og:url" content="https://theglass-1002.github.io/projects/literacy.html">
   <meta property="og:image" content="https://theglass-1002.github.io/images/projects/literacy/student-journey.png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015m">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015x">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -80,14 +80,14 @@
           <ol>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../index.html#work">Work</a></li>
-          <li><span aria-current="page">선생님 문해력 탐험대</span></li>
+          <li><span aria-current="page">문해력 탐험대 · 선생님</span></li>
           </ol>
           </nav>
 
           <header class="ph">
           <span class="ph__kicker">Case study</span>
-          <h1>선생님 문해력 탐험대</h1>
-          <p class="ph__lead">학생 문해력을 AI로 진단하고 맞춤 학습으로 연결하는 교육 서비스. 그중 선생님·기관용 관리자 사이트 담당.</p>
+          <h1>문해력 탐험대 · 선생님</h1>
+          <p class="ph__lead">학생 문해력을 AI로 진단하고 맞춤 학습으로 연결하는 교육 서비스. 운영 중이던 학생용 문해력 탐험대 고도화와 선생님·기관용 관리자 사이트 개발.</p>
 
           <dl class="ph__meta">
           <div>
@@ -121,6 +121,7 @@
           <div class="side__box">
             <h2>주요 작업</h2>
             <ul>
+              <li>학생 화면 고도화</li>
               <li>계정 유형별 화면 분기</li>
               <li>학생·선생님 등록과 배정</li>
               <li>진단 리포트 3단계</li>
@@ -129,13 +130,15 @@
           </div>
           <p class="side__title">목차</p>
           <ul class="toc">
+            <li><a href="#stack">사용 기술</a></li>
             <li><a href="#overview">프로젝트 소개</a></li>
+            <li class="toc__group">Part 1 · 문해력 탐험대 고도화</li>
+            <li><a href="#student">학생 화면 개선</a></li>
+            <li class="toc__group">Part 2 · 선생님 페이지</li>
             <li><a href="#roles">권한이 둘로 갈리는 화면</a></li>
             <li><a href="#manage">등록과 배정</a></li>
             <li><a href="#report">진단 리포트</a></li>
             <li><a href="#stats">통계와 자료 관리</a></li>
-            <li></li>
-            <li><a href="#stack">사용 기술</a></li>
           </ul>
           <dl class="side__facts">
             <div>
@@ -144,7 +147,7 @@
             </div>
             <div>
               <dt>대상 사용자</dt>
-              <dd>기관 관리자 · 선생님</dd>
+              <dd>학생 · 기관 관리자 · 선생님</dd>
             </div>
           </dl>
         </aside>
@@ -155,24 +158,39 @@
           <details class="toc-mobile">
             <summary>목차</summary>
             <ul class="toc">
+              <li><a href="#stack">사용 기술</a></li>
               <li><a href="#overview">프로젝트 소개</a></li>
+              <li class="toc__group">Part 1 · 문해력 탐험대 고도화</li>
+              <li><a href="#student">학생 화면 개선</a></li>
+              <li class="toc__group">Part 2 · 선생님 페이지</li>
               <li><a href="#roles">권한이 둘로 갈리는 화면</a></li>
               <li><a href="#manage">등록과 배정</a></li>
               <li><a href="#report">진단 리포트</a></li>
               <li><a href="#stats">통계와 자료 관리</a></li>
-              <li></li>
-              <li><a href="#stack">사용 기술</a></li>
             </ul>
           </details>
 
           <figure class="fig-hero">
             <div class="shot-frame">
-              <img src="../images/projects/literacy/teacher-dashboard-home.webp" width="1600" height="1069"
-          alt="기관 계정 홈. 학생·학급·선생님 수, 진단·학습 현황 카드, 계약 현황, 공지사항"
+              <img src="../images/projects/literacy/literacy-lab-map.webp" width="1280" height="800"
+          alt="학생용 탐험 지도 화면. 분석의 연구소 지도 위 진단·학습 단계, 오른쪽에 어휘 복습 카드, 탐험 기록 점수 그래프, 오답 노트 버튼"
           fetchpriority="high" decoding="async">
             </div>
-            <figcaption>기관 계정 홈. 소속 학급·학생의 진단·학습 현황과 이용권 남은 기간</figcaption>
+            <figcaption>학생 탐험 지도. 지도 위 단계를 따라 진단 · 학습 진입</figcaption>
           </figure>
+
+          <section class="cs-section" aria-labelledby="stack">
+            <h2 id="stack">사용 기술</h2>
+            <p>
+              학생 화면 개선과 관리자 사이트 화면 전체 개발. 관리자 사이트는 등록·수정·삭제·업로드처럼 성공할 수도 실패할 수도 있는 작업이 많아, 잘 됐는지, 문제가 생겼는지, 한 번 더 확인할지를 화면에 분명히 보여주는 데 가장 공을 들임
+            </p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>데이터 시각화</li>
+            </ul>
+          </section>
 
           <section class="cs-section" aria-labelledby="overview">
             <h2 id="overview">프로젝트 소개</h2>
@@ -180,9 +198,71 @@
               읽기는 모든 학습의 출발점이지만, 교실에서는 학생별 읽기 습관과 수준 파악이 어려움. 교과서 지문과 시선 추적으로 읽는 방식까지 측정해 어휘력·사실적·추론적·비판적·감상적 이해 5개 유형으로 진단. 드러난 약점은 맞춤 문제로 연결.
             </p>
             <p>
-              학생용 화면과 선생님·기관용 관리자 화면 중 <strong>선생님·기관 관리자 사이트</strong> 담당. 진단이 정확해도 교사가 결과를 읽고 다음 수업에 쓰지 못하면 소용이 없어, 데이터를 어떤 단위로 묶어 보여줄지가 이 화면 설계의 전부.
+              작업은 두 갈래. 이미 운영 중이던 학생용 <strong>문해력 탐험대</strong> 화면 고도화와, 새로 만든 <strong>선생님·기관 관리자 사이트</strong> 개발.
             </p>
           </section>
+
+          <div class="cs-part">
+            <span class="cs-part__no">Part 1</span>
+            <p class="cs-part__title">문해력 탐험대 고도화</p>
+            <p class="cs-part__desc">학생이 진단을 받고 학습하는 서비스. 운영 중인 화면 개선</p>
+          </div>
+
+          <section class="cs-section" aria-labelledby="student">
+            <h2 id="student">학생 화면 개선</h2>
+            <p>
+              학생이 쓰는 문해력 탐험대 앱 화면 작업. 학생은 탐험 지도에서 단계를 골라 진단이나 학습을 시작하고, 문제를 다 풀면 결과 화면에서 틀린 문제와 내 실력을 확인.
+            </p>
+            <div class="shots-row">
+              <figure>
+                <img src="../images/projects/literacy/map-forest.webp" width="1600" height="1000"
+                     alt="탐험 지도 어휘의 숲. 숲 배경 위 탐험 시작 진단부터 탐험 완료 진단까지 이어진 단계, 잠긴 단계는 자물쇠 표시"
+                     loading="lazy" decoding="async">
+                <figcaption>어휘의 숲</figcaption>
+              </figure>
+              <figure>
+                <img src="../images/projects/literacy/map-library.webp" width="1280" height="800"
+                     alt="탐험 지도 이해의 도서관. 도서관 배경 위 탐험 시작 진단부터 탐험 완료 진단까지 이어진 단계, 잠긴 단계는 자물쇠 표시"
+                     loading="lazy" decoding="async">
+                <figcaption>이해의 도서관. 위 분석의 연구소와 함께 지도마다 배경 테마가 다름</figcaption>
+              </figure>
+            </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/literacy/student-quiz.webp" width="1600" height="1000"
+                   alt="학생용 문제 풀이 화면. 질문, 보기 카드 4개, 고른 보기 주황 테두리, 다음 문제 풀기 버튼"
+                   loading="lazy" decoding="async">
+              <figcaption>문제 풀이. 고른 보기를 테두리와 색으로 표시</figcaption>
+            </figure>
+            <figure class="fig-wide scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/literacy/student-learning-result.webp" width="1800" height="1875"
+                     alt="학생 듣기 학습 결과 화면. 지문 토끼와 거북이, 정답 6개·오답 4개, 문제 1~10 탭, 고른 오답 빨간 테두리·정답 초록 테두리, 다른 지문 선택하기·이 지문으로 다시 학습하기 버튼"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>학습 결과. 틀린 문항 확인 후 같은 지문으로 다시 학습</figcaption>
+            </figure>
+            <figure class="fig-wide scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/literacy/student-diagnosis-result.webp" width="1800" height="3227"
+                     alt="학생 진단 결과 화면. 진단 등급 금빛 나침반, 진단 시간, 문제 해결 능력 오각형 분석과 이해 유형별 상·중·하, 종합 분석·실력 향상 팁, 진단 문제별 정오답"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>진단 결과 전체. 등급 · 5개 이해 유형 분석 · 문항별 정오답</figcaption>
+            </figure>
+          </section>
+
+          <div class="cs-part">
+            <span class="cs-part__no">Part 2</span>
+            <p class="cs-part__title">선생님 페이지</p>
+            <p class="cs-part__desc">기관 관리자와 선생님이 쓰는 관리자 사이트. 새로 개발. 진단이 정확해도 교사가 결과를 읽고 다음 수업에 쓰지 못하면 소용이 없어, 데이터를 어떤 단위로 묶어 보여줄지가 설계의 중심</p>
+          </div>
+
+          <figure class="fig-wide">
+            <img src="../images/projects/literacy/teacher-dashboard-home.webp" width="1600" height="1069"
+                 alt="기관 계정 홈. 학생·학급·선생님 수, 진단·학습 현황 카드, 계약 현황, 공지사항"
+                 loading="lazy" decoding="async">
+            <figcaption>기관 계정 홈. 소속 학급·학생의 진단·학습 현황과 이용권 남은 기간</figcaption>
+          </figure>
 
           <section class="cs-section" aria-labelledby="roles">
             <h2 id="roles">권한이 둘로 갈리는 화면</h2>
@@ -214,20 +294,12 @@
               </div>
               <figcaption>역할별 흐름. 학생 리포트를 기관 통계와 선생님 학습 관리에서 확인</figcaption>
             </figure>
-            <div class="shots-row">
-              <figure>
-                <img src="../images/projects/literacy/menu-institution.webp" width="1100" height="1400"
-                     alt="기관 계정 사이드 메뉴. 학급 관리(모든 학급·1~6학년), 사용자 관리(선생님·학생), 통계(종합·읽기·기타)"
-                     loading="lazy" decoding="async">
-                <figcaption>기관 계정 메뉴</figcaption>
-              </figure>
-              <figure>
-                <img src="../images/projects/literacy/menu-teacher.webp" width="1100" height="1400"
-                     alt="선생님 계정 사이드 메뉴. 학급 관리(모든 학급·1~3학년), 학생 관리, 자료 관리(진단·학습 자료). 통계·선생님 관리 없음"
-                     loading="lazy" decoding="async">
-                <figcaption>선생님 계정 메뉴. 통계·선생님 관리 제외</figcaption>
-              </figure>
-            </div>
+            <figure class="fig-wide">
+              <img src="../images/projects/literacy/teacher-class-list.webp" width="1800" height="1012"
+                   alt="선생님 계정 학급 관리 화면. 사이드 메뉴는 학급 관리(모든 학급·1~3학년), 학생 관리, 자료 관리(진단·학습 자료). 학급 목록 표에 학급명·학년·담당 선생님·학생 수·평균 점수·상태"
+                   loading="lazy" decoding="async">
+              <figcaption>선생님 계정 학급 관리. 위 기관 홈과 달리 메뉴에 통계·선생님 관리 없음</figcaption>
+            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="manage">
@@ -258,11 +330,14 @@
             <p>
               세 화면을 하나의 흐름으로 연결하고, 한 단계 내려가도 앞에서 보던 기준 유지. 정답률과 성취 수준은 표와 그래프를 함께 배치해 수치를 읽기 전에 형태가 먼저 보이도록 구성.
             </p>
-            <div class="split">
-              <figure>
-                <img src="../images/projects/literacy/class-report-top.webp" width="1600" height="1107"
-                     alt="학급 종합 리포트 상단. 진단·학습 횟수 카드, 진단 회차별 레벨 변화 그래프, 학급·학년·학교 평균 점수 비교, 점수 분포 막대그래프"
-                     loading="lazy" decoding="async">
+            <div class="split split--stack">
+              <figure class="scroll-fig">
+                <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                  <img src="../images/projects/literacy/class-report-full.webp" width="1800" height="2531"
+                       alt="학급 종합 리포트. 진단·학습 횟수 카드, 진단 회차별 레벨 변화, 학급·학년·학교 평균 점수 비교, 점수 분포, 평균 진단 시간, 학습 진행 현황 도넛, 항목별 점수, 읽기 패턴 통계"
+                       loading="lazy" decoding="async">
+                </div>
+                <figcaption>학급 종합 리포트 전체. 안쪽을 스크롤하면 끝까지 보임</figcaption>
               </figure>
               <ul>
                 <li><b>학급 종합 리포트</b>진단·학습 횟수, 레벨 변화, 점수 분포로 우리 반 위치 확인</li>
@@ -270,11 +345,21 @@
                 <li><b>개별 진단 결과</b>진단 한 회차의 등급, 5개 이해 유형, 문항별 정오답</li>
               </ul>
             </div>
-            <figure class="fig-wide">
-              <img src="../images/projects/literacy/diagnosis-questions.webp" width="1600" height="817"
-                   alt="개별 진단 결과의 문제 영역. 문제 1~10 탭, 고른 오답은 빨간 테두리·X, 정답은 초록 테두리·체크"
-                   loading="lazy" decoding="async">
-              <figcaption>문항별 정오답. 고른 답과 정답을 색·아이콘으로 구분</figcaption>
+            <figure class="fig-wide scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/literacy/student-report-full.webp" width="1800" height="2846"
+                     alt="학생 리포트. 학생 정보, 탐험 등급과 진단 통계, 레벨 변화 그래프, 영역별 점수 추이, 읽기 패턴, 복습이 필요한 어휘, 문제 해결 능력 오각형 분석"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>학생 리포트 전체. 등급 · 레벨 변화 · 읽기 패턴 · 복습 어휘 · 이해 유형 분석</figcaption>
+            </figure>
+            <figure class="fig-wide scroll-fig">
+              <div class="scroll-shot" tabindex="0" role="region" aria-label="스크롤해서 전체 화면 보기">
+                <img src="../images/projects/literacy/diagnosis-result-full.webp" width="1800" height="2415"
+                     alt="개별 진단 결과. 진단 등급과 진단 시간, 문제 해결 능력 오각형 분석과 이해 유형별 상·중·하, 맨 아래 문제 1~10 탭과 고른 오답 빨간 테두리·정답 초록 테두리"
+                     loading="lazy" decoding="async">
+              </div>
+              <figcaption>개별 진단 결과 전체. 맨 아래 문항별 정오답은 고른 답과 정답을 색·아이콘으로 구분</figcaption>
             </figure>
           </section>
 
@@ -288,39 +373,6 @@
                    alt="기관 읽기 통계 화면. 읽기 유형별 우리 학교·전국 학교 비교 막대그래프, 읽기 속도·시선 고정 시간·시선 폭·역행 비율 카드"
                    loading="lazy" decoding="async">
             </figure>
-          </section>
-
-          <section class="cs-section" aria-labelledby="student">
-            <p>
-              관리자 사이트와 함께 이미 운영 중이던 학생용 화면 일부도 개선.
-            </p>
-            <div class="shots-row">
-              <figure>
-                <img src="../images/projects/literacy/student-journey.webp" width="1600" height="1000"
-                     alt="학생용 탐험 지도 화면. 어휘의 숲 지도 위 진단·학습 단계, 오른쪽에 어휘 복습 카드, 탐험 기록 점수 그래프, 오답 노트 버튼"
-                     loading="lazy" decoding="async">
-                <figcaption>탐험 지도. 단계별 진단·학습 진입</figcaption>
-              </figure>
-              <figure>
-                <img src="../images/projects/literacy/student-quiz.webp" width="1600" height="1000"
-                     alt="학생용 문제 풀이 화면. 질문, 보기 카드 4개, 고른 보기 주황 테두리, 다음 문제 풀기 버튼"
-                     loading="lazy" decoding="async">
-                <figcaption>문제 풀이. 고른 보기를 테두리와 색으로 표시</figcaption>
-              </figure>
-            </div>
-          </section>
-
-          <section class="cs-section" aria-labelledby="stack">
-            <h2 id="stack">사용 기술</h2>
-            <p>
-              관리자 사이트 전반의 화면 개발. 등록·수정·삭제·업로드처럼 결과가 갈리는 작업이 많아, 정상·오류·확인 상태를 화면에 남기는 방식 설계 비중이 큼.
-            </p>
-            <ul class="tags">
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>데이터 시각화</li>
-            </ul>
           </section>
 
 
