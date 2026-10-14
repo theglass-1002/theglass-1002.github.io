@@ -833,23 +833,16 @@ body.dusk:not(.home) .prose .fig-portrait:not(.fig-longshot):not(.fig-hero--narr
 }
 body.dusk:not(.home) .prose .fig-portrait:not(.fig-longshot):not(.fig-hero--narrow) img { width: auto; max-width: 100%; max-height: 520px; }
 
-/* 메인 모니터: 게임 타이틀 화면 */
-.tscreen {
-  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-  text-align: center; opacity: 0; transition: opacity .2s steps(3);
-  background:
-    radial-gradient(60% 50% at 50% 42%, color-mix(in srgb, var(--d-butter) 22%, transparent), transparent 70%),
-    linear-gradient(180deg, var(--d-card) 0%, var(--d-ground) 100%);
+/* 메인 모니터 기본 화면: 스테이지 4개 미리보기 */
+.tgrid {
+  position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; padding: 12px;
+  background: var(--d-ground); opacity: 0; transition: opacity .2s steps(3);
 }
-.tscreen.is-on { opacity: 1; }
-.tscreen p { margin: 0; }
-.tscreen__top { font: 600 14px/1 var(--d-sans); letter-spacing: .12em; color: var(--d-sky); }
-.tscreen__name { font: 400 clamp(56px, 7vw, 88px)/1 var(--d-pix); color: var(--d-text); text-shadow: 5px 5px 0 var(--d-shadow); }
-.tscreen__role { font: 700 18px/1 var(--d-sans); color: var(--d-butter); }
-.tscreen__hint { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px !important; padding: 8px 14px; font: 700 15px/1 var(--d-sans); color: #172038; background: var(--d-butter); animation: d-blink 1.2s steps(2) infinite; }
-.tscreen__cnt { margin-top: 6px !important; font: 600 13px/1 var(--d-sans); color: var(--d-sub); }
+.tgrid.is-on { opacity: 1; }
+.tgrid figure { position: relative; margin: 0; background: #ffffff; border: 2px solid var(--d-shadow); overflow: hidden; }
+.tgrid img { position: absolute; inset: 4px; width: calc(100% - 8px); height: calc(100% - 8px); object-fit: contain; opacity: 1 !important; }
+.tgrid figcaption { position: absolute; left: 0; top: 0; padding: 4px 8px; font: 700 12px/1 var(--d-sans); color: #172038; background: var(--d-butter); }
 .monitor figcaption { color: #253a5e; }
-@media (prefers-reduced-motion: reduce) { .tscreen__hint { animation: none; } }
 
 /* 본문 이미지 공통 상한 — 정사각형 · 세로 캡처가 화면을 덮지 않게 (전체 페이지 긴 캡처는 자체 규칙) */
 body.dusk:not(.home) .prose figure:not(.fig-longshot) img,
