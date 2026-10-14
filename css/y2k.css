@@ -233,6 +233,93 @@
 .y2k .mail .contact-list { padding: clamp(18px, 3vw, 28px); max-width: none; }
 .y2k #contact .contact-list a { border-radius: 8px; }
 
+/* ==========================================================================
+   상세 페이지 (projects/*.html) — 같은 창 · 탭 · 스티커 언어
+   ========================================================================== */
+/* 머리말 */
+.y2k main[data-accent] .layout__head { position: relative; }
+.y2k .ph__kicker {
+  display: inline-block; padding: 6px 10px;
+  background: var(--acc-soft, var(--y-blue)); border: 1.5px solid var(--y-line); border-radius: 999px;
+  box-shadow: var(--y-shadow-sm); color: var(--y-ink);
+}
+.y2k main[data-accent] .ph__kicker { color: var(--y-ink); }
+.y2k .ph h1 { letter-spacing: -.02em; }
+.y2k .ph__meta,
+.y2k main[data-accent] .ph__meta {
+  padding: 18px 20px; border: 2px solid var(--y-line); border-radius: 10px;
+  background: #fff; box-shadow: var(--y-shadow);
+}
+.y2k .ph__meta dt { font: 400 10.5px/1.4 var(--font-pixel); letter-spacing: .08em; color: var(--muted-strong); }
+
+/* 사이드바: 작업 목록은 메모 창, 목차는 탭 */
+.y2k .side__box,
+.y2k main[data-accent] .side__box {
+  padding: 16px 18px; margin-bottom: var(--s-5);
+  background: var(--acc-soft, var(--y-lav)); border: 2px solid var(--y-line); border-radius: 4px 10px 10px 10px;
+  box-shadow: var(--y-shadow-sm); position: relative; margin-top: 14px;
+}
+.y2k .side__box::before {   /* 폴더 탭 */
+  content: ""; position: absolute; top: -14px; left: -2px; width: 72px; height: 14px;
+  background: var(--acc-soft, var(--y-lav)); border: 2px solid var(--y-line); border-bottom: 0; border-radius: 6px 6px 0 0;
+}
+.y2k .side__box h2 { font: 400 11px/1.4 var(--font-pixel); letter-spacing: .08em; color: var(--y-ink); }
+.y2k .side__title { font: 400 11px/1.4 var(--font-pixel); letter-spacing: .08em; color: var(--y-ink); }
+.y2k .side .toc { border-left: 2px solid var(--y-line); }
+.y2k main[data-accent] .toc a[aria-current="true"] { background: var(--acc-soft); }
+
+/* 본문 제목 앞 번호를 픽셀 탭으로 */
+.y2k main[data-accent] .cs-section > h2::before {
+  display: inline-block; padding: 4px 7px; margin-right: 12px;
+  background: var(--y-line); color: #fff; border-radius: 4px;
+  font-family: var(--font-pixel); font-size: 11px; vertical-align: .4em;
+}
+
+/* 이미지 판: 창 프레임 */
+.y2k .shot-frame,
+.y2k main[data-accent] .shot-frame {
+  position: relative; padding-top: 30px;
+  border: 2px solid var(--y-line); border-radius: 10px; box-shadow: var(--y-shadow);
+}
+.y2k .shot-frame::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 28px;
+  background: var(--y-silver); border-bottom: 2px solid var(--y-line); border-radius: 8px 8px 0 0;
+}
+.y2k .shot-frame::after {   /* 오른쪽 위 네모 세 개 */
+  content: ""; position: absolute; top: 8px; right: 54px; width: 12px; height: 12px;
+  border: 1.5px solid var(--y-line); border-radius: 3px; background: var(--y-blue);
+  box-shadow: 18px 0 0 -1.5px var(--y-lav), 18px 0 0 0 var(--y-line), 36px 0 0 -1.5px var(--y-pink-2), 36px 0 0 0 var(--y-line);
+}
+.y2k .prose figure img { border: 1.5px solid var(--y-line); border-radius: 8px; }
+.y2k .shot-frame img { border-radius: 6px; }
+.y2k .zoom-btn { border: 2px solid var(--y-line); border-radius: 8px; box-shadow: var(--y-shadow-sm); }
+.y2k .zoom-btn:hover { box-shadow: 3px 3px 0 var(--y-line); }
+.y2k .zoom-btn:active { box-shadow: 0 0 0 var(--y-line); }
+
+/* 강조 박스 */
+.y2k main[data-accent] .lead-note,
+.y2k .lead-note {
+  border: 2px solid var(--y-line); border-left-width: 6px; border-left-color: var(--acc, var(--cobalt));
+  border-radius: 10px; box-shadow: var(--y-shadow-sm);
+}
+.y2k .note { border: 1.5px dashed var(--y-line); border-radius: 10px; background: #fff; }
+.y2k .toc-mobile { border: 2px solid var(--y-line); border-radius: 10px; box-shadow: var(--y-shadow-sm); }
+
+/* 이전 · 다음 */
+.y2k .pager { border-top: 2px dashed var(--y-line); }
+.y2k .pager a {
+  background: #fff; border: 2px solid var(--y-line); border-radius: 10px; box-shadow: var(--y-shadow-sm);
+  transition: transform .12s var(--ease), box-shadow .12s var(--ease), background-color .15s;
+}
+.y2k .pager a:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--y-line); background: var(--y-pink); border-color: var(--y-line); }
+.y2k .pager small { font: 400 10.5px/1.4 var(--font-pixel); letter-spacing: .08em; }
+
+/* 마무리 CTA */
+.y2k .cta { background: var(--y-blue); border-top: 2px solid var(--y-line); }
+
+/* 404 등 */
+.y2k .site-footer { border-top: 2px solid var(--y-line); }
+
 /* ---- 반응형 ---- */
 @media (max-width: 1024px) {
   .y2k .skills__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -254,5 +341,5 @@
 @media (prefers-reduced-motion: reduce) {
   .y2k .marquee__track { animation: none; }
   .y2k .intro__plate.win, .y2k .sticker--tag, .y2k .sticker--chip { transform: none; }
-  .y2k .btn, .y2k .work .project-card .project-media { transition: none; }
+  .y2k .btn, .y2k .work .project-card .project-media, .y2k .pager a { transition: none; }
 }
