@@ -2,6 +2,7 @@
    시간대별 하늘 — <head> 에서 바로 실행해 첫 화면부터 맞는 하늘로 그린다.
    morning 06–11 · afternoon 11–17 · sunset 17–20 · night 20–06 (보는 사람의 현지 시각)
    ?time=morning|afternoon|sunset|night 로 고정해서 볼 수 있다.
+   '하늘 바꾸기'로 고른 하늘은 같은 탭 안에서 다른 페이지(상세)로 가도 유지된다 (sessionStorage).
    계절: 월 기준 data-season (나무 색 · 낙엽 · 꽃잎).
    날씨: 오늘 서울 현재 날씨(Open-Meteo, 키 없음)를 30분 캐시. ?weather=clear|cloudy|rain|snow|storm 로 고정.
    ========================================================================== */
@@ -18,10 +19,15 @@
   }
   function hoursNow() { var d = new Date(); return d.getHours() + d.getMinutes() / 60; }
 
+  var KEY = 'sky-time';
   var forced = null;
   try {
     var q = new URLSearchParams(location.search).get('time');
     if (ORDER.indexOf(q) > -1) forced = q;
+    else {
+      var saved = sessionStorage.getItem(KEY);
+      if (ORDER.indexOf(saved) > -1) forced = saved;
+    }
   } catch (e) { /* 무시 */ }
 
   var shown = forced || phase(hoursNow());
@@ -105,12 +111,22 @@
     tick(); label(); loadWeather();
     setInterval(tick, 30000);
 
-    /* 하늘 바꿔 보기 — 아침 → 오후 → 노을 → 밤 → (지금) */
+    /* 하늘 바꿔 보기 — 아침 → 오후 → 노을 → 밤 → 지금 시각 → … (고른 하늘은 탭 안에서 유지) */
     var btn = document.querySelector('[data-time-cycle]');
     if (!btn) return;
     btn.addEventListener('click', function () {
-      var next = ORDER[(ORDER.indexOf(shown) + 1) % ORDER.length];
+      if (forced === 'night') {   // 한 바퀴 돌면 실제 시각으로 돌아온다
+        forced = null;
+        try { sessionStorage.removeItem(KEY); } catch (e) { /* 무시 */ }
+        shown = phase(hoursNow());
+        root.setAttribute('data-time', shown);
+        place(hoursNow());
+        label();
+        return;
+      }
+      var next = forced ? ORDER[ORDER.indexOf(forced) + 1] : ORDER[(ORDER.indexOf(shown) + 1) % ORDER.length];
       forced = next; shown = next;
+      try { sessionStorage.setItem(KEY, next); } catch (e) { /* 무시 */ }
       root.setAttribute('data-time', next);
       place(SAMPLE[next]);
       label();
