@@ -1,5 +1,7 @@
 /* 자동 생성 — 한국어 원문(키) → 영어. 원문이 바뀌면 키가 맞지 않아 그 글은 한국어로 남는다(?i18n-debug 로 확인) */
 window.I18N_PAGE = {
+  "잡콕 메인 화면. 채용 공고 검색창과 직무 카테고리 아이콘이 놓여 있다.": "The Jobkok main screen, with a job search bar and job-category icons.",
+  "잡콕 모의면접 분석 결과 화면. 진행 정보 아래 종합 분석 · 상세 분석 · 이력서-면접 일치도 탭과 역량 등급이 보인다.": "The Jobkok mock-interview results screen. Below the session details are tabs for overall analysis, detailed analysis, and résumé–interview match, plus a competency grade.",
   "<span aria-current=\"page\">잡콕</span>": "<span aria-current=\"page\">Jobkok</span>",
   "잡콕": "Jobkok",
   "프론트엔드 UI/UX 개발 및 백엔드 연동": "Frontend UI/UX development & backend integration",

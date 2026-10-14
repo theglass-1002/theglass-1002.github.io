@@ -765,3 +765,50 @@ body.dusk:not(.home) .prose table th, body.dusk:not(.home) .prose table td { col
   .row, .row:hover { transition: none; transform: none; }
   .row:hover::before, .badge-live::before, .dialog__next, .quest--now::before { animation: none; }
 }
+
+/* ==========================================================================
+   소개 · 경력 배치 정리
+   ========================================================================== */
+/* 소개: 왼쪽 캐릭터 카드 | 오른쪽 대화창 · 글 · 관심 분야 */
+.profile { grid-template-columns: 320px minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: start; }
+.profile .bio { padding: 0; border-top: 0; }   /* style.css 의 옛 .bio 여백 · 선 제거 */
+.charcard { padding: 14px; background: var(--d-card); box-shadow: 0 0 0 2px var(--d-shadow), 0 0 0 4px var(--d-edge), 0 0 0 6px var(--d-shadow), 8px 8px 0 6px rgba(9, 10, 20, .35); }
+.charcard .portrait { padding: 0; background: none; box-shadow: none; border: 2px solid var(--d-shadow); }
+.charcard__name { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 16px 2px 0; }
+.charcard__name h3 { margin: 0; font: 400 32px/1.1 var(--d-pix); color: var(--d-text); }
+.charcard__name .role { margin: 0; font: 600 15px/1 var(--d-sans); color: var(--d-butter); }
+.charcard .facts { grid-template-columns: 1fr; gap: 0; margin: 14px 0 0; max-width: none; border-top: 2px dashed color-mix(in srgb, var(--d-text) 25%, transparent); }
+.charcard .facts div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 2px; background: none; border: 0; border-bottom: 1px solid color-mix(in srgb, var(--d-text) 12%, transparent); }
+.charcard .facts div:last-child { border-bottom: 0; }
+.charcard .facts dd { margin: 0; text-align: right; }
+.profile .dialog { margin-top: 0; max-width: none; }
+.profile .bio > p:not([class]) { font-size: 17px; max-width: 60ch; margin-top: 18px; }
+.profile .dialog + p { margin-top: 28px; }
+.focus-label { margin: 32px 0 0; font: 600 14px/1 var(--d-sans); color: var(--d-sky); }
+.profile .chips { margin-top: 12px; }
+.inventory { margin-top: 64px; }
+
+/* 경력: 폭을 넓히고 점선 길과 표시를 한 줄에 맞춤 (표시 중심 = 11px) */
+.quests { max-width: none; padding-left: 44px; }
+.quests::before { left: 9px; top: 28px; bottom: 28px; }
+.quest { grid-template-columns: 260px minmax(0, 1fr); }
+.quest::before { left: -40px; top: 24px; }
+.quest--now::before { left: -44px; top: 18px; }
+
+@media (max-width: 960px) {
+  .profile { grid-template-columns: 1fr; }
+  .charcard { max-width: 360px; }
+  .quest { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .quests { padding-left: 34px; }
+  .quests::before { left: 4px; }
+  .quest::before { left: -35px; }
+  .quest--now::before { left: -39px; }
+}
+
+/* 세로로 긴 사진(모바일 캡처 등)은 휴대폰 크기로 — 본문 폭을 꽉 채워 거대해지지 않게 */
+.prose .fig-portrait:not(.fig-longshot):not(.fig-hero--narrow) { max-width: 320px; margin-inline: auto; }
+.prose .fig-portrait:not(.fig-longshot) img { width: 100%; height: auto; }
+.prose .fig-portrait figcaption { text-align: center; }
+.story > figure img[width="750"] { max-width: 260px; }

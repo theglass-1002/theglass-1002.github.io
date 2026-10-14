@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/style.css?v=20260924">
-  <link rel="stylesheet" href="css/dusk.css?v=20261015a">
+  <link rel="stylesheet" href="css/dusk.css?v=20261015c">
   <script src="js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -174,23 +174,28 @@
       <div class="wrap">
         <div class="sec-head"><div><span class="tag"><i class="ico ico--heart" aria-hidden="true"></i>character</span><h2 id="about-t" data-en="About">소개</h2></div></div>
         <div class="profile">
-          <figure class="portrait">
-            <img src="images/profile/jung-yuri.webp" width="1015" height="1440" alt="정유리 프로필 사진" data-en-alt="Profile photo of Yuri Jung" loading="lazy">
-            <figcaption>lv.4 frontend</figcaption>
-          </figure>
-          <div class="bio">
-            <h3 data-en="Yuri Jung">정유리</h3>
-            <p class="role">frontend developer</p>
-            <div class="dialog"><p class="say" data-en="I build screens that actually work in use.">실제로 잘 쓰이는 화면을 만드는 개발자</p><span class="dialog__next" aria-hidden="true"></span></div>
-            <p data-en="Beyond good-looking screens, I care whether they run reliably in the field.">보기 좋은 화면만큼 현장에서 안정적으로 쓰이는지를 중요하게 봄</p>
-            <p data-en="Building an animal-hospital monitoring screen and a hiring service for job seekers with disabilities taught me that a small inconvenience can change the usability of a whole service.">동물병원 모니터링 화면과 장애인 채용 서비스를 개발하며, 작은 불편 하나가 서비스 전체의 사용성을 바꾼다는 점을 체감</p>
-            <ul class="chips" aria-label="Focus areas">
-              <li>Web Accessibility</li><li>AI Service Integration</li><li>Real-time Interface</li><li>Responsive UI</li><li>Cross-functional Communication</li>
-            </ul>
+          <aside class="charcard" aria-label="정유리 기본 정보">
+            <figure class="portrait">
+              <img src="images/profile/jung-yuri.webp" width="1015" height="1440" alt="정유리 프로필 사진" data-en-alt="Profile photo of Yuri Jung" loading="lazy">
+            </figure>
+            <div class="charcard__name">
+              <h3 data-en="Yuri Jung">정유리</h3>
+              <p class="role">frontend developer</p>
+            </div>
             <dl class="facts">
               <div><dt data-en="Date of birth">생년월일</dt><dd>1998.10.02</dd></div>
               <div><dt data-en="Education">학력</dt><dd data-en="Academic Credit Bank System">학점은행제 졸업</dd></div>
+              <div><dt data-en="Expected salary">희망연봉</dt><dd data-en="KRW 38M or more (negotiable)">3,800만원 이상 (협의)</dd></div>
             </dl>
+          </aside>
+          <div class="bio">
+            <div class="dialog"><p class="say" data-en="I build screens that actually work in use.">실제로 잘 쓰이는 화면을 만드는 개발자</p><span class="dialog__next" aria-hidden="true"></span></div>
+            <p data-en="Beyond good-looking screens, I care whether they run reliably in the field.">보기 좋은 화면만큼 현장에서 안정적으로 쓰이는지를 중요하게 봄</p>
+            <p data-en="Building an animal-hospital monitoring screen and a hiring service for job seekers with disabilities taught me that a small inconvenience can change the usability of a whole service.">동물병원 모니터링 화면과 장애인 채용 서비스를 개발하며, 작은 불편 하나가 서비스 전체의 사용성을 바꾼다는 점을 체감</p>
+            <p class="focus-label">focus</p>
+            <ul class="chips" aria-label="Focus areas">
+              <li>Web Accessibility</li><li>AI Service Integration</li><li>Real-time Interface</li><li>Responsive UI</li><li>Cross-functional Communication</li>
+            </ul>
           </div>
         </div>
         <div class="inventory">
@@ -214,7 +219,6 @@
           <li class="quest"><div><p class="when">2022.03</p><span class="state state--award">award</span></div><div><h3 data-en="KEPCO KDN Idea Contest">한전KDN 아이디어 공모전</h3><p data-en="Encouragement Award (Metaverse Energy Exhibition)">장려상 (메타버스 에너지 전시관)</p></div></li>
           <li class="quest"><div><p class="when">2022.02 — 2022.06</p><span class="state state--done">clear</span></div><div><h3 data-en="NEW:O">뉴오</h3><p data-en="Metaverse office startup (backend 40% · frontend 30% · ideas 30%)">메타버스 오피스 창업 프로젝트 (백엔드 40% · 프론트엔드 30% · 아이디어 30%)</p></div></li>
         </ol>
-        <p class="salary"><b data-en="Expected salary">희망연봉</b><span data-en="KRW 38M or more (negotiable)">3,800만원 이상 (협의)</span></p>
       </div>
     </section>
 

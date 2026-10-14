@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../css/style.css?v=20260924">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
-  <link rel="stylesheet" href="../css/dusk.css?v=20261015a">
+  <link rel="stylesheet" href="../css/dusk.css?v=20261015c">
   <script src="../js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -153,9 +153,9 @@
 
           <figure class="fig-hero">
             <div class="shot-frame">
-              <img src="../images/projects/jobkok/screen-2-interview.webp"
-               width="1200" height="400"
-               alt="잡콕 AI 면접 진행 화면 - 실시간 질문 응답"
+              <img src="../images/projects/jobkok/jobkok-main-cropped.webp"
+               width="1600" height="1000"
+               alt="잡콕 메인 화면. 채용 공고 검색창과 직무 카테고리 아이콘이 놓여 있다."
                fetchpriority="high" decoding="async">
             </div>
           </figure>
@@ -172,7 +172,7 @@
                    loading="lazy" decoding="async">
               <figcaption>메인 화면. 검색과 직군 격자 모두 같은 공고 목록으로 연결</figcaption>
             </figure>
-            <figure>
+            <figure class="fig-portrait">
               <img src="../images/projects/jobkok/screen-1.webp" width="647" height="1200"
                    alt="잡콕 채용 공고 목록. 상단 검색창과 필터 줄 아래로 기업 로고가 붙은 공고 카드가 이어진다."
                    loading="lazy" decoding="async">
@@ -197,23 +197,18 @@
             <p>
               분석 완료까지 시간이 걸려, 목록에서 완료 여부를 바로 보이게 하고 진행 중인 건은 상태를 문장으로 표시
             </p>
-            <div class="story story--wide">
+            <div class="story">
               <div class="story__text">
                 <p>
                   결과 리포트는 점수만 크게 보여주지 않고 표정·음성·내용으로 나눠, 다음에 고칠 점이 보이도록 구성
                 </p>
               </div>
               <figure>
-                <img src="../images/projects/jobkok/screen-2-interview.webp" width="1200" height="400"
-                     alt="잡콕 AI 면접 진행 화면. 질문과 응답 상태가 함께 표시된다."
+                <img src="../images/projects/jobkok/jobkok-mobile-cropped.webp" width="750" height="1333"
+                     alt="잡콕 모의면접 분석 결과 화면. 진행 정보 아래 종합 분석 · 상세 분석 · 이력서-면접 일치도 탭과 역량 등급이 보인다."
                      loading="lazy" decoding="async">
               </figure>
             </div>
-            <figure class="fig-phone">
-              <img src="../images/projects/jobkok/jobkok-mobile-cropped.webp" width="750" height="1333"
-                   alt="잡콕 모바일 화면. 좁은 폭에서 공고와 면접 정보가 세로로 정리돼 있다."
-                   loading="lazy" decoding="async">
-            </figure>
           </section>
 
           <section class="cs-section" aria-labelledby="match">
@@ -312,7 +307,7 @@
 
 
   <script src="../locales/common.en.js?v=20261015a" defer></script>
-  <script src="../locales/jobkok.en.js?v=20261015a" defer></script>
+  <script src="../locales/jobkok.en.js?v=20261015b" defer></script>
   <script src="../js/site.js?v=20260921" defer></script>
 </body>
 </html>
