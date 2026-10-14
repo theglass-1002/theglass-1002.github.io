@@ -850,3 +850,11 @@ body.dusk:not(.home) .prose .fig-portrait:not(.fig-longshot):not(.fig-hero--narr
 .tscreen__cnt { margin-top: 6px !important; font: 600 13px/1 var(--d-sans); color: var(--d-sub); }
 .monitor figcaption { color: #253a5e; }
 @media (prefers-reduced-motion: reduce) { .tscreen__hint { animation: none; } }
+
+/* 본문 이미지 공통 상한 — 정사각형 · 세로 캡처가 화면을 덮지 않게 (전체 페이지 긴 캡처는 자체 규칙) */
+body.dusk:not(.home) .prose figure:not(.fig-longshot) img,
+body.dusk:not(.home) .prose figure:not(.fig-longshot) video {
+  display: block; width: auto; max-width: 100%; max-height: 560px; margin-inline: auto; object-fit: contain;
+}
+body.dusk:not(.home) .fig-hero .shot-frame img { max-height: 600px; }
+body.dusk:not(.home) .prose figure:not(.fig-longshot) figcaption { text-align: center; }
