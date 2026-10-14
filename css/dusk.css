@@ -355,14 +355,14 @@ html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opac
 
 .list { display: flex; flex-direction: column; gap: 18px; list-style: none; margin: 0; padding: 0; }
 .row {
-  position: relative; display: grid; grid-template-columns: 260px minmax(0, 1fr) 200px; align-items: center; gap: 24px;
+  position: relative; display: grid; grid-template-columns: minmax(300px, 440px) minmax(0, 1fr) 170px; align-items: center; gap: 28px;
   padding: 12px 20px 12px 12px; background: var(--d-card); border: 2px solid var(--d-shadow); box-shadow: 5px 5px 0 var(--d-shadow);
 }
 .row:hover { border-color: var(--d-butter); background: var(--d-card-hi); }
 .row:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--d-shadow); }
 .row:has(a:focus-visible) { outline: 2px dashed var(--d-butter); outline-offset: 4px; }
 .thumb { position: relative; margin: 0; background: #ebede9; border: 2px solid var(--d-shadow); aspect-ratio: 16 / 10; overflow: hidden; }
-.thumb img { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: contain; object-position: center; }   /* 비율이 달라도 사진 전체가 보인다 */
+.thumb img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; object-position: center; }   /* 비율이 달라도 사진 전체가 보인다 */
 .row .body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .row .no { margin: 0; }
 .row h3 { margin: 0; font: 700 24px/1.3 var(--d-pix); color: var(--d-text); }
@@ -371,7 +371,7 @@ html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opac
 .row p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--d-sub); }
 .row .meta { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; text-align: right; font-size: 14px; line-height: 1.5; color: var(--d-sky); }
 .bonus { margin-top: 56px; }
-.bonus .row { grid-template-columns: 120px minmax(0, 1fr) 140px; padding: 10px 20px 10px 10px; gap: 20px; }
+.bonus .row { grid-template-columns: minmax(200px, 260px) minmax(0, 1fr) 150px; padding: 10px 20px 10px 10px; gap: 20px; }
 .bonus .row h3 { font-size: 20px; }
 .bonus .row p { font-size: 15px; }
 
@@ -425,9 +425,9 @@ html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opac
   .title, .select, .profile { grid-template-columns: 1fr; }
   .monitor { position: relative; top: 0; order: -1; }
   .portrait { max-width: 280px; }
-  .row { grid-template-columns: 200px minmax(0, 1fr); }
+  .row { grid-template-columns: minmax(240px, 42%) minmax(0, 1fr); }
   .row .meta { grid-column: 2; flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
-  .bonus .row { grid-template-columns: 110px minmax(0, 1fr); }
+  .bonus .row { grid-template-columns: minmax(160px, 34%) minmax(0, 1fr); }
   .slots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .quest { grid-template-columns: 1fr; gap: 10px; }
   .orb { width: 64px; }
@@ -440,8 +440,8 @@ html[data-weather="snow"] .snowline, html[data-season="winter"] .snowline { opac
   .stage h2, .row h3, .quest h3 { font-size: 20px; }
   .row { grid-template-columns: 1fr; padding: 12px; }
   .row .meta { grid-column: 1; }
-  .bonus .row { grid-template-columns: 96px minmax(0, 1fr); }
-  .bonus .row .meta { grid-column: 2; }
+  .bonus .row { grid-template-columns: 1fr; }
+  .bonus .row .meta { grid-column: 1; }
   .sec-head { flex-direction: column; align-items: start; }
   .slots, .facts { grid-template-columns: 1fr; }
 }
@@ -594,3 +594,66 @@ html[data-time="afternoon"] .dusk .cta h2 { text-shadow: none; }
 .dusk .cs-section > h3 { color: var(--d-text); }
 .dusk .prose table th, .dusk .prose table td { border-color: rgba(235, 237, 233, .2); color: var(--d-sub); }
 .dusk .side__box, .dusk main[data-accent] .side__box, .dusk .ph__meta, .dusk main[data-accent] .ph__meta { background: var(--d-card); }
+
+/* ==========================================================================
+   상세 본문: 시간대 하늘과 어울리는 밝은 종이 (헤더 · 하늘 띠와 구분되게)
+   ========================================================================== */
+/* 바탕(시간대 · 날씨)마다 본문 종이색이 바뀐다 — 파스텔 배경 팔레트 참고: 하늘 #EAF6FF · 모래 #FFF2DF · 라벤더 #DFD6F1 */
+:root, html[data-time="sunset"] { --pg: #fff2df; --pg-card: #ffffff; --pg-ink: #241527; --pg-sub: #4e305f; --pg-label: #7a367b; --pg-line: #241527; }
+html[data-time="morning"], html[data-time="afternoon"] { --pg: #eaf6ff; --pg-card: #ffffff; --pg-ink: #172038; --pg-sub: #2f5d7c; --pg-label: #2f5d7c; --pg-line: #172038; }
+html[data-time="night"] { --pg: #dfd6f1; --pg-card: #f5f1fb; --pg-ink: #1e1d39; --pg-sub: #402751; --pg-label: #5a2a6e; --pg-line: #1e1d39; }
+html[data-weather="rain"], html[data-weather="storm"] { --pg: #e4ece9; --pg-card: #f7f9f8; --pg-ink: #202e37; --pg-sub: #394a50; --pg-label: #394a50; --pg-line: #202e37; }
+html[data-weather="snow"] { --pg: #eaf2f8; --pg-card: #ffffff; --pg-ink: #172038; --pg-sub: #253a5e; --pg-label: #2f5d7c; --pg-line: #172038; }
+
+body.dusk:not(.home) {
+  --bg: var(--pg); --surface: var(--pg-card); --subtle: var(--pg-card);
+  --text: var(--pg-ink); --heading: var(--pg-ink); --muted: var(--pg-sub); --muted-strong: var(--pg-sub);
+  --border: color-mix(in srgb, var(--pg-ink) 16%, transparent); --border-strong: color-mix(in srgb, var(--pg-ink) 34%, transparent);
+  --primary: var(--pg-label); --primary-hover: var(--pg-ink); --primary-soft: var(--pg-card);
+  --accent: var(--pg-label); --accent-fill: var(--pg-label); --accent-soft: var(--pg-card);
+  background: var(--pg); color: var(--pg-ink);
+}
+body.dusk:not(.home) :focus-visible { outline-color: var(--pg-ink); }
+body.dusk:not(.home) .ph h1,
+body.dusk:not(.home) .cs-section > h2,
+body.dusk:not(.home) .cs-section > h3,
+body.dusk:not(.home) .ph__meta dd,
+body.dusk:not(.home) .side__box li,
+body.dusk:not(.home) .side__facts dd,
+body.dusk:not(.home) .pager a,
+body.dusk:not(.home) .prose strong,
+body.dusk:not(.home) .prose b,
+body.dusk:not(.home) .lead-note strong { color: var(--pg-ink); }
+body.dusk:not(.home) .ph__lead,
+body.dusk:not(.home) .prose, body.dusk:not(.home) .prose p, body.dusk:not(.home) .prose li,
+body.dusk:not(.home) figcaption,
+body.dusk:not(.home) .toc a,
+body.dusk:not(.home) .breadcrumb a,
+body.dusk:not(.home) .note,
+body.dusk:not(.home) .lead-note { color: var(--pg-sub); }
+body.dusk:not(.home) .toc a:hover { color: var(--pg-ink); }
+body.dusk:not(.home) .breadcrumb [aria-current],
+body.dusk:not(.home) .ph__meta dt, body.dusk:not(.home) .side__box h2, body.dusk:not(.home) .side__title,
+body.dusk:not(.home) .side__facts dt, body.dusk:not(.home) .pager small,
+body.dusk:not(.home) .prose a { color: var(--pg-label); }
+body.dusk:not(.home) .ph__meta, body.dusk:not(.home) main[data-accent] .ph__meta,
+body.dusk:not(.home) .side__box, body.dusk:not(.home) main[data-accent] .side__box,
+body.dusk:not(.home) .lead-note, body.dusk:not(.home) main[data-accent] .lead-note,
+body.dusk:not(.home) .toc-mobile, body.dusk:not(.home) .pager a {
+  background: var(--pg-card); border-color: var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line);
+}
+body.dusk:not(.home) .lead-note, body.dusk:not(.home) main[data-accent] .lead-note { border-left: 8px solid var(--acc, var(--pg-label)); }
+body.dusk:not(.home) .note { background: var(--pg-card); border-color: color-mix(in srgb, var(--pg-ink) 30%, transparent); }
+body.dusk:not(.home) .pager a:hover { background: var(--d-butter); color: #172038; border-color: var(--pg-line); }
+body.dusk:not(.home) .pager { border-top-color: color-mix(in srgb, var(--pg-ink) 25%, transparent); }
+body.dusk:not(.home) .toc { border-left-color: var(--pg-line); }
+body.dusk:not(.home) .toc a[aria-current="true"] { color: #172038; background: var(--d-butter); }
+body.dusk:not(.home) main[data-accent] .cs-section > h2::before { background: var(--pg-ink); color: var(--pg); }
+body.dusk:not(.home) .ph__kicker, body.dusk:not(.home) main[data-accent] .ph__kicker { border-color: var(--pg-line); box-shadow: 3px 3px 0 var(--pg-line); }
+body.dusk:not(.home) .shot-frame, body.dusk:not(.home) main[data-accent] .shot-frame { border-color: var(--pg-line); box-shadow: 6px 6px 0 var(--pg-line); }
+body.dusk:not(.home) .prose figure img, body.dusk:not(.home) .shot-frame img { border-color: var(--pg-line); }
+body.dusk:not(.home) .zoom-btn { border-color: var(--pg-line); box-shadow: 3px 3px 0 var(--pg-line); color: #172038; }
+body.dusk:not(.home) .side__cta .btn { border-color: var(--pg-line); box-shadow: inset -3px -3px 0 rgba(0, 0, 0, .16), inset 3px 3px 0 rgba(255, 255, 255, .5), 4px 4px 0 var(--pg-line); }
+body.dusk:not(.home) .side__cta .btn--ghost { background: var(--pg-card); color: var(--pg-ink); box-shadow: 4px 4px 0 var(--pg-line); }
+body.dusk:not(.home) .side__cta .btn--ghost:hover { background: var(--d-butter); color: #172038; }
+body.dusk:not(.home) .prose table th, body.dusk:not(.home) .prose table td { color: var(--pg-sub); border-color: color-mix(in srgb, var(--pg-ink) 20%, transparent); }
