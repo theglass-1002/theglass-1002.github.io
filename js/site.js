@@ -411,7 +411,10 @@
      홈 화면의 프로젝트 카드 이미지는 카드 전체가 링크라 제외한다.
      ------------------------------------------------------------------ */
   (function lightbox() {
-    var triggers = document.querySelectorAll('figure img, .fig-diagram svg');
+    // 메인 모니터 · 프로필 사진은 확대 대상이 아니다 (모니터는 겹친 화면이라 엉뚱한 사진이 뜬다)
+    var triggers = Array.prototype.filter.call(document.querySelectorAll('figure img, .fig-diagram svg'), function (el) {
+      return !el.closest('.monitor, .portrait, .charcard, .thumb');
+    });
     if (!triggers.length) return;
 
     var box, stage, cap, closeBtn, lastFocus;

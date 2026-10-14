@@ -851,3 +851,7 @@ body.dusk:not(.home) .prose figure:not(.fig-longshot) video {
 }
 body.dusk:not(.home) .fig-hero .shot-frame img { max-height: 600px; }
 body.dusk:not(.home) .prose figure:not(.fig-longshot) figcaption { text-align: center; }
+.tgrid a { display: block; position: relative; color: inherit; }
+.tgrid a figure { position: absolute; inset: 0; }
+.tgrid a:hover figure, .tgrid a:focus-visible figure { border-color: var(--d-butter); outline: 2px solid var(--d-butter); }
+.tgrid img { background: transparent !important; border: 0 !important; border-radius: 0 !important; }
