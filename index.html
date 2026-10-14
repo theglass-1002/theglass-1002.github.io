@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&amp;display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="css/style.css?v=20260924">
-  <link rel="stylesheet" href="css/dusk.css?v=20261015d">
+  <link rel="stylesheet" href="css/dusk.css?v=20261015e">
   <script src="js/time.js?v=20261014g"></script>
   <script>/* 영어로 열릴 때 한국어가 먼저 비치지 않도록 — site.js 가 번역을 끝내면 해제한다 */
   (function(){try{var q=new URLSearchParams(location.search).get('lang'),l=q||localStorage.getItem('portfolio-lang');if(l==='en'){var d=document.documentElement;d.lang='en';d.classList.add('i18n-pending');setTimeout(function(){d.classList.remove('i18n-pending')},2500)}}catch(e){}})();</script>
@@ -84,7 +84,13 @@
         </div>
         <figure class="monitor">
           <div class="screen">
-            <img class="is-on" data-k="home" src="images/hero/pixel-interface-studio.webp" width="1000" height="800" alt="세 개의 모니터 앞에서 작업하는 개발자 픽셀 그림" data-en-alt="Pixel art of a developer working in front of three monitors" fetchpriority="high">
+            <div class="tscreen is-on" data-k="home">
+              <p class="tscreen__top">portfolio 2026</p>
+              <p class="tscreen__name"><span data-en="Yuri Jung">정유리</span></p>
+              <p class="tscreen__role">frontend developer</p>
+              <p class="tscreen__hint"><span class="tri" aria-hidden="true"></span>select a stage</p>
+              <p class="tscreen__cnt">6 stages · 4 side quests</p>
+            </div>
             <img data-k="kiosk" src="images/projects/kiosk/hero.webp" alt="" loading="lazy">
             <img data-k="jango" src="images/projects/jango/jango-main-cropped.webp" alt="" loading="lazy">
             <img data-k="jobkok" src="images/projects/jobkok/jobkok-main-cropped.webp" alt="" loading="lazy">
@@ -246,19 +252,25 @@
   <footer class="site-footer"><p class="foot" data-en="&amp;copy; 2026 Yuri Jung. All rights reserved.">&copy; 2026 정유리. All rights reserved.</p></footer>
 
   <script>
-  /* 스테이지를 고르면 모니터 채널이 바뀐다 */
+  /* 스테이지를 고르면 모니터 채널이 바뀐다. 가만히 두면 오락실 데모처럼 작업 화면을 차례로 보여 준다 */
   (function () {
-    var imgs = document.querySelectorAll('.screen img'), ch = document.querySelector('.monitor .ch'), links = document.querySelectorAll('.stage a');
+    var screens = document.querySelectorAll('.screen [data-k]'), ch = document.querySelector('.monitor .ch'), links = document.querySelectorAll('.stage a');
+    var order = ['home', 'kiosk', 'jango', 'jobkok', 'zentry'], cur = 'home', timer = null;
     function show(k) {
-      imgs.forEach(function (i) { i.classList.toggle('is-on', i.dataset.k === k); });
-      ch.textContent = k === 'home' ? 'ch.0 home' : 'ch.' + (Array.prototype.findIndex.call(links, function (a) { return a.dataset.k === k; }) + 1) + ' ' + k;
+      cur = k;
+      screens.forEach(function (i) { i.classList.toggle('is-on', i.dataset.k === k); });
+      ch.textContent = 'ch.' + order.indexOf(k) + ' ' + k;
       links.forEach(function (a) { a.classList.toggle('is-on', a.dataset.k === k); });
     }
+    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function demo() { stop(); if (calm) return; timer = setInterval(function () { show(order[(order.indexOf(cur) + 1) % order.length]); }, 3200); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
     links.forEach(function (a) {
-      a.addEventListener('mouseenter', function () { show(a.dataset.k); });
-      a.addEventListener('focus', function () { show(a.dataset.k); });
+      a.addEventListener('mouseenter', function () { stop(); show(a.dataset.k); });
+      a.addEventListener('focus', function () { stop(); show(a.dataset.k); });
     });
-    document.querySelector('.stages').addEventListener('mouseleave', function () { show('home'); });
+    document.querySelector('.stages').addEventListener('mouseleave', function () { show('home'); demo(); });
+    setTimeout(demo, 2400);
     var top = document.querySelector('[data-scroll-top]');
     if (top) top.addEventListener('click', function (e) { e.preventDefault(); window.scrollTo({ top: 0 }); });
   })();
