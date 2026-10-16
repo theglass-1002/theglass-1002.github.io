@@ -5,6 +5,11 @@
 (function () {
   'use strict';
 
+  /* 배포 일자 — GitHub Pages 가 보내는 Last-Modified(빌드 시각)를 한국 시간으로 찍는다 */
+  try {
+    console.log('배포 일자: ' + new Date(document.lastModified).toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' }));
+  } catch (e) { /* 무시 */ }
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ------------------------------------------------------------------
