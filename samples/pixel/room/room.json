@@ -1,0 +1,132 @@
+{
+ "w": 232,
+ "h": 183,
+ "objs": [
+  {
+   "src": "room/00-rug.png",
+   "x": 68,
+   "y": 105,
+   "w": 96,
+   "h": 48,
+   "pid": null,
+   "name": "rug"
+  },
+  {
+   "src": "room/01-kiosk.png",
+   "x": 95,
+   "y": 33,
+   "w": 30,
+   "h": 56,
+   "pid": "kiosk",
+   "name": "kiosk"
+  },
+  {
+   "src": "room/02-arcade.png",
+   "x": 80,
+   "y": 50,
+   "w": 26,
+   "h": 45,
+   "pid": "newo",
+   "name": "arcade"
+  },
+  {
+   "src": "room/03-whiteboard.png",
+   "x": 125,
+   "y": 60,
+   "w": 34,
+   "h": 37,
+   "pid": "jobkok",
+   "name": "whiteboard"
+  },
+  {
+   "src": "room/04-tv.png",
+   "x": 58,
+   "y": 74,
+   "w": 28,
+   "h": 32,
+   "pid": "interview",
+   "name": "tv"
+  },
+  {
+   "src": "room/05-bookshelf.png",
+   "x": 144,
+   "y": 41,
+   "w": 58,
+   "h": 82,
+   "pid": "literacy",
+   "name": "bookshelf"
+  },
+  {
+   "src": "room/06-vitals.png",
+   "x": 13,
+   "y": 99,
+   "w": 26,
+   "h": 29,
+   "pid": "zentry",
+   "name": "vitals"
+  },
+  {
+   "src": "room/07-corkboard.png",
+   "x": 194,
+   "y": 95,
+   "w": 30,
+   "h": 35,
+   "pid": "sketchers",
+   "name": "corkboard"
+  },
+  {
+   "src": "room/08-bed.png",
+   "x": 23,
+   "y": 86,
+   "w": 49,
+   "h": 45,
+   "pid": "careform",
+   "name": "bed"
+  },
+  {
+   "src": "room/09-desk.png",
+   "x": 117,
+   "y": 97,
+   "w": 50,
+   "h": 42,
+   "pid": "jango",
+   "name": "desk"
+  },
+  {
+   "src": "room/10-pc.png",
+   "x": 131,
+   "y": 93,
+   "w": 25,
+   "h": 28,
+   "pid": "jango",
+   "name": "pc"
+  },
+  {
+   "src": "room/11-beanbag.png",
+   "x": 53,
+   "y": 122,
+   "w": 34,
+   "h": 27,
+   "pid": null,
+   "name": "beanbag"
+  },
+  {
+   "src": "room/12-table.png",
+   "x": 108,
+   "y": 133,
+   "w": 34,
+   "h": 32,
+   "pid": "energy",
+   "name": "table"
+  },
+  {
+   "src": "room/13-globe.png",
+   "x": 117,
+   "y": 132,
+   "w": 14,
+   "h": 20,
+   "pid": "energy",
+   "name": "globe"
+  }
+ ]
+}

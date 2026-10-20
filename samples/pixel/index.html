@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>정유리 — Frontend Developer (픽셀 시안)</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <style>
+    :root {
+      --ink: #1b1b1b;
+      --steel: #4d7f9b;
+      --navy: #0d3d5c;
+      --navy-2: #0a2f47;
+      --orange: #e2701f;
+      --orange-d: #9c4208;
+      --yellow: #ffcc33;
+      --yellow-d: #b48a00;
+      --green: #6c9b4e;
+      --green-d: #3f6a2a;
+      --blue: #5b8db0;
+      --blue-d: #2f5f80;
+      --link: #d35408;
+      --row-a: #a9cfe6;
+      --row-b: #dcebf4;
+      --gap: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font: 12px/1.55 Verdana, "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", sans-serif;
+      color: var(--ink);
+      background-color: #1f3344;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' shape-rendering='crispEdges'%3E%3Cpath fill='%23ffffff' fill-opacity='.05' d='M0 0h2v2H0zM8 8h2v2H8z'/%3E%3C/svg%3E");
+    }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+    ul, ol { padding: 0; list-style: none; }
+    a { color: var(--link); font-weight: 700; }
+    a:hover { color: #ff7a1a; }
+    button { font: inherit; }
+
+    .frame { width: 980px; margin: 16px auto 32px; }
+    .shell { background: #fff; border: 1px solid #000; border-radius: 10px; padding: 3px; }
+    .inner { background: var(--steel); border: 1px solid #000; border-radius: 8px; overflow: hidden; }
+
+    /* 머리: 로고 + 탭 */
+    .head { position: relative; height: 112px; background: linear-gradient(#173a55, #2a5f80); border-bottom: 1px solid #000; overflow: hidden; }
+    .head::before { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' shape-rendering='crispEdges'%3E%3Cg fill='%23fff'%3E%3Cpath fill-opacity='.7' d='M12 8h1v1h-1zM70 4h1v1h-1zM100 22h1v1h-1zM40 30h1v1h-1z'/%3E%3Cpath fill-opacity='.35' d='M28 18h1v1h-1zM86 40h1v1h-1zM5 44h1v1H5zM58 50h1v1h-1z'/%3E%3C/g%3E%3C/svg%3E"); }
+    .logo { position: absolute; left: 18px; top: 14px; text-decoration: none; }
+    .logo b {
+      display: block; font: 700 34px/1 Silkscreen, monospace; color: #ffcc00; letter-spacing: 1px;
+      text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 2px 2px 0 #e2701f, 4px 4px 0 #9c4208, 5px 5px 0 #000;
+    }
+    .logo span { display: block; margin-top: 6px; font-size: 11px; font-weight: 700; color: #cfe3f0; }
+    .lcd { position: absolute; right: 12px; top: 12px; padding: 2px 10px; font-size: 11px; color: #ffb066; background: linear-gradient(#262626, #3a3a3a); border: 1px solid #000; border-radius: 3px; box-shadow: inset 0 1px 0 #000; }
+    .tabs { position: absolute; left: 8px; right: 8px; bottom: -1px; display: flex; gap: 2px; }
+    .tabs a {
+      display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 11px;
+      font-size: 11px; font-weight: 700; color: #fff; text-decoration: none; white-space: nowrap;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.45);
+      background: linear-gradient(#f39a4b, #d9631a 55%, #c4520e); border: 1px solid #5a2600; border-bottom: 0; border-radius: 6px 6px 0 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
+    }
+    .tabs a:hover { color: #fff; background: linear-gradient(#f8ab63, #e06d22 55%, #cd5b14); }
+    .tabs a[aria-current] { height: 34px; color: #111; text-shadow: none; background: linear-gradient(#fff3b8, var(--yellow) 40%); border-color: #6b5200; }
+    .tabs svg { width: 14px; height: 14px; flex: none; }
+    .subnav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; min-height: 24px; padding: 3px 10px; font-size: 11px; background: var(--yellow); border-bottom: 1px solid #000; }
+    .subnav a { color: #111; }
+    .subnav span { color: #8a6a00; }
+    .subnav .here { color: #6b5200; }
+
+    .content { padding: 10px; display: grid; gap: var(--gap); }
+    .row { display: grid; gap: var(--gap); align-items: stretch; }
+    .row--top { grid-template-columns: minmax(0, 1fr) 300px; }
+    .row--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .row--article { grid-template-columns: minmax(0, 1fr) 260px; align-items: start; }
+    .col { display: grid; gap: var(--gap); align-content: start; }
+
+    /* 공통 박스 */
+    .box { display: flex; flex-direction: column; background: #fff; border: 1px solid #000; border-radius: 7px; padding: 3px; }
+    .box__h {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 2px 8px 3px; font-size: 11px; font-weight: 700; color: #fff; text-shadow: 1px 1px 0 rgba(0,0,0,.35);
+      background: linear-gradient(#ef8a3e, var(--orange)); border: 1px solid var(--orange-d); border-radius: 5px;
+    }
+    .box--green .box__h { background: linear-gradient(#86b56a, var(--green)); border-color: var(--green-d); }
+    .box--blue .box__h { background: linear-gradient(#78a7c7, var(--blue)); border-color: var(--blue-d); }
+    .box--yellow .box__h { color: #111; text-shadow: none; background: linear-gradient(#ffe27a, var(--yellow)); border-color: var(--yellow-d); }
+    .box__b { flex: 1; padding: 10px 8px 8px; }
+    .box__b p + p { margin-top: 8px; }
+    .more { display: inline-block; margin-top: 10px; }
+    .more::after { content: " >>"; }
+    .sprite { image-rendering: pixelated; }
+    .with-icon { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 10px; align-items: start; }
+    .with-icon img { justify-self: center; max-height: 64px; width: auto; }
+
+    .hbtn {
+      position: relative; display: inline-flex; align-items: center; height: 20px; padding: 0 26px 0 10px;
+      font-size: 11px; font-weight: 700; color: #111; text-decoration: none; white-space: nowrap; cursor: pointer;
+      background: linear-gradient(#fdfdfd, #d4d4d4); border: 1px solid #333; border-radius: 4px;
+    }
+    .hbtn::after {
+      content: ""; position: absolute; right: 2px; top: 2px; width: 14px; height: 14px; border-radius: 2px;
+      background: #f0821e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' shape-rendering='crispEdges'%3E%3Cpath fill='%23fff' d='M5 3h1v1h1v1h1v1h1v2H8v1H7v1H6v1H5z'/%3E%3C/svg%3E") center / 14px no-repeat;
+      box-shadow: inset 0 0 0 1px #9c4208;
+    }
+    .hbtn:hover { color: #111; background: linear-gradient(#fff, #e6e6e6); }
+    .hbtn--blue { color: #fff; background: linear-gradient(#5fb0e8, #2272ad); border-color: #0d3d5c; }
+    .hbtn--blue:hover { color: #fff; background: linear-gradient(#78c0f0, #2c82c0); }
+
+    /* 1면: 방 */
+    .roombox { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: #1b1b1b; border: 1px solid #000; border-radius: 7px; overflow: hidden; color: #fff; }
+    .roombox__h { display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; font-size: 11px; font-weight: 700; }
+    .roombox__h span { font-weight: 400; color: #9fb2c1; }
+    .scene { display: grid; place-items: center; padding: 14px 0 10px; background: radial-gradient(ellipse at 50% 55%, #2b4a63, #13212d 70%); border-top: 1px solid #000; border-bottom: 1px solid #000; }
+    .stage { position: relative; width: 464px; max-width: 100%; aspect-ratio: 232 / 183; }
+    .stage img { position: absolute; image-rendering: pixelated; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+    .stage img.on { filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff); }
+    .stage.hot { cursor: pointer; }
+    .tip { position: absolute; z-index: 50; transform: translate(-50%, calc(-100% - 8px)); padding: 3px 8px; white-space: nowrap; pointer-events: none; font-size: 11px; font-weight: 700; color: #111; background: #fff; border: 1px solid #000; border-radius: 4px; }
+    .tip[hidden] { display: none; }
+    .caption { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 46px; padding: 6px 10px; background: var(--navy); font-size: 11px; }
+    .caption b { color: #fff; }
+    .caption p { color: #cfe0ec; }
+
+    .news { display: grid; grid-template-rows: auto 1fr auto; background: var(--navy); border: 1px solid #000; border-radius: 7px; overflow: hidden; color: #fff; }
+    .news__h { display: flex; justify-content: space-between; align-items: center; padding: 5px 10px; background: #1b1b1b; font-size: 11px; font-weight: 700; }
+    .news__h i { width: 14px; height: 14px; border-radius: 2px; background: #f0821e; box-shadow: inset 0 0 0 1px #9c4208; }
+    .news ol { padding: 10px; }
+    .news li { padding-bottom: 9px; margin-bottom: 9px; border-bottom: 1px dashed #3f6f8f; font-size: 11px; }
+    .news li:last-child { border-bottom: 0; margin-bottom: 0; }
+    .news time { font-weight: 700; color: #fff; }
+    .news a { color: #ff9a4d; }
+    .news p { color: #cfe0ec; }
+    .news__foot { display: flex; justify-content: flex-end; padding: 0 10px 10px; }
+
+    .tbl { width: 100%; border-collapse: separate; border-spacing: 0 2px; font-size: 11px; }
+    .tbl th { padding: 4px 6px; color: #fff; text-align: left; background: var(--navy); }
+    .tbl td { padding: 5px 6px; vertical-align: top; }
+    .tbl tbody tr:nth-child(odd) td { background: var(--row-a); }
+    .tbl tbody tr:nth-child(even) td { background: var(--row-b); }
+    .tbl a { color: #234f6e; }
+    .tbl td:first-child { white-space: nowrap; }
+    .tbl td.when { white-space: nowrap; font-style: italic; color: #2a4a60; }
+    .tbl tr[data-go] { cursor: pointer; }
+    .tbl tr[data-go]:hover td { background: #ffe58a; }
+    .bullets li { position: relative; padding-left: 12px; }
+    .bullets li + li { margin-top: 3px; }
+    .bullets li::before { content: ""; position: absolute; left: 1px; top: 7px; width: 5px; height: 5px; background: var(--blue-d); }
+
+    /* 기사 */
+    .title-bar { padding: 5px 12px; color: #fff; font-size: 17px; font-weight: 700; background: var(--navy); border: 1px solid #000; border-radius: 7px; box-shadow: inset 0 1px 0 rgba(255,255,255,.15); display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .title-bar small { font-size: 11px; font-weight: 400; color: #b9d3e4; }
+    .masthead { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 14px; align-items: center; }
+    .masthead .icon { height: 96px; display: grid; place-items: center; background: #eef3f6; border: 1px solid #000; border-radius: 5px; }
+    .masthead .icon img { max-height: 88px; width: auto; }
+    .masthead .lead { font-size: 13px; }
+    .events { width: 100%; margin-top: 12px; border-collapse: collapse; font-size: 11px; border: 2px solid #000; }
+    .events td { padding: 4px 8px; border: 1px solid #000; }
+    .events td:first-child { width: 110px; font-weight: 700; white-space: nowrap; }
+    .events tr:nth-child(odd) td:first-child { background: #e8302a; color: #fff; }
+    .events tr:nth-child(even) td:first-child { background: var(--yellow); }
+    .events td:last-child { text-align: center; font-weight: 700; }
+    .rich > * + * { margin-top: 10px; }
+    .rich h3 { margin-top: 18px; font-size: 13px; }
+    .rich h4 { margin-top: 14px; font-size: 12px; }
+    .rich ul li { position: relative; padding-left: 12px; }
+    .rich ul li + li, .rich ol li + li { margin-top: 3px; }
+    .rich ul li::before { content: ""; position: absolute; left: 1px; top: 7px; width: 5px; height: 5px; background: var(--blue-d); }
+    .rich ol { padding-left: 20px; list-style: decimal; }
+    .rich li b:first-child, .rich li strong:first-child { margin-right: 6px; color: var(--navy); }
+    .rich figure { margin: 14px 0 0; }
+    .rich .media { max-height: 480px; overflow: auto; border: 1px solid #000; background: #f3f5f7; }
+    .rich .media img { margin: 0 auto; height: auto; }
+    .rich video { display: block; max-width: 100%; max-height: 480px; width: auto; height: auto; margin: 0 auto; border: 1px solid #000; background: #000; }
+    .rich figcaption { margin-top: 6px; font-size: 11px; color: #555; text-align: center; }
+    .rich svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+    .rich table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .rich th { padding: 4px 6px; color: #fff; text-align: left; background: var(--navy); border: 1px solid #000; }
+    .rich td { padding: 4px 6px; border: 1px solid #9fb6c6; vertical-align: top; }
+    .rich blockquote { margin: 10px 0 0; padding: 6px 10px; background: #fff8dc; border-left: 4px solid var(--yellow); }
+    .rich dl { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; }
+    .rich dt { font-weight: 700; }
+    .rich a { color: var(--link); }
+    /* 원본 도식을 하보 톤으로 */
+    .rich .fig-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    .rich .fig-pair figure { margin: 0; }
+    .rich .split { display: grid; gap: 10px; }
+    .rich .split:not(.split--stack) { grid-template-columns: 1fr 1fr; align-items: start; }
+    .rich .split > figure { margin: 0; }
+    .rich .devices { display: grid; grid-template-columns: 3fr 1fr; gap: 10px; align-items: end; }
+    .rich .devices figcaption { grid-column: 1 / -1; }
+    .rich .lanes__cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+    .rich .lanes__col { border: 1px solid #000; border-radius: 5px; overflow: hidden; background: #f4f8fb; }
+    .rich .lanes__head { margin: 0; padding: 3px 8px; font-weight: 700; background: var(--yellow); border-bottom: 1px solid #000; }
+    .rich .lanes__col ol { margin: 0; padding: 8px 8px 8px 26px; }
+    .rich small { display: block; font-size: 10px; color: #667; }
+    .rich .svcflow__grid { display: grid; grid-template-columns: 84px 88px minmax(0, 1fr) 88px 84px; gap: 6px; align-items: center; font-size: 11px; }
+    .rich .svcflow__actor { padding: 10px 6px; text-align: center; color: #cfe0ec; background: var(--navy); border: 1px solid #000; border-radius: 5px; }
+    .rich .svcflow__actor b { display: block; color: #fff; font-size: 12px; }
+    .rich .svcflow__links { display: grid; gap: 10px; }
+    .rich .svcflow__link { margin: 0; padding: 3px 4px; text-align: center; font-weight: 700; background: #fff8dc; border: 1px dashed #b48a00; border-radius: 4px; }
+    .rich .svcflow__link.dir-r::after { content: " →"; color: var(--orange); }
+    .rich .svcflow__link.dir-l::before { content: "← "; color: var(--orange); }
+    .rich .svcflow__core { padding: 0 0 8px; background: #f4f8fb; border: 2px solid #000; border-radius: 6px; overflow: hidden; }
+    .rich .svcflow__title { margin: 0 0 8px; padding: 3px 8px; font-weight: 700; color: #111; background: var(--yellow); border-bottom: 1px solid #000; text-align: center; }
+    .rich .svcflow__cols, .rich .svcflow__infra { margin: 0 8px; }
+    .rich .svcflow__pipe { margin: 0; padding-left: 18px; }
+    .rich .svcflow__pipe li b:first-child, .rich .svcflow__pipe b { display: block; margin: 0; }
+    .rich .svcflow__pipe--biz { padding: 0; }
+    .rich .svcflow__bridge { margin: 6px 0; padding: 3px 6px; text-align: center; color: #fff; background: var(--blue-d); border-radius: 4px; }
+    .rich .svcflow__infra { margin-top: 8px; padding-top: 6px; border-top: 1px dashed #9fb6c6; color: #555; text-align: center; }
+    .chips { display: flex; flex-wrap: wrap; gap: 3px; }
+    .chips li { padding: 1px 6px; font-size: 10px; background: #eef4f8; border: 1px solid #9fb6c6; border-radius: 3px; }
+    .pn { display: grid; gap: 6px; }
+    .pn a { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; align-items: center; padding: 4px; text-decoration: none; color: #111; border: 1px solid #c9d6df; border-radius: 4px; }
+    .pn a:hover { background: #fff6d6; }
+    .pn img { max-height: 36px; width: auto; justify-self: center; }
+    .pn small { display: block; font-weight: 400; color: #666; }
+    .side4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .footer { margin: 0 10px 10px; padding: 12px; text-align: center; font-size: 11px; color: #8fb9d6; background: var(--navy-2); border: 1px solid #000; border-radius: 7px; }
+    .footer a { color: #8fb9d6; font-weight: 400; text-decoration: none; }
+    .footer a:hover { color: #fff; text-decoration: underline; }
+    .footer p + p { margin-top: 6px; color: #6f9cbb; }
+
+    @media (max-width: 1000px) {
+      .frame { width: auto; margin: 0; }
+      .shell, .inner { border-radius: 0; }
+      .tabs { overflow-x: auto; scrollbar-width: none; }
+      .lcd { display: none; }
+      .row--top, .row--3, .row--article, .side4 { grid-template-columns: minmax(0, 1fr); }
+      .rich .svcflow__grid, .rich .split, .rich .devices { grid-template-columns: minmax(0, 1fr) !important; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 13px; }
+      .head { height: 100px; }
+      .logo { left: 12px; top: 12px; }
+      .logo b { font-size: 26px; }
+      .logo span { font-size: 10px; }
+      .tabs { left: 0; right: 0; padding: 0 8px; -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
+      .tabs a { padding: 0 9px; }
+      .subnav { padding: 4px 10px; line-height: 1.8; }
+      .content { padding: 8px; }
+      .roombox__h span { display: none; }
+      .scene { padding: 8px 0 4px; }
+      .stage { -webkit-tap-highlight-color: transparent; }
+      .caption { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+      .caption .hbtn { justify-self: start; }
+      .news li, .tbl, .rich small, .rich figcaption, .events { font-size: 12px; }
+      .box__h { font-size: 12px; }
+      .with-icon { grid-template-columns: 44px minmax(0, 1fr); }
+      .title-bar { flex-direction: column; align-items: flex-start; gap: 2px; font-size: 16px; }
+      .masthead { grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
+      .masthead .icon { height: 64px; }
+      .masthead .icon img { max-height: 56px; }
+      .masthead .lead { font-size: 13px; }
+      .events td:first-child { width: 92px; }
+      /* 프로젝트 표 → 카드 목록 */
+      .tbl--list thead { display: none; }
+      .tbl--list, .tbl--list tbody { display: block; }
+      .tbl--list tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 8px; margin-bottom: 4px; padding: 8px; }
+      .tbl--list tbody tr:nth-child(odd) { background: var(--row-a); }
+      .tbl--list tbody tr:nth-child(even) { background: var(--row-b); }
+      .tbl--list td { padding: 0; background: none !important; }
+      .tbl--list .meta2 { margin-top: 2px; font-size: 12px; color: #2a4a60; }
+      .tbl--list tr { grid-template-areas: "n w" "m m"; }
+      .tbl--list td:nth-child(1) { grid-area: n; white-space: normal; }
+      .tbl--list td:nth-child(2) { grid-area: w; font-size: 11px; }
+      .tbl--list .meta2 { grid-area: m; }
+      .rich .media { max-height: 420px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="shell">
+      <div class="inner">
+        <header class="head">
+          <a class="logo" href="#home"><b>YURI JUNG</b><span>프론트엔드 개발자 · 포트폴리오 2026</span></a>
+          <p class="lcd" id="clock">서울 --:--</p>
+          <nav class="tabs" id="tabs" aria-label="탭"></nav>
+        </header>
+        <nav class="subnav" id="subnav" aria-label="하위 메뉴"></nav>
+        <main class="content" id="view"></main>
+        <footer class="footer">
+          <p><a href="mailto:glass.xcx@gmail.com">glass.xcx@gmail.com</a> | 010-4096-5625 | <a href="../../index.html">기존 포트폴리오</a></p>
+          <p>© 2026 정유리 · 픽셀 가구: Pixel Isometric Modern Interior by Cryovex</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+  (function () {
+    var P = window.PROJECTS, ROOT = '../../';
+    var COMPANY = ['kiosk', 'jango', 'jobkok', 'literacy', 'interview', 'zentry'];
+    var SIDE = ['newo', 'energy', 'careform', 'sketchers'];
+    var ALL = COMPANY.concat(SIDE);
+    var SHORT = { kiosk: '키오스크', jango: '장고', jobkok: '잡콕', literacy: '문해력 탐험대', interview: '면접왕', zentry: '두리틀', newo: '뉴오', energy: '에너지 전시관', careform: '케어팜', sketchers: '스케치스' };
+    // 프로젝트를 대표하는 방 안 사물
+    var OBJ = { kiosk: 'kiosk', jango: 'pc', jobkok: 'whiteboard', literacy: 'bookshelf', interview: 'tv', zentry: 'vitals', newo: 'arcade', energy: 'globe', careform: 'bed', sketchers: 'corkboard' };
+    var ICON_OF = { home: 'home', kiosk: 'screen', jango: 'case', jobkok: 'doc', literacy: 'book', interview: 'mic', zentry: 'heart', side: 'star' };
+
+    // 12x12 탭 아이콘
+    var ICONS = {
+      home: ['.....kk.....', '....kyyk....', '...kyyyyk...', '..kyyyyyyk..', '.kyyyyyyyyk.', 'kkkkkkkkkkkk', '.kwwwwwwwwk.', '.kwkkwwbbwk.', '.kwkkwwbbwk.', '.kwkkwwwwwk.', '.kwkkwwwwwk.', '.kkkkkkkkkk.'],
+      screen: ['..kkkkkkkk..', '..kbbbbbbk..', '..kbwbbbbk..', '..kbbbbbbk..', '..kbbbbbbk..', '..kbbbbbbk..', '..kkkkkkkk..', '..kggggggk..', '..kgkkkkgk..', '..kggggggk..', '..kkkkkkkk..', '....kkkk....'],
+      case: ['............', '....kkkk....', '...k....k...', 'kkkkkkkkkkkk', 'kbbbbbbbbbbk', 'kbbbbbbbbbbk', 'kbbbbyybbbbk', 'kkkkkyykkkkk', 'kbbbbbbbbbbk', 'kbbbbbbbbbbk', 'kkkkkkkkkkkk', '............'],
+      doc: ['.kkkkkkk....', '.kwwwwwkk...', '.kwkkkwwkk..', '.kwwwwwwwk..', '.kwkkkkkwk..', '.kwwwwwwwk..', '.kwkkkkkwk..', '.kwwwwwwwk..', '.kwkkkwwwk..', '.kwwwwwwwk..', '.kkkkkkkkk..', '............'],
+      book: ['............', '.kkkkkkkkk..', '.krrrrrrrkk.', '.krwwwwwrkw.', '.krrrrrrrkw.', '.krrrrrrrkw.', '.krrrrrrrkw.', '.krrrrrrrkw.', '.krrrrrrrkw.', '.kkkkkkkkkw.', '..wwwwwwwww.', '............'],
+      mic: ['....kkkk....', '...kssssk...', '...kswssk...', '...kssssk...', '...kssssk...', '.k.kssssk.k.', '.k..kkkk..k.', '..k......k..', '...kkkkkk...', '.....kk.....', '....kkkk....', '............'],
+      heart: ['............', '.kkk...kkk..', 'krrrk.krrrk.', 'krwrrkrrrrk.', 'krrrrrrrrrk.', 'krrrrrrrrrk.', '.krrrrrrrk..', '..krrrrrk...', '...krrrk....', '....krk.....', '.....k......', '............'],
+      star: ['.....k......', '....kyk.....', '....kyk.....', 'kkkkyyykkkk.', 'kyyyyyyyyyk.', '.kyyyyyyyk..', '..kyyyyyk...', '.kyyykyyyk..', '.kyyk.kyyk..', '.kkk...kkk..', '............', '............']
+    };
+    var ICOL = { k: '#1b1b1b', y: '#ffcc33', w: '#ffffff', b: '#4a90c8', g: '#9aa5ad', r: '#e0402c', s: '#cfd6db' };
+    function iconSVG(name) {
+      var d = {};
+      ICONS[name].forEach(function (row, y) {
+        for (var x = 0; x < row.length; x++) { var c = ICOL[row[x]]; if (c) d[c] = (d[c] || '') + 'M' + x + ' ' + y + 'h1v1h-1z'; }
+      });
+      return '<svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true">' + Object.keys(d).map(function (c) { return '<path fill="' + c + '" d="' + d[c] + '"/>'; }).join('') + '</svg>';
+    }
+
+    function meta(k, label) { var m = P[k].meta.filter(function (x) { return x[0].indexOf(label) > -1; })[0]; return m ? m[1] : ''; }
+    function short(t) { return t.replace(/\s*\(.*?\)\s*/g, ' ').trim(); }
+    function first(t) { return t.split('. ')[0]; }
+
+    var tabs = document.getElementById('tabs'), subnav = document.getElementById('subnav'), view = document.getElementById('view');
+    tabs.innerHTML = [['home', '홈']].concat(COMPANY.map(function (k) { return [k, SHORT[k]]; }), [['side', '개인 작업']]).map(function (t) {
+      return '<a href="#' + t[0] + '" data-tab="' + t[0] + '">' + iconSVG(ICON_OF[t[0]]) + t[1] + '</a>';
+    }).join('');
+
+    fetch('room/room.json').then(function (r) { return r.json(); }).then(function (room) {
+      var icon = {};
+      room.objs.forEach(function (o) { if (o.pid && OBJ[o.pid] === o.name) icon[o.pid] = o; });
+      function sprite(k, scale) { var o = icon[k], f = scale || 1; return '<img class="sprite" src="' + o.src + '" width="' + o.w * f + '" height="' + o.h * f + '" alt="">'; }
+
+      // HOME: 신문 1면
+      function renderHome() {
+        subnav.innerHTML = '<span class="here">홈</span><span>|</span><a href="#home" data-scroll="room">내 방</a><span>|</span><a href="#home" data-scroll="news">경력</a><span>|</span><a href="#home" data-scroll="list">프로젝트 목록</a><span>|</span><a href="mailto:glass.xcx@gmail.com">메일 보내기</a>';
+        var news = [
+          ['2026.07', 'kiosk', '홀로그램 AI 키오스크 개발 시작', '부산 실증 사업. Gemini API 음성 주문'],
+          ['2026.04', 'jango', '장고 개발 시작', '장애인 구직자 고용 플랫폼 (정부과제)'],
+          ['2025.07', '', '(주)위드마인드 입사', '프론트엔드 개발자로 합류'],
+          ['2025.02', 'zentry', '(주)젠트리 2년 6개월 근무 마침', '수의사용 모니터링 앱 · 공식/관리자 웹'],
+          ['2022.03', 'energy', '한전KDN 아이디어 공모전 장려상', '메타버스 에너지 전시관']
+        ];
+        view.innerHTML =
+          '<div class="row row--top">' +
+            '<section class="roombox" id="room" aria-labelledby="room-h">' +
+              '<div class="roombox__h"><b id="room-h">오늘의 1면 · 내 방</b><span>사물을 누르면 프로젝트가 열림</span></div>' +
+              '<div class="scene"><div class="stage" id="stage" role="img" aria-label="프로젝트 사물이 놓인 아이소메트릭 픽셀 방. 아래 표에서도 같은 프로젝트를 열 수 있음"><p class="tip" id="tip" hidden></p></div></div>' +
+              '<div class="caption" id="caption"></div>' +
+            '</section>' +
+            '<section class="news" id="news" aria-labelledby="news-h">' +
+              '<div class="news__h"><span id="news-h">새 소식 · 경력</span><i aria-hidden="true"></i></div>' +
+              '<ol>' + news.map(function (n) {
+                return '<li><time>[' + n[0] + ']</time> ' + (n[1] ? '<a href="#' + n[1] + '">' + n[2] + '</a>' : '<b>' + n[2] + '</b>') + '<p>' + n[3] + '</p></li>';
+              }).join('') + '</ol>' +
+              '<div class="news__foot"><a class="hbtn hbtn--blue" href="' + ROOT + 'index.html#career">경력 전체</a></div>' +
+            '</section>' +
+          '</div>' +
+          '<div class="row row--3">' +
+            '<section class="box"><h2 class="box__h">처음 오셨나요?</h2><div class="box__b with-icon">' + sprite('jango') +
+              '<div><p><b>정유리</b>. AI 서비스 · 실시간 모니터링 · 접근성 중심 제품을 개발해 온 프론트엔드 개발자</p>' +
+              '<p>총경력 3년 10개월. 지금은 (주)위드마인드 프론트엔드</p>' +
+              '<a class="more" href="' + ROOT + 'index.html#about">자세한 소개</a></div>' +
+            '</div></section>' +
+            '<section class="box box--green"><h2 class="box__h">지금 하는 중!</h2><div class="box__b with-icon">' + sprite('kiosk') +
+              '<div><p><b>홀로그램 AI 키오스크</b></p><p>Gemini API로 말로 주문하는 카페 키오스크. 음성이 끊겨도 터치로 이어가도록 처리</p>' +
+              '<a class="more" href="#kiosk" style="color:#3f6a2a">기사 보기</a></div>' +
+            '</div></section>' +
+            '<section class="box box--blue"><h2 class="box__h">특기 · 기술</h2><div class="box__b">' +
+              '<ul class="bullets"><li>웹 접근성</li><li>AI 서비스 연동 (Gemini API · 음성 인식)</li><li>실시간 화면 (Flutter · TCP)</li><li>React · TypeScript · Firebase</li><li>기획·디자인 협업</li></ul>' +
+            '</div></section>' +
+          '</div>' +
+          '<section class="box box--blue" id="list"><h2 class="box__h">프로젝트 목록 <span style="font-weight:400">회사 6 · 개인 4</span></h2><div class="box__b">' +
+            '<table class="tbl tbl--list"><thead><tr><th>프로젝트</th><th>기간</th><th>성격 · 맡은 일</th></tr></thead><tbody>' +
+              ALL.map(function (k) {
+                return '<tr data-go="' + k + '"><td><a href="#' + k + '">' + P[k].title + '</a></td><td class="when">' + short(meta(k, '기간')) + '</td><td class="meta2">' + short(meta(k, '성격')) + ' · ' + short(meta(k, '맡은 일')) + '</td></tr>';
+              }).join('') +
+            '</tbody></table>' +
+          '</div></section>';
+        mountRoom(room);
+      }
+
+      // 방: 사물별 이미지 + 픽셀 단위 판정
+      function mountRoom(room) {
+        var stage = document.getElementById('stage'), tip = document.getElementById('tip'), cap = document.getElementById('caption');
+        function place(el, o) {
+          el.style.left = (o.x / room.w * 100) + '%'; el.style.top = (o.y / room.h * 100) + '%'; el.style.width = (o.w / room.w * 100) + '%';
+        }
+        var base = new Image(); base.src = 'room/base.png'; base.alt = ''; place(base, { x: 0, y: 0, w: room.w }); stage.insertBefore(base, tip);
+        var objs = room.objs.map(function (o, i) {
+          var im = new Image(); im.src = o.src; im.alt = ''; place(im, o); im.style.zIndex = i + 1; stage.insertBefore(im, tip);
+          var it = { o: o, el: im, alpha: null };
+          im.addEventListener('load', function () {
+            var c = document.createElement('canvas'); c.width = o.w; c.height = o.h;
+            var g = c.getContext('2d'); g.drawImage(im, 0, 0); it.alpha = g.getImageData(0, 0, o.w, o.h).data;
+          });
+          return it;
+        });
+        function hit(e) {
+          var r = stage.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * room.w, y = (e.clientY - r.top) / r.height * room.h;
+          for (var i = objs.length - 1; i >= 0; i--) {
+            var it = objs[i], o = it.o;
+            if (!o.pid || !it.alpha) continue;
+            var lx = Math.floor(x - o.x), ly = Math.floor(y - o.y);
+            if (lx >= 0 && ly >= 0 && lx < o.w && ly < o.h && it.alpha[(ly * o.w + lx) * 4 + 3] > 0) return o.pid;
+          }
+          return null;
+        }
+        function caption(k) {
+          cap.innerHTML = k
+            ? '<p><b>' + P[k].title + '</b> · ' + short(meta(k, '기간')) + '<br>' + first(P[k].lead) + '</p><a class="hbtn hbtn--blue" href="#' + k + '">기사 보기</a>'
+            : '<p><b>방 안 사물 10개 = 프로젝트 10개</b><br>' + (matchMedia('(hover: none)').matches ? '사물을 누르면 해당 프로젝트 탭이 열림' : '마우스를 올리면 이름이 뜨고, 누르면 해당 탭이 열림') + '</p><a class="hbtn hbtn--blue" href="#home" data-scroll="list">목록으로 보기</a>';
+        }
+        var cur = null;
+        function hover(k, e) {
+          if (k !== cur) {
+            cur = k;
+            objs.forEach(function (it) { it.el.classList.toggle('on', !!k && it.o.pid === k); });
+            stage.classList.toggle('hot', !!k);
+            tip.hidden = !k; if (k) tip.textContent = P[k].title;
+            caption(k);
+          }
+          if (k && e) { var r = stage.getBoundingClientRect(); tip.style.left = (e.clientX - r.left) + 'px'; tip.style.top = (e.clientY - r.top) + 'px'; }
+        }
+        stage.addEventListener('pointermove', function (e) { hover(hit(e), e); });
+        stage.addEventListener('pointerleave', function () { hover(null); });
+        stage.addEventListener('click', function (e) { var k = hit(e); if (k) location.hash = k; });
+        caption(null);
+      }
+
+      // 프로젝트 기사
+      function renderProject(k) {
+        var p = P[k], isSide = SIDE.indexOf(k) > -1, group = isSide ? SIDE : COMPANY;
+        var stack = p.secs.filter(function (s) { return s.h === '사용 기술'; })[0];
+        var secs = p.rich.secs.filter(function (s) { return s.h !== '사용 기술'; });
+        var i = group.indexOf(k), prev = group[(i + group.length - 1) % group.length], next = group[(i + 1) % group.length];
+        subnav.innerHTML = (isSide ? '<a href="#side">개인 작업</a><span>›</span>' : '<a href="#home">홈</a><span>›</span>') + '<span class="here">' + p.title + '</span><span>|</span><a href="#' + prev + '">◀ ' + SHORT[prev] + '</a><span>|</span><a href="#' + next + '">' + SHORT[next] + ' ▶</a><span>|</span><a href="' + ROOT + 'projects/' + k + '.html">케이스 스터디 원본</a>';
+        view.innerHTML =
+          '<h1 class="title-bar">' + p.title + '<small>' + (isSide ? '개인 작업' : '회사 프로젝트') + ' · ' + short(meta(k, '기간')) + '</small></h1>' +
+          '<div class="row row--article">' +
+            '<div class="col">' +
+              '<article class="box box--yellow"><h2 class="box__h">' + p.title + '</h2><div class="box__b">' +
+                '<div class="masthead"><div class="icon">' + sprite(k, icon[k].h > 40 ? 1 : 2) + '</div><p class="lead">' + p.lead + '</p></div>' +
+                '<table class="events"><tbody>' + p.meta.map(function (m) { return '<tr><td>' + m[0] + '</td><td>' + m[1] + '</td></tr>'; }).join('') + '</tbody></table>' +
+                (p.rich.intro ? '<div class="rich" style="margin-top:12px">' + p.rich.intro + '</div>' : '') +
+              '</div></article>' +
+              secs.map(function (s) {
+                return '<section class="box box--yellow"><h2 class="box__h">' + s.h + '</h2><div class="box__b rich">' + s.html + '</div></section>';
+              }).join('') +
+            '</div>' +
+            '<aside class="col">' +
+              (p.work.length ? '<section class="box"><h2 class="box__h">주요 작업</h2><div class="box__b"><ul class="bullets">' + p.work.map(function (w) { return '<li>' + w + '</li>'; }).join('') + '</ul></div></section>' : '') +
+              (stack && stack.li.length ? '<section class="box box--green"><h2 class="box__h">사용 기술</h2><div class="box__b"><ul class="chips">' + stack.li.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div></section>' : '') +
+              '<section class="box box--blue"><h2 class="box__h">' + (isSide ? '다른 개인 작업' : '다른 프로젝트') + '</h2><div class="box__b pn">' +
+                group.filter(function (g) { return g !== k; }).map(function (g) { return '<a href="#' + g + '">' + sprite(g) + '<span>' + P[g].title + '<small>' + short(meta(g, '기간')) + '</small></span></a>'; }).join('') +
+              '</div></section>' +
+              '<section class="box box--yellow"><h2 class="box__h">더 보기</h2><div class="box__b"><p>그림·영상이 모두 담긴 원래 케이스 스터디</p><p style="margin-top:8px"><a class="hbtn" href="' + ROOT + 'projects/' + k + '.html">원본 열기</a></p></div></section>' +
+            '</aside>' +
+          '</div>';
+      }
+
+      function renderSide() {
+        subnav.innerHTML = '<a href="#home">홈</a><span>›</span><span class="here">개인 작업</span>' + SIDE.map(function (s) { return '<span>|</span><a href="#' + s + '">' + SHORT[s] + '</a>'; }).join('');
+        view.innerHTML = '<h1 class="title-bar">개인 작업<small>회사 밖에서 직접 기획하고 만든 작업 4개</small></h1>' +
+          '<div class="row side4">' + SIDE.map(function (k) {
+            return '<section class="box box--yellow"><h2 class="box__h">' + P[k].title + '</h2><div class="box__b with-icon">' + sprite(k) +
+              '<div><p><b>' + short(meta(k, '기간')) + '</b> · ' + short(meta(k, '성격')) + '</p><p>' + P[k].lead + '</p><p style="margin-top:10px"><a class="hbtn" href="#' + k + '">기사 보기</a></p></div>' +
+            '</div></section>';
+          }).join('') + '</div>';
+      }
+
+      function route() {
+        var k = (location.hash || '#home').slice(1);
+        if (k !== 'side' && !P[k]) k = 'home';
+        if (k === 'home') renderHome(); else if (k === 'side') renderSide(); else renderProject(k);
+        var active = SIDE.indexOf(k) > -1 ? 'side' : k;
+        tabs.querySelectorAll('a').forEach(function (a) {
+          if (a.getAttribute('data-tab') === active) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+        });
+        var on = tabs.querySelector('[aria-current]');
+        if (on) tabs.scrollLeft = on.offsetLeft - tabs.clientWidth / 2 + on.offsetWidth / 2;
+        document.title = (k === 'home' ? '정유리' : k === 'side' ? '개인 작업' : P[k].title) + ' — Frontend Developer (픽셀 시안)';
+      }
+      window.addEventListener('hashchange', function () {
+        route();
+        var top = document.querySelector('.subnav').getBoundingClientRect().top + scrollY - 8;
+        if (scrollY > top) scrollTo(0, top);
+      });
+      document.addEventListener('click', function (e) {
+        var s = e.target.closest('[data-scroll]');
+        if (s) { var t = document.getElementById(s.getAttribute('data-scroll')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } return; }
+        var row = e.target.closest('tr[data-go]');
+        if (row && !e.target.closest('a')) location.hash = row.getAttribute('data-go');
+      });
+      route();
+    });
+
+    var clock = document.getElementById('clock');
+    function tick() { clock.textContent = '서울 ' + new Date().toLocaleTimeString('ko-KR', { timeZone: 'Asia/Seoul', hour: '2-digit', minute: '2-digit', hour12: false }); }
+    tick(); setInterval(tick, 30000);
+  })();
+  </script>
+</body>
+</html>
