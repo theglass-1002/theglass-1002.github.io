@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Flair — 홈 장식 (dusk.css 위에 덮어쓴다)
+   - 하늘: 열기구 · 비행선 · 새 떼(낮) · 별똥별(밤) · 반짝이, 제목 픽셀 입체
+   - 작업 목록: 스테이지 길, 큰 번호, 강조색 빛, 별 가루
+   스프라이트는 images/scene/*.svg (crispEdges)
+   ========================================================================== */
+
+/* ---------- 하늘 장식 ---------- */
+.flair { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.flair span { position: absolute; display: block; background-position: center; background-size: 100% 100%; background-repeat: no-repeat; image-rendering: pixelated; }
+
+.balloon { width: 51px; height: 81px; background-image: url("../images/scene/balloon-a.svg"); animation: f-bob 6s steps(6) infinite; }
+.balloon--a { left: 7%; top: 30%; }
+.balloon--b { right: 5%; top: 52%; width: 34px; height: 54px; filter: hue-rotate(150deg) saturate(.8); animation-duration: 7.5s; animation-delay: -3s; }
+@keyframes f-bob { 50% { translate: 0 -12px; } }
+
+.blimp { left: 0; top: 13%; width: 136px; height: 52px; background-image: url("../images/scene/blimp.svg"); animation: f-cross 70s linear infinite; }
+@keyframes f-cross { from { transform: translateX(-160px); } to { transform: translateX(calc(100vw + 40px)); } }
+
+.birds { left: 0; top: 20%; width: 120px; height: 40px; animation: f-cross 38s linear infinite; animation-delay: -12s; opacity: 0; }
+.birds i { position: absolute; width: 32px; height: 8px; background: url("../images/scene/bird.svg") 0 0 / 64px 8px no-repeat; image-rendering: pixelated; animation: f-flap .5s steps(1) infinite; }
+.birds i:nth-child(1) { left: 0; top: 14px; }
+.birds i:nth-child(2) { left: 40px; top: 0; animation-delay: -.25s; }
+.birds i:nth-child(3) { left: 76px; top: 22px; animation-delay: -.12s; width: 24px; height: 6px; background-size: 48px 6px; }
+@keyframes f-flap { 50% { background-position: 100% 0; } }
+html[data-time="morning"] .birds, html[data-time="afternoon"] .birds { opacity: .75; }
+
+.shoot { width: 120px; height: 4px; left: 62%; top: 8%; opacity: 0; rotate: -24deg; transform-origin: right center;
+  background: linear-gradient(90deg, transparent 0 20%, rgba(255, 247, 239, .25) 20% 45%, rgba(255, 247, 239, .6) 45% 75%, #fff7ef 75%);
+  animation: f-shoot 9s steps(12) infinite; }
+.shoot--2 { left: 30%; top: 18%; width: 80px; animation-delay: -5s; animation-duration: 13s; }
+@keyframes f-shoot { 0%, 88% { opacity: 0; translate: 0 0; } 89% { opacity: 1; } 100% { opacity: 0; translate: -220px 98px; } }
+html:not([data-time="night"]):not([data-weather="snow"]) .shoot { display: none; }
+
+.spark { width: 21px; height: 21px; background-image: url("../images/scene/sparkle.svg"); animation: f-tw 2.4s steps(2) infinite; }
+.spark:nth-child(2n) { width: 14px; height: 14px; animation-delay: -1.2s; animation-duration: 3s; }
+@keyframes f-tw { 50% { opacity: 0; scale: .5; } }
+
+/* 비 · 눈 오는 날은 열기구 · 비행선 · 새를 접는다 */
+html[data-weather="rain"] .balloon, html[data-weather="storm"] .balloon, html[data-weather="snow"] .balloon,
+html[data-weather="rain"] .blimp, html[data-weather="storm"] .blimp,
+html[data-weather="rain"] .birds, html[data-weather="storm"] .birds, html[data-weather="snow"] .birds { display: none; }
+html[data-time="night"] .balloon, html[data-time="night"] .blimp { filter: brightness(.6) saturate(.8); }
+html[data-time="night"] .balloon--b { filter: hue-rotate(150deg) brightness(.6) saturate(.7); }
+
+/* 제목: 2단 픽셀 입체 */
+:root { --ext-1: #7a367b; --ext-2: #090a14; }
+html[data-time="morning"], html[data-time="afternoon"] { --ext-1: #ffd166; --ext-2: rgba(23, 32, 56, .28); }
+html[data-time="night"] { --ext-1: #533066; }
+html[data-weather="rain"], html[data-weather="storm"] { --ext-1: #577277; --ext-2: #10141f; }
+html[data-weather="snow"] { --ext-1: #3c5e8b; --ext-2: #090a14; }
+html .sky .title h1 { text-shadow: 3px 3px 0 var(--ext-1), 6px 6px 0 var(--ext-2); }
+
+/* 모니터: 유리 반사 + 깜빡이는 전원 */
+.screen::before { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(115deg, transparent 0 18%, rgba(255, 255, 255, .14) 18% 24%, transparent 24% 28%, rgba(255, 255, 255, .08) 28% 30%, transparent 30%); }
+.monitor .led { display: inline-flex; align-items: center; gap: 6px; }
+.monitor .led::before { content: ""; width: 8px; height: 8px; background: #75a743; box-shadow: 0 0 6px #a8ca58; animation: d-blink 2s steps(2) infinite; }
+
+/* ---------- 작업 목록 ---------- */
+#work { position: relative; overflow: hidden; }
+#work::after {   /* 별 가루 */
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='180' shape-rendering='crispEdges'%3E%3Cg fill='%23ffd166'%3E%3Crect x='20' y='30' width='2' height='2'/%3E%3Crect x='150' y='12' width='2' height='2'/%3E%3Cpath d='M96 96h2v2h2v2h-2v2h-2v-2h-2v-2h2z'/%3E%3C/g%3E%3Cg fill='%23ebede9' fill-opacity='.6'%3E%3Crect x='180' y='120' width='2' height='2'/%3E%3Crect x='60' y='150' width='2' height='2'/%3E%3Crect x='200' y='60' width='1' height='1'/%3E%3C/g%3E%3C/svg%3E");
+  animation: f-dust 4s steps(2) infinite; }
+@keyframes f-dust { 50% { opacity: .25; } }
+#work > .wrap { position: relative; z-index: 1; }
+
+/* 스테이지를 잇는 점선 길 */
+#work .wrap > .list { position: relative; }
+#work .wrap > .list::before { content: ""; position: absolute; left: -26px; top: 24px; bottom: 24px; width: 4px;
+  background: repeating-linear-gradient(180deg, var(--d-butter) 0 8px, transparent 8px 16px); opacity: .5; }
+
+.row { isolation: isolate;
+  background: linear-gradient(100deg, color-mix(in srgb, var(--acc, var(--d-butter)) 22%, var(--d-card)) 0 30%, var(--d-card) 62%);
+  box-shadow: 5px 5px 0 var(--d-shadow), inset 0 3px 0 rgba(255, 255, 255, .08), inset 0 -3px 0 rgba(0, 0, 0, .14); }
+.row:hover { background: linear-gradient(100deg, color-mix(in srgb, var(--acc, var(--d-butter)) 34%, var(--d-card-hi)) 0 30%, var(--d-card-hi) 62%);
+  box-shadow: 8px 8px 0 var(--d-shadow), 0 0 0 2px var(--d-butter), 0 0 28px color-mix(in srgb, var(--acc, var(--d-butter)) 45%, transparent); }
+
+/* 큰 스테이지 번호 */
+#work .wrap > .list { counter-reset: st; }
+#work .wrap > .list > .row { counter-increment: st; }
+#work .wrap > .list > .row::after { content: "0" counter(st); position: absolute; right: 18px; top: -6px; z-index: -1; pointer-events: none;
+  font: 400 120px/1 var(--d-pix); color: var(--acc, var(--d-butter)); opacity: .16; }
+#work .wrap > .list > .row:hover::after { opacity: .3; }
+
+/* 썸네일 프레임: 강조색 전원 불 */
+.thumb::before { content: ""; position: absolute; right: 12px; bottom: 3px; z-index: 1; width: 10px; height: 4px; background: var(--acc, var(--d-butter)); }
+.row:hover .thumb { box-shadow: 0 0 0 3px var(--acc, var(--d-butter)); }
+
+.sec-head h2 { text-shadow: 3px 3px 0 var(--d-shadow); }
+
+@media (max-width: 900px) {
+  #work .wrap > .list::before { display: none; }
+  .balloon--a { display: none; }
+  #work .wrap > .list > .row::after { font-size: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flair span, .birds i, #work::after { animation: none; }
+  .blimp, .birds, .shoot { display: none; }
+}
+
+/* ---------- 상세 페이지 ---------- */
+/* 하늘 띠: 낮은 띠에 맞춰 작게 */
+.sky--page .balloon--a { left: 4%; top: 14%; width: 34px; height: 54px; }
+.sky--page .balloon--b { right: 3%; top: 8%; width: 26px; height: 41px; }
+.sky--page .blimp { top: 6%; width: 102px; height: 39px; }
+.sky--page .birds { top: 26%; }
+.sky--page .shoot { top: 4%; }
+
+/* 제목: 강조색 픽셀 입체 + 반짝이 */
+body.dusk:not(.home) .ph h1 { text-shadow: 3px 3px 0 var(--acc, var(--d-butter)), 6px 6px 0 color-mix(in srgb, var(--pg-ink) 22%, transparent); }
+body.dusk:not(.home) .ph h1::after { content: ""; display: inline-block; width: 21px; height: 21px; margin-left: 14px; vertical-align: .5em;
+  background: url("../images/scene/sparkle.svg") center / 100% 100% no-repeat; image-rendering: pixelated; animation: f-tw 2.4s steps(2) infinite; }
+
+/* 섹션 번호 칸: 강조색 그림자 */
+body.dusk:not(.home) main[data-accent] .cs-section > h2::before { box-shadow: 3px 3px 0 var(--acc, var(--d-butter)); }
+body.dusk:not(.home) .cs-section > h2 { text-shadow: 2px 2px 0 color-mix(in srgb, var(--acc, var(--d-butter)) 45%, transparent); }
+
+/* 종이 바탕: 은은한 픽셀 점 */
+body.dusk:not(.home) { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' shape-rendering='crispEdges'%3E%3Crect x='0' y='0' width='2' height='2' fill='%23172038' fill-opacity='.06'/%3E%3C/svg%3E"); }
+
+@media (prefers-reduced-motion: reduce) {
+  body.dusk:not(.home) .ph h1::after { animation: none; }
+}
