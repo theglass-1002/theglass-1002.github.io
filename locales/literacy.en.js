@@ -66,6 +66,7 @@ window.I18N_PAGE = {
   "학생 일괄 등록 흐름": "Bulk student registration flow",
   "<span aria-current=\"page\">문해력 탐험대 · 선생님</span>": "<span aria-current=\"page\">Literacy Expedition · Teacher</span>",
   "문해력 탐험대 · 선생님": "Literacy Expedition · Teacher",
+  "문해력 탐험대&nbsp;· 선생님": "Literacy Expedition · Teacher",
   "교육 서비스": "Education service",
   "계정 유형별 화면 분기": "Screen branching by account type",
   "학생·선생님 등록과 배정": "Student and teacher registration and assignment",

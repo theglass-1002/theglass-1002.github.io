@@ -91,14 +91,15 @@ html:has(body.dusk) { scroll-behavior: smooth; }
 .dusk .lang-toggle:hover { box-shadow: 3px 3px 0 var(--d-shadow); }
 .dusk .lang-toggle__thumb { background: var(--d-butter); }
 .dusk .lang-toggle .lang-toggle__opt { position: relative; z-index: 1; color: var(--d-sub); }
-.dusk .lang-toggle[aria-checked="false"] .lang-toggle__opt:first-of-type,
+.dusk .lang-toggle[aria-checked="false"] .lang-toggle__opt:nth-child(2),
 .dusk .lang-toggle[aria-checked="true"] .lang-toggle__opt:last-of-type { color: #172038; font-weight: 800; }
 .dusk .nav-toggle { border: 2px solid var(--d-shadow); border-radius: 0; background: var(--d-card); }
 .dusk .nav-toggle__bars, .dusk .nav-toggle__bars::before, .dusk .nav-toggle__bars::after { background: var(--d-text); border-radius: 0; }
 .dusk .nav-toggle[aria-expanded="true"] .nav-toggle__bars { background: transparent; }
 @media (max-width: 768px) {
   .dusk .nav { background: var(--hud); border-bottom: 2px solid var(--d-shadow); box-shadow: none; }
-  .dusk .nav__list a { min-height: 48px; }
+  .dusk .nav__list { align-items: stretch; }
+  .dusk .nav__list a { display: flex; align-items: center; width: 100%; min-height: 48px; }
 }
 
 /* ---------- 시간대 · 날씨 · 계절 하늘 ----------
@@ -762,6 +763,12 @@ body.dusk:not(.home) .prose table th, body.dusk:not(.home) .prose table td { col
   .row::before { display: none; }
   .sky.contact h2 { font-size: 44px; }
   .chips-s { justify-content: flex-start; }
+  /* 위 640px 블록보다 뒤에 오는 기본값을 다시 덮는다 */
+  .dusk .ph h1 { font-size: 40px; }
+  .dusk .cs-section > h2 { font-size: 30px; }
+  .dusk .cta h2 { font-size: 28px; }
+  .clock { width: auto; max-width: calc(100% - 48px); flex-wrap: wrap; gap: 8px 12px; }
+  .clock button { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .row, .row:hover { transition: none; transform: none; }
@@ -805,7 +812,7 @@ body.dusk:not(.home) .prose table th, body.dusk:not(.home) .prose table td { col
   .quest { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
-  .quests { padding-left: 34px; }
+  ol.quests { padding-left: 34px; }   /* style.css 의 ol[class] 초기화보다 우선 */
   .quests::before { left: 4px; }
   .quest::before { left: -35px; }
   .quest--now::before { left: -39px; }
@@ -1115,3 +1122,31 @@ body.dusk:not(.home) .prose figure.fig-wide figcaption { text-align: left; max-w
 body.dusk:not(.home) .prose .fig-pair--photos { margin: var(--s-5) 0 var(--s-7); align-items: start; }
 body.dusk:not(.home) .prose .fig-pair--photos figure img { width: 100%; height: auto; aspect-ratio: 4 / 3; max-height: none; object-fit: cover; border: 2px solid var(--pg-line); box-shadow: 4px 4px 0 var(--pg-line); }
 body.dusk:not(.home) .prose .fig-pair--photos figure figcaption { text-align: left; }
+
+/* ==========================================================================
+   모바일 다듬기 — 파일 맨 끝에 두어 위쪽 규칙을 덮는다
+   ========================================================================== */
+@media (max-width: 640px) {
+  /* 한두 단어만 다음 줄로 떨어지지 않게 */
+  .dusk p, .dusk li, .dusk dd, .dusk figcaption { text-wrap: pretty; }
+
+  /* 영문 'Education' 같은 항목명이 글자 단위로 끊기지 않게 */
+  .charcard .facts dt { flex-shrink: 0; white-space: nowrap; }
+
+  /* 여러 줄 캡션은 가운데 정렬이면 들쭉날쭉해 보여 왼쪽으로 통일 (휴대폰 캡처 아래 짧은 이름표는 가운데 유지) */
+  body.dusk:not(.home) .prose figure:not(.fig-longshot) figcaption,
+  body.dusk:not(.home) .story > figure figcaption,
+  .prose .fig-portrait figcaption,
+  .fig-tall figcaption { text-align: left; }
+  body.dusk:not(.home) .prose .shots-row figure figcaption,
+  body.dusk:not(.home) .shots-row figcaption { text-align: center; }
+
+  /* 캡션 줄 수가 달라도 나란한 캡처의 윗선이 맞도록 */
+  body.dusk:not(.home) .shots-row { align-items: start; }
+
+  /* 데스크톱 · 모바일 겹친 그림 — 좁은 화면에선 캡션을 가려서 나란히 놓는다 */
+  body.dusk:not(.home) .prose figure.devices { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+  body.dusk:not(.home) .prose figure.devices .devices__desk { width: calc(74% - 6px); }
+  body.dusk:not(.home) .prose figure.devices .devices__phone { position: static; width: calc(26% - 6px); box-shadow: 3px 3px 0 var(--pg-line); }
+  body.dusk:not(.home) .prose figure.devices figcaption { width: 100%; margin-top: 0; }
+}

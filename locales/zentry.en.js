@@ -22,6 +22,7 @@ window.I18N_PAGE = {
   "<b>오진 위험</b>정상 흐름에서는 드러나지 않아 예외 처리 항목을 따로 추적": "<b>Risk of misdiagnosis</b>Invisible in the normal flow, so edge cases were tracked as separate items",
   "<span aria-current=\"page\">젠트리 · 두리틀</span>": "<span aria-current=\"page\">Zentry · Doolittle</span>",
   "젠트리 · 두리틀": "Zentry · Doolittle",
+  "젠트리&nbsp;· 두리틀": "Zentry · Doolittle",
   "2022.09 – 2025.02 (2년 6개월)": "Sep 2022 – Feb 2025 (2 yrs 6 mos)",
   "(주)젠트리 재직 중 참여 프로젝트": "In-house project at Zentry Inc.",
   "두리틀 수의사용 APP 퍼블리싱 · 공식/관리자 웹사이트 개발": "Doolittle Vet app publishing · official and admin website development",

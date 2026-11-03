@@ -18,7 +18,12 @@
 
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="brand" href="/index.html"> <span>Frontend Developer</span></a>
+      <a class="brand" href="/index.html">정유리 <span>Frontend Developer</span></a>
+      <button class="lang-toggle" type="button" role="switch" aria-checked="false" data-lang-toggle aria-label="영문 버전 · English version">
+        <span class="lang-toggle__thumb" aria-hidden="true"></span>
+        <span class="lang-toggle__opt" aria-hidden="true">KO</span>
+        <span class="lang-toggle__opt" aria-hidden="true">EN</span>
+      </button>
 
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">
         <span class="nav-toggle__bars" aria-hidden="true"></span>
@@ -39,16 +44,17 @@
   <main id="main">
     <section class="cta">
       <div class="wrap wrap--content">
-        <h1>페이지를 찾을 수 없습니다</h1>
-        <p>주소가 바뀌었거나 삭제된 페이지예요. 아래에서 다시 찾아봐 주세요.</p>
+        <h1 data-en="Page not found">페이지를 찾을 수 없습니다</h1>
+        <p data-en="This page has moved or been removed. Try one of the links below.">주소가 바뀌었거나 삭제된 페이지예요. 아래에서 다시 찾아봐 주세요.</p>
         <div class="cta__actions">
-          <a class="btn btn--primary" href="/index.html">홈으로</a>
-          <a class="btn btn--ghost" href="/index.html#work">프로젝트 보기</a>
+          <a class="btn btn--primary" href="/index.html" data-en="Home">홈으로</a>
+          <a class="btn btn--ghost" href="/index.html#work" data-en="See projects">프로젝트 보기</a>
         </div>
       </div>
     </section>
   </main>
 
+  <script src="/locales/common.en.js?v=20261015q" defer></script>
   <script src="/js/site.js?v=20261016a" defer></script>
 </body>
 </html>
